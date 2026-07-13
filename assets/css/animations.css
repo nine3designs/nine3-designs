@@ -1,0 +1,233 @@
+/* ==========================================================
+   Nine3 Designs
+   Animations
+========================================================== */
+
+/* ---------- Global ---------- */
+
+*{
+
+    transition:
+        background-color .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+
+}
+
+/* ---------- Hero ---------- */
+
+.hero-text{
+
+    animation:slideLeft 1s ease both;
+
+}
+
+.hero-image{
+
+    animation:slideRight 1s ease .2s both;
+
+}
+
+/* ---------- Section Fade ---------- */
+
+.section-title,
+.service-card,
+.portfolio-card,
+.about-content,
+.about-image,
+.why-grid,
+.contact-card,
+.contact-form{
+
+    animation:fadeUp linear both;
+
+    animation-timeline:view();
+
+    animation-range:entry 10% cover 35%;
+
+}
+
+/* ---------- Buttons ---------- */
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+}
+
+.btn:hover::before{
+
+    left:120%;
+
+    transition:.7s;
+
+}
+
+/* ---------- Cards ---------- */
+
+.service-card:hover{
+
+    transform:translateY(-12px) scale(1.02);
+
+}
+
+.portfolio-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+/* ---------- Navigation ---------- */
+
+.main-nav a{
+
+    transition:.3s ease;
+
+}
+
+.main-nav a:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ---------- Logo ---------- */
+
+.logo img{
+
+    transition:.35s ease;
+
+}
+
+.logo:hover img{
+
+    transform:scale(1.04);
+
+}
+
+/* ---------- Keyframes ---------- */
+
+@keyframes slideLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes slideRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ---------- Floating Hero ---------- */
+
+.hero-image img{
+
+    animation:
+
+        slideRight 1s ease .2s both,
+
+        floatLogo 5s ease-in-out infinite;
+
+}
+
+@keyframes floatLogo{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}

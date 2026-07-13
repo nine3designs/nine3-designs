@@ -1,0 +1,70 @@
+/* ==========================================================
+   Nine3 Designs
+   Variables
+========================================================== */
+
+:root {
+
+    /* Brand Colours */
+
+ --primary:#404A3B;
+--primary-dark:#333C30;
+--primary-light:#566150;
+
+--accent:#C8A96A;
+--accent-light:#D8BC84;
+
+--white:#FEF9F3;
+--off-white:#FEF9F3;
+
+--light-grey:#8ca87c;
+
+--dark:#2B2B2B;
+
+    /* Typography */
+
+    --font-main: "Raleway", sans-serif;
+
+    --font-size-xs: .85rem;
+    --font-size-sm: .95rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.2rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 3rem;
+    --font-size-display: 4.5rem;
+
+    /* Spacing */
+
+    --space-xs: .5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 6rem;
+    --space-xxl: 8rem;
+
+    /* Border Radius */
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-xl: 40px;
+
+    /* Shadows */
+
+    --shadow-sm: 0 5px 15px rgba(0,0,0,.08);
+
+    --shadow-md: 0 12px 35px rgba(0,0,0,.12);
+
+    --shadow-lg: 0 20px 60px rgba(0,0,0,.20);
+
+    /* Layout */
+
+    --container: 1280px;
+
+    --header-height: 30px;
+
+    /* Animation */
+
+    --transition: .3s ease;
+
+}
