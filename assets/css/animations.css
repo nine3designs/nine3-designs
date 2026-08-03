@@ -3,9 +3,18 @@
    Animations
 ========================================================== */
 
-/* ---------- Global ---------- */
 
-*{
+/* ==========================================================
+   Global Transitions
+========================================================== */
+
+a,
+button,
+.btn,
+.service-card,
+.portfolio-card,
+.contact-card,
+img{
 
     transition:
         background-color .3s ease,
@@ -16,40 +25,61 @@
 
 }
 
-/* ---------- Hero ---------- */
+
+/* ==========================================================
+   Hero Animations
+========================================================== */
 
 .hero-text{
 
-    animation:slideLeft 1s ease both;
+    animation:slideLeft .9s ease both;
 
 }
+
 
 .hero-image{
 
-    animation:slideRight 1s ease .2s both;
+    animation:slideRight .9s ease .15s both;
 
 }
 
-/* ---------- Section Fade ---------- */
 
-.section-title,
-.service-card,
-.portfolio-card,
-.about-content,
-.about-image,
-.why-grid,
-.contact-card,
-.contact-form{
+.hero-image img{
 
-    animation:fadeUp linear both;
-
-    animation-timeline:view();
-
-    animation-range:entry 10% cover 35%;
+    animation:floatLogo 5s ease-in-out infinite;
 
 }
 
-/* ---------- Buttons ---------- */
+
+/* ==========================================================
+   Scroll Reveal
+========================================================== */
+
+.hidden{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+}
+
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+
+/* ==========================================================
+   Buttons
+========================================================== */
 
 .btn{
 
@@ -59,6 +89,7 @@
 
 }
 
+
 .btn::before{
 
     content:"";
@@ -66,9 +97,11 @@
     position:absolute;
 
     top:0;
+
     left:-120%;
 
     width:100%;
+
     height:100%;
 
     background:linear-gradient(
@@ -78,17 +111,21 @@
         transparent
     );
 
+    transition:.7s ease;
+
 }
+
 
 .btn:hover::before{
 
     left:120%;
 
-    transition:.7s;
-
 }
 
-/* ---------- Cards ---------- */
+
+/* ==========================================================
+   Cards
+========================================================== */
 
 .service-card:hover{
 
@@ -96,11 +133,13 @@
 
 }
 
+
 .portfolio-card:hover{
 
     transform:translateY(-10px);
 
 }
+
 
 .contact-card:hover{
 
@@ -108,13 +147,10 @@
 
 }
 
-/* ---------- Navigation ---------- */
 
-.main-nav a{
-
-    transition:.3s ease;
-
-}
+/* ==========================================================
+   Navigation
+========================================================== */
 
 .main-nav a:hover{
 
@@ -122,21 +158,21 @@
 
 }
 
-/* ---------- Logo ---------- */
 
-.logo img{
+/* ==========================================================
+   Logo Hover
+========================================================== */
 
-    transition:.35s ease;
-
-}
-
-.logo:hover img{
+.logo img:hover{
 
     transform:scale(1.04);
 
 }
 
-/* ---------- Keyframes ---------- */
+
+/* ==========================================================
+   Keyframes
+========================================================== */
 
 @keyframes slideLeft{
 
@@ -158,6 +194,7 @@
 
 }
 
+
 @keyframes slideRight{
 
     from{
@@ -178,37 +215,6 @@
 
 }
 
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(60px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-/* ---------- Floating Hero ---------- */
-
-.hero-image img{
-
-    animation:
-
-        slideRight 1s ease .2s both,
-
-        floatLogo 5s ease-in-out infinite;
-
-}
 
 @keyframes floatLogo{
 
@@ -227,6 +233,27 @@
     100%{
 
         transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Reduced Motion Accessibility
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms!important;
+
+        animation-iteration-count:1!important;
+
+        transition-duration:.01ms!important;
 
     }
 

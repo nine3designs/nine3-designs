@@ -53,7 +53,6 @@
 
 
 /* Hero */
-
 .hero{
 
     padding:120px 0 80px;
@@ -84,11 +83,6 @@
 
 }
 
-.hero-image{
-
-    order:-1;
-
-}
 
 .hero-image img{
 
@@ -187,7 +181,7 @@ h2{
 
 .site-header{
 
-    height:80px;
+    height:var(--header-height);
 
 }
 
@@ -432,11 +426,7 @@ h2{
 }
 
 }
-/* ==========================================================
-   SMALL PHONES
-========================================================== */
 
-@media (max-width:480px){
 
 /* ---------- Container ---------- */
 
@@ -478,7 +468,7 @@ h3{
 
 .site-header{
 
-    height:75px;
+    height:var(--header-height);
 
 }
 
@@ -617,5 +607,47 @@ h3{
     font-size:.9rem;
 
 }
+@media(max-width:768px){
+
+    .main-nav.active{
+
+        display:block;
+
+        position:absolute;
+
+        top:75px;
+
+        left:0;
+
+        width:100%;
+
+        background:var(--primary);
+
+        padding:2rem;
+
+    }
+
+    .main-nav.active ul{
+
+        flex-direction:column;
+
+        gap:1.5rem;
+
+    }
 
 }
+@media (max-width:768px) {
+
+    .about-mobile-hide{
+
+        display:none;
+
+    }
+
+}
+    /* ==========================================================
+   SMALL PHONES
+========================================================== */
+
+@media (max-width:480px)
+{}

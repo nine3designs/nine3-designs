@@ -130,15 +130,12 @@
 
 /* ---------- About Images ---------- */
 
-.about-image img,
-.why-image img{
-
-    width:100%;
-
-    max-width:420px;
-
-    margin:auto;
-
+.contact-about img{
+    width:160px !important;
+    height:160px !important;
+    aspect-ratio:1 / 1;
+    object-fit:cover;
+    border-radius:50% !important;
 }
 
 /* ---------- Contact Form ---------- */
@@ -602,7 +599,7 @@ FORM
 
     background:#fff;
 
-    padding:50px;
+    padding:80px;
 
     border-radius:28px;
 
@@ -614,7 +611,7 @@ FORM
 
     color:#FEF9F3;
 
-    margin-bottom:35px;
+    margin-bottom:45px;
 
 }
 
@@ -720,7 +717,7 @@ CONTACT ABOUT
 
     color:#fff;
 
-    padding:55px;
+    padding:35px;
 
     border-radius:28px;
 
@@ -732,25 +729,18 @@ CONTACT ABOUT
 
 .contact-about .section-icon{
 
-    width:70px;
+    width:50px;
+    height:50px;
 
-    height:70px;
+    margin:0 auto 10px;
 
-    border-radius:50%;
+}
 
-    background: #404B3B;
-
-    color:#404B3B;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
+.section-icon i{
 
     font-size:1.8rem;
 
-    margin-bottom:25px;
+
 
 }
 
@@ -807,9 +797,9 @@ CONTACT ABOUT
 
 .contact-details{
 
-    margin:35px 0;
+    margin:15px 0;
 
-    padding-top:30px;
+    padding-top:10px;
 
     border-top:1px solid rgba(255,255,255,.12);
 
@@ -845,9 +835,9 @@ CONTACT ABOUT
 
 .signature{
 
-    margin-top:40px;
+    margin-top:20px;
 
-    padding-top:30px;
+    padding-top:15px;
 
     border-top:1px solid rgba(255,255,255,.12);
 
@@ -857,29 +847,17 @@ CONTACT ABOUT
 
 }
 
-.signature{
 
-    margin-top:40px;
 
-    padding-top:30px;
-
-    border-top:1px solid rgba(255,255,255,.12);
-
-    color:#FEF9F3;
-
-    opacity:.9;
-
-}
-
-    .signature span{
+.signature span{
 
     display:block;
 
-    margin-top:18px;
+    margin-top:1px;
 
-    font-family:'Inspiration', cursive;
+    font-family:'Allura', cursive !important;
 
-    font-size:4rem;
+    font-size:2.0rem;
 
     line-height:1;
 
@@ -896,7 +874,7 @@ FAQ
 
     background:#404B3B;
 
-    padding:120px 0;
+    padding:100px 0;
 
 
 }
@@ -1021,7 +999,7 @@ WHY CHOOSE US
 
 .why-contact{
 
-    padding:100px 0;
+    padding:70px 0;
 
     background:#404B3B;
 
@@ -1037,5 +1015,74 @@ WHY CHOOSE US
     font-style:italic;
 
     color:#FEF9F3;
+
+}
+/* ---------- Contact Profile Image ---------- */
+
+.profile-image{
+
+    width:260px;
+    height:260px;
+    object-fit:cover;
+    border-radius:50%;
+    display:block;
+
+    margin:-30px auto 35px;
+
+}
+/* =====================================
+   WHY CHOOSE US SECTION
+===================================== */
+
+.why-section{
+
+    background:#404B3B;
+    padding:var(--space-xl) 0;
+
+}
+
+
+.why-section .section-title h2{
+
+    color:#FEF9F3;
+
+}
+
+
+.why-section .section-title span{
+
+    color:var(--accent);
+
+}
+
+
+.why-section .services-grid{
+
+    gap:2rem;
+
+}
+
+
+.why-section .service-card{
+
+    background:#FEF9F3;
+    border:none;
+    padding:2.25rem;
+
+}
+
+
+.why-section .service-card h3{
+
+    color:#404B3B;
+
+}
+
+
+.why-section .service-card p{
+
+    color:#555;
+
+    margin-bottom:0;
 
 }

@@ -89,7 +89,7 @@ h3,
 h4,
 h5,
 h6{
-  font-family:var(--font-heading);
+    font-family:var(--font-main);
 
     font-weight:700;
 
@@ -350,7 +350,7 @@ ABOUT PAGE
 
     color:#404b3b;
 
-    padding:180px 0 120px;
+    padding:70px 0 80px;
 
     text-align:center;
 
@@ -399,7 +399,8 @@ ABOUT PAGE
     gap:80px;
 
     align-items:center;
- color:#404b3b;
+
+    color:#FEF9F3;
 }
 
 .about-story img{
@@ -408,7 +409,7 @@ ABOUT PAGE
 
     border-radius:24px;
 
-    box-shadow:0 30px 60px rgba(0,0,0,.12);
+    box-shadow:0 30px 60px #404b3b;
 
 }
 
@@ -416,6 +417,20 @@ ABOUT PAGE
 
     color:#404b3b;
     margin-bottom:25px;
+
+}
+
+.about-story{
+
+    background:#404b3b;
+
+    padding:100px 0;
+
+}
+
+.about-story h2{
+
+    color:#404b3b;
 
 }
 
@@ -433,7 +448,7 @@ ABOUT PAGE
 
     background:#404b3b;
 
-    padding:100px 0;
+    padding:50px 0;
 
 }
 
@@ -465,7 +480,7 @@ ABOUT PAGE
 
     background:#404b3b;
 
-    padding:100px 0;
+    padding:50px 0;
 
 }
 
@@ -493,7 +508,7 @@ ABOUT PAGE
 
     color:#404b3b;
 
-    margin-bottom:15px;
+    margin-bottom:10px;
 
 }
 
@@ -564,7 +579,7 @@ SERVICES PAGE
 
     letter-spacing:3px;
 
-    font-size:.70 rem;
+    font-size:.70rem;
 
     font-weight:700;
 
@@ -875,14 +890,16 @@ font-size:2.5rem;
 
     display:block;
 
-    margin-top:18px;
+    margin-top:1px;
 
-    font-family:'Allura', cursive;
+    font-family:'Allura', cursive !important;
 
-    font-size:3rem;
+    font-size:2.5rem;
+
+    line-height:1;
 
     color:var(--accent);
 
-    line-height:1;
+    font-weight:400;
 
 }
