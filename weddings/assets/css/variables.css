@@ -1,0 +1,62 @@
+/* ==========================================================
+   Nine3 Weddings
+   Variables
+========================================================== */
+
+:root{
+
+    /* ---------- Brand Colours ---------- */
+
+    --primary:#404A3B;
+    --primary-dark:#5E514B;
+
+    --accent:#C8A96A;
+    --accent-light:#D9BE8B;
+
+    --white:#FFFCF8;
+    --cream:#F8F4EF;
+    --light:#EFE7DD;
+
+    --dark:#2F2A27;
+
+    --text:#444444;
+    --text-light:#777777;
+
+    /* ---------- Typography ---------- */
+
+    --font-heading:'Cormorant Garamond', serif;
+    --font-body:'Raleway', sans-serif;
+
+    /* ---------- Layout ---------- */
+
+    --container:1280px;
+
+    --header-height:95px;
+
+    /* ---------- Spacing ---------- */
+
+    --space-xs:.5rem;
+    --space-sm:1rem;
+    --space-md:2rem;
+    --space-lg:4rem;
+    --space-xl:7rem;
+
+    /* ---------- Radius ---------- */
+
+    --radius-sm:12px;
+    --radius-md:22px;
+    --radius-lg:32px;
+
+    /* ---------- Shadows ---------- */
+
+    --shadow-sm:0 8px 20px rgba(0,0,0,.06);
+
+    --shadow-md:0 18px 45px rgba(0,0,0,.08);
+
+    --shadow-lg:0 30px 70px rgba(0,0,0,.12);
+
+    /* ---------- Animation ---------- */
+
+    --transition:.35s ease;
+
+}

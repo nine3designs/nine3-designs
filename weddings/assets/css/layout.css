@@ -16,11 +16,9 @@
 
     z-index:200;
 
-    background:#404b3b;
+    background:#F8F4EF;
 
     backdrop-filter:blur(15px);
-
-    border-bottom:1px solid rgba(255,255,255,.08);
 
 }
 
@@ -191,16 +189,7 @@
 
     padding-top:var(--header-height);
 
-    background:
-        radial-gradient(circle at top right,
-        rgba(200,169,106,.18),
-        transparent 40%),
-        linear-gradient(
-            180deg,
-            #404A3B,
-            #333C30
-        );
-
+    background:#EFE7DD
 }
 
 .hero-grid{
@@ -412,7 +401,7 @@
 
     padding-top:2rem;
 
-    border-top:1px solid rgba(255,255,255,.10);
+    border-top:1px solid #F8F4EF;
 
     text-align:center;
 

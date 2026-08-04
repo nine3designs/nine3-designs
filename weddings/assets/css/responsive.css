@@ -1,4 +1,156 @@
 /* ==========================================================
+   FEATURED COLLECTIONS
+========================================================== */
+
+@media (max-width:992px){
+
+    .editorial-item,
+    .editorial-item.reverse{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+    .editorial-item.reverse .editorial-image,
+    .editorial-item.reverse .editorial-content{
+
+        order:initial;
+
+    }
+
+    .editorial-content{
+
+        max-width:100%;
+        text-align:center;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .featured-collections{
+
+        padding:90px 0;
+
+    }
+
+    .editorial-grid{
+
+        gap:80px;
+
+    }
+
+    .editorial-content h2{
+
+        font-size:2.7rem;
+
+    }
+
+}
+/* ==========================================================
+   SIGNATURE FINISHES
+========================================================== */
+
+@media (max-width:992px){
+
+    .finishes-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .finish-item img{
+
+        height:350px;
+
+    }
+
+}
+/* ==========================================================
+   ABOUT NATALIE
+========================================================== */
+
+@media (max-width:992px){
+
+    .about-natalie-grid{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+        text-align:center;
+
+    }
+
+    .about-natalie-content{
+
+        max-width:100%;
+
+        margin:auto;
+
+    }
+
+}
+/* ==========================================================
+   PROCESS TIMELINE
+========================================================== */
+
+@media(max-width:992px){
+
+.process-timeline{
+
+    grid-template-columns:1fr;
+
+    gap:60px;
+
+}
+
+.process-timeline::before{
+
+    display:none;
+
+}
+
+}
+/* ==========================================================
+   JOURNEY
+========================================================== */
+
+@media(max-width:768px){
+
+    .journey{
+
+        padding:120px 0;
+
+    }
+
+    .journey h2{
+
+        font-size:3rem;
+
+    }
+
+}
+@media(max-width:992px){
+
+.image-feature-grid{
+
+    grid-template-columns:1fr;
+
+    gap:60px;
+
+}
+
+.image-feature-content{
+
+    text-align:center;
+
+}
+
+}/* ==========================================================
    RESPONSIVE
    Nine3 Designs
 ========================================================== */
