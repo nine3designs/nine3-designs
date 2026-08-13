@@ -6,14 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nine3 Designs | Website Design, Branding & Marketing</title>
+    <title>Our Work | Nine3 Designs</title>
 
-   <meta name="description" content="Luxury creative design studio specialising in branding, websites, print, social media and wedding stationery.">
+    <meta
+        name="description"
+        content="Explore selected branding, website, print and marketing projects by Nine3 Designs."
+    >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Raleway:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/reset.css">
@@ -22,10 +28,668 @@
     <link rel="stylesheet" href="assets/css/components.css">
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+
+    <style>
+
+        /* ==================================================
+           NINE3 — OUR WORK PAGE
+        ================================================== */
+
+        .work-page {
+            background: var(--ivory);
+            color: var(--text);
+        }
+
+
+        /* ==================================================
+           HERO
+        ================================================== */
+
+        .work-hero {
+            padding: 72px 0 65px;
+            text-align: center;
+        }
+
+        .work-hero-inner {
+            width: min(780px, 90%);
+            margin: 0 auto;
+        }
+
+        .work-hero .section-label {
+            margin-bottom: 16px;
+        }
+
+        .work-hero h1 {
+            margin: 0 auto 22px;
+            color: var(--green);
+            font-size: clamp(38px, 4.2vw, 58px);
+            line-height: 1.05;
+            font-weight: 500;
+        }
+
+        .work-hero h1 span {
+            display: block;
+        }
+
+        .work-hero p {
+            max-width: 620px;
+            margin: 0 auto;
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+
+        /* ==================================================
+           FILTERS
+        ================================================== */
+
+        .work-filters {
+            width: min(1100px, 90%);
+            margin: 0 auto 65px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .work-filter {
+            padding: 10px 19px;
+
+            border: 1px solid rgba(64, 74, 59, .18);
+            border-radius: 100px;
+
+            background: transparent;
+            color: var(--green);
+
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            transition:
+                background .35s ease,
+                color .35s ease,
+                border-color .35s ease,
+                transform .35s ease;
+        }
+
+        .work-filter:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-1px);
+        }
+
+        .work-filter.active {
+            border-color: var(--green);
+            background: var(--green);
+            color: var(--ivory);
+        }
+
+
+        /* ==================================================
+           FEATURED PROJECT
+        ================================================== */
+
+        /* ==================================================
+   FEATURED PROJECT
+================================================== */
+
+.featured-work {
+    width: min(1120px, 90%);
+    margin: 0 auto 100px;
+}
+
+.featured-work-card {
+    display: grid;
+    grid-template-columns: 1fr 0.75fr;
+
+    min-height: 450px;
+
+    overflow: hidden;
+
+    background: var(--green);
+}
+
+.featured-work-image {
+    position: relative;
+    min-height: 450px;
+    overflow: hidden;
+}
+
+.featured-work-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .9s cubic-bezier(.2,.65,.25,1);
+}
+
+.featured-work-card:hover .featured-work-image img {
+    transform: scale(1.025);
+}
+
+.featured-work-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(254,249,243,.5);
+    border-radius: 50%;
+
+    background: rgba(64,74,59,.75);
+    color: var(--ivory);
+
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.featured-work-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 42px 40px;
+}
+
+.featured-work-content .section-label {
+    margin-bottom: 14px;
+    color: var(--gold);
+}
+
+.featured-work-content h2 {
+    margin: 0 0 20px;
+
+    color: var(--ivory);
+
+    font-size: clamp(32px, 3.5vw, 46px);
+    line-height: 1;
+}
+
+.featured-work-content p {
+    margin: 0 0 14px;
+
+    color: rgba(254,249,243,.76);
+
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.work-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-top: 14px;
+}
+
+.work-tags span {
+    padding: 7px 10px;
+
+    border: 1px solid rgba(200,169,106,.4);
+
+    color: var(--ivory);
+
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+        /* ==================================================
+           SELECTED WORK
+        ================================================== */
+
+        .selected-work {
+            width: min(1280px, 92%);
+            margin: 0 auto 120px;
+        }
+
+        .selected-work-heading {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+
+            margin-bottom: 42px;
+        }
+
+        .selected-work-heading .section-label {
+            margin-bottom: 12px;
+        }
+
+        .selected-work-heading h2 {
+            margin: 0;
+            color: var(--green);
+            font-size: clamp(30px, 3.2vw, 43px);
+            line-height: 1.05;
+        }
+
+        .selected-work-heading p {
+            max-width: 390px;
+            margin: 0;
+
+            color: var(--text-light);
+
+            font-size: 13px;
+            line-height: 1.75;
+            text-align: right;
+        }
+
+
+        /* ==================================================
+           PROJECT GRID
+        ================================================== */
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 55px 35px;
+        }
+
+        .work-card {
+            display: block;
+        }
+
+        .work-card-image {
+            position: relative;
+
+            aspect-ratio: 1.28 / 1;
+
+            overflow: hidden;
+
+            background: var(--cream, #F6F1EA);
+        }
+
+        .work-card-image img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            transition:
+                transform .8s cubic-bezier(.2,.65,.25,1),
+                filter .8s ease;
+        }
+
+        .work-card:hover .work-card-image img {
+            transform: scale(1.025);
+        }
+
+        .work-card-overlay {
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(64,74,59,.16);
+
+            opacity: 0;
+
+            transition: opacity .45s ease;
+        }
+
+        .work-card-overlay span {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--ivory);
+            color: var(--green);
+
+            font-size: 20px;
+
+            transform: translateY(8px);
+
+            transition: transform .45s ease;
+        }
+
+        .work-card:hover .work-card-overlay {
+            opacity: 1;
+        }
+
+        .work-card:hover .work-card-overlay span {
+            transform: translateY(0);
+        }
+
+        .work-card-content {
+            padding: 22px 2px 0;
+        }
+
+        .work-card-category {
+            display: block;
+
+            margin-bottom: 9px;
+
+            color: var(--gold);
+
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .work-card-content h3 {
+            margin: 0 0 8px;
+
+            color: var(--green);
+
+            font-size: 25px;
+            line-height: 1.15;
+            font-weight: 500;
+        }
+
+        .work-card-content p {
+            max-width: 500px;
+            margin: 0;
+
+            color: var(--text-light);
+
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+
+        /* ==================================================
+           CLIENTS
+        ================================================== */
+
+        .work-clients {
+            padding: 105px 0 115px;
+
+            background: var(--green);
+        }
+
+        .work-clients-inner {
+            width: min(1100px, 90%);
+            margin: 0 auto;
+        }
+
+        .work-clients-heading {
+            max-width: 600px;
+            margin: 0 auto 55px;
+
+            text-align: center;
+        }
+
+        .work-clients-heading .section-label {
+            margin-bottom: 15px;
+        }
+
+        .work-clients-heading h2 {
+            margin: 0 0 17px;
+
+            color: var(--ivory);
+
+            font-size: clamp(32px, 3.5vw, 46px);
+            line-height: 1.05;
+        }
+
+        .work-clients-heading p {
+            margin: 0;
+
+            color: rgba(254,249,243,.72);
+
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+        .work-client-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .work-client {
+            aspect-ratio: 1 / .72;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 22px;
+
+            border: 1px solid rgba(254,249,243,.1);
+            border-radius: 5px;
+
+            background: rgba(254,249,243,.96);
+
+            transition:
+                transform .4s ease,
+                box-shadow .4s ease;
+        }
+
+        .work-client:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,.12);
+        }
+
+        .work-client img {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: contain;
+        }
+
+
+        /* ==================================================
+           CTA
+        ================================================== */
+
+        .work-cta {
+            padding: 105px 0 110px;
+
+            background: var(--ivory);
+
+            text-align: center;
+        }
+
+        .work-cta-inner {
+            width: min(700px, 90%);
+            margin: 0 auto;
+        }
+
+        .work-cta .section-label {
+            margin-bottom: 15px;
+        }
+
+        .work-cta h2 {
+            margin: 0 0 20px;
+
+            color: var(--green);
+
+            font-size: clamp(34px, 4vw, 52px);
+            line-height: 1.05;
+        }
+
+        .work-cta p {
+            max-width: 600px;
+            margin: 0 auto 28px;
+
+            color: var(--text-light);
+
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .work-cta .btn-primary {
+            min-width: 155px;
+
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--ivory);
+        }
+
+        .work-cta .btn-primary:hover {
+            background: var(--green);
+            border-color: var(--green);
+            color: var(--ivory);
+        }
+
+
+        /* ==================================================
+           TABLET
+        ================================================== */
+
+        @media (max-width: 900px) {
+
+            .work-hero {
+                padding: 60px 0 50px;
+            }
+
+            .featured-work-card {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-work-image {
+                min-height: 320px;
+            }
+
+            .featured-work-content {
+                padding: 45px;
+            }
+
+            .selected-work-heading {
+                display: block;
+            }
+
+            .selected-work-heading p {
+                margin-top: 15px;
+                text-align: left;
+            }
+
+            .work-client-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* ==================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 600px) {
+
+            .work-hero {
+                padding: 48px 0 42px;
+            }
+
+            .work-hero h1 {
+                font-size: 37px;
+            }
+
+            .work-filters {
+                margin-bottom: 45px;
+            }
+
+            .work-filter {
+                padding: 9px 14px;
+                font-size: 9px;
+            }
+
+            .featured-work,
+            .selected-work {
+                width: 90%;
+                margin-bottom: 75px;
+            }
+
+            .featured-work-card {
+                display: block;
+            }
+
+            .featured-work-image {
+                min-height: 120px;
+            }
+
+            .featured-work-content {
+                padding: 34px 27px 38px;
+            }
+
+            .featured-work-content h2 {
+                font-size: 35px;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .selected-work-heading {
+                margin-bottom: 30px;
+            }
+
+            .selected-work-heading h2 {
+                font-size: 31px;
+            }
+
+            .work-card-content h3 {
+                font-size: 23px;
+            }
+
+            .work-clients {
+                padding: 75px 0 80px;
+            }
+
+            .work-client-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .work-client {
+                padding: 17px;
+            }
+
+            .work-cta {
+                padding: 75px 0 80px;
+            }
+
+            .work-cta h2 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
-<body>
+
+<body class="work-page">
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
 
 <header class="site-header">
 
@@ -33,504 +697,616 @@
 
         <a href="index.html" class="logo">
 
-            <img src="assets/images/branding/logo-full.svg"
-                alt="Nine3 Designs">
+            <img
+                src="assets/images/branding/logo-full.svg"
+                alt="Nine3 Designs"
+            >
 
         </a>
+
 
         <nav class="main-nav">
 
             <ul>
 
-                <li><a href="#home" class="active">Home</a></li>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
 
-                <li><a href="#services">Services</a></li>
+                <li>
+                    <a href="services.html">Services</a>
+                </li>
 
-                <li><a href="portfolio.html">Our Work</a></li>
+                <li>
+                    <a href="portfolio.html" class="active">Our Work</a>
+                </li>
 
-                <li><a href="about.html">About</a></li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
 
-                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
 
             </ul>
 
         </nav>
-        
+
+
         <a href="weddings.html" class="btn btn-primary">
-
             Nine3 Weddings
-
         </a>
 
-        <button class="mobile-toggle">
 
+        <button
+            class="mobile-toggle"
+            aria-label="Open menu"
+            type="button"
+        >
             <span></span>
             <span></span>
             <span></span>
-
         </button>
 
     </div>
 
 </header>
+
+
+
 <main>
 
-    <!-- =========================
-         PAGE HERO
-    ========================== -->
 
-  <section class="page-hero">
+<!-- ==================================================
+     HERO
+================================================== -->
 
-    <div class="container">
+<section class="work-hero">
 
-        <span class="section-label">Our Portfolio</span>
+    <div class="work-hero-inner">
 
-        <h2>Design That Speaks<br>For Itself.</h2>
+        <span class="section-label">
+            Our Work
+        </span>
+
+        <h1>
+            Design That
+            <span>Feels Like You.</span>
+        </h1>
 
         <p>
-
-            Every project is crafted with creativity, strategy and attention
-            to detail. Here's a selection of branding, website, print and
-            marketing projects we've loved working on.
-
+            A selection of branding, websites, print and marketing projects
+            created for businesses with something worth saying.
         </p>
 
     </div>
 
 </section>
 
-    <!-- =========================
-         INTRO
-    ========================== -->
 
-    <section class="portfolio-intro">
 
-        <div class="container narrow">
+<!-- ==================================================
+     FILTERS
+================================================== -->
 
-            <h2>Selected Projects</h2>
+<div class="work-filters">
+
+    <button class="work-filter active" type="button">
+        All Work
+    </button>
+
+    <button class="work-filter" type="button">
+        Branding
+    </button>
+
+    <button class="work-filter" type="button">
+        Websites
+    </button>
+
+    <button class="work-filter" type="button">
+        Print
+    </button>
+
+    <button class="work-filter" type="button">
+        Marketing
+    </button>
+
+</div>
+
+
+
+<!-- ==================================================
+     FEATURED PROJECT
+================================================== -->
+
+<section class="featured-work">
+
+    <article class="featured-work-card">
+
+        <div class="featured-work-image">
+
+            <img
+                src="assets/images/portfolio/esquared-2.jpg"
+                alt="ESquared branding project"
+                loading="eager"
+            >
+
+            <span class="featured-work-number">
+                01
+            </span>
+
+        </div>
+
+
+        <div class="featured-work-content">
+
+            <span class="section-label">
+                Featured Project
+            </span>
+
+            <h2>
+                ESQUARED
+            </h2>
 
             <p>
-
-                We believe every business deserves a brand that reflects who they
-                are. From complete brand identities to bespoke websites and
-                beautiful print, each project is carefully tailored to our
-                client's goals.
-
+                A complete visual identity created for a local coffee shop,
+                bringing together bold branding, printed materials,
+                merchandise and marketing assets.
             </p>
 
-        </div>
+            <p>
+                The result is a distinctive brand designed to feel memorable,
+                approachable and consistent across every touchpoint.
+            </p>
 
-    </section>
+            <div class="work-tags">
 
-    <!-- =========================
-         ESQUARED
-    ========================== -->
-
-    <section class="case-study">
-
-        <div class="container">
-
-            <div class="case-grid">
-
-                <div class="case-images">
-
-                    <img src="assets/images/portfolio/esquared-main.png"
-                         alt="ESquared Branding">
-
-                    <div class="case-gallery">
-
-                        <img src="assets/images/portfolio/esquared-1.jpg" alt="">
-
-                        <img src="assets/images/portfolio/esquared-2.jpg" alt="">
-
-                        <img src="assets/images/portfolio/esquared-3.jpg" alt="">
-
-                    </div>
-
-                </div>
-
-                <div class="case-content">
-
-                    <span class="case-category">
-
-                        Branding • Print • Marketing
-
-                    </span>
-
-                    <h2>ESQUARED</h2>
-
-                    <p>
-
-                        A nearby coffee shop required a complete brand identity,
-                        including logo design, printed materials, merchandise and
-                        supporting marketing assets.
-
-                    </p>
-
-                    <p>
-
-                        We developed a clean yet memorable visual identity with a
-                        primary logo, supporting logo marks, menus, loyalty cards
-                        and branded merchandise that perfectly reflected the
-                        client's vision.
-
-                    </p>
-
-                    <div class="project-services">
-
-                        <span>Logo Design</span>
-
-                        <span>Brand Identity</span>
-
-                        <span>Print Design</span>
-
-                        <span>Marketing</span>
-
-                    </div>
-
-                </div>
+                <span>Brand Identity</span>
+                <span>Print</span>
+                <span>Marketing</span>
 
             </div>
 
         </div>
 
-    </section>
+    </article>
 
-    <!-- =========================
-         BEAUTY BOTHY
-    ========================== -->
+</section>
 
-    <section class="case-study alt">
 
-        <div class="container">
 
-            <div class="case-grid reverse">
+<!-- ==================================================
+     SELECTED WORK
+================================================== -->
 
-                <div class="case-content">
+<section class="selected-work">
 
-                    <span class="case-category">
+    <div class="selected-work-heading">
 
-                        Branding
+        <div>
 
-                    </span>
+            <span class="section-label">
+                Selected Projects
+            </span>
 
-                    <h2>The Beauty Bothy</h2>
+            <h2>
+                A Few Things
+                <br>
+                We've Created.
+            </h2>
 
-                    <p>
+        </div>
 
-                        A complete visual identity designed for a beauty business,
-                        inspired by Scottish heritage and the natural landscape.
+        <p>
+            Every project starts with understanding the business behind it.
+            Then we build something thoughtful, purposeful and completely
+            yours.
+        </p>
 
-                    </p>
+    </div>
 
-                    <p>
 
-                        The finished branding combined elegant typography,
-                        contemporary colours and versatile logo variations suitable
-                        for digital, print and social media.
 
-                    </p>
+    <div class="work-grid">
 
-                    <div class="project-services">
 
-                        <span>Brand Identity</span>
+        <!-- BEAUTY BOTHY -->
 
-                        <span>Logo Design</span>
+        <article class="work-card">
 
-                        <span>Social Media</span>
+            <div class="work-card-image">
 
-                        <span>Print Assets</span>
+                <img
+                    src="assets/images/portfolio/beauty-1.jpg"
+                    alt="The Beauty Bothy branding project"
+                    loading="lazy"
+                >
 
-                    </div>
-
-                </div>
-
-                <div class="case-images">
-
-                    <div class="case-gallery">
-
-                        <img src="assets/images/portfolio/beauty-1.jpg" alt="">
-
-                        <img src="assets/images/portfolio/beauty-2.jpg" alt="">
-
-                        <img src="assets/images/portfolio/beauty-3.jpg" alt="">
-
-                    </div>
-
+                <div class="work-card-overlay">
+                    <span>↗</span>
                 </div>
 
             </div>
 
-        </div>
-
-    </section>
-        <!-- =========================
-         FOREVER
-    ========================== -->
-
-     <section class="case-study">
-
-        <div class="container">
-
-            <div class="case-grid">
-
-                <div class="case-images">
-
-                    <div class="case-gallery">
-
-                        <img src="assets/images/portfolio/forever-1.jpg" alt="">
-
-                        <img src="assets/images/portfolio/forever-2.jpg" alt="">
-
-                        <img src="assets/images/portfolio/forever-3.jpg" alt="">
-
-                        
-
-                    </div>
-
-                </div>
-
-                <div class="case-content">
-
-                    <span class="case-category">
-
-                        Wedding Stationery
-
-                    </span>
-
-                    <h2>FOREVER</h2>
-
-                    <p>
-
-                        A fully bespoke wedding stationery suite designed to
-                        capture the couple's love of the outdoors while
-                        maintaining a timeless and elegant aesthetic.
-
-                    </p>
-
-                    <p>
-
-                        The collection included save-the-dates, invitations,
-                        RSVP cards, welcome signs, table plans, menus, place
-                        cards and digital invitations, all designed to work
-                        beautifully together.
-
-                    </p>
-
-                    <div class="project-services">
-
-                        <span>Invitations</span>
-
-                        <span>Day Stationery</span>
-
-                        <span>Signage</span>
-
-                        <span>Digital Invites</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- =========================
-         TAILS & TIDES
-    ========================== -->
-
-    <section class="case-study alt">
-
-        <div class="container">
-
-            <div class="case-grid reverse">
-
-                <div class="case-content">
-
-                    <span class="case-category">
-
-                        Brand Identity
-
-                    </span>
-
-                    <h2>Tails & Tides</h2>
-
-                    <p>
-
-                        A fresh lifestyle brand inspired by coastal adventures,
-                        sandy beaches and dogs. The aim was to create a playful
-                        yet premium visual identity suitable for packaging,
-                        merchandise and digital marketing.
-
-                    </p>
-
-                    <p>
-
-                        Every element was designed to balance personality with
-                        professionalism, giving the business a memorable and
-                        commercially strong brand presence.
-
-                    </p>
-
-                    <div class="project-services">
-
-                        <span>Logo Design</span>
-
-                        <span>Packaging</span>
-
-                        <span>Brand Assets</span>
-
-                        <span>Social Media</span>
-
-                    </div>
-
-                </div>
-
-                <div class="case-images">
-
-                    <img src="assets/images/portfolio/tails-main.png"
-                         alt="Tails & Tides">
-
-                    <div class="case-gallery">
-
-                        <img src="assets/images/portfolio/tails-1.jpg" alt="">
-
-                        <img src="assets/images/portfolio/tails-2.jpg" alt="">
-
-                        <img src="assets/images/portfolio/tails-3.jpg" alt="">
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- =========================
-         OSG
-    ========================== -->
-
-    <section class="case-study">
-
-        <div class="container">
-
-            <div class="case-grid">
-
-                <div class="case-images">
-
-                    <img src="assets/images/portfolio/osg-main.jpg"
-                         alt="OSG Home Solutions">
-
-                    <div class="case-gallery">
-
-                        <img src="assets/images/portfolio/osg-1.jpg" alt="">
-
-                        <img src="assets/images/portfolio/osg-2.jpg" alt="">
-
-                        <img src="assets/images/portfolio/osg-3.jpg" alt="">
-
-                    </div>
-
-                </div>
-
-                <div class="case-content">
-
-                    <span class="case-category">
-
-                        Full Brand Identity
-
-                    </span>
-
-                    <h2>OSG Home Solutions</h2>
-
-                    <p>
-
-                        A modern identity created for a growing home improvement
-                        company. The branding needed to feel trustworthy,
-                        professional and instantly recognisable across every
-                        customer touchpoint.
-
-                    </p>
-
-                    <p>
-
-                        From logo design and colour palette through to printed
-                        materials and digital assets, every element was developed
-                        to create a consistent and memorable brand.
-
-                    </p>
-
-                    <div class="project-services">
-
-                        <span>Logo Design</span>
-
-                        <span>Brand Identity</span>
-
-                        <span>Print Design</span>
-
-                        <span>Marketing</span>
-
-                    </div>
-
-                </div>
-
-                </section>
-
-    <!-- =========================
-         OTHER CLIENTS
-    ========================== -->
-
-    <section class="clients">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <span><h3>Trusted By:</h3></span>
+            <div class="work-card-content">
+
+                <span class="work-card-category">
+                    Branding
+                </span>
+
+                <h3>
+                    The Beauty Bothy
+                </h3>
 
                 <p>
-
-                    We're proud to have worked with businesses across a wide
-                    range of industries.
-
+                    A considered visual identity inspired by Scottish
+                    heritage, natural textures and modern beauty.
                 </p>
 
             </div>
 
-            <div class="client-grid">
+        </article>
 
-                <img src="assets/images/clients/client1.png" alt="Client Logo">
 
-                <img src="assets/images/clients/client2.png" alt="Client Logo">
 
-                <img src="assets/images/clients/client3.png" alt="Client Logo">
+        <!-- TAILS & TIDES -->
 
-                <img src="assets/images/clients/client4.png" alt="Client Logo">
+        <article class="work-card">
 
-                <img src="assets/images/clients/client5.png" alt="Client Logo">
+            <div class="work-card-image">
 
-                <img src="assets/images/clients/client6.png" alt="Client Logo">
+                <img
+                    src="assets/images/portfolio/tails-3.jpg"
+                    alt="Tails and Tides branding project"
+                    loading="lazy"
+                >
 
-                <img src="assets/images/clients/client7.png" alt="Client Logo">
+                <div class="work-card-overlay">
+                    <span>↗</span>
+                </div>
 
-                <img src="assets/images/clients/client8.png" alt="Client Logo">
+            </div>
+
+            <div class="work-card-content">
+
+                <span class="work-card-category">
+                    Brand Identity
+                </span>
+
+                <h3>
+                    Tails &amp; Tides
+                </h3>
+
+                <p>
+                    A playful but premium identity inspired by coastal
+                    adventures, dogs and a love of the outdoors.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- OSG -->
+
+        <article class="work-card">
+
+            <div class="work-card-image">
+
+                <img
+                    src="assets/images/portfolio/osg-3.jpg"
+                    alt="OSG Home Solutions branding project"
+                    loading="lazy"
+                >
+
+                <div class="work-card-overlay">
+                    <span>↗</span>
+                </div>
+
+            </div>
+
+            <div class="work-card-content">
+
+                <span class="work-card-category">
+                    Branding &amp; Marketing
+                </span>
+
+                <h3>
+                    OSG Home Solutions
+                </h3>
+
+                <p>
+                    A confident, professional identity designed to build
+                    trust across print, digital and customer touchpoints.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- PROJECT FOUR -->
+
+        <article class="work-card">
+
+            <div class="work-card-image">
+
+                <img
+                    src="assets/images/portfolio/tails-1.jpg"
+                    alt="Nine3 Designs print and marketing project"
+                    loading="lazy"
+                >
+
+                <div class="work-card-overlay">
+                    <span>↗</span>
+                </div>
+
+            </div>
+
+            <div class="work-card-content">
+
+                <span class="work-card-category">
+                    Print &amp; Marketing
+                </span>
+
+                <h3>
+                    The Details Matter.
+                </h3>
+
+                <p>
+                    From printed collateral to supporting marketing pieces,
+                    every detail is designed to work beautifully together.
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     CLIENTS
+================================================== -->
+
+<section class="work-clients">
+
+    <div class="work-clients-inner">
+
+        <div class="work-clients-heading">
+
+            <span class="section-label">
+                The People Behind The Projects
+            </span>
+
+            <h2>
+                Trusted By
+                <br>
+                Brilliant Businesses.
+            </h2>
+
+            <p>
+                We're proud to have worked with businesses across a range
+                of industries, from independent brands to established
+                companies.
+            </p>
+
+        </div>
+
+
+        <div class="work-client-grid">
+
+            <div class="work-client">
+                <img
+                    src="assets/images/clients/client1.png"
+                    alt="Client logo"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="work-client">
+                <img
+                    src="assets/images/clients/client2.png"
+                    alt="Client logo"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="work-client">
+                <img
+                    src="assets/images/clients/client3.png"
+                    alt="Client logo"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="work-client">
+                <img
+                    src="assets/images/clients/client4.png"
+                    alt="Client logo"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="work-client">
+                <img
+                    src="assets/images/clients/client5.png"
+                    alt="Client logo"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="work-client">
+                <img
+                    src="assets/images/clients/client6.png"
+                    alt="Client logo"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="work-client">
+                <img
+                    src="assets/images/clients/client7.png"
+                    alt="Client logo"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="work-client">
+                <img
+                    src="assets/images/clients/client8.png"
+                    alt="Client logo"
+                    loading="lazy"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     CTA
+================================================== -->
+
+<section class="work-cta">
+
+    <div class="work-cta-inner">
+
+        <span class="section-label">
+            Have A Project In Mind?
+        </span>
+
+        <h2>
+            Let's Create Something
+            <br>
+            Great, Together.
+        </h2>
+
+        <p>
+            Whether you're starting something new or refreshing an existing
+            brand, let's create something that feels like you.
+        </p>
+
+        <a
+            href="contact.html"
+            class="btn btn-primary"
+        >
+            Let's Talk
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+
+            <div class="footer-social">
+
+                <a
+                    href="https://facebook.com/nine3designs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Nine3 Designs on Facebook"
+                >
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+
+                <a
+                    href="https://instagram.com/nine3designs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Nine3 Designs on Instagram"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+
+                <a
+                    href="https://tiktok.com/@nine3designs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Nine3 Designs on TikTok"
+                >
+                    <i class="fab fa-tiktok"></i>
+                </a>
 
             </div>
 
 
-   </section>
-         <div class="footer-bottom">
+            <p class="footer-email">
 
-            <p>
-
-                © 2026 Nine3 Designs. All Rights Reserved.
+                <a href="mailto:hello@nine3designs.co.uk">
+                    hello@nine3designs.co.uk
+                </a>
 
             </p>
 
 
+            <p>
+                Luxury creative design studio specialising
+                in websites, branding and marketing for
+                businesses across the UK.
+            </p>
+
+        </div>
+
+
+        <!-- LOGO -->
+
+        <div>
+
+            <img
+                src="assets/images/branding/logo-full.svg"
+                alt="Nine3 Designs"
+                class="footer-logo"
+            >
+
+        </div>
+
     </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Nine3 Designs. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
