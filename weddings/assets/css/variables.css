@@ -1,0 +1,31 @@
+:root {
+
+    /* BRAND */
+    --green: #404A3B;
+    --green-dark: #333C30;
+    --green-light: #566150;
+
+    --gold: #C8A96A;
+    --gold-light: #D8BC84;
+
+    /* WEDDINGS BACKGROUND */
+    --ivory: #FEF9F3;
+    --cream: #F6F1EA;
+
+    /* TEXT */
+    --text: #333333;
+    --text-light: #666666;
+
+    /* TYPE */
+    --font-heading: "Cormorant Garamond", serif;
+    --font-body: "Raleway", sans-serif;
+
+    /* LAYOUT */
+    --container: 1280px;
+    --header-height: 82px;
+
+    /* OTHER */
+    --radius: 8px;
+    --transition: .35s ease;
+
+}

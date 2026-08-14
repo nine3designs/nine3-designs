@@ -902,3 +902,14 @@ h3{
     }
 
 }}
+/* ==========================================================
+   ABOUT PAGE — WHY CHOOSE US TEXT COLOURS
+========================================================== */
+
+body .why-section .service-card h3 {
+    color: #C8A96A !important;
+}
+
+body .why-section .service-card p {
+    color: #404A3B !important;
+}

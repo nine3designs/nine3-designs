@@ -1,0 +1,141 @@
+body {
+
+    background: var(--ivory);
+
+    color: var(--text);
+
+    font-family: var(--font-body);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    -webkit-font-smoothing: antialiased;
+
+}
+
+
+.container {
+
+    width: min(90%, var(--container));
+
+    margin: 0 auto;
+
+}
+
+
+h1,
+h2,
+h3 {
+
+    font-family: var(--font-heading);
+
+    font-weight: 500;
+
+    color: var(--green);
+
+}
+
+
+p {
+
+    color: var(--text-light);
+
+}
+
+
+.section-label {
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--gold);
+
+    font-family: var(--font-body);
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+}
+
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 235px;
+
+    padding: 15px 28px;
+
+    border-radius: 3px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    transition: var(--transition);
+
+}
+
+
+.btn-primary {
+
+    background: var(--green);
+
+    color: var(--ivory);
+
+}
+
+
+.btn-primary:hover {
+
+    background: var(--green-dark);
+
+    transform: translateY(-2px);
+
+}
+
+
+.btn-outline {
+
+    border: 1px solid var(--gold);
+
+    background: transparent;
+
+    color: var(--gold);
+
+}
+
+
+.btn-outline:hover {
+
+    background: var(--gold);
+
+    color: var(--ivory);
+
+}
+
+
+.hero-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+}

@@ -1,0 +1,720 @@
+/* ==========================================================
+   COMPONENTS
+========================================================== */
+
+.collection-card {
+
+    position: relative;
+
+}
+
+
+.c.collection-card::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: translateX(-50%);
+    transition: .35s ease;
+}
+
+.collection-card:hover::after {
+    width: 45px;
+}
+
+.collection-card:hover::after {
+
+    width: 45px;
+
+}
+
+
+.collection-image {
+
+    box-shadow: 0 10px 30px rgba(43,43,43,.04);
+
+}
+
+
+.journey {
+
+    padding: 130px 0;
+
+    text-align: center;
+
+    background: var(--green);
+
+}
+
+
+.journey h2 {
+
+    max-width: 700px;
+
+    margin: 0 auto 25px;
+
+    color: var(--ivory);
+
+    font-size: clamp(45px,6vw,70px);
+
+}
+
+
+.journey p {
+
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
+    color: rgba(254,249,243,.8);
+
+}
+
+
+.site-footer {
+
+    padding: 70px 0 25px;
+
+    background: var(--green-dark);
+
+    color: var(--ivory);
+
+}
+
+
+.footer-grid {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 50px;
+
+}
+
+
+.footer-logo {
+
+    width: 150px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.site-footer h4 {
+
+    margin-bottom: 18px;
+
+    color: var(--gold);
+
+    font-family: var(--font-body);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.site-footer p,
+.site-footer li,
+.site-footer a {
+
+    color: rgba(254,249,243,.72);
+
+    font-size: 13px;
+
+}
+
+
+.site-footer li {
+
+    margin-bottom: 8px;
+
+}
+
+
+.site-footer a:hover {
+
+    color: var(--gold-light);
+
+}
+
+
+.footer-bottom {
+
+    margin-top: 50px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(254,249,243,.1);
+
+    text-align: center;
+
+}
+
+
+.footer-bottom p {
+
+    margin: 0;
+
+    font-size: 11px;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .footer-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+}
+/* ==========================================================
+   ABOUT CTA
+========================================================== */
+
+.about-cta {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 35px;
+
+}
+
+
+.about-cta .btn-gold {
+
+    min-width: 220px;
+
+    padding: 16px 30px;
+
+    background: var(--gold);
+
+    color: var(--ivory);
+
+    border: 1px solid var(--gold);
+
+    border-radius: 30px;
+
+    box-shadow: 0 8px 22px rgba(200, 169, 106, .18);
+
+}
+
+
+.about-cta .btn-gold:hover {
+
+    background: var(--green);
+
+    border-color: var(--green);
+
+    color: var(--ivory);
+
+    transform: translateY(-3px);
+
+}
+/* ==================================================
+   HOMEPAGE COLLECTION CARDS
+   Match Collections page proportions
+================================================== */
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+/* Card */
+
+.collection-card {
+    position: relative;
+    text-align: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Image */
+
+.collection-card .collection-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    margin-bottom: 22px;
+    box-shadow: 0 10px 30px rgba(43,43,43,.04);
+}
+
+.collection-card .collection-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .45s ease;
+}
+
+.collection-card:hover .collection-image img {
+    transform: scale(1.04);
+}
+
+/* Heading */
+
+.collection-card h3 {
+    margin: 0 0 10px;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+/* Description */
+
+.collection-card p {
+    max-width: 300px;
+    margin: 0 auto 18px;
+    font-size: .85rem;
+    line-height: 1.6;
+}
+
+/* Link */
+
+.collection-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    color: var(--gold);
+    text-decoration: none;
+
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+/* Gold underline */
+
+.collection-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 25px;
+    height: 1px;
+    background: var(--gold);
+    transform: translateX(-50%);
+}
+
+.collection-link:hover::after {
+    transform: scaleX(1);
+}
+
+.collection-link span {
+    transition: transform .3s ease;
+}
+
+.collection-link:hover span {
+    transform: translateX(4px);
+}
+
+
+/* ==================================================
+   NINE3 EDIT — MOST POPULAR
+================================================== */
+
+.collection-card-featured {
+    position: relative;
+
+    border: 1px solid var(--gold);
+    padding: 10px 10px 25px;
+}
+
+.collection-card-featured .collection-image {
+    margin-bottom: 22px;
+}
+
+.collection-card-label {
+    display: inline-block;
+
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 2;
+
+    padding: 5px 16px;
+
+    background: var(--gold);
+    color: var(--ivory);
+
+    font-size: .6rem;
+    font-weight: 600;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 800px) {
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+        gap: 50px;
+    }
+
+}
+/* ==================================================
+   NAV — NINE3 DESIGNS GOLD GLASS BUTTON
+================================================== */
+
+.header-container > .btn {
+    padding: 8px 17px;
+    min-width: auto;
+
+    font-size: 0.67rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+
+    color: var(--gold-light);
+
+    /* Gold glass */
+    background: rgba(200, 169, 106, 0.16);
+
+    border: 1px solid rgba(200, 169, 106, 0.55);
+    border-radius: 30px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        0 4px 15px rgba(0,0,0,0.05);
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+
+/* Hover */
+
+.header-container > .btn:hover {
+
+    color: var(--ivory);
+
+    background: rgba(200, 169, 106, 0.38);
+
+    border-color: var(--gold);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.18),
+        0 6px 20px rgba(200, 169, 106, 0.18);
+}
+/* ==================================================
+   INDEX PAGE — HERO SIZING
+================================================== */
+
+/* Slightly smaller logo */
+
+.hero-logo img {
+    width: 78%;
+    max-width: 360px;
+}
+
+
+/* Slightly smaller main heading */
+
+.hero h1 {
+    font-size: clamp(45px, 5vw, 60px);
+}
+/* ==================================================
+   INDEX — TIGHTEN HERO → FEATURED COLLECTIONS
+================================================== */
+
+.hero-content > p {
+    margin-bottom: 0px;
+}
+
+
+.featured-collections {
+    padding-top: 0px !important;
+}
+
+.featured-heading {
+    margin-top: 0 !important;
+}
+/* ==================================================
+   HOMEPAGE — TIGHTEN HERO TO COLLECTIONS
+================================================== */
+
+@media (min-width: 769px) {
+
+    .hero {
+        min-height: auto;
+        height: auto;
+        padding-top: calc(var(--header-height) + 45px);
+        padding-bottom: 35px;
+    }
+
+    .hero-content {
+        padding-bottom: 0;
+    }
+
+
+    .featured-collections {
+        padding-top: 35px;
+    }
+
+    .featured-heading {
+        margin-top: 0;
+    }
+
+}
+/* ==================================================
+   COLLECTION CARDS — BUTTONS & BOTTOM SPACING
+================================================== */
+
+/* More breathing room at the bottom of each card */
+
+.collection-card {
+    padding-bottom: 35px;
+}
+
+
+/* Gold glass buttons */
+
+.collection-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 9px 18px;
+
+    color: var(--gold-light);
+
+    background: rgba(200, 169, 106, 0.16);
+
+    border: 1px solid rgba(200, 169, 106, 0.55);
+    border-radius: 30px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    font-size: 0.67rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        0 4px 15px rgba(0,0,0,0.05);
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+
+/* ==================================================
+   COLLECTION LINKS — DARK GOLD / GLASS HOVER
+================================================== */
+
+.collection-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 9px 19px;
+
+    color: #FEF9F3;
+    background: #9F824B;
+
+    border: 1px solid #9F824B;
+    border-radius: 30px;
+
+    font-size: 0.67rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 4px 12px rgba(43, 43, 43, 0.08);
+
+    transition:
+        background .35s ease,
+        border-color .35s ease,
+        color .35s ease,
+        box-shadow .35s ease,
+        transform .35s ease,
+        backdrop-filter .35s ease;
+}
+
+/* ==================================================
+   COLLECTION BUTTONS — DARK GOLD / MIRROR GLASS
+================================================== */
+
+.collection-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 8px 14px;
+
+    color: #FEF9F3;
+    background: #9F824B;
+
+    border: 1px solid #9F824B;
+    border-radius: 30px;
+
+    font-size: 0.63rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 3px 10px rgba(43, 43, 43, 0.08);
+
+    transition:
+        color .35s ease,
+        background .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease,
+        transform .35s ease;
+}
+
+/* Smooth, slow reflective sweep */
+
+/* ==================================================
+   SMOOTH GOLD REFLECTION
+================================================== */
+
+.collection-link {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Soft reflection */
+
+.collection-link::before {
+    content: "";
+
+    position: absolute;
+    top: -40%;
+    left: -60%;
+
+    width: 35%;
+    height: 180%;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.03) 20%,
+        rgba(255, 255, 255, 0.28) 50%,
+        rgba(255, 255, 255, 0.03) 80%,
+        transparent 100%
+    );
+
+    transform: translateX(0) skewX(-18deg);
+
+    transition:
+        transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Smooth left → right sweep */
+
+.collection-link:hover::before {
+    transform: translateX(520%) skewX(-18deg);
+}
+
+
+/* Keep button content above reflection */
+
+.collection-link > * {
+    position: relative;
+    z-index: 1;
+}
+.collection-link:hover::before {
+    left: 145%;
+}
+
+.nine3-detail-item h3 {
+    font-size: 15px !important;
+}
+/* ==================================================
+   GLOBAL — SLIGHTLY SMALLER LARGE HEADINGS
+================================================== */
+
+h1,
+h2 {
+    font-size: 90%;
+}
+/* ==================================================
+   COLLECTIONS DROPDOWN — ACTIVE PAGE
+================================================== */
+
+.collections-dropdown-menu a.active {
+    color: var(--gold);
+    background: rgba(200, 169, 106, 0.08);
+    padding-left: 20px;
+    border-left: 2px solid var(--gold);
+
+}
