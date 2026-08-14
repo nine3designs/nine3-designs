@@ -5,63 +5,51 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+/* ==================================================
+   MOBILE NAVIGATION
+================================================== */
 
-    /* ======================================================
-       MOBILE NAVIGATION
-    ====================================================== */
+const mobileToggle = document.querySelector(".mobile-toggle");
+const mainNav = document.querySelector(".main-nav");
 
-    const mobileToggle = document.querySelector(".mobile-toggle");
-    const mainNav = document.querySelector(".main-nav");
+if (mobileToggle && mainNav) {
 
-    if (mobileToggle && mainNav) {
+    mobileToggle.addEventListener("click", () => {
 
-        mobileToggle.addEventListener("click", () => {
+        mobileToggle.classList.toggle("active");
+        mainNav.classList.toggle("active");
 
-            const isOpen = mainNav.classList.toggle("is-open");
+        const isOpen = mainNav.classList.contains("active");
 
-            mobileToggle.classList.toggle("is-open", isOpen);
+        mobileToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        document.body.classList.toggle("menu-open", isOpen);
+
+    });
+
+    // Close menu when a navigation link is clicked
+    mainNav.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            mobileToggle.classList.remove("active");
+            mainNav.classList.remove("active");
 
             mobileToggle.setAttribute(
                 "aria-expanded",
-                String(isOpen)
+                "false"
             );
 
-            mobileToggle.setAttribute(
-                "aria-label",
-                isOpen
-                    ? "Close navigation"
-                    : "Open navigation"
-            );
+            document.body.classList.remove("menu-open");
 
         });
 
+    });
 
-        /* Close menu after clicking a link */
-
-        mainNav.querySelectorAll("a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                mainNav.classList.remove("is-open");
-
-                mobileToggle.classList.remove("is-open");
-
-                mobileToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-                mobileToggle.setAttribute(
-                    "aria-label",
-                    "Open navigation"
-                );
-
-            });
-
-        });
-
-    }
-
+}
 
     /* ======================================================
        SMOOTH SAME-PAGE ANCHORS
@@ -198,3 +186,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+/* ==================================================
+   BACK TO TOP
+================================================== */
+
+const backToTop = document.querySelector(".back-to-top");
+
+if (backToTop) {
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 500) {
+            backToTop.classList.add("visible");
+        } else {
+            backToTop.classList.remove("visible");
+        }
+
+    });
+
+    backToTop.addEventListener("click", () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+}

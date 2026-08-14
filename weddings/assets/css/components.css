@@ -718,3 +718,50 @@ h2 {
     border-left: 2px solid var(--gold);
 
 }
+/* ==================================================
+   BACK TO TOP
+================================================== */
+
+.back-to-top {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(200, 169, 106, 0.7);
+    border-radius: 50%;
+
+    background: var(--gold);
+    color: #FEF9F3;
+
+    font-size: 16px;
+
+    cursor: pointer;
+    z-index: 999;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--dark-green);
+    transform: translateY(-3px);
+}
