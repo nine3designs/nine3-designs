@@ -543,3 +543,11 @@ body {
         max-width: none !important;
     }
 }
+@media (max-width: 768px) {
+
+    .hero-image img {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+}
