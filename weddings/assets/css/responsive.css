@@ -758,3 +758,395 @@
     }
 
 }
+
+/* ==========================================================
+   FINAL MOBILE-ONLY POLISH — NINE3 WEDDINGS
+   Desktop styles intentionally untouched.
+========================================================== */
+
+@media (max-width: 800px) {
+
+    /* Keep the mobile site compact and centred */
+    .container {
+        width: calc(100% - 30px) !important;
+        max-width: 390px !important;
+    }
+
+    .header-container {
+        width: calc(100% - 24px) !important;
+        max-width: 390px !important;
+    }
+
+    /* Hamburger — always visible on ivory header */
+    .mobile-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .mobile-toggle span {
+        display: block !important;
+        width: 25px !important;
+        height: 2px !important;
+        margin: 3px auto !important;
+        background: var(--green) !important;
+        border-radius: 10px;
+    }
+
+    /* Mobile menu */
+    .main-nav {
+        display: none !important;
+        position: fixed !important;
+        top: 82px !important;
+        left: 50% !important;
+        right: auto !important;
+        width: min(100%, 390px) !important;
+        height: calc(100vh - 82px) !important;
+        height: calc(100dvh - 82px) !important;
+        transform: translateX(-50%) !important;
+        padding: 12px 15px 30px !important;
+        background: #FEF9F3 !important;
+        border-top: 1px solid rgba(64,74,59,.10) !important;
+        box-shadow: 0 15px 35px rgba(43,43,43,.10) !important;
+        overflow-y: auto;
+        z-index: 10000;
+    }
+
+    .main-nav.is-open {
+        display: block !important;
+        transform: translateX(-50%) !important;
+    }
+
+    .main-nav ul {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .main-nav li {
+        width: 100% !important;
+        border-bottom: 1px solid rgba(64,74,59,.10);
+    }
+
+    .main-nav li > a {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        width: 100% !important;
+        padding: 15px 8px !important;
+        color: var(--green) !important;
+        font-size: 11px !important;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+    }
+
+    .main-nav li > a::after {
+        display: none !important;
+    }
+
+    .main-nav li > a:hover,
+    .main-nav li > a.active {
+        color: var(--gold) !important;
+    }
+
+    /* Collections — collapsed until tapped */
+    .collections-dropdown {
+        position: static !important;
+    }
+
+    .collections-dropdown > a {
+        cursor: pointer;
+    }
+
+    .dropdown-arrow {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        margin-left: auto;
+        color: var(--gold) !important;
+        font-size: 0 !important;
+        transition: transform .25s ease;
+    }
+
+    .dropdown-arrow::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-right: 1.5px solid var(--gold);
+        border-bottom: 1.5px solid var(--gold);
+        transform: rotate(45deg) translateY(-2px);
+    }
+
+    .collections-dropdown.mobile-open .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+
+    .collections-dropdown-menu {
+        position: static !important;
+        display: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 0 8px !important;
+        background: transparent !important;
+        border: 0 !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: none !important;
+    }
+
+    .collections-dropdown.mobile-open .collections-dropdown-menu {
+        display: block !important;
+    }
+
+    .collections-dropdown-menu a {
+        display: block !important;
+        width: 100% !important;
+        padding: 10px 18px !important;
+        color: #404A3B !important;
+        font-size: 10.5px !important;
+        font-weight: 500;
+        letter-spacing: .7px;
+        line-height: 1.45;
+        text-transform: none;
+        border-left: 1px solid rgba(200,169,106,.55);
+    }
+
+    /* Nine3 Designs — gold CTA */
+    .main-nav .sister-site-mobile {
+        border-bottom: 0 !important;
+        padding-top: 10px;
+    }
+
+    .main-nav .sister-site-mobile a {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 4px 0 0 !important;
+        padding: 13px 18px !important;
+        background: var(--gold) !important;
+        border: 1px solid var(--gold) !important;
+        border-radius: 30px !important;
+        color: var(--green) !important;
+        font-size: 10.5px !important;
+        letter-spacing: 1.1px;
+    }
+
+    /* Tighter sections throughout mobile */
+    .featured-collections,
+    .about-natalie,
+    .collection-options,
+    .wedding-websites,
+    .wedding-details,
+    .digital-extras,
+    .about-approach,
+    .about-more,
+    .about-why,
+    .about-cta,
+    .how-intro,
+    .how-process,
+    .how-portal,
+    .how-included,
+    .how-terms,
+    .how-timeline,
+    .how-proof,
+    .how-finishes,
+    .how-faq,
+    .how-delivery,
+    .how-final {
+        padding-top: 60px !important;
+        padding-bottom: 68px !important;
+    }
+
+    .wedding-details {
+        margin-top: 35px !important;
+    }
+
+    /* About value cards — 10–20% tighter */
+    .about-values-grid {
+        gap: 12px !important;
+    }
+
+    .about-value-card {
+        min-height: auto !important;
+        padding: 26px 22px !important;
+    }
+
+    .about-value-number {
+        top: 14px;
+        right: 15px;
+        font-size: 17px;
+    }
+
+    .about-value-icon {
+        margin-top: 18px;
+        font-size: 24px;
+    }
+
+    .about-value-card h3 {
+        margin: 13px 0 9px;
+        font-size: 29px !important;
+    }
+
+    .about-value-card p {
+        font-size: 11px !important;
+        line-height: 1.7;
+    }
+
+    /* Before / On The Day headings smaller */
+    .about-more-item {
+        grid-template-columns: 38px 1fr;
+        gap: 15px;
+        padding: 18px 8px;
+    }
+
+    .about-more-item h3 {
+        font-size: 25px !important;
+    }
+
+    .about-more-item p {
+        font-size: 11px !important;
+    }
+
+    /* How It Works cards tighter */
+    .process-grid {
+        gap: 12px !important;
+    }
+
+    .process-card {
+        padding: 25px 22px !important;
+    }
+
+    .process-number {
+        margin-bottom: 14px;
+        font-size: 19px;
+    }
+
+    .process-card h3 {
+        font-size: 29px !important;
+    }
+
+    .process-line {
+        margin: 12px 0;
+    }
+
+    .process-card p {
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .terms-grid {
+        gap: 12px !important;
+    }
+
+    .term-card {
+        padding: 24px 20px !important;
+    }
+
+    .term-card h3 {
+        margin: 11px 0 7px;
+        font-size: 25px !important;
+    }
+
+    .term-card p {
+        font-size: 11px !important;
+        line-height: 1.7;
+    }
+
+    /* Remove the final portal divider under the last detail */
+    .portal-feature:last-child {
+        border-bottom: 0 !important;
+    }
+
+    /* Footer — tighter and centred bottom text */
+    .footer-container {
+        gap: 24px !important;
+        padding-top: 38px !important;
+        padding-bottom: 38px !important;
+    }
+
+    .footer-bottom {
+        margin-top: 22px !important;
+    }
+
+    .footer-bottom-inner {
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        gap: 7px !important;
+    }
+
+    .footer-bottom-inner span {
+        text-align: center !important;
+    }
+
+    /* Contact mobile spacing */
+    .contact-page-hero {
+        padding-bottom: 35px !important;
+    }
+
+    .contact-page-info,
+    .contact-page-form {
+        padding: 25px 18px !important;
+    }
+
+    /* Compact FAQs */
+    .faq-item {
+        margin-bottom: 10px !important;
+    }
+
+    .faq-item summary {
+        padding: 16px 18px !important;
+        font-size: 19px !important;
+    }
+
+    .faq-answer {
+        padding: 0 18px 15px !important;
+    }
+
+    .faq-answer p {
+        font-size: 13px !important;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        height: 78px !important;
+        min-height: 78px !important;
+    }
+
+    .header-container {
+        min-height: 78px !important;
+    }
+
+    .main-nav {
+        top: 78px !important;
+        height: calc(100vh - 78px) !important;
+        height: calc(100dvh - 78px) !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .container {
+        width: calc(100% - 24px) !important;
+        max-width: 390px !important;
+    }
+
+    .header-container {
+        width: calc(100% - 20px) !important;
+        max-width: 390px !important;
+    }
+
+    .main-nav {
+        width: 100% !important;
+    }
+}

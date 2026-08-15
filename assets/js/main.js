@@ -226,6 +226,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* ======================================================
+       MOBILE TRUST BANNER LOOP
+    ====================================================== */
+
+    const statsGrid = document.querySelector(".stats-grid");
+
+    const setupMobileStats = () => {
+
+        if (!statsGrid || statsGrid.dataset.mobileCloned === "true") return;
+
+        if (window.innerWidth <= 768) {
+
+            const items = Array.from(statsGrid.children);
+
+            items.forEach(item => {
+                const clone = item.cloneNode(true);
+                clone.setAttribute("aria-hidden", "true");
+                statsGrid.appendChild(clone);
+            });
+
+            statsGrid.dataset.mobileCloned = "true";
+        }
+    };
+
+    setupMobileStats();
+
+
+    /* ======================================================
        Active Navigation
     ====================================================== */
 
