@@ -1,55 +1,65 @@
 /* ==========================================================
-   NINE3 DESIGNS
+   NINE3 WEDDINGS
    MAIN JAVASCRIPT
 ========================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-/* ==================================================
-   MOBILE NAVIGATION
-================================================== */
+    /* ======================================================
+       MOBILE NAVIGATION
+    ====================================================== */
 
-const mobileToggle = document.querySelector(".mobile-toggle");
-const mainNav = document.querySelector(".main-nav");
+    const mobileToggle = document.querySelector(".mobile-toggle");
+    const mainNav = document.querySelector(".main-nav");
 
-if (mobileToggle && mainNav) {
+    const closeMenu = () => {
+        if (!mobileToggle || !mainNav) return;
 
-    mobileToggle.addEventListener("click", () => {
+        mobileToggle.classList.remove("active");
+        mainNav.classList.remove("active");
+        mobileToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+    };
 
-        mobileToggle.classList.toggle("active");
-        mainNav.classList.toggle("active");
+    if (mobileToggle && mainNav) {
 
-        const isOpen = mainNav.classList.contains("active");
+        mobileToggle.addEventListener("click", (event) => {
+            event.stopPropagation();
 
-        mobileToggle.setAttribute(
-            "aria-expanded",
-            isOpen ? "true" : "false"
-        );
+            const isOpen = !mainNav.classList.contains("active");
 
-        document.body.classList.toggle("menu-open", isOpen);
-
-    });
-
-    // Close menu when a navigation link is clicked
-    mainNav.querySelectorAll("a").forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            mobileToggle.classList.remove("active");
-            mainNav.classList.remove("active");
-
+            mobileToggle.classList.toggle("active", isOpen);
+            mainNav.classList.toggle("active", isOpen);
             mobileToggle.setAttribute(
                 "aria-expanded",
-                "false"
+                isOpen ? "true" : "false"
             );
-
-            document.body.classList.remove("menu-open");
-
+            document.body.classList.toggle("menu-open", isOpen);
         });
 
-    });
+        mainNav.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                closeMenu();
+            });
+        });
 
-}
+        document.addEventListener("click", (event) => {
+            if (
+                mainNav.classList.contains("active") &&
+                !mainNav.contains(event.target) &&
+                !mobileToggle.contains(event.target)
+            ) {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                closeMenu();
+            }
+        });
+    }
+
 
     /* ======================================================
        SMOOTH SAME-PAGE ANCHORS
@@ -59,10 +69,7 @@ if (mobileToggle && mainNav) {
 
         link.addEventListener("click", event => {
 
-            const url = new URL(
-                link.href,
-                window.location.href
-            );
+            const url = new URL(link.href, window.location.href);
 
             const currentPath =
                 window.location.pathname.replace(/\/$/, "");
@@ -70,17 +77,9 @@ if (mobileToggle && mainNav) {
             const linkPath =
                 url.pathname.replace(/\/$/, "");
 
+            if (currentPath === linkPath && url.hash) {
 
-            /* Only intercept links pointing to this page */
-
-            if (
-                currentPath === linkPath &&
-                url.hash
-            ) {
-
-                const target = document.querySelector(
-                    url.hash
-                );
+                const target = document.querySelector(url.hash);
 
                 if (target) {
 
@@ -90,9 +89,7 @@ if (mobileToggle && mainNav) {
                         document.querySelector(".site-header");
 
                     const headerHeight =
-                        header
-                            ? header.offsetHeight
-                            : 0;
+                        header ? header.offsetHeight : 0;
 
                     const targetPosition =
                         target.getBoundingClientRect().top +
@@ -105,18 +102,10 @@ if (mobileToggle && mainNav) {
                         behavior: "smooth"
                     });
 
-                    history.pushState(
-                        null,
-                        "",
-                        url.hash
-                    );
-
+                    history.pushState(null, "", url.hash);
                 }
-
             }
-
         });
-
     });
 
 
@@ -124,50 +113,31 @@ if (mobileToggle && mainNav) {
        SCROLL REVEAL
     ====================================================== */
 
-    const revealElements =
-        document.querySelectorAll(
-            ".service-card, .portfolio-card, .case-study, .why-card"
-        );
-
+    const revealElements = document.querySelectorAll(
+        ".service-card, .portfolio-card, .case-study, .why-card"
+    );
 
     if (
         revealElements.length &&
         "IntersectionObserver" in window
     ) {
 
-        const observer =
-            new IntersectionObserver(
-                entries => {
-
-                    entries.forEach(entry => {
-
-                        if (entry.isIntersecting) {
-
-                            entry.target.classList.add("is-visible");
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.12
-                }
-            );
-
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.12 }
+        );
 
         revealElements.forEach(element => {
-
             element.classList.add("reveal");
-
             observer.observe(element);
-
         });
-
     }
 
 
@@ -178,39 +148,34 @@ if (mobileToggle && mainNav) {
     document
         .querySelectorAll("[data-current-year]")
         .forEach(element => {
-
-            element.textContent =
-                new Date().getFullYear();
-
+            element.textContent = new Date().getFullYear();
         });
 
+
+    /* ======================================================
+       BACK TO TOP
+    ====================================================== */
+
+    const backToTop = document.querySelector(".back-to-top");
+
+    if (backToTop) {
+
+        const updateBackToTop = () => {
+            backToTop.classList.toggle(
+                "visible",
+                window.scrollY > 500
+            );
+        };
+
+        window.addEventListener("scroll", updateBackToTop);
+        updateBackToTop();
+
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
 
 });
-/* ==================================================
-   BACK TO TOP
-================================================== */
-
-const backToTop = document.querySelector(".back-to-top");
-
-if (backToTop) {
-
-    window.addEventListener("scroll", () => {
-
-        if (window.scrollY > 500) {
-            backToTop.classList.add("visible");
-        } else {
-            backToTop.classList.remove("visible");
-        }
-
-    });
-
-    backToTop.addEventListener("click", () => {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    });
-
-}

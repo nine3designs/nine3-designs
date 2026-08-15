@@ -25,8 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         toggle.addEventListener("click", () => {
 
-            menu.classList.toggle("active");
-            toggle.classList.toggle("active");
+            const isOpen = !menu.classList.contains("active");
+
+            menu.classList.toggle("active", isOpen);
+            toggle.classList.toggle("active", isOpen);
+
+            toggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+            document.body.classList.toggle("menu-open", isOpen);
 
         });
 
@@ -43,6 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             menu?.classList.remove("active");
             toggle?.classList.remove("active");
+            toggle?.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("menu-open");
 
         });
 
@@ -64,6 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             menu.classList.remove("active");
             toggle.classList.remove("active");
+            toggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("menu-open");
 
         }
 
