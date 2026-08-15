@@ -1334,3 +1334,14 @@ body {
     }
 
 }
+/* Prevent horizontal page movement on mobile */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+}
