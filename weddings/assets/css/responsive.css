@@ -1150,3 +1150,118 @@
         width: 100% !important;
     }
 }
+
+
+/* ==========================================================
+   FINAL MOBILE FIXES — AUGUST 2026
+   Desktop styles intentionally untouched.
+========================================================== */
+
+@media (max-width: 800px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+
+    /* Hamburger: smaller, clearer X and always above menu */
+    .mobile-toggle {
+        width: 40px !important;
+        height: 40px !important;
+        padding: 4px !important;
+        z-index: 10002 !important;
+    }
+
+    .mobile-toggle span {
+        width: 22px !important;
+        height: 1.5px !important;
+        margin: 3px auto !important;
+    }
+
+    .mobile-toggle.is-open span:nth-child(1),
+    .mobile-toggle.active span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg) !important;
+    }
+
+    .mobile-toggle.is-open span:nth-child(3),
+    .mobile-toggle.active span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg) !important;
+    }
+
+    /* Homepage: bring Featured Collections right up to the hero divider */
+    .hero .hero-divider {
+        margin-bottom: 0 !important;
+    }
+
+    .featured-collections {
+        padding-top: 0 !important;
+    }
+
+    .featured-heading {
+        margin-top: 0 !important;
+    }
+
+    /* Finishing Touches: reduce the gap before Made To Match */
+    .collections-options {
+        padding-bottom: 28px !important;
+    }
+
+    .collections-details {
+        padding-top: 32px !important;
+    }
+
+    /* Six-step process: slightly smaller title + clear number/title separation */
+    .how-section-heading h2 {
+        font-size: clamp(45px, 9vw, 58px) !important;
+    }
+
+    .process-card h3 {
+        margin-top: 5px !important;
+    }
+
+    .process-number {
+        margin-bottom: 7px !important;
+    }
+
+    /* Remove the final portal divider */
+    .portal-features .portal-feature:last-child {
+        border-bottom: 0 !important;
+    }
+
+    /* Back-to-top: actual arrow, not an empty gold circle */
+    .back-to-top {
+        width: 46px !important;
+        height: 46px !important;
+        font-family: Arial, sans-serif !important;
+    }
+
+    .back-to-top > span {
+        display: block !important;
+        color: #FEF9F3 !important;
+        font-size: 20px !important;
+        font-weight: 400 !important;
+        line-height: 1 !important;
+        transform: translateY(-1px);
+    }
+
+    .back-to-top i {
+        display: none !important;
+    }
+
+}
+
+@media (max-width: 390px) {
+
+    .container {
+        width: calc(100% - 24px) !important;
+        max-width: 390px !important;
+    }
+
+    .header-container {
+        width: calc(100% - 20px) !important;
+        max-width: 390px !important;
+    }
+
+}

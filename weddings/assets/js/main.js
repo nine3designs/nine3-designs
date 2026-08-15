@@ -9,13 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const mainNav = document.querySelector(".main-nav");
     const collectionsDropdown = document.querySelector(".collections-dropdown");
 
+    if (mobileToggle && mobileToggle.dataset.nine3Init === "true") return;
+    if (mobileToggle) mobileToggle.dataset.nine3Init = "true";
+
     const closeMenu = () => {
         if (!mobileToggle || !mainNav) return;
 
-        mobileToggle.classList.remove("is-open");
-        mobileToggle.classList.remove("active");
-        mainNav.classList.remove("is-open");
-        mainNav.classList.remove("active");
+        mobileToggle.classList.remove("is-open", "active");
+        mainNav.classList.remove("is-open", "active");
         mobileToggle.setAttribute("aria-expanded", "false");
         document.body.classList.remove("menu-open");
 
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (mobileToggle && mainNav) {
 
         mobileToggle.addEventListener("click", event => {
+            event.preventDefault();
             event.stopPropagation();
 
             const isOpen = !mainNav.classList.contains("is-open");
@@ -42,15 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
         mainNav.querySelectorAll("a").forEach(link => {
             link.addEventListener("click", event => {
 
-                if (
+                const isCollectionsTrigger =
                     collectionsDropdown &&
-                    link.closest(".collections-dropdown") &&
-                    link.parentElement === collectionsDropdown
-                ) {
-                    if (window.innerWidth <= 800) {
-                        event.preventDefault();
-                        collectionsDropdown.classList.toggle("mobile-open");
-                    }
+                    link.parentElement === collectionsDropdown;
+
+                if (isCollectionsTrigger && window.innerWidth <= 800) {
+                    event.preventDefault();
+                    collectionsDropdown.classList.toggle("mobile-open");
                     return;
                 }
 
@@ -69,9 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         window.addEventListener("resize", () => {
-            if (window.innerWidth > 800) {
-                closeMenu();
-            }
+            if (window.innerWidth > 800) closeMenu();
         });
     }
 
@@ -144,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
             backToTop.classList.toggle("visible", window.scrollY > 500);
         };
 
-        window.addEventListener("scroll", updateBackToTop);
+        window.addEventListener("scroll", updateBackToTop, { passive: true });
         updateBackToTop();
 
         backToTop.addEventListener("click", () => {
