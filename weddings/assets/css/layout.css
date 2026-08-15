@@ -182,25 +182,24 @@
 }
 
 
-/* ==========================================================
-   HEADER BUTTON
-========================================================== */
+/* ==================================================
+   SISTER SITE BUTTON
+================================================== */
 
-.site-header .btn {
+.header-container > .btn {
+    flex-shrink: 0;
+    padding: 11px 25px;
+    font-size: .85rem;
+}
 
-    min-width: 190px;
+/* Hide sister-site button on mobile.
+   The mobile menu contains its own link. */
 
-    padding: 25px 20px;
+@media (max-width: 768px) {
 
-    background: var(--gold);
-
-    color: var(--ivory);
-
-    border: 1px solid var(--gold);
-
-    border-radius: 30px;
-
-    text-align: center;
+    .header-container > .btn {
+        display: none !important;
+    }
 
 }
 
