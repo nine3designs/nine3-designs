@@ -134,7 +134,7 @@
     /* Hamburger → X */
 
     .mobile-toggle.is-open span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
+        transform: translateY(7px) rotate(45deg);
     }
 
     .mobile-toggle.is-open span:nth-child(2) {
@@ -235,7 +235,7 @@
 
         color: var(--green);
 
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 600;
 
         line-height: 1.5;
@@ -335,7 +335,7 @@
 
         color: #555 !important;
 
-        font-size: 11px !important;
+        font-size: 13px !important;
 
         font-weight: 500;
 
@@ -395,7 +395,7 @@
 
 
     .hero-buttons .btn {
-        width: 100%;
+        width: 80%;
     }
 
 
@@ -406,14 +406,14 @@
     .wedding-details,
     .digital-extras {
         padding-top: 90px;
-        padding-bottom: 100px;
+        padding-bottom: 70px;
     }
 
 
     .wedding-details {
         margin-top: 70px;
 
-        padding-top: 100px;
+        padding-top: 70px;
     }
 
 
