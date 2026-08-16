@@ -607,35 +607,7 @@ h3{
     font-size:.9rem;
 
 }
-@media(max-width:768px){
 
-    .main-nav.active{
-
-        display:block;
-
-        position:absolute;
-
-        top:75px;
-
-        left:0;
-
-        width:100%;
-
-        background:var(--primary);
-
-        padding:2rem;
-
-    }
-
-    .main-nav.active ul{
-
-        flex-direction:column;
-
-        gap:1.5rem;
-
-    }
-
-}
 @media (max-width:768px) {
 
     .about-mobile-hide{
