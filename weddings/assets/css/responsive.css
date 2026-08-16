@@ -15,16 +15,12 @@ body {
     overflow-x: hidden !important;
     box-sizing: border-box;
 }
-
 .site-header,
 .site-footer {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
-
-
 /* ==========================================================
    TABLET
 ========================================================== */
