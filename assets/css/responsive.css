@@ -1319,3 +1319,30 @@ body {
     }
 
 }
+
+/* ==========================================================
+   FINAL MOBILE NAVIGATION — NINE3 DESIGNS
+   Desktop styles intentionally untouched.
+========================================================== */
+@media (max-width:768px) {
+    html,body{width:100%;max-width:100%;overflow-x:hidden !important;}
+    body.menu-open{overflow:hidden !important;}
+    .site-header{position:fixed !important;top:0 !important;left:0 !important;width:100% !important;height:75px !important;min-height:75px !important;z-index:11000 !important;overflow:visible !important;}
+    .header-container{position:relative !important;display:flex !important;align-items:center !important;width:calc(100% - 30px) !important;max-width:100% !important;height:75px !important;min-height:75px !important;margin:0 auto !important;gap:12px !important;overflow:visible !important;}
+    .logo{display:flex !important;align-items:center !important;flex:1 1 auto !important;min-width:0 !important;}
+    .logo img{width:145px !important;max-width:100% !important;height:auto !important;}
+    .header-container>.btn{display:none !important;}
+    .mobile-toggle{display:flex !important;align-items:center !important;justify-content:center !important;flex-direction:column !important;flex:0 0 42px !important;width:42px !important;height:42px !important;padding:0 !important;margin-left:auto !important;border:0 !important;outline:0 !important;background:transparent !important;box-shadow:none !important;z-index:11002 !important;appearance:none !important;}
+    .mobile-toggle span{display:block !important;width:27px !important;height:2.5px !important;margin:3px 0 !important;background:#FEF9F3 !important;border-radius:3px !important;transition:transform .25s ease,opacity .2s ease !important;}
+    .mobile-toggle.active span:nth-child(1){transform:translateY(8px) rotate(45deg) !important;} .mobile-toggle.active span:nth-child(2){opacity:0 !important;} .mobile-toggle.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg) !important;}
+    .main-nav{display:block !important;position:fixed !important;top:75px !important;left:0 !important;width:100% !important;max-height:calc(100dvh - 75px) !important;margin:0 !important;padding:10px 15px 25px !important;background:#404A3B !important;border-top:1px solid rgba(254,249,243,.10) !important;box-shadow:0 18px 40px rgba(0,0,0,.18) !important;opacity:0 !important;visibility:hidden !important;pointer-events:none !important;transform:translateY(-8px) !important;overflow-x:hidden !important;overflow-y:auto !important;z-index:11001 !important;transition:opacity .2s ease,transform .2s ease,visibility .2s ease !important;}
+    .main-nav.active{opacity:1 !important;visibility:visible !important;pointer-events:auto !important;transform:translateY(0) !important;}
+    .main-nav ul{display:flex !important;flex-direction:column !important;width:100% !important;gap:0 !important;margin:0 !important;padding:0 !important;list-style:none !important;}
+    .main-nav li{width:100% !important;margin:0 !important;padding:0 !important;border-bottom:1px solid rgba(254,249,243,.12) !important;}
+    .main-nav li>a{display:flex !important;align-items:center !important;justify-content:center !important;width:100% !important;min-height:58px !important;padding:16px 8px !important;color:#FEF9F3 !important;font-size:13px !important;font-weight:600 !important;letter-spacing:1.3px !important;line-height:1.4 !important;text-transform:uppercase !important;text-decoration:none !important;text-align:center !important;}
+    .main-nav li>a::after{display:none !important;}
+    .main-nav li>a:hover,.main-nav li>a:focus,.main-nav li>a.active{color:#C8A96A !important;}
+    .sister-site-mobile{margin-top:14px !important;padding-top:14px !important;border-top:1px solid rgba(200,169,106,.35) !important;border-bottom:0 !important;}
+    .main-nav .sister-site-mobile a{min-height:46px !important;background:#C8A96A !important;color:#404A3B !important;border:1px solid #C8A96A !important;border-radius:2px !important;font-size:11px !important;letter-spacing:1.1px !important;}
+}
+@media (max-width:390px){.header-container{width:calc(100% - 22px) !important;}.logo img{width:138px !important;}}
