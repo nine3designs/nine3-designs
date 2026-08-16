@@ -709,13 +709,157 @@ h2 {
 }
 /* ==================================================
    COLLECTIONS DROPDOWN — ACTIVE PAGE
-================================================== */
+=/* ==========================================================
+   COLLECTIONS DROPDOWN — DESKTOP
+========================================================== */
 
-.collections-dropdown-menu a.active {
-    color: var(--gold);
-    background: rgba(200, 169, 106, 0.08);
-    padding-left: 20px;
-    border-left: 2px solid var(--gold);
+@media (min-width: 801px) {
+
+    .site-header {
+        position: relative;
+        z-index: 1000;
+        overflow: visible !important;
+    }
+
+    .header-container {
+        position: relative;
+        z-index: 1001;
+        overflow: visible !important;
+    }
+
+    .main-nav {
+        position: relative;
+        z-index: 1002;
+        overflow: visible !important;
+    }
+
+    .main-nav ul {
+        overflow: visible !important;
+    }
+
+
+    /* Parent */
+
+    .collections-dropdown {
+        position: relative !important;
+        z-index: 1003;
+    }
+
+
+    /* Dropdown */
+
+    .collections-dropdown-menu {
+        position: absolute !important;
+
+        top: calc(100% + 8px) !important;
+        left: 50% !important;
+
+        width: 230px !important;
+
+        margin: 0 !important;
+        padding: 10px 0 !important;
+
+        transform: translateX(-50%) !important;
+
+        background: #FEF9F3 !important;
+
+        border: 1px solid rgba(64, 74, 59, .12) !important;
+
+        box-shadow:
+            0 15px 35px rgba(43, 43, 43, .14) !important;
+
+        opacity: 0 !important;
+        visibility: hidden !important;
+
+        pointer-events: none !important;
+
+        z-index: 99999 !important;
+
+        display: block !important;
+    }
+
+
+    /* Show when hovering */
+
+    .collections-dropdown:hover
+    .collections-dropdown-menu {
+
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+
+    }
+
+
+    /* Keep dropdown open while moving mouse
+       from Collections onto the dropdown */
+
+    .collections-dropdown-menu::before {
+
+        content: "";
+
+        position: absolute;
+
+        top: -10px;
+        left: 0;
+
+        width: 100%;
+        height: 10px;
+
+    }
+
+
+    /* Dropdown links */
+
+    .collections-dropdown-menu a {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        padding: 11px 18px !important;
+
+        color: #404A3B !important;
+
+        font-size: 11px !important;
+        font-weight: 500 !important;
+
+        line-height: 1.4 !important;
+
+        letter-spacing: .8px !important;
+
+        text-decoration: none !important;
+
+        white-space: nowrap;
+
+        background: transparent !important;
+
+        transition:
+            background .2s ease,
+            color .2s ease,
+            padding-left .2s ease;
+
+    }
+
+
+    .collections-dropdown-menu a:hover {
+
+        color: #C8A96A !important;
+
+        background: rgba(200, 169, 106, .08) !important;
+
+        padding-left: 22px !important;
+
+    }
+
+
+    /* Remove any desktop underline */
+
+    .collections-dropdown-menu a::after {
+
+        display: none !important;
+
+    }
 
 }
 /* ==================================================
