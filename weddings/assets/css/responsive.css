@@ -104,70 +104,6 @@ body {
         display: none !important;
     }
 
-
-    /* ------------------------------------------
-       HAMBURGER
-    ------------------------------------------ */
-
-    .mobile-toggle {
-        display: flex !important;
-
-        flex: 0 0 42px;
-
-        width: 42px;
-        height: 42px;
-
-        padding: 5px;
-
-        margin-left: auto;
-
-        border: 0;
-
-        background: transparent;
-
-        cursor: pointer;
-
-        flex-direction: column;
-
-        align-items: center;
-        justify-content: center;
-
-        z-index: 10002;
-    }
-
-
-    .mobile-toggle span {
-        display: block;
-
-        width: 26px;
-        height: 2.5px;
-
-        margin: 5px auto;
-
-        background: var(--green);
-        border-radius: 2px;
-
-        transition:
-            transform .3s ease,
-            opacity .3s ease;
-    }
-
-
-    /* Hamburger → X */
-
-    .mobile-toggle.is-open span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-
-    .mobile-toggle.is-open span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .mobile-toggle.is-open span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-
-
     /* ------------------------------------------
        MOBILE NAV PANEL
     ------------------------------------------ */
@@ -1181,13 +1117,79 @@ body {
         overflow-x: hidden;
         max-width: 100%;
     }
-
-}/* ==========================================================
-   MOBILE MENU — NINE3 WEDDINGS BUTTON
+/* ==========================================================
+   NINE3 WEDDINGS — MOBILE HAMBURGER
 ========================================================== */
 
-.mobile-weddings-link {
-    display: none;
+@media (max-width: 800px) {
+
+    .mobile-toggle {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        position: relative !important;
+
+        flex: 0 0 42px !important;
+
+        width: 42px !important;
+        height: 42px !important;
+
+        margin-left: auto !important;
+        padding: 6px !important;
+
+        border: 0 !important;
+        outline: none !important;
+
+        background: transparent !important;
+
+        cursor: pointer;
+
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        z-index: 10005 !important;
+    }
+
+
+    .mobile-toggle span {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        width: 25px !important;
+        height: 2px !important;
+
+        margin: 3px 0 !important;
+
+        background: #404A3B !important;
+
+        border-radius: 2px !important;
+
+        transform: none;
+        transition:
+            transform .25s ease,
+            opacity .25s ease;
+    }
+
+
+    /* OPEN — turn into X */
+
+    .mobile-toggle.is-open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg) !important;
+    }
+
+
+    .mobile-toggle.is-open span:nth-child(2) {
+        opacity: 0 !important;
+    }
+
+
+    .mobile-toggle.is-open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg) !important;
+    }
+
 }
 
 
@@ -1240,6 +1242,4 @@ body {
         color: #333C30 !important;
 
         transform: translateY(-1px);
-    }
-
-}
+    }}}
