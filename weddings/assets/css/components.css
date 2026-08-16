@@ -706,20 +706,21 @@
 h1,
 h2 {
     font-size: 90%;
-}
-/* ==================================================
-   COLLECTIONS DROPDOWN — ACTIVE PAGE
-=/* ==========================================================
-   COLLECTIONS DROPDOWN — DESKTOP
+}/* ==========================================================
+   DESKTOP COLLECTIONS DROPDOWN
 ========================================================== */
 
 @media (min-width: 801px) {
 
-    .site-header {
-        position: relative;
-        z-index: 1000;
-        overflow: visible !important;
-    }
+    /* Header must allow dropdown to extend outside it */
+
+.site-header,
+.site-footer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
 
     .header-container {
         position: relative;
@@ -727,18 +728,22 @@ h2 {
         overflow: visible !important;
     }
 
+
     .main-nav {
         position: relative;
         z-index: 1002;
         overflow: visible !important;
     }
 
+
     .main-nav ul {
         overflow: visible !important;
     }
 
 
-    /* Parent */
+    /* ------------------------------------------------------
+       COLLECTIONS PARENT
+    ------------------------------------------------------ */
 
     .collections-dropdown {
         position: relative !important;
@@ -746,27 +751,41 @@ h2 {
     }
 
 
-    /* Dropdown */
+    /* ------------------------------------------------------
+       COLLECTIONS LINK
+    ------------------------------------------------------ */
+
+    .collections-dropdown > a {
+        position: relative;
+        z-index: 1004;
+    }
+
+
+    /* ------------------------------------------------------
+       DROPDOWN PANEL
+    ------------------------------------------------------ */
 
     .collections-dropdown-menu {
         position: absolute !important;
 
-        top: calc(100% + 8px) !important;
+        top: 100% !important;
         left: 50% !important;
 
-        width: 230px !important;
+        width: 240px !important;
 
-        margin: 0 !important;
+        margin-top: 12px !important;
         padding: 10px 0 !important;
 
         transform: translateX(-50%) !important;
 
+        display: block !important;
+
         background: #FEF9F3 !important;
 
-        border: 1px solid rgba(64, 74, 59, .12) !important;
+        border: 1px solid rgba(64, 74, 59, .14) !important;
 
         box-shadow:
-            0 15px 35px rgba(43, 43, 43, .14) !important;
+            0 18px 40px rgba(43, 43, 43, .15) !important;
 
         opacity: 0 !important;
         visibility: hidden !important;
@@ -774,14 +793,17 @@ h2 {
         pointer-events: none !important;
 
         z-index: 99999 !important;
-
-        display: block !important;
     }
 
 
-    /* Show when hovering */
+    /* ------------------------------------------------------
+       SHOW DROPDOWN
+    ------------------------------------------------------ */
 
     .collections-dropdown:hover
+    .collections-dropdown-menu,
+
+    .collections-dropdown:focus-within
     .collections-dropdown-menu {
 
         opacity: 1 !important;
@@ -791,8 +813,10 @@ h2 {
     }
 
 
-    /* Keep dropdown open while moving mouse
-       from Collections onto the dropdown */
+    /* ------------------------------------------------------
+       INVISIBLE BRIDGE
+       Stops menu disappearing while moving mouse down
+    ------------------------------------------------------ */
 
     .collections-dropdown-menu::before {
 
@@ -800,16 +824,18 @@ h2 {
 
         position: absolute;
 
-        top: -10px;
+        top: -14px;
         left: 0;
 
         width: 100%;
-        height: 10px;
+        height: 14px;
 
     }
 
 
-    /* Dropdown links */
+    /* ------------------------------------------------------
+       DROPDOWN LINKS
+    ------------------------------------------------------ */
 
     .collections-dropdown-menu a {
 
@@ -817,47 +843,78 @@ h2 {
 
         width: 100% !important;
 
-        padding: 11px 18px !important;
+        padding: 12px 20px !important;
+
+        margin: 0 !important;
+
+        background: transparent !important;
 
         color: #404A3B !important;
 
         font-size: 11px !important;
+
         font-weight: 500 !important;
 
         line-height: 1.4 !important;
 
-        letter-spacing: .8px !important;
+        letter-spacing: .7px !important;
+
+        text-align: left !important;
 
         text-decoration: none !important;
 
-        white-space: nowrap;
+        white-space: nowrap !important;
 
-        background: transparent !important;
+        border: 0 !important;
 
-        transition:
-            background .2s ease,
-            color .2s ease,
-            padding-left .2s ease;
+        transform: none !important;
 
     }
 
 
     .collections-dropdown-menu a:hover {
 
+        background: rgba(200, 169, 106, .10) !important;
+
         color: #C8A96A !important;
-
-        background: rgba(200, 169, 106, .08) !important;
-
-        padding-left: 22px !important;
 
     }
 
 
-    /* Remove any desktop underline */
+    /* Remove nav underline from submenu */
 
     .collections-dropdown-menu a::after {
 
         display: none !important;
+
+        content: none !important;
+
+    }
+
+
+    /* ------------------------------------------------------
+       ARROW
+    ------------------------------------------------------ */
+
+    .dropdown-arrow {
+
+        display: inline-block;
+
+        margin-left: 7px;
+
+        color: #C8A96A;
+
+        font-size: 10px;
+
+        transition: transform .25s ease;
+
+    }
+
+
+    .collections-dropdown:hover
+    .dropdown-arrow {
+
+        transform: rotate(180deg);
 
     }
 
