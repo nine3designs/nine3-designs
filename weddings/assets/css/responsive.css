@@ -1323,3 +1323,40 @@ body {
     }
 
 }
+/* ==========================================================
+   DESKTOP COLLECTIONS DROPDOWN — FIX LAYERING
+========================================================== */
+
+@media (min-width: 801px) {
+
+    .site-header {
+        position: relative;
+        z-index: 10000;
+        overflow: visible !important;
+    }
+
+    .header-container {
+        position: relative;
+        z-index: 10001;
+    }
+
+    .main-nav {
+        position: relative;
+        z-index: 10002;
+    }
+
+    .collections-dropdown {
+        position: relative;
+        z-index: 10003;
+    }
+
+    .collections-dropdown-menu {
+        position: absolute;
+        z-index: 10004 !important;
+    }
+
+    .collections-dropdown:hover {
+        z-index: 10005;
+    }
+
+}
