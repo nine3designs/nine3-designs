@@ -5,43 +5,60 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
     /* ======================================================
        MOBILE NAVIGATION
     ====================================================== */
 
-    const mobileToggle = document.querySelector(".mobile-toggle");
-    const mainNav = document.querySelector(".main-nav");
-    const collectionsDropdown = document.querySelector(".collections-dropdown");
-    const collectionsTrigger = collectionsDropdown
-        ? collectionsDropdown.querySelector(":scope > a")
-        : null;
+    const mobileToggle =
+        document.querySelector(".mobile-toggle");
+
+    const mainNav =
+        document.querySelector(".main-nav");
+
+    const collectionsDropdown =
+        document.querySelector(".collections-dropdown");
+
+    const collectionsTrigger =
+        collectionsDropdown
+            ? collectionsDropdown.querySelector(":scope > a")
+            : null;
 
 
     /* ------------------------------------------------------
        CLOSE MENU
     ------------------------------------------------------ */
 
-    const closeMenu = () => {
+    function closeMenu() {
 
-        if (!mobileToggle || !mainNav) return;
+        if (!mobileToggle || !mainNav) {
+            return;
+        }
+
 
         mobileToggle.classList.remove("is-open");
         mobileToggle.classList.remove("active");
 
+
         mainNav.classList.remove("is-open");
         mainNav.classList.remove("active");
+
 
         mobileToggle.setAttribute(
             "aria-expanded",
             "false"
         );
 
+
         mobileToggle.setAttribute(
             "aria-label",
             "Open navigation"
         );
 
-        document.body.classList.remove("menu-open");
+
+        document.body.classList.remove(
+            "menu-open"
+        );
 
 
         if (collectionsDropdown) {
@@ -52,74 +69,71 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-    };
+    }
 
 
     /* ------------------------------------------------------
-       TOGGLE MOBILE MENU
+       HAMBURGER
     ------------------------------------------------------ */
 
     if (mobileToggle && mainNav) {
 
-        mobileToggle.addEventListener("click", event => {
+        mobileToggle.addEventListener(
+            "click",
+            event => {
 
-            event.preventDefault();
-            event.stopPropagation();
-
-
-            const isOpen =
-                !mainNav.classList.contains("is-open");
+                event.preventDefault();
+                event.stopPropagation();
 
 
-            mobileToggle.classList.toggle(
-                "is-open",
-                isOpen
-            );
-
-            mobileToggle.classList.toggle(
-                "active",
-                isOpen
-            );
+                const isOpen =
+                    !mainNav.classList.contains(
+                        "is-open"
+                    );
 
 
-            mainNav.classList.toggle(
-                "is-open",
-                isOpen
-            );
+                if (isOpen) {
 
-            mainNav.classList.toggle(
-                "active",
-                isOpen
-            );
+                    mobileToggle.classList.add(
+                        "is-open"
+                    );
 
+                    mainNav.classList.add(
+                        "is-open"
+                    );
 
-            mobileToggle.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
+                    mobileToggle.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
 
+                    mobileToggle.setAttribute(
+                        "aria-label",
+                        "Close navigation"
+                    );
 
-            mobileToggle.setAttribute(
-                "aria-label",
-                isOpen
-                    ? "Close navigation"
-                    : "Open navigation"
-            );
+                    document.body.classList.add(
+                        "menu-open"
+                    );
 
+                } else {
 
-            document.body.classList.toggle(
-                "menu-open",
-                isOpen
-            );
+                    closeMenu();
 
-        });
+                }
+
+            }
+        );
 
 
         /* --------------------------------------------------
-           COLLECTIONS DROPDOWN
+           COLLECTIONS
         -------------------------------------------------- */
 
-        if (collectionsTrigger && collectionsDropdown) {
+        if (
+            collectionsTrigger &&
+            collectionsDropdown
+        ) {
 
             collectionsTrigger.addEventListener(
                 "click",
@@ -144,44 +158,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* --------------------------------------------------
-           NAVIGATION LINKS
+           OTHER NAVIGATION LINKS
         -------------------------------------------------- */
 
-        mainNav.querySelectorAll("a").forEach(link => {
+        mainNav
+            .querySelectorAll("a")
+            .forEach(link => {
 
-            link.addEventListener("click", event => {
+                link.addEventListener(
+                    "click",
+                    event => {
+
+                        /*
+                         * The Collections parent
+                         * is handled separately.
+                         */
+
+                        if (
+                            link === collectionsTrigger &&
+                            window.innerWidth <= 800
+                        ) {
+
+                            return;
+
+                        }
 
 
-                /*
-                 * Collections parent:
-                 * handled separately above.
-                 */
+                        /*
+                         * Clicking any actual destination
+                         * closes the menu.
+                         */
 
-                if (
-                    collectionsDropdown &&
-                    link === collectionsTrigger &&
-                    window.innerWidth <= 800
-                ) {
+                        closeMenu();
 
-                    return;
-
-                }
-
-
-                /*
-                 * All other links close
-                 * the mobile menu.
-                 */
-
-                closeMenu();
+                    }
+                );
 
             });
 
-        });
-
 
         /* --------------------------------------------------
-           CLICK OUTSIDE MENU
+           CLICK OUTSIDE
         -------------------------------------------------- */
 
         document.addEventListener(
@@ -189,9 +206,15 @@ document.addEventListener("DOMContentLoaded", () => {
             event => {
 
                 if (
-                    mainNav.classList.contains("is-open") &&
-                    !mainNav.contains(event.target) &&
-                    !mobileToggle.contains(event.target)
+                    mainNav.classList.contains(
+                        "is-open"
+                    ) &&
+                    !mainNav.contains(
+                        event.target
+                    ) &&
+                    !mobileToggle.contains(
+                        event.target
+                    )
                 ) {
 
                     closeMenu();
@@ -212,7 +235,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (
                     event.key === "Escape" &&
-                    mainNav.classList.contains("is-open")
+                    mainNav.classList.contains(
+                        "is-open"
+                    )
                 ) {
 
                     closeMenu();
@@ -226,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* --------------------------------------------------
-           RESIZE
+           DESKTOP RESIZE
         -------------------------------------------------- */
 
         window.addEventListener(
@@ -257,10 +282,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 "click",
                 event => {
 
-                    const url = new URL(
-                        link.href,
-                        window.location.href
-                    );
+                    const url =
+                        new URL(
+                            link.href,
+                            window.location.href
+                        );
 
 
                     const currentPath =
@@ -356,7 +382,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     entries.forEach(entry => {
 
-                        if (entry.isIntersecting) {
+                        if (
+                            entry.isIntersecting
+                        ) {
 
                             entry.target.classList.add(
                                 "is-visible"
@@ -413,14 +441,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (backToTop) {
 
-        const updateBackToTop = () => {
+        function updateBackToTop() {
 
             backToTop.classList.toggle(
                 "visible",
                 window.scrollY > 500
             );
 
-        };
+        }
 
 
         window.addEventListener(
