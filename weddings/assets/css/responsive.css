@@ -118,12 +118,13 @@
     .mobile-toggle span {
         display: block;
 
-        width: 24px;
-        height: 1px;
+        width: 26px;
+        height: 2.5px;
 
-        margin: 4px auto;
+        margin: 5px auto;
 
         background: var(--green);
+        border-radius: 2px;
 
         transition:
             transform .3s ease,
