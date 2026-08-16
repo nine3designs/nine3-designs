@@ -699,6 +699,7 @@
 <body class="work-page">
 
 
+
 <!-- ==================================================
      HEADER
 ================================================== -->
@@ -707,7 +708,11 @@
 
     <div class="container header-container">
 
-        <a href="index.html" class="logo">
+        <a
+            href="index.html"
+            class="logo"
+            aria-label="Nine3 Designs home"
+        >
 
             <img
                 src="assets/images/branding/logo-full.svg"
@@ -749,23 +754,39 @@
             </a>
         </li>
 
+        <li class="sister-site-mobile">
+            <a href="/weddings/">
+                Nine3 Weddings →
+            </a>
+        </li>
+
     </ul>
-<li class="mobile-weddings-link">
 
-    <a
-        href="https://nine3designs.co.uk/weddings"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Nine3 Weddings
-    </a>
-
-</li>
 </nav>
 
+        <!-- Nine3 Weddings sister brand -->
+
+    <a
+    href="/weddings/"
+    class="btn btn-primary"
+>
+    Nine3 Weddings
+</a>
+
+
+        <!-- Mobile navigation -->
+
+        <button
+            class="mobile-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+
             <span></span>
             <span></span>
             <span></span>
+
         </button>
 
     </div>
