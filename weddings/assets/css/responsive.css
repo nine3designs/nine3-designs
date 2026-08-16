@@ -742,14 +742,6 @@ body {
         opacity: 1 !important;
     }
 
-    .mobile-toggle span {
-        display: block !important;
-        width: 25px !important;
-        height: 2px !important;
-        margin: 3px auto !important;
-        background: var(--green) !important;
-        border-radius: 10px;
-    }
 
     /* Mobile menu */
     .main-nav {
@@ -1152,28 +1144,6 @@ body {
         z-index: 10005 !important;
     }
 
-
-    .mobile-toggle span {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-
-        width: 25px !important;
-        height: 2px !important;
-
-        margin: 3px 0 !important;
-
-        background: #404A3B !important;
-
-        border-radius: 2px !important;
-
-        transform: none;
-        transition:
-            transform .25s ease,
-            opacity .25s ease;
-    }
-
-
     /* OPEN — turn into X */
 
     .mobile-toggle.is-open span:nth-child(1) {
@@ -1243,3 +1213,113 @@ body {
 
         transform: translateY(-1px);
     }}}
+    /* ==========================================================
+   NINE3 WEDDINGS — FORCE MOBILE HAMBURGER VISIBILITY
+========================================================== */
+
+@media (max-width: 800px) {
+
+    .site-header {
+        position: relative !important;
+        z-index: 10001 !important;
+    }
+
+
+    .header-container {
+        position: relative !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        width: calc(100% - 24px) !important;
+        max-width: 390px !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+
+    .mobile-toggle {
+        position: relative !important;
+
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        flex: 0 0 42px !important;
+
+        width: 42px !important;
+        min-width: 42px !important;
+        max-width: 42px !important;
+
+        height: 42px !important;
+        min-height: 42px !important;
+
+        margin-left: auto !important;
+        margin-right: 0 !important;
+
+        padding: 6px !important;
+
+        border: 1px solid #404A3B !important;
+        border-radius: 0 !important;
+
+        background: #FEF9F3 !important;
+
+        color: #404A3B !important;
+
+        cursor: pointer !important;
+
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        overflow: visible !important;
+
+        z-index: 10010 !important;
+
+        appearance: none !important;
+        -webkit-appearance: none !important;
+    }
+
+
+    .mobile-toggle span {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+
+        width: 24px !important;
+        min-width: 24px !important;
+        height: 2px !important;
+
+        margin: 3px 0 !important;
+        padding: 0 !important;
+
+        background: #404A3B !important;
+
+        border: 0 !important;
+        border-radius: 2px !important;
+
+        flex: 0 0 2px !important;
+
+        transform: none;
+        transition:
+            transform .25s ease,
+            opacity .25s ease;
+    }
+
+
+    /* X when menu is open */
+
+    .mobile-toggle.is-open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg) !important;
+    }
+
+    .mobile-toggle.is-open span:nth-child(2) {
+        opacity: 0 !important;
+    }
+
+    .mobile-toggle.is-open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg) !important;
+    }
+
+}
