@@ -5,6 +5,27 @@
 
 
 /* ==========================================================
+   PREVENT HORIZONTAL SCROLLING
+========================================================== */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
+}
+
+.site-header,
+.site-footer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+
+/* ==========================================================
    TABLET
 ========================================================== */
 
@@ -232,16 +253,16 @@
 
         width: 100%;
 
-        padding: 17px 8px;
+        padding: 16px 12px;
 
         color: var(--green);
 
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 600;
 
-        line-height: 1.5;
+        line-height: 1.6;
 
-        letter-spacing: 1.2px;
+        letter-spacing: 0.5px;
 
         text-transform: uppercase;
 

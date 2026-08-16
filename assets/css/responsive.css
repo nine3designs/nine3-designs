@@ -873,7 +873,7 @@ h3{
         white-space: nowrap;
 
         /* thinner banner */
-        padding: 10px 24px;
+        padding: 6px 20px;
     }
 
     .stat-item i {
@@ -922,7 +922,8 @@ html,
 body {
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
+    box-sizing: border-box;
 }
 
 .site-header,
@@ -930,6 +931,7 @@ body {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
@@ -1209,7 +1211,7 @@ body {
 @media (max-width: 390px) {
 
     .container {
-        width: calc(100% - 24px) !important;
+        width: calc(100% - 44px) !important;
     }
 
     .hero {

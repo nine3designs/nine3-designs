@@ -10,6 +10,12 @@ body {
 
     line-height: 1.7;
 
+    overflow-x: hidden !important;
+
+    width: 100%;
+
+    max-width: 100%;
+
     -webkit-font-smoothing: antialiased;
 
 }
@@ -40,6 +46,13 @@ h3 {
 p {
 
     color: var(--text-light);
+
+}
+
+
+section {
+
+    padding: 45px 0;
 
 }
 
