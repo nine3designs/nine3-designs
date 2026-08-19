@@ -1261,3 +1261,150 @@ body {
         display: none !important;
     }
 }
+/* ==========================================================
+   DESKTOP HEADER — FINAL RESET
+   Nine3 Weddings
+   Desktop only — mobile remains untouched
+========================================================== */
+
+@media (min-width: 801px) {
+
+    /* Restore the full desktop container */
+
+    .site-header .header-container {
+        width: min(1280px, calc(100% - 80px)) !important;
+        max-width: none !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        height: 100% !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        gap: 30px !important;
+
+        position: relative !important;
+    }
+
+
+    /* Desktop logo */
+
+    .site-header .logo {
+        display: flex !important;
+        align-items: center !important;
+
+        flex: 0 0 auto !important;
+        min-width: 0 !important;
+    }
+
+
+    .site-header .logo img {
+        width: 155px !important;
+        max-width: none !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+
+    /* Desktop navigation */
+
+    .site-header .main-nav {
+        display: block !important;
+
+        position: static !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        margin-left: auto !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+
+        transform: none !important;
+
+        background: transparent !important;
+        box-shadow: none !important;
+        border: 0 !important;
+    }
+
+
+    .site-header .main-nav ul {
+        display: flex !important;
+
+        flex-direction: row !important;
+        align-items: center !important;
+
+        width: auto !important;
+
+        gap: 32px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    .site-header .main-nav li {
+        display: block !important;
+
+        width: auto !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        border: 0 !important;
+    }
+
+
+    .site-header .main-nav li > a {
+        display: inline-block !important;
+
+        width: auto !important;
+        min-height: 0 !important;
+
+        padding: 0 !important;
+
+        color: var(--green) !important;
+
+        background: transparent !important;
+
+        font-family: Raleway, sans-serif !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+
+        letter-spacing: 1px !important;
+
+        text-transform: uppercase !important;
+
+        text-decoration: none !important;
+    }
+
+
+    /* Desktop CTA */
+
+    .site-header .header-container > .btn {
+        display: inline-flex !important;
+
+        flex: 0 0 auto !important;
+
+        width: auto !important;
+
+        min-width: 0 !important;
+
+        padding: 11px 25px !important;
+
+        font-size: 11px !important;
+    }
+
+
+    /* No hamburger on desktop */
+
+    .site-header .mobile-toggle {
+        display: none !important;
+    }
+
+}
