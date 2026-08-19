@@ -445,7 +445,7 @@ body {
 
     .header-container {
         width: calc(100% - 24px) !important;
-        max-width: auto; !important;
+        max-width: 390px; !important;
     }
 
 
