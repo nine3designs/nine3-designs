@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nine3designs.co.uk/sitemap.xml
