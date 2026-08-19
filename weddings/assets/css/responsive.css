@@ -440,12 +440,12 @@ body {
     /* Keep the mobile site compact and centred */
     .container {
         width: calc(100% - 30px) !important;
-        max-width: 390px !important;
+        max-width: 390px; !important;
     }
 
     .header-container {
         width: calc(100% - 24px) !important;
-        max-width: 390px !important;
+        max-width: auto; !important;
     }
 
 
