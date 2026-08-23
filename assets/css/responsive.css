@@ -1348,83 +1348,124 @@ body {
 @media (max-width:390px){.header-container{width:calc(100% - 22px) !important;}.logo img{width:138px !important;}}
 
 /* ==========================================================
-   CONTACT PAGE — FINAL MOBILE FIX
+   CONTACT PAGE — MOBILE
+   Clean layout and ordering
 ========================================================== */
 
 @media (max-width: 768px) {
 
-    /* Keep header in the page flow */
-    .site-header {
-        position: sticky !important;
-        top: 0 !important;
-    }
-
-    /* Remove the incorrect 155px offset */
-    main {
-        padding-top: 0 !important;
-    }
-
-    /* Correct contact page ordering */
-    .contact-page .contact-content > .contact-intro-copy {
-        order: 3 !important;
-    }
-
-    .contact-page .contact-form {
-        order: 4 !important;
-    }
-
-    .contact-page .contact-content > .contact-response-copy {
-        order: 5 !important;
-    }
-
-    .contact-page .contact-content > .contact-details {
-        order: 6 !important;
-    }
-
-}
-/* ==========================================================
-   CONTACT PAGE — MOBILE FINAL POLISH
-========================================================== */
-
-@media (max-width: 768px) {
-
-    /* Contact section spacing */
+    /* Contact section */
     .contact-page .contact-section {
-        padding-top: 42px !important;
-        padding-bottom: 45px !important;
+        padding: 42px 0 55px !important;
     }
 
-    /* Make sure the Get In Touch label is visible */
+    /* One column mobile layout */
+    .contact-page .contact-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
+    /*
+       Allows the intro elements and form to be ordered
+       as individual items on mobile
+    */
+    .contact-page .contact-content {
+        display: contents !important;
+    }
+
+    /* ---------- INTRO ---------- */
+
     .contact-page .contact-content > .section-label {
-        display: inline-block !important;
+        display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
         order: 1 !important;
-        margin-bottom: 12px !important;
+
+        width: 100% !important;
+        margin: 0 0 14px !important;
+
+        text-align: center !important;
     }
 
     .contact-page .contact-content > h2 {
         order: 2 !important;
-        margin-top: 0 !important;
-        margin-bottom: 28px !important;
+
+        width: 100% !important;
+        margin: 0 0 20px !important;
+
+        text-align: center !important;
     }
 
-    /* Keep the intro comfortably spaced */
-    .contact-page .contact-intro-copy {
-        margin-bottom: 10px !important;
+    .contact-page .contact-content > .contact-intro-copy {
+        order: 3 !important;
+
+        width: 100% !important;
+        max-width: 600px !important;
+        margin: 0 auto 26px !important;
+
+        text-align: center !important;
     }
 
-    /* Reduce space around the response and social links */
-    .contact-page .contact-response-copy {
-        margin-top: 20px !important;
-        margin-bottom: 28px !important;
+    /* ---------- FORM ---------- */
+
+    .contact-page .contact-form {
+        order: 4 !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        box-sizing: border-box !important;
+
+        margin: 0 0 30px !important;
+        padding: 30px 22px !important;
     }
 
-    .contact-page .contact-details {
-        margin-bottom: 0 !important;
+    .contact-page .contact-form input,
+    .contact-page .contact-form select,
+    .contact-page .contact-form textarea {
+        box-sizing: border-box !important;
+        padding: 14px 15px !important;
+        font-size: 13px !important;
     }
 
-    /* Bring the FAQ section slightly closer */
+    .contact-page .contact-form textarea {
+        min-height: 150px !important;
+    }
+
+    /* ---------- RESPONSE TEXT ---------- */
+
+    .contact-page .contact-content > .contact-response-copy {
+        order: 5 !important;
+
+        width: 100% !important;
+        max-width: 600px !important;
+        margin: 0 auto 25px !important;
+
+        text-align: center !important;
+    }
+
+    /* ---------- CONTACT DETAILS ---------- */
+
+    .contact-page .contact-content > .contact-details {
+        order: 6 !important;
+
+        width: 100% !important;
+        margin: 0 !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+
+        text-align: center !important;
+    }
+
+    .contact-page .contact-details a {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    /* FAQ spacing */
     .contact-page .faq-section {
         padding-top: 55px !important;
         padding-bottom: 65px !important;
@@ -1432,9 +1473,8 @@ body {
 
 }
 
-/* ==========================================================
    CONTACT PAGE — MOBILE HEADING FIX
-========================================================== */
+
 
 @media (max-width: 768px) {
 
