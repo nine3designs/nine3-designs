@@ -1382,3 +1382,52 @@ body {
     }
 
 }
+/* ==========================================================
+   CONTACT PAGE — MOBILE FINAL POLISH
+========================================================== */
+
+@media (max-width: 768px) {
+
+    /* Contact section spacing */
+    .contact-page .contact-section {
+        padding-top: 42px !important;
+        padding-bottom: 45px !important;
+    }
+
+    /* Make sure the Get In Touch label is visible */
+    .contact-page .contact-content > .section-label {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        order: 1 !important;
+        margin-bottom: 12px !important;
+    }
+
+    .contact-page .contact-content > h2 {
+        order: 2 !important;
+        margin-top: 0 !important;
+        margin-bottom: 28px !important;
+    }
+
+    /* Keep the intro comfortably spaced */
+    .contact-page .contact-intro-copy {
+        margin-bottom: 10px !important;
+    }
+
+    /* Reduce space around the response and social links */
+    .contact-page .contact-response-copy {
+        margin-top: 20px !important;
+        margin-bottom: 28px !important;
+    }
+
+    .contact-page .contact-details {
+        margin-bottom: 0 !important;
+    }
+
+    /* Bring the FAQ section slightly closer */
+    .contact-page .faq-section {
+        padding-top: 55px !important;
+        padding-bottom: 65px !important;
+    }
+
+}
