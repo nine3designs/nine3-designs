@@ -1346,3 +1346,19 @@ body {
     .main-nav .sister-site-mobile a{min-height:46px !important;background:#C8A96A !important;color:#404A3B !important;border:1px solid #C8A96A !important;border-radius:2px !important;font-size:11px !important;letter-spacing:1.1px !important;}
 }
 @media (max-width:390px){.header-container{width:calc(100% - 22px) !important;}.logo img{width:138px !important;}}
+
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 155px;
+    }
+
+    main {
+        padding-top: var(--header-height);
+    }
+
+    .contact-page,
+    .contact-hero {
+        padding-top: 0;
+    }
+}
