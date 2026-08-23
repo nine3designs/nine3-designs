@@ -1433,30 +1433,38 @@ body {
 }
 
 /* ==========================================================
-   CONTACT PAGE — MOBILE TEXT ALIGNMENT
+   CONTACT PAGE — MOBILE HEADING FIX
 ========================================================== */
 
 @media (max-width: 768px) {
 
-    /* Centre the contact introduction */
-    .contact-page .contact-content {
-        text-align: center !important;
-    }
-
-    .contact-page .contact-content > h2,
-    .contact-page .contact-content > p {
-        text-align: center !important;
-    }
-
-    /* Ensure GET IN TOUCH is visible and centred */
-    .contact-page .contact-content > .section-label {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        text-align: center !important;
+    /* Centre all contact introduction content */
+    .contact-page .contact-grid > .contact-content > h2,
+    .contact-page .contact-grid > .contact-content > p {
         width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* The original label doesn't behave reliably with display: contents */
+    .contact-page .contact-content > .section-label {
+        display: none !important;
+    }
+
+    /* Add GET IN TOUCH directly above the heading */
+    .contact-page .contact-content > h2::before {
+        content: "GET IN TOUCH";
+        display: block;
+        margin-bottom: 18px;
+
         color: #C8A96A !important;
-        margin: 0 auto 14px !important;
+
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 4px;
+        line-height: 1.2;
+
+        text-transform: uppercase;
+        text-align: center;
     }
 
 }
