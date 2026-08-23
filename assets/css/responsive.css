@@ -1491,7 +1491,7 @@ body {
     }
 
     /* Add GET IN TOUCH directly above the heading */
-    .contact-page .contact-content > h2::before {
+    .contact-page .contact-content > h2::after {
         content: "GET IN TOUCH";
         display: block;
         margin-bottom: 18px;
