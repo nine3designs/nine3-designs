@@ -1431,3 +1431,32 @@ body {
     }
 
 }
+
+/* ==========================================================
+   CONTACT PAGE — MOBILE TEXT ALIGNMENT
+========================================================== */
+
+@media (max-width: 768px) {
+
+    /* Centre the contact introduction */
+    .contact-page .contact-content {
+        text-align: center !important;
+    }
+
+    .contact-page .contact-content > h2,
+    .contact-page .contact-content > p {
+        text-align: center !important;
+    }
+
+    /* Ensure GET IN TOUCH is visible and centred */
+    .contact-page .contact-content > .section-label {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        text-align: center !important;
+        width: 100% !important;
+        color: #C8A96A !important;
+        margin: 0 auto 14px !important;
+    }
+
+}
