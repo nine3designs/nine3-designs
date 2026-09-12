@@ -20,6 +20,12 @@
   </url>
 
   <url>
+    <loc>https://nine3designs.co.uk/pricing.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://nine3designs.co.uk/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
