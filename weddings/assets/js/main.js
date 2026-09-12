@@ -98,4 +98,45 @@ document.addEventListener("DOMContentLoaded", () => {
         updateBackToTop();
         backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
     }
+
+    // Product enquiry basket — deliberately an enquiry rather than a payment checkout.
+    const basketButtons = document.querySelectorAll(".add-to-basket");
+    const basketItems = document.querySelector(".basket-items");
+    const basketField = document.querySelector("#selected-products");
+    const basketCounts = document.querySelectorAll("[data-basket-count]");
+    const basket = [];
+
+    const renderBasket = () => {
+        if (!basketItems) return;
+        basketItems.innerHTML = basket.length
+            ? basket.map((item, index) => `<div class="basket-item"><span><strong>${item.name}</strong> · ${item.price}</span><button type="button" data-remove-basket-item="${index}">Remove</button></div>`).join("")
+            : '<p class="basket-empty">Your basket is waiting for a few lovely things.</p>';
+        if (basketField) basketField.value = basket.map(item => `${item.name} (${item.price})`).join(", ");
+        basketCounts.forEach(count => { count.textContent = basket.length; });
+    };
+
+    basketButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const item = { name: button.dataset.product, price: button.dataset.price };
+            if (!basket.some(existing => existing.name === item.name)) basket.push(item);
+            button.classList.add("is-added");
+            button.textContent = "Added to enquiry";
+            renderBasket();
+        });
+    });
+
+    if (basketItems) {
+        basketItems.addEventListener("click", event => {
+            const removeButton = event.target.closest("[data-remove-basket-item]");
+            if (!removeButton) return;
+            const removed = basket.splice(Number(removeButton.dataset.removeBasketItem), 1)[0];
+            basketButtons.forEach(button => {
+                if (button.dataset.product === removed.name) {
+                    button.classList.remove("is-added");
+                    button.textContent = "Add to enquiry";
+                }
+            });
+            renderBasket();
+        });
+    }
 });
