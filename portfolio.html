@@ -36,56 +36,56 @@
 
     <style>
 
-        /* ==================================================
-           PORTFOLIO PAGE
-        ================================================== */
+        /* =========================================================
+           PORTFOLIO
+        ========================================================= */
 
         :root {
-            --portfolio-cream: #fef9f3;
-            --portfolio-green: #404a3b;
-            --portfolio-gold: #c8a96a;
-            --portfolio-muted: #8c7650;
-            --portfolio-line: rgba(64, 74, 59, 0.16);
+            --cream: #fef9f3;
+            --green: #404a3b;
+            --gold: #c8a96a;
+            --brown: #8c7650;
+            --line: rgba(64, 74, 59, 0.16);
         }
 
 
-        /* ==================================================
+        /* =========================================================
            HERO
-        ================================================== */
+        ========================================================= */
 
         .portfolio-hero {
-            min-height: 78vh;
+            min-height: 82vh;
             display: flex;
             align-items: flex-end;
-            padding: 8rem 0 7rem;
-            background: var(--portfolio-cream);
+            padding: 8rem 0 6rem;
+            background: var(--cream);
         }
 
-        .portfolio-hero-inner {
+        .portfolio-hero .container {
             width: 100%;
         }
 
         .portfolio-hero .section-label {
-            display: inline-block;
-            margin-bottom: 1.5rem;
+            display: block;
+            margin-bottom: 2rem;
         }
 
         .portfolio-hero h1 {
-            max-width: 1050px;
+            max-width: 1100px;
             margin: 0;
-            font-size: clamp(4rem, 9vw, 9rem);
-            line-height: 0.88;
-            letter-spacing: -0.055em;
-            color: var(--portfolio-green);
+            color: var(--green);
+            font-size: clamp(4.5rem, 10vw, 10rem);
+            line-height: 0.84;
+            letter-spacing: -0.06em;
         }
 
         .portfolio-hero-bottom {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--portfolio-line);
+            gap: 3rem;
+            margin-top: 5rem;
+            padding-top: 1.75rem;
+            border-top: 1px solid var(--line);
         }
 
         .portfolio-hero-bottom p {
@@ -95,51 +95,52 @@
             line-height: 1.7;
         }
 
-        .portfolio-scroll {
+        .portfolio-index {
             display: flex;
-            align-items: center;
             justify-content: flex-end;
+            align-items: center;
             gap: 0.75rem;
-            color: var(--portfolio-muted);
-            font-size: 0.75rem;
+            color: var(--brown);
+            font-size: 0.72rem;
             font-weight: 700;
-            text-transform: uppercase;
             letter-spacing: 0.14em;
+            text-transform: uppercase;
         }
 
-        .portfolio-scroll span {
-            width: 36px;
+        .portfolio-index::before {
+            content: "";
+            width: 45px;
             height: 1px;
-            background: var(--portfolio-gold);
+            background: var(--gold);
         }
 
 
-        /* ==================================================
+        /* =========================================================
            INTRO
-        ================================================== */
+        ========================================================= */
 
-        .portfolio-intro-section {
-            padding: 8rem 0 5rem;
-            background: var(--portfolio-cream);
+        .portfolio-intro {
+            padding: 7rem 0 5rem;
+            background: var(--cream);
         }
 
         .portfolio-intro-grid {
             display: grid;
-            grid-template-columns: 1fr 1.3fr;
+            grid-template-columns: 1fr 1.4fr;
             gap: 5rem;
             align-items: end;
         }
 
-        .portfolio-intro-grid h2 {
+        .portfolio-intro h2 {
             margin: 0;
-            font-size: clamp(2.5rem, 5vw, 5rem);
-            line-height: 0.95;
-            letter-spacing: -0.045em;
-            color: var(--portfolio-green);
+            color: var(--green);
+            font-size: clamp(3rem, 6vw, 6rem);
+            line-height: 0.9;
+            letter-spacing: -0.05em;
         }
 
         .portfolio-intro-copy {
-            max-width: 620px;
+            max-width: 650px;
         }
 
         .portfolio-intro-copy p {
@@ -149,18 +150,18 @@
         }
 
 
-        /* ==================================================
-           PROJECTS
-        ================================================== */
+        /* =========================================================
+           PROJECT SECTION
+        ========================================================= */
 
-        .portfolio-projects {
-            padding: 2rem 0 8rem;
-            background: var(--portfolio-cream);
+        .portfolio-work {
+            padding-bottom: 7rem;
+            background: var(--cream);
         }
 
         .portfolio-project {
             padding: 6rem 0;
-            border-top: 1px solid var(--portfolio-line);
+            border-top: 1px solid var(--line);
         }
 
         .portfolio-project:first-child {
@@ -168,74 +169,76 @@
         }
 
 
-        /* Project Header */
+        /* =========================================================
+           PROJECT META
+        ========================================================= */
 
         .project-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.75rem;
         }
 
         .project-number {
-            color: var(--portfolio-muted);
-            font-size: 0.75rem;
+            color: var(--brown);
+            font-size: 0.72rem;
             font-weight: 700;
             letter-spacing: 0.15em;
         }
 
-        .project-services {
-            color: var(--portfolio-muted);
+        .project-category {
+            color: var(--brown);
             font-size: 0.72rem;
             font-weight: 700;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            letter-spacing: 0.13em;
-            text-align: right;
         }
 
 
-        /* Project Title */
+        /* =========================================================
+           PROJECT HEADING
+        ========================================================= */
 
-        .project-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 3rem;
+        .project-heading {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+            align-items: end;
             margin-bottom: 2.5rem;
         }
 
-        .project-title h2 {
+        .project-heading h2 {
             margin: 0;
-            color: var(--portfolio-green);
-            font-size: clamp(3rem, 7vw, 7rem);
-            line-height: 0.88;
-            letter-spacing: -0.055em;
+            color: var(--green);
+            font-size: clamp(3.5rem, 7vw, 7.5rem);
+            line-height: 0.84;
+            letter-spacing: -0.06em;
         }
 
-        .project-title p {
-            max-width: 380px;
-            margin: 0 0 0.4rem;
+        .project-heading p {
+            max-width: 400px;
+            margin: 0 0 0.5rem;
             font-size: 1rem;
-            line-height: 1.7;
+            line-height: 1.75;
         }
 
 
-        /* ==================================================
-           PROJECT GALLERY
-        ================================================== */
+        /* =========================================================
+           PROJECT IMAGES
+        ========================================================= */
 
         .project-gallery {
             display: grid;
-            grid-template-columns: 1.7fr 1fr;
+            grid-template-columns: 1.65fr 1fr;
             gap: 1rem;
         }
 
-        .project-gallery-main {
+        .project-main-image {
             min-height: 650px;
         }
 
-        .project-gallery-side {
+        .project-side-images {
             display: grid;
             grid-template-rows: 1fr 1fr;
             gap: 1rem;
@@ -245,7 +248,7 @@
             position: relative;
             display: block;
             overflow: hidden;
-            background: #e9e3d9;
+            background: #e8e1d7;
         }
 
         .project-image img {
@@ -254,12 +257,12 @@
             height: 100%;
             object-fit: cover;
             transition:
-                transform 0.8s cubic-bezier(0.2, 0.65, 0.25, 1),
+                transform 0.8s cubic-bezier(.2, .65, .25, 1),
                 filter 0.5s ease;
         }
 
         .project-image:hover img {
-            transform: scale(1.035);
+            transform: scale(1.04);
         }
 
         .project-image::after {
@@ -267,16 +270,16 @@
             position: absolute;
             right: 1.25rem;
             bottom: 1.25rem;
-            padding: 0.65rem 0.85rem;
-            background: rgba(254, 249, 243, 0.92);
-            color: var(--portfolio-green);
-            font-size: 0.7rem;
+            padding: 0.7rem 0.9rem;
+            background: rgba(254, 249, 243, 0.94);
+            color: var(--green);
+            font-size: 0.68rem;
             font-weight: 700;
-            text-transform: uppercase;
             letter-spacing: 0.08em;
+            text-transform: uppercase;
             opacity: 0;
             transform: translateY(8px);
-            transition: 0.35s ease;
+            transition: 0.3s ease;
         }
 
         .project-image:hover::after {
@@ -284,41 +287,16 @@
             transform: translateY(0);
         }
 
-        .project-caption {
-            margin-top: 0.75rem;
-            color: var(--portfolio-muted);
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
 
-
-        /* ==================================================
-           ALTERNATING PROJECT
-        ================================================== */
-
-        .portfolio-project:nth-child(even) .project-gallery {
-            grid-template-columns: 1fr 1.7fr;
-        }
-
-        .portfolio-project:nth-child(even) .project-gallery-main {
-            order: 2;
-        }
-
-        .portfolio-project:nth-child(even) .project-gallery-side {
-            order: 1;
-        }
-
-
-        /* ==================================================
+        /* =========================================================
            PROJECT FOOTER
-        ================================================== */
+        ========================================================= */
 
         .project-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 2rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: start;
             margin-top: 2rem;
         }
 
@@ -326,125 +304,137 @@
             max-width: 700px;
             margin: 0;
             font-size: 1.05rem;
-            line-height: 1.7;
+            line-height: 1.75;
         }
 
         .project-link {
-            flex-shrink: 0;
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            padding-bottom: 0.45rem;
-            border-bottom: 1px solid var(--portfolio-gold);
-            color: var(--portfolio-green);
+            gap: 0.65rem;
+            color: var(--green);
             font-weight: 700;
             text-decoration: none;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 0.4rem;
+            white-space: nowrap;
             transition: 0.3s ease;
         }
 
         .project-link:hover {
-            color: var(--portfolio-muted);
+            color: var(--brown);
             gap: 0.9rem;
         }
 
 
-        /* ==================================================
-           TRUSTED SECTION
-        ================================================== */
+        /* =========================================================
+           ALTERNATING PROJECTS
+        ========================================================= */
 
-        .trusted-section {
-            padding: 8rem 0;
-            background: var(--portfolio-green);
-            color: var(--portfolio-cream);
+        .portfolio-project:nth-child(even) .project-gallery {
+            grid-template-columns: 1fr 1.65fr;
         }
 
-        .trusted-header {
+        .portfolio-project:nth-child(even) .project-main-image {
+            order: 2;
+        }
+
+        .portfolio-project:nth-child(even) .project-side-images {
+            order: 1;
+        }
+
+
+        /* =========================================================
+           TRUSTED
+        ========================================================= */
+
+        .trusted {
+            padding: 8rem 0;
+            background: var(--green);
+            color: var(--cream);
+        }
+
+        .trusted-heading {
             display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
             align-items: end;
         }
 
-        .trusted-header h2 {
+        .trusted h2 {
             margin: 0;
-            color: var(--portfolio-cream);
-            font-size: clamp(3rem, 6vw, 6rem);
-            line-height: 0.9;
-            letter-spacing: -0.05em;
+            color: var(--cream);
+            font-size: clamp(3.5rem, 7vw, 7rem);
+            line-height: 0.86;
+            letter-spacing: -0.055em;
         }
 
-        .trusted-header p {
+        .trusted-copy p {
             max-width: 500px;
             margin: 0;
             color: rgba(254, 249, 243, 0.72);
-            line-height: 1.7;
+            line-height: 1.75;
         }
-
-
-        /* Client Logos */
 
         .client-logos {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+            gap: 1rem;
             margin-top: 5rem;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(254, 249, 243, 0.2);
         }
 
         .client-logo {
+            min-height: 110px;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100px;
-            padding: 1rem;
-            border: 1px solid rgba(254, 249, 243, 0.12);
-            transition: 0.35s ease;
+            border: 1px solid rgba(254, 249, 243, 0.15);
+            transition: 0.3s ease;
         }
 
         .client-logo:hover {
-            border-color: rgba(200, 169, 106, 0.6);
+            border-color: rgba(200, 169, 106, 0.7);
             transform: translateY(-4px);
         }
 
         .client-logo img {
-            max-width: 80%;
+            max-width: 75%;
             max-height: 60px;
             object-fit: contain;
             filter: brightness(0) invert(1);
-            opacity: 0.72;
+            opacity: 0.7;
         }
 
 
-        /* ==================================================
+        /* =========================================================
            TESTIMONIALS
-        ================================================== */
+        ========================================================= */
 
-        .testimonials-section {
+        .testimonials {
             padding: 8rem 0;
-            background: var(--portfolio-gold);
-            color: var(--portfolio-green);
+            background: var(--gold);
+            color: var(--green);
         }
 
-        .testimonials-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 3rem;
+        .testimonials-heading {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 5rem;
+            align-items: end;
             margin-bottom: 4rem;
         }
 
-        .testimonials-header h2 {
+        .testimonials h2 {
             margin: 0;
-            font-size: clamp(3rem, 6vw, 6rem);
-            line-height: 0.9;
-            letter-spacing: -0.05em;
+            color: var(--green);
+            font-size: clamp(3.5rem, 7vw, 7rem);
+            line-height: 0.86;
+            letter-spacing: -0.055em;
         }
 
-        .testimonials-header p {
-            max-width: 360px;
+        .testimonials-heading p {
+            max-width: 450px;
             margin: 0;
-            line-height: 1.7;
+            line-height: 1.75;
         }
 
         .testimonial-grid {
@@ -456,68 +446,68 @@
 
         .testimonial {
             margin: 0;
-            padding: 2.5rem;
-            background: var(--portfolio-gold);
+            padding: 2.75rem;
+            background: var(--gold);
         }
 
         .testimonial-mark {
             display: block;
             margin-bottom: 2rem;
-            color: var(--portfolio-muted);
+            color: var(--brown);
             font-family: Georgia, serif;
-            font-size: 3rem;
+            font-size: 4rem;
             line-height: 0.5;
         }
 
         .testimonial p {
             margin: 0;
-            font-size: 1.1rem;
-            line-height: 1.7;
+            font-size: 1.05rem;
+            line-height: 1.75;
         }
 
         .testimonial cite {
             display: block;
             margin-top: 2rem;
+            font-size: 0.72rem;
             font-style: normal;
-            font-size: 0.75rem;
             font-weight: 700;
-            text-transform: uppercase;
             letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
 
-        /* ==================================================
+        /* =========================================================
            CTA
-        ================================================== */
+        ========================================================= */
 
         .portfolio-cta {
             padding: 9rem 0;
-            background: var(--portfolio-cream);
+            background: var(--cream);
         }
 
         .portfolio-cta-inner {
-            max-width: 1100px;
+            max-width: 1150px;
         }
 
         .portfolio-cta h2 {
-            margin: 1.25rem 0 2rem;
-            color: var(--portfolio-green);
-            font-size: clamp(3.5rem, 8vw, 8rem);
-            line-height: 0.88;
-            letter-spacing: -0.055em;
+            margin: 1.5rem 0 2rem;
+            color: var(--green);
+            font-size: clamp(4rem, 8vw, 8rem);
+            line-height: 0.84;
+            letter-spacing: -0.06em;
         }
 
         .portfolio-cta p {
-            max-width: 500px;
+            max-width: 520px;
             margin-bottom: 2.5rem;
             font-size: 1.1rem;
-            line-height: 1.7;
+            line-height: 1.75;
         }
 
 
-        /* ==================================================
-           MOBILE
-        ================================================== */
+        /* =========================================================
+           TABLET
+        ========================================================= */
 
         @media (max-width: 900px) {
 
@@ -532,11 +522,11 @@
                 margin-top: 3rem;
             }
 
-            .portfolio-scroll {
+            .portfolio-index {
                 justify-content: flex-start;
             }
 
-            .portfolio-intro-section {
+            .portfolio-intro {
                 padding: 5rem 0 3rem;
             }
 
@@ -545,20 +535,13 @@
                 gap: 2rem;
             }
 
-            .portfolio-projects {
-                padding-bottom: 4rem;
-            }
-
             .portfolio-project {
-                padding: 4rem 0;
+                padding: 4.5rem 0;
             }
 
-            .project-title {
-                display: block;
-            }
-
-            .project-title p {
-                margin-top: 1.5rem;
+            .project-heading {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
             .project-gallery,
@@ -566,42 +549,31 @@
                 grid-template-columns: 1fr;
             }
 
-            .portfolio-project:nth-child(even) .project-gallery-main {
+            .portfolio-project:nth-child(even) .project-main-image,
+            .portfolio-project:nth-child(even) .project-side-images {
                 order: initial;
             }
 
-            .portfolio-project:nth-child(even) .project-gallery-side {
-                order: initial;
-            }
-
-            .project-gallery-main {
+            .project-main-image {
                 min-height: 500px;
             }
 
-            .project-gallery-side {
+            .project-side-images {
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: none;
             }
 
-            .project-image {
-                min-height: 220px;
+            .project-side-images .project-image {
+                min-height: 250px;
             }
 
             .project-footer {
-                display: block;
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
-            .project-link {
-                display: inline-flex;
-                margin-top: 1.5rem;
-            }
-
-            .trusted-section,
-            .testimonials-section {
-                padding: 5rem 0;
-            }
-
-            .trusted-header {
+            .trusted-heading,
+            .testimonials-heading {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -611,16 +583,13 @@
                 margin-top: 3rem;
             }
 
-            .testimonials-header {
-                display: block;
-            }
-
-            .testimonials-header p {
-                margin-top: 1.5rem;
-            }
-
             .testimonial-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .trusted,
+            .testimonials {
+                padding: 5.5rem 0;
             }
 
             .portfolio-cta {
@@ -629,10 +598,14 @@
         }
 
 
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
         @media (max-width: 600px) {
 
             .portfolio-hero h1 {
-                font-size: clamp(3.5rem, 17vw, 5.5rem);
+                font-size: clamp(3.6rem, 17vw, 5.5rem);
             }
 
             .portfolio-hero-bottom p {
@@ -643,33 +616,29 @@
                 display: block;
             }
 
-            .project-services {
+            .project-category {
+                display: block;
                 margin-top: 0.75rem;
-                text-align: left;
             }
 
-            .project-title h2 {
-                font-size: clamp(3rem, 15vw, 5rem);
+            .project-heading h2 {
+                font-size: clamp(3.2rem, 16vw, 5rem);
             }
 
-            .project-gallery-main {
+            .project-main-image {
                 min-height: 380px;
             }
 
-            .project-gallery-side {
+            .project-side-images {
                 grid-template-columns: 1fr;
             }
 
-            .project-image {
+            .project-side-images .project-image {
                 min-height: 280px;
             }
 
-            .client-logos {
-                gap: 0.75rem;
-            }
-
             .client-logo {
-                min-height: 80px;
+                min-height: 85px;
             }
 
             .testimonial {
@@ -677,8 +646,9 @@
             }
 
             .portfolio-cta h2 {
-                font-size: clamp(3.2rem, 15vw, 5rem);
+                font-size: clamp(3.5rem, 16vw, 5.5rem);
             }
+
         }
 
     </style>
@@ -688,9 +658,9 @@
 <body>
 
 
-    <!-- ==================================================
+    <!-- =========================================================
          HEADER
-    ================================================== -->
+    ========================================================= -->
 
     <header class="site-header">
 
@@ -712,6 +682,7 @@
                 class="main-nav"
                 aria-label="Main navigation"
             >
+
                 <ul>
 
                     <li>
@@ -754,6 +725,7 @@
                     </li>
 
                 </ul>
+
             </nav>
 
 
@@ -782,20 +754,20 @@
     </header>
 
 
-    <!-- ==================================================
+    <!-- =========================================================
          MAIN
-    ================================================== -->
+    ========================================================= -->
 
     <main>
 
 
-        <!-- ==================================================
+        <!-- =====================================================
              HERO
-        ================================================== -->
+        ===================================================== -->
 
         <section class="portfolio-hero">
 
-            <div class="container portfolio-hero-inner">
+            <div class="container">
 
                 <span class="section-label">
                     Our work
@@ -815,8 +787,7 @@
                         purpose.
                     </p>
 
-                    <div class="portfolio-scroll">
-                        <span></span>
+                    <div class="portfolio-index">
                         Selected projects
                     </div>
 
@@ -827,15 +798,16 @@
         </section>
 
 
-        <!-- ==================================================
+        <!-- =====================================================
              INTRO
-        ================================================== -->
+        ===================================================== -->
 
-        <section class="portfolio-intro-section">
+        <section class="portfolio-intro">
 
             <div class="container portfolio-intro-grid">
 
                 <div>
+
                     <span class="section-label">
                         Selected projects
                     </span>
@@ -844,6 +816,7 @@
                         More than<br>
                         a moment.
                     </h2>
+
                 </div>
 
                 <div class="portfolio-intro-copy">
@@ -862,18 +835,18 @@
         </section>
 
 
-        <!-- ==================================================
+        <!-- =====================================================
              PROJECTS
-        ================================================== -->
+        ===================================================== -->
 
-        <section class="portfolio-projects">
+        <section class="portfolio-work">
 
             <div class="container">
 
 
-                <!-- ==================================================
-                     PROJECT 01 — ESQUARED
-                ================================================== -->
+                <!-- =================================================
+                     PROJECT 01
+                ================================================= -->
 
                 <article class="portfolio-project">
 
@@ -883,14 +856,14 @@
                             01 / 04
                         </span>
 
-                        <span class="project-services">
+                        <span class="project-category">
                             Brand identity · Print · Launch
                         </span>
 
                     </div>
 
 
-                    <div class="project-title">
+                    <div class="project-heading">
 
                         <h2>
                             ESquared<br>
@@ -908,7 +881,7 @@
 
                     <div class="project-gallery">
 
-                        <div class="project-gallery-main">
+                        <div class="project-main-image">
 
                             <a
                                 class="project-image"
@@ -921,14 +894,10 @@
                                 >
                             </a>
 
-                            <div class="project-caption">
-                                Primary identity
-                            </div>
-
                         </div>
 
 
-                        <div class="project-gallery-side">
+                        <div class="project-side-images">
 
                             <a
                                 class="project-image"
@@ -981,9 +950,9 @@
                 </article>
 
 
-                <!-- ==================================================
-                     PROJECT 02 — OSG
-                ================================================== -->
+                <!-- =================================================
+                     PROJECT 02
+                ================================================= -->
 
                 <article class="portfolio-project">
 
@@ -993,14 +962,14 @@
                             02 / 04
                         </span>
 
-                        <span class="project-services">
+                        <span class="project-category">
                             Brand identity · Digital
                         </span>
 
                     </div>
 
 
-                    <div class="project-title">
+                    <div class="project-heading">
 
                         <h2>
                             OSG Home<br>
@@ -1018,7 +987,7 @@
 
                     <div class="project-gallery">
 
-                        <div class="project-gallery-main">
+                        <div class="project-main-image">
 
                             <a
                                 class="project-image"
@@ -1031,14 +1000,10 @@
                                 >
                             </a>
 
-                            <div class="project-caption">
-                                Primary identity
-                            </div>
-
                         </div>
 
 
-                        <div class="project-gallery-side">
+                        <div class="project-side-images">
 
                             <a
                                 class="project-image"
@@ -1091,9 +1056,9 @@
                 </article>
 
 
-                <!-- ==================================================
-                     PROJECT 03 — TAILS & TIDES
-                ================================================== -->
+                <!-- =================================================
+                     PROJECT 03
+                ================================================= -->
 
                 <article class="portfolio-project">
 
@@ -1103,14 +1068,14 @@
                             03 / 04
                         </span>
 
-                        <span class="project-services">
+                        <span class="project-category">
                             Brand identity · Packaging
                         </span>
 
                     </div>
 
 
-                    <div class="project-title">
+                    <div class="project-heading">
 
                         <h2>
                             Tails<br>
@@ -1128,7 +1093,7 @@
 
                     <div class="project-gallery">
 
-                        <div class="project-gallery-main">
+                        <div class="project-main-image">
 
                             <a
                                 class="project-image"
@@ -1141,14 +1106,10 @@
                                 >
                             </a>
 
-                            <div class="project-caption">
-                                Primary identity
-                            </div>
-
                         </div>
 
 
-                        <div class="project-gallery-side">
+                        <div class="project-side-images">
 
                             <a
                                 class="project-image"
@@ -1201,9 +1162,9 @@
                 </article>
 
 
-                <!-- ==================================================
-                     PROJECT 04 — NORDKUST
-                ================================================== -->
+                <!-- =================================================
+                     PROJECT 04
+                ================================================= -->
 
                 <article class="portfolio-project">
 
@@ -1213,14 +1174,14 @@
                             04 / 04
                         </span>
 
-                        <span class="project-services">
+                        <span class="project-category">
                             Brand identity · Packaging
                         </span>
 
                     </div>
 
 
-                    <div class="project-title">
+                    <div class="project-heading">
 
                         <h2>
                             Nordkust<br>
@@ -1238,7 +1199,7 @@
 
                     <div class="project-gallery">
 
-                        <div class="project-gallery-main">
+                        <div class="project-main-image">
 
                             <a
                                 class="project-image"
@@ -1251,14 +1212,10 @@
                                 >
                             </a>
 
-                            <div class="project-caption">
-                                Primary identity
-                            </div>
-
                         </div>
 
 
-                        <div class="project-gallery-side">
+                        <div class="project-side-images">
 
                             <a
                                 class="project-image"
@@ -1315,15 +1272,15 @@
         </section>
 
 
-        <!-- ==================================================
+        <!-- =====================================================
              TRUSTED BY
-        ================================================== -->
+        ===================================================== -->
 
-        <section class="trusted-section">
+        <section class="trusted">
 
             <div class="container">
 
-                <div class="trusted-header">
+                <div class="trusted-heading">
 
                     <div>
 
@@ -1339,12 +1296,17 @@
 
                     </div>
 
-                    <p>
-                        From independent businesses to ambitious
-                        new brands, Nine3 works with people who care
-                        about how their business is seen, understood
-                        and remembered.
-                    </p>
+
+                    <div class="trusted-copy">
+
+                        <p>
+                            From independent businesses to ambitious
+                            new brands, Nine3 works with people who
+                            care about how their business is seen,
+                            understood and remembered.
+                        </p>
+
+                    </div>
 
                 </div>
 
@@ -1386,15 +1348,15 @@
         </section>
 
 
-        <!-- ==================================================
+        <!-- =====================================================
              TESTIMONIALS
-        ================================================== -->
+        ===================================================== -->
 
-        <section class="testimonials-section">
+        <section class="testimonials">
 
             <div class="container">
 
-                <div class="testimonials-header">
+                <div class="testimonials-heading">
 
                     <div>
 
@@ -1408,6 +1370,7 @@
                         </h2>
 
                     </div>
+
 
                     <p>
                         Great design is a collaboration. Here's
@@ -1481,9 +1444,9 @@
         </section>
 
 
-        <!-- ==================================================
+        <!-- =====================================================
              CTA
-        ================================================== -->
+        ===================================================== -->
 
         <section class="portfolio-cta">
 
@@ -1523,9 +1486,9 @@
     </main>
 
 
-    <!-- ==================================================
+    <!-- =========================================================
          FOOTER
-    ================================================== -->
+    ========================================================= -->
 
     <footer class="site-footer">
 
@@ -1597,9 +1560,8 @@
     </footer>
 
 
-    <!-- Site JavaScript -->
+    <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>
