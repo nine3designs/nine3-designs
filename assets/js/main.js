@@ -485,3 +485,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const toggle = document.querySelector(".mobile-toggle");
+    const nav = document.querySelector(".main-nav");
+
+    if (!toggle || !nav) return;
+
+    toggle.addEventListener("click", () => {
+
+        const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+        toggle.setAttribute(
+            "aria-expanded",
+            String(!isOpen)
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            isOpen ? "Open navigation" : "Close navigation"
+        );
+
+        nav.classList.toggle("is-open", !isOpen);
+
+    });
+
+
+    nav.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            toggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            toggle.setAttribute(
+                "aria-label",
+                "Open navigation"
+            );
+
+            nav.classList.remove("is-open");
+
+        });
+
+    });
+
+});
