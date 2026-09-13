@@ -602,7 +602,7 @@ ul {
 
     gap: 18px;
 
-    max-width: 720px;
+    max-width: 450px;
 
     margin-left: auto;
     margin-right: auto;
@@ -625,8 +625,8 @@ ul {
 
     display: block;
 
-    width: 70%;
-    height: 70%;
+    width: 50%;
+    height: 50%;
 
     overflow: hidden;
 
@@ -655,7 +655,7 @@ ul {
     min-width: 70px;
     height: 34px;
 
-    padding: 0 12px;
+    padding: 0 15px;
 
     border-radius: 999px;
 
@@ -676,8 +676,8 @@ ul {
 }
 
 .project-image img {
-    width: 70%;
-    height: 70%;
+    width: 50%;
+    height: 50%;
 
     object-fit: cover;
 
@@ -707,7 +707,7 @@ ul {
 
     align-items: end;
 
-    max-width: 1120px;
+    max-width: 720px;
 
     margin: 32px auto 0;
 }
@@ -781,7 +781,7 @@ ul {
 
 .trusted-heading {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
+    grid-template-columns: minmax(1, 1fr) minmax(480px, 0.7fr);
 
     gap: 120px;
 
