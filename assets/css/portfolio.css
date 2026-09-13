@@ -293,14 +293,14 @@
 
     color: var(--primary-dark);
 
-    font-size: clamp(3.5rem, 6.8vw, 7.5rem);
+    font-size: clamp(2.6rem, 4.6vw, 4.4rem);
     font-weight: 400;
-    letter-spacing: -0.065em;
-    line-height: 0.86;
+    letter-spacing: -0.06em;
+    line-height: 0.95;
 }
 
 .project-heading h2 span {
-    color: var(--text-light);
+    color: var(--accent);
 }
 
 .project-heading p {
@@ -453,9 +453,13 @@
 
     display: inline-flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 
-    padding-bottom: 7px;
+    padding: 14px 28px;
+
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
 
     color: var(--primary-dark);
 
@@ -463,9 +467,20 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+
+    transition: background .3s ease, color .3s ease, transform .3s ease;
+}
+
+.project-link:hover {
+    background: transparent;
+    color: var(--accent-deep);
+
+    transform: translateY(-2px);
 }
 
 .project-link::after {
+    display: none;
+
     content: "";
 
     position: absolute;
@@ -498,7 +513,7 @@
 ========================================================= */
 
 main section.trusted {
-    padding: 145px 0;
+    padding: 115px 0 105px;
 
     background: var(--primary-dark);
     color: var(--off-white);
@@ -545,7 +560,7 @@ main section.trusted .trusted-copy p {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
-    margin-top: 100px;
+    margin-top: 70px;
 
     border-top: 1px solid rgba(254, 249, 243, 0.14);
     border-bottom: 1px solid rgba(254, 249, 243, 0.14);
@@ -569,12 +584,12 @@ main section.trusted .trusted-copy p {
 
 .client-logo img {
     width: auto;
-    max-width: 130px;
-    max-height: 55px;
+    max-width: 150px;
+    max-height: 96px;
 
     object-fit: contain;
 
-    opacity: 0.62;
+    opacity: 0.85;
 
     filter: grayscale(1) brightness(0) invert(1);
 
@@ -874,7 +889,7 @@ main section.trusted .trusted-copy p {
     }
 
     .project-heading h2 {
-        font-size: clamp(3.4rem, 13vw, 6rem);
+        font-size: clamp(2.5rem, 8.5vw, 3.8rem);
     }
 
     .project-heading p {
@@ -1046,9 +1061,9 @@ main section.trusted .trusted-copy p {
     }
 
     .project-heading h2 {
-        font-size: clamp(3.1rem, 15vw, 5rem);
+        font-size: clamp(2.3rem, 10vw, 3.2rem);
 
-        line-height: 0.88;
+        line-height: 0.92;
     }
 
     .project-heading p {
@@ -1113,10 +1128,7 @@ main section.trusted .trusted-copy p {
         padding: 18px;
     }
 
-    .client-logo img {
-        max-width: 100px;
-        max-height: 42px;
-    }
+    .client-logo img { max-width: 110px; max-height: 74px; }
 
     .testimonial {
         padding: 35px 25px;
