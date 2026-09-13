@@ -1508,3 +1508,79 @@ body {
     }
 
 }
+
+
+/* =========================================================
+   SITE-WIDE DESIGN REFRESH — matches the Our Work language
+   Big, light, tightly-tracked headings · refined kickers ·
+   more generous page-hero presence. Loaded last on purpose.
+========================================================= */
+
+h1 {
+    font-size: clamp(3.2rem, 6.5vw, 6rem);
+    font-weight: 400;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+}
+
+h2 {
+    font-size: clamp(2.3rem, 4.4vw, 4rem);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 1.02;
+}
+
+h3 {
+    letter-spacing: -0.015em;
+}
+
+.section-title span {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.page-hero {
+    padding-top: 120px !important;
+    padding-bottom: 90px !important;
+}
+
+.page-hero h1 {
+    letter-spacing: -0.05em;
+}
+
+
+/* =========================================================
+   HOME — "WHAT WE DO" SPACING REFRESH
+========================================================= */
+
+.services .section-title {
+    margin-bottom: 3rem !important;
+}
+
+@media (max-width: 800px) {
+
+    .services .section-title {
+        margin-bottom: 2rem !important;
+    }
+
+    .services .section-title span {
+        margin-bottom: 0.6rem !important;
+    }
+
+    .services .section-title p {
+        margin-top: 0.7rem !important;
+    }
+
+    .services .services-grid {
+        gap: 13px !important;
+    }
+
+    .services .service-card {
+        padding: 1.55rem 1.35rem !important;
+    }
+
+    .services .service-card h3 {
+        margin-bottom: 9px !important;
+    }
+}

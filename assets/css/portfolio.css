@@ -839,7 +839,7 @@ main section.trusted .trusted-copy p {
     .portfolio-hero {
         min-height: auto;
 
-        padding: 75px 0 80px;
+        padding: 135px 0 85px;
     }
 
     .hero-content {
@@ -861,7 +861,7 @@ main section.trusted .trusted-copy p {
     }
 
     .portfolio-intro {
-        padding: 90px 0;
+        padding: 66px 0;
     }
 
     .portfolio-intro-grid {
@@ -875,7 +875,7 @@ main section.trusted .trusted-copy p {
     }
 
     .portfolio-project {
-        padding: 75px 0 85px;
+        padding: 60px 0 66px;
     }
 
     .project-meta {
@@ -931,24 +931,26 @@ main section.trusted .trusted-copy p {
 
     .project-link {
         justify-self: start;
+
+        padding: 15px 30px;
     }
 
     .trusted,
     .testimonials {
-        padding: 90px 0;
+        padding: 68px 0;
     }
 
     .trusted-heading,
     .testimonials-heading {
         grid-template-columns: 1fr;
 
-        gap: 45px;
+        gap: 32px;
     }
 
     .client-logos {
         grid-template-columns: repeat(2, 1fr);
 
-        margin-top: 65px;
+        margin-top: 46px;
     }
 
     .client-logo:nth-child(2) {
@@ -960,18 +962,38 @@ main section.trusted .trusted-copy p {
     }
 
     .testimonial-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: min(76%, 300px);
+
+        gap: 13px;
+
+        padding: 4px 22px 10px;
+        margin: 0 -22px;
+
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 22px;
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    .testimonial-grid::-webkit-scrollbar {
+        display: none;
     }
 
     .testimonial {
         min-height: auto;
 
-        border-right: 0;
-        border-bottom: 1px solid var(--light-grey);
-    }
+        scroll-snap-align: start;
 
-    .testimonial:last-child {
-        border-bottom: 0;
+        padding: 26px 24px;
+
+        background: #ffffff;
+
+        border: 1px solid var(--light-grey);
+        border-radius: 16px;
     }
 
     .portfolio-cta {
@@ -979,7 +1001,7 @@ main section.trusted .trusted-copy p {
     }
 
     .portfolio-cta-inner {
-        padding: 75px 40px;
+        padding: 58px 26px;
     }
 }
 
@@ -991,7 +1013,7 @@ main section.trusted .trusted-copy p {
 @media (max-width: 560px) {
 
     .portfolio-hero {
-        padding: 55px 0 65px;
+        padding: 118px 0 70px;
     }
 
     .hero-top {
@@ -1042,7 +1064,7 @@ main section.trusted .trusted-copy p {
     }
 
     .portfolio-project {
-        padding: 58px 0 65px;
+        padding: 48px 0 54px;
     }
 
     .project-meta {
@@ -1316,4 +1338,3 @@ main section.trusted .trusted-copy p {
         color: var(--primary-dark);
     }
 }
-
