@@ -820,7 +820,7 @@ main section.process h2 span {
 .process-step p {
     margin: 0;
 
-    color: rgba(254, 249, 243, 0.62);
+    color: var(--white);
 
     font-size: 0.9rem;
     line-height: 1.75;
