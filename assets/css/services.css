@@ -800,7 +800,7 @@ main section.process h2 span {
 }
 
 .process-step span {
-    color: var(--accent);
+    color: var(--accent);!important
 
     font-size: 1.9rem;
     font-weight: 300;
@@ -810,7 +810,7 @@ main section.process h2 span {
 .process-step h3 {
     margin: 18px 0 10px;
 
-    color: var(--white);
+    color: var(--white);!important
 
     font-size: 1.05rem;
     font-weight: 600;
@@ -820,7 +820,7 @@ main section.process h2 span {
 .process-step p {
     margin: 0;
 
-    color: var(--white);
+    color: var(--white);!important
 
     font-size: 0.9rem;
     line-height: 1.75;
