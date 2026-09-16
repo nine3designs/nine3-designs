@@ -591,8 +591,6 @@ main section.trusted .trusted-copy p {
 
     object-fit: contain;
 
-    opacity: 0.85;
-
     filter: grayscale(1) brightness(0) invert(1);
 
     transition:
@@ -601,7 +599,7 @@ main section.trusted .trusted-copy p {
 }
 
 .client-logo:hover img {
-    opacity: 1;
+    opacity: 80;
     transform: scale(1.04);
 }
 
