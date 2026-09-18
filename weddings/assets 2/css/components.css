@@ -1,0 +1,1066 @@
+/* ==========================================================
+   COMPONENTS
+========================================================== */
+
+.collection-card {
+
+    position: relative;
+
+}
+
+
+.c.collection-card::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: translateX(-50%);
+    transition: .35s ease;
+}
+
+.collection-card:hover::after {
+    width: 45px;
+}
+
+.collection-card:hover::after {
+
+    width: 45px;
+
+}
+
+
+.collection-image {
+
+    box-shadow: 0 10px 30px rgba(43,43,43,.04);
+
+}
+
+
+.journey {
+
+    padding: 130px 0;
+
+    text-align: center;
+
+    background: var(--green);
+
+}
+
+
+.journey h2 {
+
+    max-width: 700px;
+
+    margin: 0 auto 25px;
+
+    color: var(--ivory);
+
+    font-size: clamp(45px,6vw,70px);
+
+}
+
+
+.journey p {
+
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
+    color: rgba(254,249,243,.8);
+
+}
+
+
+.site-footer {
+
+    padding: 70px 0 25px;
+
+    background: var(--green-dark);
+
+    color: var(--ivory);
+
+}
+
+
+.footer-grid {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 50px;
+
+}
+
+
+.footer-logo {
+
+    width: 150px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.site-footer h4 {
+
+    margin-bottom: 18px;
+
+    color: var(--gold);
+
+    font-family: var(--font-body);
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.site-footer p,
+.site-footer li,
+.site-footer a {
+
+    color: rgba(254,249,243,.72);
+
+    font-size: 13px;
+
+}
+
+
+.site-footer li {
+
+    margin-bottom: 8px;
+
+}
+
+
+.site-footer a:hover {
+
+    color: var(--gold-light);
+
+}
+
+
+.footer-bottom {
+
+    margin-top: 50px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(254,249,243,.1);
+
+    text-align: center;
+
+}
+
+
+.footer-bottom p {
+
+    margin: 0;
+
+    font-size: 11px;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .footer-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+    }
+
+}
+/* ==========================================================
+   ABOUT CTA
+========================================================== */
+
+.about-cta {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 35px;
+
+}
+
+
+.about-cta .btn-gold {
+
+    min-width: 220px;
+
+    padding: 16px 30px;
+
+    background: var(--gold);
+
+    color: var(--ivory);
+
+    border: 1px solid var(--gold);
+
+    border-radius: 30px;
+
+    box-shadow: 0 8px 22px rgba(200, 169, 106, .18);
+
+}
+
+
+.about-cta .btn-gold:hover {
+
+    background: var(--green);
+
+    border-color: var(--green);
+
+    color: var(--ivory);
+
+    transform: translateY(-3px);
+
+}
+
+/* ==========================================================
+   NINE3 WEDDINGS V2 — PRODUCT BROWSER & ENQUIRY BASKET
+========================================================== */
+
+.products-hero {
+    padding: calc(var(--header-height) + 105px) 0 90px;
+    background: var(--ivory);
+    text-align: center;
+}
+
+.products-hero-content { max-width: 650px; margin: 0 auto; }
+
+.products-hero h1 {
+    margin: 12px 0 18px;
+    color: var(--green);
+    font-size: clamp(52px, 6vw, 76px);
+    line-height: .86;
+}
+
+.products-hero p { max-width: 550px; margin: 0 auto; line-height: 1.85; }
+
+.product-intro { padding: 28px 0; background: var(--green); text-align: center; }
+.product-intro .section-label { color: var(--gold-light); }
+.product-category-links { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 12px; }
+.product-category-links a { color: var(--ivory); font-family: var(--font-heading); font-size: 24px; }
+.product-category-links a:hover { color: var(--gold-light); }
+
+.product-section { padding: 105px 0; }
+.product-section-alt { background: var(--cream); }
+.product-section-heading { max-width: 560px; margin: 0 auto 55px; text-align: center; }
+.product-section-heading h2, .basket-layout h2 { margin: 12px 0 18px; color: var(--green); font-size: clamp(42px, 5vw, 62px); line-height: .92; }
+.product-section-heading p { line-height: 1.8; }
+
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.product-card { display: flex; flex-direction: column; overflow: hidden; background: var(--ivory); box-shadow: 0 12px 32px rgba(51, 60, 48, .08); transition: transform .35s ease, box-shadow .35s ease; }
+.product-card:hover { transform: translateY(-7px); box-shadow: 0 18px 38px rgba(51, 60, 48, .14); }
+.product-card > img { width: 100%; height: 250px; object-fit: cover; }
+.product-card > div { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 25px; }
+.product-card span { color: var(--gold); font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+.product-card h3 { margin: 7px 0 10px; color: var(--green); font-size: 35px; }
+.product-card p { margin: 0 0 17px; font-size: 13px; line-height: 1.7; }
+.product-card strong { margin-top: auto; color: var(--green); font-size: 14px; letter-spacing: .6px; }
+
+.add-to-basket { width: 100%; margin-top: 16px; padding: 13px 16px; border: 1px solid var(--green); background: transparent; color: var(--green); cursor: pointer; font-family: var(--font-body); font-size: 10px; font-weight: 600; letter-spacing: 1.1px; text-transform: uppercase; transition: .25s ease; }
+.add-to-basket:hover, .add-to-basket.is-added { background: var(--green); color: var(--ivory); }
+.basket-link span { display: inline-grid; min-width: 18px; height: 18px; place-items: center; margin-left: 5px; border-radius: 50%; background: var(--gold); color: var(--ivory); font-size: 10px; }
+
+.basket-section { padding: 105px 0; background: var(--green); color: var(--ivory); }
+.basket-layout { display: grid; grid-template-columns: .8fr 1fr; gap: 90px; align-items: start; }
+.basket-layout h2 { color: var(--ivory); }
+.basket-layout > div > p { max-width: 440px; line-height: 1.85; color: rgba(254,249,243,.78); }
+.basket-section .section-label { color: var(--gold-light); }
+.delivery-note { margin-top: 30px; padding: 20px; border-left: 1px solid var(--gold); background: rgba(254,249,243,.06); font-size: 13px; line-height: 1.75; }
+.delivery-note strong { color: var(--gold-light); }
+.basket-form { padding: 30px; background: var(--ivory); color: var(--text); }
+.basket-form label { display: block; margin: 17px 0 7px; color: var(--green); font-size: 10px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; }
+.basket-form input, .basket-form textarea { width: 100%; padding: 12px 13px; border: 1px solid rgba(64,74,59,.2); background: #fffdfa; color: var(--text); font: inherit; font-size: 13px; }
+.basket-form textarea { resize: vertical; }
+.basket-form .btn { width: 100%; margin-top: 22px; border: 0; cursor: pointer; }
+.basket-items { min-height: 50px; padding: 13px 15px; background: var(--cream); }
+.basket-empty { margin: 0; color: var(--text-light); font-size: 12px; }
+.basket-item { display: flex; justify-content: space-between; gap: 14px; padding: 6px 0; border-bottom: 1px solid rgba(64,74,59,.12); font-size: 12px; }
+.basket-item:last-child { border-bottom: 0; }
+.basket-item button { padding: 0; border: 0; background: none; color: var(--green); cursor: pointer; font: inherit; font-size: 11px; text-decoration: underline; }
+
+@media (max-width: 850px) {
+    .product-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+    .product-card > img { height: 290px; }
+    .basket-layout { grid-template-columns: 1fr; gap: 45px; }
+}
+
+@media (max-width: 600px) {
+    .products-hero, .product-section, .basket-section { padding: 75px 0; }
+    .products-hero { padding-top: calc(var(--header-height) + 60px); }
+    .product-category-links { gap: 13px 22px; }
+    .product-category-links a { font-size: 20px; }
+    .basket-form { padding: 22px; }
+}
+
+/* Homepage keeps its opening thought light, then invites visitors into products. */
+.home-page .featured-heading h2 { font-size: clamp(38px, 4.5vw, 58px); line-height: .95; }
+.home-products-cta { margin-top: 28px; text-align: center; }
+.home-page .collection-grid { display: none; }
+.home-page .featured-collections { padding-bottom: 85px; }
+
+/* A more compact, tactile about page. */
+.about-hero { min-height: 58vh; }
+.about-hero h1 { font-size: clamp(50px, 6vw, 76px); }
+.about-page .about-value-card, .about-value-card { transition: transform .3s ease, background .3s ease; }
+.about-value-card:hover { transform: translateY(-5px); }
+
+/* The process remains clear without repeating production, delivery or a fixed timeline. */
+.how-it-works-page .process-card:nth-child(5),
+.how-it-works-page .process-card:nth-child(6),
+.how-timeline,
+.how-finishes { display: none; }
+
+/* ==================================================
+   HOMEPAGE COLLECTION CARDS
+   Match Collections page proportions
+================================================== */
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+/* Card */
+
+.collection-card {
+    position: relative;
+    text-align: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Image */
+
+.collection-card .collection-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    margin-bottom: 22px;
+    box-shadow: 0 10px 30px rgba(43,43,43,.04);
+}
+
+.collection-card .collection-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .45s ease;
+}
+
+.collection-card:hover .collection-image img {
+    transform: scale(1.04);
+}
+
+/* Heading */
+
+.collection-card h3 {
+    margin: 0 0 10px;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+/* Description */
+
+.collection-card p {
+    max-width: 300px;
+    margin: 0 auto 18px;
+    font-size: .85rem;
+    line-height: 1.6;
+}
+
+/* Link */
+
+.collection-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    color: var(--gold);
+    text-decoration: none;
+
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+/* Gold underline */
+
+.collection-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 25px;
+    height: 1px;
+    background: var(--gold);
+    transform: translateX(-50%);
+}
+
+.collection-link:hover::after {
+    transform: scaleX(1);
+}
+
+.collection-link span {
+    transition: transform .3s ease;
+}
+
+.collection-link:hover span {
+    transform: translateX(4px);
+}
+
+
+/* ==================================================
+   NINE3 EDIT — MOST POPULAR
+================================================== */
+
+.collection-card-featured {
+    position: relative;
+
+    border: 1px solid var(--gold);
+    padding: 10px 10px 25px;
+}
+
+.collection-card-featured .collection-image {
+    margin-bottom: 22px;
+}
+
+.collection-card-label {
+    display: inline-block;
+
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 2;
+
+    padding: 5px 16px;
+
+    background: var(--gold);
+    color: var(--ivory);
+
+    font-size: .6rem;
+    font-weight: 600;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 800px) {
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+        gap: 50px;
+    }
+
+}
+/* ==================================================
+   NAV — NINE3 DESIGNS GOLD GLASS BUTTON
+================================================== */
+
+.header-container > .btn {
+    padding: 8px 17px;
+    min-width: auto;
+
+    font-size: 0.67rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+
+    color: var(--gold-light);
+
+    /* Gold glass */
+    background: rgba(200, 169, 106, 0.16);
+
+    border: 1px solid rgba(200, 169, 106, 0.55);
+    border-radius: 30px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        0 4px 15px rgba(0,0,0,0.05);
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+
+/* Hover */
+
+.header-container > .btn:hover {
+
+    color: var(--ivory);
+
+    background: rgba(200, 169, 106, 0.38);
+
+    border-color: var(--gold);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.18),
+        0 6px 20px rgba(200, 169, 106, 0.18);
+}
+/* ==================================================
+   INDEX PAGE — HERO SIZING
+================================================== */
+
+/* Slightly smaller logo */
+
+.hero-logo img {
+    width: 78%;
+    max-width: 360px;
+}
+
+
+/* Slightly smaller main heading */
+
+.hero h1 {
+    font-size: clamp(45px, 5vw, 60px);
+}
+/* ==================================================
+   INDEX — TIGHTEN HERO → FEATURED COLLECTIONS
+================================================== */
+
+.hero-content > p {
+    margin-bottom: 0px;
+}
+
+
+.featured-collections {
+    padding-top: 0px !important;
+}
+
+.featured-heading {
+    margin-top: 0 !important;
+}
+/* ==================================================
+   HOMEPAGE — TIGHTEN HERO TO COLLECTIONS
+================================================== */
+
+@media (min-width: 769px) {
+
+    .hero {
+        min-height: auto;
+        height: auto;
+        padding-top: calc(var(--header-height) + 45px);
+        padding-bottom: 35px;
+    }
+
+    .hero-content {
+        padding-bottom: 0;
+    }
+
+
+    .featured-collections {
+        padding-top: 35px;
+    }
+
+    .featured-heading {
+        margin-top: 0;
+    }
+
+}
+/* ==================================================
+   COLLECTION CARDS — BUTTONS & BOTTOM SPACING
+================================================== */
+
+/* More breathing room at the bottom of each card */
+
+.collection-card {
+    padding-bottom: 35px;
+}
+
+
+/* Gold glass buttons */
+
+.collection-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 9px 18px;
+
+    color: var(--gold-light);
+
+    background: rgba(200, 169, 106, 0.16);
+
+    border: 1px solid rgba(200, 169, 106, 0.55);
+    border-radius: 30px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    font-size: 0.67rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        0 4px 15px rgba(0,0,0,0.05);
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+
+/* ==================================================
+   COLLECTION LINKS — DARK GOLD / GLASS HOVER
+================================================== */
+
+.collection-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 9px 19px;
+
+    color: #FEF9F3;
+    background: #9F824B;
+
+    border: 1px solid #9F824B;
+    border-radius: 30px;
+
+    font-size: 0.67rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 4px 12px rgba(43, 43, 43, 0.08);
+
+    transition:
+        background .35s ease,
+        border-color .35s ease,
+        color .35s ease,
+        box-shadow .35s ease,
+        transform .35s ease,
+        backdrop-filter .35s ease;
+}
+
+/* ==================================================
+   COLLECTION BUTTONS — DARK GOLD / MIRROR GLASS
+================================================== */
+
+.collection-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 8px 14px;
+
+    color: #FEF9F3;
+    background: #9F824B;
+
+    border: 1px solid #9F824B;
+    border-radius: 30px;
+
+    font-size: 0.63rem;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 3px 10px rgba(43, 43, 43, 0.08);
+
+    transition:
+        color .35s ease,
+        background .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease,
+        transform .35s ease;
+}
+
+/* Smooth, slow reflective sweep */
+
+/* ==================================================
+   SMOOTH GOLD REFLECTION
+================================================== */
+
+.collection-link {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Soft reflection */
+
+.collection-link::before {
+    content: "";
+
+    position: absolute;
+    top: -40%;
+    left: -60%;
+
+    width: 35%;
+    height: 180%;
+
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.03) 20%,
+        rgba(255, 255, 255, 0.28) 50%,
+        rgba(255, 255, 255, 0.03) 80%,
+        transparent 100%
+    );
+
+    transform: translateX(0) skewX(-18deg);
+
+    transition:
+        transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* Smooth left → right sweep */
+
+.collection-link:hover::before {
+    transform: translateX(520%) skewX(-18deg);
+}
+
+
+/* Keep button content above reflection */
+
+.collection-link > * {
+    position: relative;
+    z-index: 1;
+}
+.collection-link:hover::before {
+    left: 145%;
+}
+
+.nine3-detail-item h3 {
+    font-size: 15px !important;
+}
+/* ==================================================
+   GLOBAL — SLIGHTLY SMALLER LARGE HEADINGS
+================================================== */
+
+h1,
+h2 {
+    font-size: 90%;
+}/* ==========================================================
+   DESKTOP COLLECTIONS DROPDOWN
+========================================================== */
+
+@media (min-width: 801px) {
+
+    /* Header must allow dropdown to extend outside it */
+
+.site-header,
+.site-footer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+    .header-container {
+        position: relative;
+        z-index: 1001;
+        overflow: visible !important;
+    }
+
+
+    .main-nav {
+        position: relative;
+        z-index: 1002;
+        overflow: visible !important;
+    }
+
+
+    .main-nav ul {
+        overflow: visible !important;
+    }
+
+
+    /* ------------------------------------------------------
+       COLLECTIONS PARENT
+    ------------------------------------------------------ */
+
+    .collections-dropdown {
+        position: relative !important;
+        z-index: 1003;
+    }
+
+
+    /* ------------------------------------------------------
+       COLLECTIONS LINK
+    ------------------------------------------------------ */
+
+    .collections-dropdown > a {
+        position: relative;
+        z-index: 1004;
+    }
+
+
+    /* ------------------------------------------------------
+       DROPDOWN PANEL
+    ------------------------------------------------------ */
+
+    .collections-dropdown-menu {
+        position: absolute !important;
+
+        top: 100% !important;
+        left: 50% !important;
+
+        width: 240px !important;
+
+        margin-top: 12px !important;
+        padding: 10px 0 !important;
+
+        transform: translateX(-50%) !important;
+
+        display: block !important;
+
+        background: #FEF9F3 !important;
+
+        border: 1px solid rgba(64, 74, 59, .14) !important;
+
+        box-shadow:
+            0 18px 40px rgba(43, 43, 43, .15) !important;
+
+        opacity: 0 !important;
+        visibility: hidden !important;
+
+        pointer-events: none !important;
+
+        z-index: 99999 !important;
+    }
+
+
+    /* ------------------------------------------------------
+       SHOW DROPDOWN
+    ------------------------------------------------------ */
+
+    .collections-dropdown:hover
+    .collections-dropdown-menu,
+
+    .collections-dropdown:focus-within
+    .collections-dropdown-menu {
+
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+
+    }
+
+
+    /* ------------------------------------------------------
+       INVISIBLE BRIDGE
+       Stops menu disappearing while moving mouse down
+    ------------------------------------------------------ */
+
+    .collections-dropdown-menu::before {
+
+        content: "";
+
+        position: absolute;
+
+        top: -14px;
+        left: 0;
+
+        width: 100%;
+        height: 14px;
+
+    }
+
+
+    /* ------------------------------------------------------
+       DROPDOWN LINKS
+    ------------------------------------------------------ */
+
+    .collections-dropdown-menu a {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        padding: 12px 20px !important;
+
+        margin: 0 !important;
+
+        background: transparent !important;
+
+        color: #404A3B !important;
+
+        font-size: 11px !important;
+
+        font-weight: 500 !important;
+
+        line-height: 1.4 !important;
+
+        letter-spacing: .7px !important;
+
+        text-align: left !important;
+
+        text-decoration: none !important;
+
+        white-space: nowrap !important;
+
+        border: 0 !important;
+
+        transform: none !important;
+
+    }
+
+
+    .collections-dropdown-menu a:hover {
+
+        background: rgba(200, 169, 106, .10) !important;
+
+        color: #C8A96A !important;
+
+    }
+
+
+    /* Remove nav underline from submenu */
+
+    .collections-dropdown-menu a::after {
+
+        display: none !important;
+
+        content: none !important;
+
+    }
+
+
+    /* ------------------------------------------------------
+       ARROW
+    ------------------------------------------------------ */
+
+    .dropdown-arrow {
+
+        display: inline-block;
+
+        margin-left: 7px;
+
+        color: #C8A96A;
+
+        font-size: 10px;
+
+        transition: transform .25s ease;
+
+    }
+
+
+    .collections-dropdown:hover
+    .dropdown-arrow {
+
+        transform: rotate(180deg);
+
+    }
+
+}
+/* ==================================================
+   BACK TO TOP
+================================================== */
+
+.back-to-top {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(200, 169, 106, 0.7);
+    border-radius: 50%;
+
+    background: var(--gold);
+    color: #FEF9F3;
+
+    font-size: 16px;
+
+    cursor: pointer;
+    z-index: 999;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--dark-green);
+    transform: translateY(-3px);
+}
