@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -10,19 +11,17 @@
  content="width=device-width, initial-scale=1.0"
  >
 
- <title>Contact | Nine3 Weddings</title>
+ <title>Home | Nine3 Weddings</title>
 <link rel="icon" href="assets/images/branding/favicon.ico" type="image/x-icon">
  <meta
  name="description"
- content="Discover how Nine3 Weddings works, from your first ideas and stationery design through to printing, delivery and your wedding day."
+ content="Luxury wedding stationery and bespoke wedding websites, thoughtfully designed and beautifully crafted around your love story."
  >
 
  <meta name="author" content="Nine3 Weddings">
 
 
- <!-- ==================================================
- FONTS
- ================================================== -->
+ <!-- FONTS -->
 
  <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -38,9 +37,7 @@
  >
 
 
- <!-- ==================================================
- CSS
- ================================================== -->
+ <!-- CSS -->
 
  <link rel="stylesheet" href="assets/css/variables.css">
  <link rel="stylesheet" href="assets/css/reset.css">
@@ -53,7 +50,8 @@
 
 </head>
 
-<body>
+
+<body class="home-page">
 
 
 <!-- ==================================================
@@ -77,11 +75,13 @@
  >
 
  </a>
+
+
  <nav class="main-nav" aria-label="Main navigation">
 
  <ul>
 
- <li><a href="index.html">Home</a></li>
+ <li><a href="index.html" class="active">Home</a></li>
 
  <li class="collections-dropdown">
  <a href="collections.html">
@@ -93,22 +93,30 @@
 
  <li><a href="about.html">About</a></li>
  <li><a href="how-it-works.html">How It Works</a></li>
- <li><a href="contact.html" class="active">Contact</a></li>
+ <li><a href="contact.html">Contact</a></li>
+
+ 
 
  </ul>
 
 </nav>
+
+
+ <!-- HEADER CTA -->
+
+ 
+
  <a
  href="https://nine3designs.co.uk"
  class="btn header-brand-link"
  target="_blank"
  rel="noopener"
  >
- Nine3 Designs &rarr;
+ Nine3 Designs →
  </a>
 
 
-
+ <!-- MOBILE MENU -->
 
  <button
  class="mobile-toggle"
@@ -128,382 +136,168 @@
 
 </header>
 
+
 <!-- ==================================================
  MAIN
 ================================================== -->
 
 <main>
 
+<section class="hero">
 
- <!-- ==================================================
- CONTACT HERO
- ================================================== -->
-
- <section class="contact-page-hero">
-
- <div class="container">
-
- <div class="contact-page-hero-inner">
-
-
- <span class="section-label">
- Let's Talk
- </span>
-
+ <div class="hero-content">
 
  <h1>
- Your Story
- <br>
- Starts Here.
+ Luxury Wedding Stationery
  </h1>
 
 
- <div class="hero-divider">
-
- <img
- src="assets/images/section-icon.jpg"
- alt=""
- aria-hidden="true"
- >
-
- </div>
-
-
  <p>
- Tell me what you're planning, what you've
- been dreaming about and where you are in
- the process. I'd love to hear all about it.
+ Bespoke wedding stationery and websites, designed with care, printed on fine paper
+ and made to be kept.
  </p>
+ <div class="hero-rule"></div>
 
+</section>
 
- </div>
+<!-- ==================================================
+ FEATURED COLLECTIONS
+================================================== -->
 
- </div>
-
- </section>
-
-
-
- <!-- ==================================================
- CONTACT MAIN
- ================================================== -->
-
- <section class="contact-page-main">
+<section class="featured-collections">
 
  <div class="container">
 
- <div class="contact-page-grid">
-
-
- <!-- FORM -->
-
- <div class="contact-page-form">
-
-
- <h2>
- Tell Me A Little More.
- </h2>
-
-
- <p>
- Fill in the form below and I'll be in
- touch as soon as I can.
- </p>
-
-
- <form action="https://formspree.io/f/mnpadree" method="POST">
-
-
- <div class="form-row">
-
-
- <div class="form-group">
-
- <label for="name">
- Your Name
- </label>
-
- <input
- type="text"
- id="name"
- name="name"
- placeholder="Your name"
- autocomplete="name"
- required
- >
-
+ <div class="work-gallery" data-work-gallery>
+ <img src="assets/images/savethedateblue.jpg" alt="Elegant blue wedding save the date" data-caption="Save The Dates">
+ <img src="assets/images/savethedate.jpg" alt="Classic wedding save the date design" data-caption="Save The Date Designs">
+ <img src="assets/images/table2.jpg" alt="Wedding table styling details" data-caption="On The Day Details">
+ <img src="assets/images/pearledit.jpg" alt="The Pearl Edit stationery collection" data-caption="The Pearl Edit">
+ <img src="assets/images/fullpng.png" alt="Personalised save the date design" data-caption="Personalised Designs">
+ <div class="work-gallery-caption"><span data-work-caption>Save The Dates</span></div>
  </div>
 
-
- <div class="form-group">
-
- <label for="email">
- Email Address
- </label>
-
- <input
- type="email"
- id="email"
- name="email"
- placeholder="hello@example.com"
- autocomplete="email"
- required
- >
-
+ <div class="home-products-cta">
+ <a href="collections.html" class="btn btn-gold">Browse the Collections <span>&rarr;</span></a>
  </div>
 
-
  </div>
+</section>
 
-
-
- <div class="form-row">
-
-
- <div class="form-group">
-
- <label for="wedding-date">
- Wedding Date
- </label>
-
- <input
- type="text"
- id="wedding-date"
- name="wedding-date"
- placeholder="Your wedding date"
- >
-
+<section class="digital-intro">
+ <div class="container">
+ <div class="section-intro">
+ <span class="section-label">Simple Doesn&#39;t Mean Ordinary</span>
+ <h2>Your Wedding.<br>Beautifully<br>Online.</h2>
+ <p><strong>The Digital Edit</strong> is perfect if you love beautiful design but don&#39;t need a fully bespoke stationery suite.</p>
+ <a href="collections.html#digital" class="collection-link">Explore digital stationery <span aria-hidden="true">&rarr;</span></a>
+ <p>Choose a Nine3 design, provide your details and I&#39;ll take care of the rest, creating a polished digital piece that&#39;s ready to share with your guests.</p>
  </div>
-
-
- <div class="form-group">
-
- <label for="service">
- I'm Interested In
- </label>
-
- <select
- id="service"
- name="service"
- >
-
- <option value="">
- Select an option
- </option>
-
- <option value="digital">
- Digital Designs
- </option>
-
- <option value="nine3-collection">
- Nine3 Collection
- </option>
-
- <option value="signature">
- Signature Designs
- </option>
-
- <option value="website">
- Bespoke Wedding Website
- </option>
-
- <option value="stationery">
- Wedding Stationery
- </option>
-
- <option value="not-sure">
- Not Sure Yet
- </option>
-
- </select>
-
  </div>
+</section>
 
+<!-- ==================================================
+ ABOUT NINE3 WEDDINGS
+================================================== -->
 
- </div>
+<section class="about-natalie">
 
+ <div class="container about-natalie-grid">
 
-
- <div class="form-group">
-
- <label for="message">
- Tell Me About Your Plans
- </label>
-
- <textarea
- id="message"
- name="message"
- placeholder="Tell me a little about your wedding, your ideas and what you're looking for..."
- required
- ></textarea>
-
- </div>
-
-
- <button
- type="submit"
- class="btn btn-primary"
- >
- Send Enquiry
- </button>
-
-
- </form>
-
-
- </div>
-
-
-
- <!-- INFORMATION -->
-
- <div class="contact-page-info">
-
+ <div class="about-natalie-content">
 
  <span class="section-label">
- Nine3 Weddings
+ A Little About Nine3 Weddings
  </span>
-
 
  <h2>
- Let's Make
+ Designed With
  <br>
- It Beautiful.
+ Your Story In Mind.
  </h2>
 
-
- <div class="hero-divider">
-
- <img
- src="assets/images/section-icon.jpg"
- alt=""
- aria-hidden="true"
- >
-
- </div>
-
-
  <p>
- Whether you're looking for a beautifully
- simple digital design or a completely
- bespoke wedding stationery suite, every
- Nine3 wedding begins with your story.
+ Your wedding stationery should feel like you.
+ From the first save the date to the final
+ details on your day, every piece is thoughtfully
+ designed to create a beautifully cohesive
+ celebration.
  </p>
 
+ <p>
+ Nine3 Weddings creates elegant, personal
+ stationery and beautiful bespoke wedding
+ websites for couples who care about the
+ little details.
+ </p>
 
- <div class="contact-page-details">
+ <div class="about-cta">
 
-
- <div class="contact-page-detail">
-
- <span>
- Email
- </span>
-
- <a href="/cdn-cgi/l/email-protection#cfa7aaa3a3a08fa1a6a1aafcb8aaababa6a1a8bce1aca0e1baa4">
- <span class="__cf_email__" data-cfemail="bed6dbd2d2d1fed0d7d0db8dc9dbdadad7d0d9cd90ddd190cbd5">[email&#160;protected]</span>
+ <a
+ href="about.html"
+ class="btn btn-gold"
+ >
+ Meet Nine3 Weddings
  </a>
 
  </div>
 
-
- <div class="contact-page-detail">
-
- <span>
- Based In
- </span>
-
- <p>
- Yorkshire · UK
- </p>
-
  </div>
 
 
- <div class="contact-page-detail">
+ <div class="about-natalie-image">
 
- <span>
- Response Time
- </span>
-
- <p>
- Usually within 1–2 working days
- </p>
-
- </div>
-
-
- </div>
-
-
- <div class="contact-page-signature">
-
- With love,
-
- <span>
- Natalie
- </span>
-
- </div>
-
-
- </div>
-
+ <img
+ src="assets/images/sds.png"
+ alt="Elegant wedding stationery"
+ loading="lazy"
+ >
 
  </div>
 
  </div>
 
- </section>
+</section>
 
 
+<!-- ==================================================
+ CTA
+================================================== -->
 
- <!-- ==================================================
- FAQ CTA
- ================================================== -->
-
- <section class="contact-faq-cta">
+<section class="journey">
 
  <div class="container">
 
- <div class="contact-faq-cta-inner">
-
-
  <span class="section-label">
- Questions?
+ Your Wedding. Your Story.
  </span>
 
 
- <h2>
- Wondering How
- <br>
- It All Works?
- </h2>
+ 
 
 
  <p>
- From deposits and design changes to wedding
- websites and getting started, I've answered
- some of the questions couples ask most.
+ Beautiful stationery for the moments
+ you'll remember forever.
  </p>
 
 
  <a
- href="how-it-works.html"
- class="btn btn-primary"
+ href="contact.html"
+ class="btn btn-outline"
  >
- How It Works
+ Begin Your Journey
  </a>
 
-
  </div>
 
- </div>
-
- </section>
-
+</section>
 
 </main>
+
+<!-- ==================================================
+ FOOTER
+================================================== -->
 
 <footer class="site-footer">
 
@@ -609,8 +403,8 @@
  </p>
 
 
- <a href="/cdn-cgi/l/email-protection#5b333e3737341b3532353e682c3e3f3f32353c28753834752e30" class="footer-email">
- <span class="__cf_email__" data-cfemail="81e9e4ededeec1efe8efe4b2f6e4e5e5e8efe6f2afe2eeaff4ea">[email&#160;protected]</span>
+ <a href="/cdn-cgi/l/email-protection#523a373e3e3d123c3b3c3761253736363b3c35217c313d7c2739" class="footer-email">
+ <span class="__cf_email__" data-cfemail="97fff2fbfbf8d7f9fef9f2a4e0f2f3f3fef9f0e4b9f4f8b9e2fc">[email&#160;protected]</span>
  </a>
 
 
@@ -738,6 +532,8 @@
  <a href="cookie-policy.html">
  Cookie Policy
  </a>
+
+ </div>
  <div class="container footer-bottom-inner">
 
  <span>
@@ -761,22 +557,20 @@
 
 </footer>
 
-<!-- ==================================================
- JAVASCRIPT
-================================================== -->
+<!-- JAVASCRIPT -->
 
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/main.js"></script>
-<script src="assets/js/weddings-enhancements.js" defer></script>
-</body>
 <!-- Back to Top -->
 <button
  class="back-to-top"
  type="button"
  aria-label="Back to top"
 >
- <span aria-hidden="true">&uarr;</span>
+ <span aria-hidden="true">↑</span>
 </button>
 
-</html>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/main.js"></script>
+<script src="assets/js/weddings-enhancements.js" defer></script>
+</body>
+
+</html>

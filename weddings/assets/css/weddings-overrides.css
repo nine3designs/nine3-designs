@@ -1,0 +1,637 @@
+/* ==========================================================
+   NINE3 WEDDINGS — REFINEMENTS
+   Loads after responsive.css. Overrides only — no shared
+   files are modified.
+   1. H1 sizing (reduced ~20%)
+   2. Homepage hero + featured collections polish
+   3. Product cards — gold bullet includes + popular badge
+   4. Papers & Printing page + strip
+   5. About page — tighter, smaller, interactive touches
+   6. Scroll reveals + reduced motion
+========================================================== */
+
+
+/* ----------------------------------------------------------
+   1. H1 SIZING  (−20% site-wide)
+---------------------------------------------------------- */
+
+.hero h1 {
+    font-size: clamp(44px, 5.6vw, 76px);
+}
+
+.collections-hero h1,
+.digital-hero h1 {
+    font-size: clamp(44px, 5.6vw, 72px);
+}
+
+.nine3-hero h1 {
+    font-size: clamp(48px, 6.4vw, 84px);
+}
+
+.signature-hero h1,
+.about-hero h1,
+.how-hero h1 {
+    font-size: clamp(46px, 5.6vw, 72px);
+}
+
+.contact-page-hero h1 {
+    font-size: clamp(46px, 5.6vw, 70px);
+}
+
+.legal-header h1 {
+    font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
+@media (max-width: 500px) {
+
+    .contact-page-hero h1,
+    .how-hero h1 {
+        font-size: 42px;
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .legal-header h1 {
+        font-size: 2rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .legal-header h1 {
+        font-size: 1.75rem;
+    }
+
+}
+
+
+/* ----------------------------------------------------------
+   2. HOMEPAGE — HERO + FEATURED COLLECTIONS
+---------------------------------------------------------- */
+
+.hero p {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    line-height: 1.9;
+    letter-spacing: .3px;
+}
+
+.hero-rule {
+    width: 64px;
+    height: 1px;
+    margin: 26px auto 0;
+    background: var(--gold);
+}
+
+.featured-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.featured-title {
+    margin: 16px 0 4px;
+    color: var(--green);
+    font-family: var(--font-heading);
+    font-size: clamp(34px, 4.5vw, 54px);
+    font-weight: 500;
+    line-height: 1.04;
+    letter-spacing: .2px;
+}
+
+.featured-title em {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.heading-heart {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--gold);
+}
+
+.heading-heart::before,
+.heading-heart::after {
+    content: "";
+    width: 44px;
+    height: 1px;
+    background: var(--gold);
+    opacity: .55;
+}
+
+.heading-heart span {
+    font-size: 15px;
+}
+
+.home-products-cta {
+    text-align: center;
+}
+
+
+/* ----------------------------------------------------------
+   3. PRODUCT CARDS — GOLD BULLET INCLUDES + POPULAR BADGE
+---------------------------------------------------------- */
+
+.product-includes {
+    margin: 0 0 18px;
+    padding: 0;
+    list-style: none;
+}
+
+.product-includes li {
+    position: relative;
+    margin: 0 0 7px;
+    padding-left: 17px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.product-includes li::before {
+    content: "";
+    position: absolute;
+    top: .58em;
+    left: 2px;
+    width: 5px;
+    height: 5px;
+    background: var(--gold);
+    transform: rotate(45deg);
+}
+
+.product-includes li:last-child {
+    margin-bottom: 0;
+}
+
+.product-note {
+    margin: 10px 0 16px;
+    font-size: 11.5px;
+    font-style: italic;
+    opacity: .75;
+}
+
+.product-badge {
+    display: inline-block;
+    margin: 2px 0 4px;
+    padding: 5px 11px;
+    background: var(--gold);
+    color: var(--ivory);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+
+/* ----------------------------------------------------------
+   4. PAPERS & PRINTING
+---------------------------------------------------------- */
+
+.papers-strip {
+    padding: 78px 0;
+    background: var(--green);
+    text-align: center;
+}
+
+.papers-strip .section-label {
+    color: var(--gold-light);
+}
+
+.papers-strip h2 {
+    margin: 14px 0 16px;
+    color: var(--ivory);
+    font-family: var(--font-heading);
+    font-size: clamp(30px, 3.6vw, 44px);
+    font-weight: 500;
+}
+
+.papers-strip p {
+    max-width: 560px;
+    margin: 0 auto 26px;
+    color: rgba(254, 249, 243, .82);
+    line-height: 1.8;
+}
+
+.papers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 46px;
+}
+
+.papers-card {
+    padding: 30px 26px;
+    background: var(--ivory);
+    box-shadow: 0 12px 32px rgba(51, 60, 48, .08);
+}
+
+.papers-grid-2 .papers-card {
+    padding: 30px 26px;
+    background: var(--ivory);
+    box-shadow: 0 12px 32px rgba(51, 60, 48, .08);
+}
+
+.papers-card .product-includes li {
+    font-size: 12.5px;
+}
+
+.papers-card h3 {
+    margin: 0 0 12px;
+    color: var(--green);
+    font-size: 24px;
+}
+
+.print-partner {
+    margin-top: 34px;
+    padding: 22px 26px;
+    border: 1px solid rgba(200, 169, 106, .5);
+    background: rgba(200, 169, 106, .07);
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.print-partner strong {
+    color: var(--green);
+    letter-spacing: .4px;
+}
+
+
+/* ----------------------------------------------------------
+   5. ABOUT — TIGHTER + INTERACTIVE TOUCHES
+---------------------------------------------------------- */
+
+.about-hero,
+.about-natalie,
+.about-approach,
+.about-more,
+.about-final {
+    padding: 72px 0;
+}
+
+.about-hero {
+    padding-top: 140px;
+}
+
+.about-hero h1 {
+    margin-bottom: 18px;
+}
+
+.about-value-card {
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.about-value-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 16px 36px rgba(51, 60, 48, .12);
+}
+
+.about-value-card:hover .about-value-number {
+    color: var(--gold);
+}
+
+.about-value-number {
+    transition: color .3s ease;
+}
+
+
+/* ----------------------------------------------------------
+   6. SCROLL REVEALS + REDUCED MOTION
+---------------------------------------------------------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.reveal-fade {
+    opacity: 0;
+    transition: opacity .9s ease;
+}
+
+.reveal-fade.is-visible {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal,
+    .reveal-fade {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .about-value-card,
+    .product-card {
+        transition: none;
+    }
+
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 991px) {
+
+    .papers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .papers-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ----------------------------------------------------------
+   1b. MORE H1 CONTEXTS (−20%)
+---------------------------------------------------------- */
+
+.products-hero h1 {
+    font-size: clamp(42px, 4.8vw, 61px);
+}
+
+.about-natalie h2,
+.about-approach h2,
+.about-more h2 {
+    font-size: clamp(34px, 4vw, 48px);
+}
+
+/* ==========================================================
+   RALEWAY FOR LABEL SPANS + NAVIGATION
+========================================================== */
+body span,
+.main-nav a {
+    font-family: var(--font-body);
+}
+
+/* Keep the handwritten signature accents in Allura */
+.about-signature span,
+.contact-page-signature span {
+    font-family: "Allura", cursive;
+}
+
+/* ==========================================================
+   GLOBAL GOLD BUTTON (filled)
+========================================================== */
+.btn-gold {
+    display: inline-block;
+
+    min-width: 200px;
+    padding: 16px 30px;
+
+    background: var(--gold);
+    color: var(--ivory);
+    border: 1px solid var(--gold);
+    border-radius: 30px;
+    box-shadow: 0 8px 22px rgba(200, 169, 106, .18);
+
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+
+    transition: background .25s ease, border-color .25s ease,
+                transform .25s ease, box-shadow .25s ease;
+}
+
+.btn-gold:hover {
+    background: var(--green);
+    border-color: var(--green);
+    color: var(--ivory);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(64, 74, 59, .2);
+}
+
+/* ==========================================================
+   HOMEPAGE WORK GALLERY (auto-rotating)
+========================================================== */
+.work-gallery {
+    position: relative;
+
+    max-width: 620px;
+    margin: 0 auto 34px;
+
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
+    overflow: hidden;
+
+    background: var(--green-light);
+    box-shadow: 0 24px 60px rgba(64, 74, 59, .16);
+}
+
+.work-gallery img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    opacity: 0;
+    transition: opacity 1.1s ease;
+}
+
+.work-gallery img.is-active {
+    opacity: 1;
+}
+
+.work-gallery-caption {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    z-index: 2;
+
+    background: rgba(51, 60, 48, .72);
+    color: var(--ivory);
+
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+
+    padding: 8px 16px;
+    border-radius: 999px;
+    backdrop-filter: blur(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .work-gallery img {
+        transition: none;
+    }
+}
+
+/* ==========================================================
+   COLLECTIONS — RANGE COLUMNS + PERSONALISATION STEPS
+========================================================== */
+.range-columns-section {
+    padding: clamp(48px, 7vw, 80px) 0 0;
+}
+
+.range-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+.range-column {
+    background: #fff;
+    border: 1px solid rgba(200, 169, 106, .28);
+    border-radius: 18px;
+
+    padding: 40px 36px;
+    text-align: center;
+
+    box-shadow: 0 14px 40px rgba(64, 74, 59, .07);
+}
+
+.range-column .section-label {
+    margin-bottom: 12px;
+}
+
+.range-column h3 {
+    font-size: clamp(26px, 3vw, 34px);
+    margin-bottom: 14px;
+}
+
+.range-column p {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--green);
+    opacity: .85;
+
+    margin-bottom: 26px;
+}
+
+.range-column .btn {
+    margin-top: 2px;
+}
+
+.personalise-grid .nine3-customisation-item h3 {
+    font-size: 22px;
+}
+
+.personalise-grid .nine3-customisation-item p {
+    font-size: 16.5px;
+    line-height: 1.65;
+}
+
+@media (max-width: 860px) {
+    .range-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================
+   SALE PRICING
+========================================================== */
+.price-was {
+    font-weight: 400;
+    text-decoration: line-through;
+    opacity: .5;
+    margin-right: 6px;
+}
+
+.sale-badge {
+    display: inline-block;
+
+    background: var(--gold);
+    color: var(--ivory);
+
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    padding: 4px 10px;
+    margin-left: 10px;
+    border-radius: 999px;
+    vertical-align: middle;
+}
+
+/* ==========================================================
+   TIGHTER DIGITAL → PRINTED SPACING (collections)
+========================================================== */
+#digital.product-section {
+    padding-bottom: clamp(28px, 4vw, 44px);
+}
+
+/* ==========================================================
+   HOW IT WORKS — compact intro + anchor target
+========================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+#process {
+    scroll-margin-top: 110px;
+}
+
+.how-intro.how-intro-tight {
+    padding: clamp(40px, 6vw, 64px) 0 clamp(18px, 3vw, 28px);
+}
+
+.how-intro.how-intro-tight h2 {
+    font-size: clamp(30px, 3.6vw, 42px);
+}
+
+.how-intro.how-intro-tight p {
+    font-size: 15px;
+}
+
+/* ==========================================================
+   ABOUT — hero removed, keep comfortable spacing
+========================================================== */
+.about-page .about-natalie {
+    padding-top: clamp(90px, 12vw, 150px);
+}
+
+/* ==========================================================
+   BEFORE, DURING & AFTER — compact mid-page hero
+========================================================== */
+.collections-hero.collections-hero-sub {
+    padding: clamp(56px, 8vw, 90px) 0 clamp(36px, 5vw, 60px);
+}
+
+.collections-hero.collections-hero-sub h1 {
+    font-size: clamp(34px, 4.6vw, 52px);
+}
+
+/* ==========================================================
+   BACK TO TOP — always presentable
+========================================================== */
+.back-to-top {
+    z-index: 1200;
+}
+
+/* ==========================================================
+   HOW IT WORKS — six steps visible
+   (shared CSS hides cards 5-6 from the original 4-step layout)
+========================================================== */
+.how-it-works-page .process-card:nth-child(5),
+.how-it-works-page .process-card:nth-child(6) {
+    display: block;
+}
