@@ -149,3 +149,53 @@
     }
 
 })();
+
+/* ---------------- Product card mini-carousel ---------------- */
+(function () {
+    var ARROW_HTML = '<button class="product-arrow prev" type="button" aria-label="Previous design">&#8592;</button>' +
+                     '<button class="product-arrow next" type="button" aria-label="Next design">&#8594;</button>' +
+                     '<div class="product-dots" role="tablist" aria-label="Design views"></div>';
+
+    function build() {
+        document.querySelectorAll('.product-media').forEach(function (media) {
+            var imgs = media.querySelectorAll('img');
+            if (imgs.length < 2) return;
+            media.classList.add('has-multiple');
+            media.insertAdjacentHTML('beforeend', ARROW_HTML);
+            var dots = media.querySelector('.product-dots');
+            imgs.forEach(function (img, i) {
+                img.classList.add('product-slide');
+                if (i > 0) { img.loading = 'lazy'; }
+                var d = document.createElement('button');
+                d.type = 'button';
+                d.className = 'product-dot' + (i === 0 ? ' is-active' : '');
+                d.setAttribute('aria-label', 'View design ' + (i + 1));
+                d.addEventListener('click', function () { show(media, i); });
+                dots.appendChild(d);
+            });
+        });
+    }
+
+    function show(media, index) {
+        var imgs = media.querySelectorAll('img.product-slide');
+        var dots = media.querySelectorAll('.product-dot');
+        var n = imgs.length;
+        index = (index + n) % n;
+        imgs.forEach(function (img, i) { img.classList.toggle('is-active', i === index); });
+        dots.forEach(function (d, i) { d.classList.toggle('is-active', i === index); });
+    }
+
+    document.addEventListener('click', function (e) {
+        var arrow = e.target.closest('.product-arrow');
+        if (!arrow) return;
+        var media = arrow.closest('.product-media');
+        var imgs = media.querySelectorAll('img.product-slide');
+        var current = 0;
+        imgs.forEach(function (img, i) { if (img.classList.contains('is-active')) current = i; });
+        show(media, current + (arrow.classList.contains('next') ? 1 : -1));
+    });
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', build);
+    } else { build(); }
+})();

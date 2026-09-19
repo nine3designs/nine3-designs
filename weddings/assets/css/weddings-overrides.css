@@ -635,3 +635,155 @@ html {
 .how-it-works-page .process-card:nth-child(6) {
     display: block;
 }
+
+/* ==========================================================
+   FIX — SALE BADGE TEXT
+   .product-card span (gold label) has higher specificity than
+   .sale-badge, which rendered "SALE" gold-on-gold. Restore
+   ivory text with a matching-specificity selector.
+========================================================== */
+.product-card .sale-badge,
+.product-card .product-badge {
+    color: var(--ivory);
+}
+
+/* ==========================================================
+   TIGHTER VERTICAL RHYTHM
+   Reduce the largest section paddings for a closer, more
+   intentional feel. Heroes keep extra top padding to clear
+   the sticky header.
+========================================================== */
+.hero-divider {
+    margin: 22px auto;
+}
+
+.collections-hero,
+.digital-hero,
+.signature-hero,
+.about-hero,
+.contact-page-hero,
+.how-hero {
+    padding-top: clamp(118px, 13vw, 148px);
+    padding-bottom: clamp(52px, 7vw, 78px);
+}
+
+.about-natalie,
+.journey,
+.wedding-websites,
+.collections-cta,
+.digital-extras,
+.signature-websites,
+.signature-final,
+.digital-customise,
+.digital-signature,
+.signature-stationery,
+.collections-details,
+.collections-websites,
+.collections-final,
+.digital-included,
+.digital-process,
+.signature-details,
+.signature-website-features,
+.signature-process,
+.digital-options,
+.digital-upgrade,
+.about-approach,
+.collection-options,
+.digital-designs,
+.collections-options,
+.product-section,
+.basket-section,
+.about-final,
+.how-process,
+.how-portal,
+.how-included,
+.how-terms,
+.how-timeline,
+.how-proof,
+.how-finishes,
+.how-faq,
+.how-final {
+    padding-top: clamp(52px, 7vw, 82px);
+    padding-bottom: clamp(52px, 7vw, 82px);
+}
+
+/* ==========================================================
+   MOBILE OPTIMISATION
+   Collapse every fixed multi-column grid that the base
+   responsive stylesheet does not handle.
+========================================================== */
+@media (max-width: 800px) {
+    .collections-grid,
+    .collection-grid,
+    .product-grid,
+    .papers-grid,
+    .papers-grid-2,
+    .delivery-grid,
+    .website-feature-grid,
+    .signature-website-grid,
+    .signature-detail-grid,
+    .how-proof-grid,
+    .collections-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .signature-website-image img,
+    .collections-details-grid img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* ==========================================================
+   LEGAL PAGES — compact text-only rhythm
+========================================================== */
+.legal-body .about-approach {
+    padding-top: clamp(40px, 5vw, 56px);
+    padding-bottom: clamp(40px, 5vw, 56px);
+}
+
+.legal-body .about-approach + .about-approach {
+    border-top: 1px solid rgba(64, 74, 59, .08);
+}
+
+.legal-body .section-intro {
+    margin-bottom: 0;
+}
+
+/* ----------------------------------------------------------
+   PRODUCT CARD MINI-CAROUSEL
+   Arrows + dots appear only when a card has 2+ images.
+---------------------------------------------------------- */
+.product-media { position: relative; overflow: hidden; }
+.product-media img { width: 100%; height: 250px; object-fit: cover; display: block; }
+.product-media img:not(.is-active) { display: none; }
+
+.product-arrow {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 34px; height: 34px; border-radius: 50%;
+    background: rgba(247, 244, 237, .92);
+    border: 1px solid rgba(64, 74, 59, .18);
+    color: var(--green); font-size: 14px; line-height: 1;
+    display: none; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 2; transition: background .2s ease;
+}
+.product-arrow:hover { background: #fff; }
+.product-arrow.prev { left: 10px; }
+.product-arrow.next { right: 10px; }
+.product-media.has-multiple .product-arrow { display: flex; }
+
+.product-dots {
+    position: absolute; bottom: 10px; left: 0; right: 0;
+    display: none; justify-content: center; gap: 6px; z-index: 2;
+}
+.product-media.has-multiple .product-dots { display: flex; }
+.product-dot {
+    width: 7px; height: 7px; border-radius: 50%; border: 0; padding: 0;
+    background: rgba(247, 244, 237, .55); cursor: pointer;
+}
+.product-dot.is-active { background: var(--gold); }
+
+@media (min-width: 1001px) {
+    .product-media img { height: 290px; }
+}
