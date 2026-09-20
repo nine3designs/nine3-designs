@@ -17,8 +17,9 @@
     --text-light: #666666;
 
     /* TYPE */
-    --font-heading: "Cormorant Garamond", serif;
-    --font-body: "Raleway", sans-serif;
+    --font-heading: "Karma", serif;
+    --font-body: "Cabinet Grotesk", sans-serif;
+    --font-nav: "Outfit", sans-serif;
 
     /* LAYOUT */
     --container: 1280px;

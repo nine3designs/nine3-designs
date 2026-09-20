@@ -980,7 +980,7 @@ body {
 
         background: transparent !important;
 
-        font-family: Raleway, sans-serif;
+        font-family: var(--font-nav), sans-serif;
 
         font-size: 11px !important;
         font-weight: 600 !important;
@@ -1239,7 +1239,7 @@ body {
     .main-nav.is-open, .main-nav.active { opacity:1 !important; visibility:visible !important; pointer-events:auto !important; transform:translate(-50%,0) !important; }
     .main-nav ul { display:flex !important; flex-direction:column !important; align-items:stretch !important; width:100% !important; margin:0 !important; padding:0 !important; gap:0 !important; list-style:none !important; }
     .main-nav li { display:block !important; width:100% !important; margin:0 !important; padding:0 !important; border-bottom:1px solid rgba(64,74,59,.10) !important; }
-    .main-nav li > a { display:flex !important; align-items:center !important; justify-content:space-between !important; width:100% !important; min-height:56px !important; padding:15px 8px !important; color:#404A3B !important; background:transparent !important; font-family:Raleway,sans-serif !important; font-size:13px !important; font-weight:600 !important; line-height:1.4 !important; letter-spacing:1.35px !important; text-transform:uppercase !important; text-decoration:none !important; box-sizing:border-box !important; }
+    .main-nav li > a { display:flex !important; align-items:center !important; justify-content:space-between !important; width:100% !important; min-height:56px !important; padding:15px 8px !important; color:#404A3B !important; background:transparent !important; font-family:var(--font-nav),sans-serif !important; font-size:13px !important; font-weight:600 !important; line-height:1.4 !important; letter-spacing:1.35px !important; text-transform:uppercase !important; text-decoration:none !important; box-sizing:border-box !important; }
     .main-nav li > a::after, .collections-dropdown-menu a::after { display:none !important; content:none !important; }
     .main-nav li > a:hover, .main-nav li > a:focus, .main-nav li > a.active { color:#C8A96A !important; }
     .collections-dropdown { position:static !important; }
@@ -1372,7 +1372,7 @@ body {
 
         background: transparent !important;
 
-        font-family: Raleway, sans-serif !important;
+        font-family: var(--font-nav), sans-serif !important;
         font-size: 11px !important;
         font-weight: 600 !important;
 

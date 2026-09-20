@@ -375,11 +375,11 @@
 }
 
 /* ==========================================================
-   RALEWAY FOR LABEL SPANS + NAVIGATION
+   OUTFIT FOR LABEL SPANS + NAVIGATION
 ========================================================== */
 body span,
 .main-nav a {
-    font-family: var(--font-body);
+    font-family: var(--font-nav);
 }
 
 /* Keep the handwritten signature accents in Allura */

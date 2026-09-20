@@ -68,7 +68,7 @@
             var index = 0;
             var timer = null;
             var playing = false;
-            var interval = 4000;
+            var interval = 2600;
 
             var show = function (i) {
                 slides.forEach(function (img, n) {
@@ -97,6 +97,22 @@
 
             show(0);
             start();
+
+            /* Manual arrows */
+            gallery.insertAdjacentHTML('beforeend',
+                '<button class="gallery-arrow prev" type="button" aria-label="Previous image">&#8592;</button>' +
+                '<button class="gallery-arrow next" type="button" aria-label="Next image">&#8594;</button>');
+
+            gallery.querySelectorAll('.gallery-arrow').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var wasPlaying = playing;
+                    index = btn.classList.contains('next')
+                        ? (index + 1) % slides.length
+                        : (index - 1 + slides.length) % slides.length;
+                    show(index);
+                    if (wasPlaying) { stop(); start(); }
+                });
+            });
 
             /* Pause on hover */
             gallery.addEventListener("mouseenter", stop);
