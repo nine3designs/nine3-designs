@@ -1,18 +1,18 @@
 /* ==========================================================
-   NINE3 WEDDINGS — REFINEMENTS
-   Loads after responsive.css. Overrides only — no shared
+   NINE3 WEDDINGS â€” REFINEMENTS
+   Loads after responsive.css. Overrides only â€” no shared
    files are modified.
    1. H1 sizing (reduced ~20%)
    2. Homepage hero + featured collections polish
-   3. Product cards — gold bullet includes + popular badge
+   3. Product cards â€” gold bullet includes + popular badge
    4. Papers & Printing page + strip
-   5. About page — tighter, smaller, interactive touches
+   5. About page â€” tighter, smaller, interactive touches
    6. Scroll reveals + reduced motion
 ========================================================== */
 
 
 /* ----------------------------------------------------------
-   1. H1 SIZING  (−20% site-wide)
+   1. H1 SIZING  (âˆ’20% site-wide)
 ---------------------------------------------------------- */
 
 .hero h1 {
@@ -69,7 +69,7 @@
 
 
 /* ----------------------------------------------------------
-   2. HOMEPAGE — HERO + FEATURED COLLECTIONS
+   2. HOMEPAGE â€” HERO + FEATURED COLLECTIONS
 ---------------------------------------------------------- */
 
 .hero p {
@@ -136,7 +136,7 @@
 
 
 /* ----------------------------------------------------------
-   3. PRODUCT CARDS — GOLD BULLET INCLUDES + POPULAR BADGE
+   3. PRODUCT CARDS â€” GOLD BULLET INCLUDES + POPULAR BADGE
 ---------------------------------------------------------- */
 
 .product-includes {
@@ -263,7 +263,7 @@
 
 
 /* ----------------------------------------------------------
-   5. ABOUT — TIGHTER + INTERACTIVE TOUCHES
+   5. ABOUT â€” TIGHTER + INTERACTIVE TOUCHES
 ---------------------------------------------------------- */
 
 .about-hero,
@@ -361,7 +361,7 @@
 
 
 /* ----------------------------------------------------------
-   1b. MORE H1 CONTEXTS (−20%)
+   1b. MORE H1 CONTEXTS (âˆ’20%)
 ---------------------------------------------------------- */
 
 .products-hero h1 {
@@ -481,7 +481,7 @@ body span,
 }
 
 /* ==========================================================
-   COLLECTIONS — RANGE COLUMNS + PERSONALISATION STEPS
+   COLLECTIONS â€” RANGE COLUMNS + PERSONALISATION STEPS
 ========================================================== */
 .range-columns-section {
     padding: clamp(48px, 7vw, 80px) 0 0;
@@ -573,14 +573,14 @@ body span,
 }
 
 /* ==========================================================
-   TIGHTER DIGITAL → PRINTED SPACING (collections)
+   TIGHTER DIGITAL â†’ PRINTED SPACING (collections)
 ========================================================== */
 #digital.product-section {
     padding-bottom: clamp(28px, 4vw, 44px);
 }
 
 /* ==========================================================
-   HOW IT WORKS — compact intro + anchor target
+   HOW IT WORKS â€” compact intro + anchor target
 ========================================================== */
 html {
     scroll-behavior: smooth;
@@ -603,14 +603,14 @@ html {
 }
 
 /* ==========================================================
-   ABOUT — hero removed, keep comfortable spacing
+   ABOUT â€” hero removed, keep comfortable spacing
 ========================================================== */
 .about-page .about-natalie {
     padding-top: clamp(90px, 12vw, 150px);
 }
 
 /* ==========================================================
-   BEFORE, DURING & AFTER — compact mid-page hero
+   BEFORE, DURING & AFTER â€” compact mid-page hero
 ========================================================== */
 .collections-hero.collections-hero-sub {
     padding: clamp(56px, 8vw, 90px) 0 clamp(36px, 5vw, 60px);
@@ -621,14 +621,14 @@ html {
 }
 
 /* ==========================================================
-   BACK TO TOP — always presentable
+   BACK TO TOP â€” always presentable
 ========================================================== */
 .back-to-top {
     z-index: 1200;
 }
 
 /* ==========================================================
-   HOW IT WORKS — six steps visible
+   HOW IT WORKS â€” six steps visible
    (shared CSS hides cards 5-6 from the original 4-step layout)
 ========================================================== */
 .how-it-works-page .process-card:nth-child(5),
@@ -637,7 +637,7 @@ html {
 }
 
 /* ==========================================================
-   FIX — SALE BADGE TEXT
+   FIX â€” SALE BADGE TEXT
    .product-card span (gold label) has higher specificity than
    .sale-badge, which rendered "SALE" gold-on-gold. Restore
    ivory text with a matching-specificity selector.
@@ -736,7 +736,7 @@ html {
 
 
 /* ==========================================================
-   LEGAL PAGES — compact text-only rhythm
+   LEGAL PAGES â€” compact text-only rhythm
 ========================================================== */
 .legal-body .about-approach {
     padding-top: clamp(40px, 5vw, 56px);
@@ -786,4 +786,72 @@ html {
 
 @media (min-width: 1001px) {
     .product-media img { height: 290px; }
+}
+
+
+/* ==========================================================
+   BEFORE, DURING & AFTER â€” structure-fix companions
+   Pairs with the un-nested page markup (Sep 2026)
+========================================================== */
+
+/* "Made To Match" detail blocks â€” centred, readable */
+.collections-details-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.collections-details-inner h2 {
+    margin: 14px 0 4px;
+
+    color: var(--green);
+
+    font-family: var(--font-heading);
+    font-size: clamp(34px, 4.2vw, 50px);
+    line-height: 1.05;
+}
+
+.collections-details-inner .hero-divider {
+    margin: 20px auto;
+}
+
+.collections-details-inner .collections-detail-row {
+    justify-content: center;
+    text-align: left;
+    min-height: 0;
+    padding: 14px 20px;
+}
+
+/* Two-card grid â€” bottom photos sized up, no empty slot */
+.collections-grid--two {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.collections-grid--two .collection-card-image {
+    height: 460px;
+}
+
+@media (max-width: 1000px) {
+
+    .collections-grid--two {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .collections-grid--two .collection-card-image {
+        height: 380px;
+    }
+
+}
+
+/* Rows are stacked full-width here â€” drop the 2-column divider tick */
+.collections-details-inner .collections-detail-row:nth-child(odd) {
+    border-right: 0;
 }
