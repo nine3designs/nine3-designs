@@ -599,7 +599,7 @@ main section.trusted .trusted-copy p {
 }
 
 .client-logo:hover img {
-    opacity: 80;
+    opacity: 1;
     transform: scale(1.04);
 }
 
@@ -1335,4 +1335,190 @@ main section.trusted .trusted-copy p {
         background: var(--accent);
         color: var(--primary-dark);
     }
+}
+
+
+/* ==========================================================
+   Client logo fix: logos 3 & 4 are filled artwork — keep
+   detail with grayscale only (2 & 4 replace the old
+   brightness/invert filter that flattened them to white circles)
+========================================================== */
+
+.client-logos .client-logo:nth-child(3) img,
+.client-logos .client-logo:nth-child(4) img {
+
+    filter: grayscale(1);
+
+}
+
+
+/* ==========================================================
+   Portfolio filters
+========================================================== */
+
+.portfolio-filters{
+
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:.65rem;
+
+    margin:0 auto 2.6rem;
+
+    max-width:900px;
+
+}
+
+.filter-btn{
+
+    appearance:none;
+    border:1px solid rgba(200,169,106,.45);
+    background:transparent;
+    color:#FEF9F3;
+
+    font-family:"Raleway",sans-serif;
+    font-size:.82rem;
+    font-weight:600;
+    letter-spacing:.08em;
+
+    padding:.7rem 1.35rem;
+    border-radius:999px;
+
+    cursor:pointer;
+
+    transition:
+        background-color .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+
+}
+
+.filter-btn:hover{
+
+    border-color:#C8A96A;
+    transform:translateY(-1px);
+
+}
+
+.filter-btn.is-active{
+
+    background:#C8A96A;
+    border-color:#C8A96A;
+    color:#333C30;
+
+}
+
+.filter-btn:focus-visible{
+
+    outline:2px solid #C8A96A;
+    outline-offset:3px;
+
+}
+
+.gallery li.is-filtered-out{
+
+    display:none;
+
+}
+
+
+/* =========================================================
+   "Working with Nine3" promise cards
+   (replaces the placeholder client testimonials)
+   Section sits on cream => dark olive cards, ivory text
+========================================================= */
+
+.promise-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1.6rem;
+
+    max-width:1100px;
+    margin:0 auto;
+
+}
+
+.promise-card{
+
+    margin:0;
+
+    padding:2.6rem 2.2rem 2.4rem;
+
+    background:var(--primary);
+    border-radius:18px;
+
+    box-shadow:0 18px 40px -24px rgba(26,32,25,.45);
+
+    transition:transform .4s ease, background-color .4s ease;
+
+}
+
+.promise-card:hover{
+
+    transform:translateY(-6px);
+    background-color:#39452F;
+
+}
+
+.promise-icon{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    width:54px;
+    height:54px;
+
+    margin-bottom:1.6rem;
+
+    border-radius:14px;
+    background:rgba(200,169,106,.16);
+
+    color:#C8A96A;
+    font-size:1.35rem;
+
+}
+
+.promise-card h3{
+
+    margin-bottom:.8rem;
+
+    color:var(--off-white);
+    font-size:1.25rem;
+    font-weight:600;
+    letter-spacing:-0.01em;
+
+}
+
+.promise-card p{
+
+    margin:0;
+
+    color:rgba(254,249,243,.72);
+    font-size:.9rem;
+    line-height:1.8;
+
+}
+
+@media (max-width:900px){
+
+    .promise-grid{
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width:560px){
+
+    .promise-grid{
+        grid-template-columns:1fr;
+        gap:1.1rem;
+    }
+
+    .promise-card{
+        padding:2rem 1.7rem;
+    }
+
 }

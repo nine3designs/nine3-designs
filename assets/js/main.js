@@ -423,7 +423,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ".service-card", ".portfolio-card", ".contact-card", ".contact-form",
         ".section-title", ".about-content", ".about-image", ".service-overview-card",
         ".process-step", ".package-group", ".bespoke-card", ".project-case",
-        ".testimonial", ".work-clients", ".why-nine3-item", ".service-list-item"
+        ".testimonial", ".promise-card", ".work-clients", ".why-nine3-item", ".service-list-item", ".signature-block"
     ];
 
     const motionItems = Array.from(document.querySelectorAll(revealSelectors.join(",")));
@@ -533,3 +533,122 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+    /* ======================================================
+       MISSING IMAGE FALLBACK
+       (branded placeholder instead of a broken-image icon)
+    ====================================================== */
+
+    const brokenImages = document.querySelectorAll(
+        ".portfolio-card img, .case-image img, .about-image img"
+    );
+
+    const markBroken = (img) => {
+
+        const holder =
+            img.closest(".portfolio-card") ||
+            img.closest(".case-image") ||
+            img.closest(".about-image");
+
+        if(holder){
+            holder.classList.add("img-missing");
+            img.style.display = "none";
+        }
+
+    };
+
+    brokenImages.forEach(img => {
+
+        if(img.complete && img.naturalWidth === 0){
+            markBroken(img);
+            return;
+        }
+
+        img.addEventListener("error", () => markBroken(img));
+
+    });
+
+
+    /* ======================================================
+       PORTFOLIO FILTERS
+    ====================================================== */
+
+    const filterButtons = document.querySelectorAll(
+        ".portfolio-filters [data-filter]"
+    );
+
+    const galleryItems = document.querySelectorAll(
+        ".gallery li[data-filter]"
+    );
+
+    if(filterButtons.length && galleryItems.length){
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const filter = button.dataset.filter;
+
+                filterButtons.forEach(btn => {
+                    const isActive = btn === button;
+                    btn.classList.toggle("is-active", isActive);
+                    btn.setAttribute(
+                        "aria-pressed",
+                        isActive ? "true" : "false"
+                    );
+                });
+
+                galleryItems.forEach(item => {
+                    const match =
+                        filter === "all" ||
+                        (" " + item.dataset.filter + " ")
+                            .includes(" " + filter + " ");
+                    item.classList.toggle("is-filtered-out", !match);
+                });
+
+            });
+
+        });
+
+    }
+
+
+window.__n3MainLoaded = true;
+
+
+/* ==========================================================
+   Studio polish: gentle parallax on the hero collage
+   (fine pointers only, honours reduced motion)
+   ========================================================== */
+(function () {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+    const hero = document.querySelector(".hero");
+    const cards = document.querySelectorAll(".hero-collage .collage-card");
+    if (!hero || !cards.length) return;
+
+    let raf = 0, tx = 0, ty = 0;
+
+    function apply() {
+        raf = 0;
+        cards.forEach(function (card, i) {
+            const depth = 6 + i * 3;
+            card.style.transform =
+                "translate(" + (-tx * depth).toFixed(1) + "px," + (-ty * depth).toFixed(1) + "px)";
+        });
+    }
+
+    hero.addEventListener("mousemove", function (e) {
+        const r = hero.getBoundingClientRect();
+        tx = ((e.clientX - r.left) / r.width - 0.5) * 2;
+        ty = ((e.clientY - r.top) / r.height - 0.5) * 2;
+        if (!raf) raf = requestAnimationFrame(apply);
+    });
+
+    hero.addEventListener("mouseleave", function () {
+        tx = 0; ty = 0;
+        if (!raf) raf = requestAnimationFrame(apply);
+    });
+})();

@@ -400,3 +400,611 @@ body::before {
     body::before { transition: none; }
     .motion-reveal { opacity: 1; transform: none; }
 }
+
+
+
+
+
+/* ==========================================================
+   Signature write-on effect
+   (Natalie's signature draws itself when scrolled into view)
+========================================================== */
+
+.signature-block{
+
+    --sig-ink:currentColor;
+
+    display:flex;
+    justify-content:center;
+    margin-top:2.4rem;
+
+}
+
+.signature-svg{
+
+    width:min(300px, 74%);
+    height:auto;
+    overflow:visible;
+
+}
+
+.signature-svg .sig-name tspan{
+
+    font-family:"Allura", cursive;
+    font-size:88px;
+    fill:var(--sig-ink);
+
+}
+
+.signature-svg .sig-flourish{
+
+    fill:none;
+    stroke:var(--sig-ink);
+    stroke-width:2.2;
+    stroke-linecap:round;
+    opacity:.9;
+
+}
+
+.signature-svg .sig-role{
+
+    font-family:"Raleway", sans-serif;
+    font-weight:600;
+    font-size:12.5px;
+    letter-spacing:.46em;
+    fill:var(--sig-ink);
+
+}
+
+.signature-intro{
+
+    font-family:"Raleway", sans-serif;
+    font-size:1.02rem;
+    margin:0 0 .35rem;
+    text-align:center;
+
+}
+
+/* Animated state — main.js adds .motion-reveal, then .is-visible in view */
+
+.signature-block.motion-reveal .sig-name tspan{
+
+    fill:transparent;
+    stroke:var(--sig-ink);
+    stroke-width:1.5;
+    stroke-linejoin:round;
+    stroke-dasharray:980;
+    stroke-dashoffset:980;
+
+}
+
+.signature-block.motion-reveal .sig-flourish{
+
+    stroke-dasharray:560;
+    stroke-dashoffset:560;
+
+}
+
+.signature-block.motion-reveal .sig-role{
+
+    opacity:0;
+
+}
+
+.signature-block.motion-reveal.is-visible .sig-name tspan{
+
+    animation:
+        sig-stroke .95s ease-out calc(var(--i, 0) * .16s + .1s) forwards,
+        sig-ink .6s ease calc(var(--i, 0) * .16s + 1.9s) forwards;
+
+}
+
+.signature-block.motion-reveal.is-visible .sig-flourish{
+
+    animation:sig-stroke 1.05s cubic-bezier(.16, 1, .3, 1) 2.3s forwards;
+
+}
+
+.signature-block.motion-reveal.is-visible .sig-role{
+
+    animation:sig-show .8s ease 2.7s forwards;
+
+}
+
+@keyframes sig-stroke{ to{ stroke-dashoffset:0; } }
+@keyframes sig-ink{ to{ fill:var(--sig-ink); } }
+@keyframes sig-show{ to{ opacity:1; } }
+
+@media (prefers-reduced-motion:reduce){
+
+    .signature-block.motion-reveal .sig-name tspan{
+
+        stroke-dashoffset:0;
+        fill:var(--sig-ink);
+        animation:none;
+
+    }
+
+    .signature-block.motion-reveal .sig-flourish{
+        stroke-dashoffset:0;
+        animation:none;
+    }
+
+    .signature-block.motion-reveal .sig-role{
+        opacity:1;
+        animation:none;
+    }
+
+}
+
+
+
+
+
+/* ==========================================================
+   Homepage hero collage
+   (replaces the floating logo with recent project work)
+========================================================== */
+
+.hero-image.hero-collage{
+
+    display:block;
+
+    width:100%;
+    max-width:560px;
+    aspect-ratio:5 / 4;
+
+    margin:0 auto;
+
+}
+
+.hero-collage .collage-card{
+
+    position:absolute;
+
+    margin:0;
+
+    border-radius:18px;
+    overflow:hidden;
+
+    border:4px solid rgba(254,249,243,.16);
+
+    box-shadow:
+        0 24px 48px rgba(10, 18, 14, .38),
+        0 6px 16px rgba(10, 18, 14, .22);
+
+}
+
+.hero-collage .collage-card img{
+
+    position:static;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center;
+
+    filter:none;
+
+}
+
+.hero-collage .collage-a{
+
+    left:0;
+    top:10%;
+    width:56%;
+    height:68%;
+
+    transform:rotate(-4deg);
+    z-index:1;
+
+}
+
+.hero-collage .collage-b{
+
+    right:0;
+    top:0;
+    width:46%;
+    height:52%;
+
+    transform:rotate(4deg);
+    z-index:2;
+
+}
+
+.hero-collage .collage-c{
+
+    right:7%;
+    bottom:0;
+    width:40%;
+    height:46%;
+
+    transform:rotate(-2deg);
+    z-index:3;
+
+}
+
+.hero-collage .collage-card img{
+
+    animation:none;
+
+}
+
+.hero-collage .collage-a img{ animation:collageFloat 7s ease-in-out infinite; }
+.hero-collage .collage-b img{ animation:collageFloat 8s ease-in-out 1.1s infinite; }
+.hero-collage .collage-c img{ animation:collageFloat 9s ease-in-out 2.2s infinite; }
+
+@keyframes collageFloat{
+
+    0%, 100%{ transform:scale(1); }
+    50%{ transform:scale(1.045); }
+
+}
+
+.collage-badge{
+
+    position:absolute;
+
+    left:4%;
+    bottom:6%;
+
+    z-index:4;
+
+    display:inline-flex;
+    align-items:center;
+
+    background:rgba(51,60,48,.85);
+    color:#FEF9F3;
+
+    font-family:"Raleway",sans-serif;
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+
+    padding:.55rem .95rem;
+
+    border-radius:999px;
+    border:1px solid rgba(200,169,106,.5);
+
+    backdrop-filter:blur(6px);
+
+}
+
+/* ---------- Collage: tablets ---------- */
+
+@media (max-width: 1200px){
+
+    .hero-image.hero-collage{
+        max-width:470px;
+    }
+
+}
+
+/* ---------- Collage: mobile ---------- */
+
+@media (max-width: 768px){
+
+    .hero-image.hero-collage{
+        max-width:400px;
+        aspect-ratio:5 / 4;
+    }
+
+    .hero-collage .collage-card{
+        border-width:3px;
+    }
+
+    .collage-badge{
+        font-size:.66rem;
+        padding:.5rem .8rem;
+    }
+
+}
+
+@media (max-width: 420px){
+
+    .hero-image.hero-collage{
+        max-width:330px;
+    }
+
+}
+
+
+/* ---------- Signature: smaller on mobile ---------- */
+
+@media (max-width: 560px){
+
+    .signature-svg{
+        width:min(250px, 80%);
+    }
+
+    .signature-intro{
+        font-size:.95rem;
+    }
+
+}
+
+
+/* ---------- Collage: reduced motion ---------- */
+
+@media (prefers-reduced-motion:reduce){
+
+    .hero-collage .collage-card img{
+        animation:none;
+    }
+
+}
+
+
+/* ==========================================================
+   Missing image fallback (branded placeholder)
+========================================================== */
+
+.portfolio-card.img-missing img,
+.case-image.img-missing img,
+.about-image.img-missing img{
+
+    display:none;
+
+}
+
+.portfolio-card.img-missing::before{
+
+    content:"Nine3 Designs";
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    aspect-ratio:4 / 3;
+
+    background:
+        linear-gradient(135deg, #333C30, #404A3B);
+
+    color:rgba(254,249,243,.85);
+
+    font-family:"Allura",cursive;
+    font-size:1.9rem;
+
+    margin-bottom:1.6rem;
+
+    border-radius:inherit;
+
+}
+
+.about-image.img-missing::before,
+.case-image.img-missing::before{
+
+    content:"";
+
+    aspect-ratio:4 / 3;
+
+    background:
+        linear-gradient(135deg, #333C30, #404A3B);
+
+    border-radius:inherit;
+
+}
+
+
+/* ==========================================================
+   STUDIO POLISH LAYER — added 25 Sep 2026 (v4)
+   Micro-interactions & professional finish.
+   Load order note: appended AFTER existing rules, so these
+   are additive refinements, not overrides of core styles.
+   ========================================================== */
+
+/* ---- 1. Nav links: animated gold underline ---- */
+.motion-ready .main-nav ul li a{
+    position:relative;
+}
+.motion-ready .main-nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:100%;
+    height:2px;
+    background:linear-gradient(90deg,var(--accent),rgba(200,169,106,.25));
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .35s cubic-bezier(.22,1,.36,1);
+    border-radius:2px;
+}
+.motion-ready .main-nav ul li a:hover::after,
+.motion-ready .main-nav ul li a:focus-visible::after{
+    transform:scaleX(1);
+}
+
+/* ---- 2. Hero entrance: tag, title, copy, buttons ---- */
+.motion-ready .hero-text .hero-tag,
+.motion-ready .hero-text h1,
+.motion-ready .hero-text p,
+.motion-ready .hero-buttons a{
+    animation:heroRise .9s cubic-bezier(.16,1,.3,1) both;
+}
+.motion-ready .hero-text .hero-tag{ animation-delay:.05s; }
+.motion-ready .hero-text h1{ animation-delay:.15s; }
+.motion-ready .hero-text p{ animation-delay:.3s; }
+.motion-ready .hero-buttons a:nth-child(1){ animation-delay:.42s; }
+.motion-ready .hero-buttons a:nth-child(2){ animation-delay:.52s; }
+
+/* ---- 3. Hero collage: gentle float + interactive hover ---- */
+.motion-ready .collage-card{
+    animation:collageFloat 7s ease-in-out infinite;
+    transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s ease;
+}
+.motion-ready .collage-a{ animation-delay:0s; }
+.motion-ready .collage-b{ animation-delay:1.2s; }
+.motion-ready .collage-c{ animation-delay:2.4s; }
+.motion-ready .collage-card:hover{
+    box-shadow:0 28px 60px rgba(16,28,23,.35);
+    z-index:5;
+}
+@media (hover:none){
+    .motion-ready .collage-card{ animation:none; }
+}
+@media (prefers-reduced-motion:reduce){
+    .motion-ready .collage-card{ animation:none; }
+}
+
+/* ---- 4. Service cards: lift + gold top light ---- */
+.motion-ready .service-card{
+    transition:transform .45s cubic-bezier(.22,1,.36,1),
+               box-shadow .45s ease,
+               border-color .45s ease;
+}
+.motion-ready .service-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:15%;
+    right:15%;
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(200,169,106,.9),transparent);
+    opacity:0;
+    transition:opacity .45s ease;
+    pointer-events:none;
+}
+.motion-ready .service-card:hover::before{ opacity:1; }
+
+/* ---- 5. Homepage project cards: image zoom + shine sweep ---- */
+.motion-ready .portfolio-card{
+    position:relative;
+    overflow:hidden;
+}
+.motion-ready .portfolio-card img{
+    transition:transform .7s cubic-bezier(.22,1,.36,1);
+}
+.motion-ready .portfolio-card:hover img{
+    transform:scale(1.06);
+}
+.motion-ready .portfolio-card::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-80%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(100deg,transparent,rgba(254,249,243,.18),transparent);
+    transform:skewX(-20deg);
+    transition:left .8s cubic-bezier(.22,1,.36,1);
+    pointer-events:none;
+}
+.motion-ready .portfolio-card:hover::after{ left:130%; }
+.motion-ready .portfolio-card.img-missing::after{ display:none; }
+
+/* ---- 6. Promise cards: lift + icon chip response ---- */
+.motion-ready .promise-card{
+    transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease;
+}
+.motion-ready .promise-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 22px 50px rgba(16,28,23,.3);
+}
+.motion-ready .promise-icon{
+    transition:transform .45s cubic-bezier(.34,1.56,.64,1),background .3s ease;
+}
+.motion-ready .promise-card:hover .promise-icon{
+    transform:scale(1.12) rotate(-4deg);
+}
+
+/* ---- 7. Section eyebrows: tracking-in entrance ---- */
+.motion-ready .section-label,
+.motion-ready .section-title span{
+    animation:eyebrowIn .8s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes eyebrowIn{
+    from{ opacity:0; letter-spacing:.35em; transform:translateY(6px); }
+    to{ opacity:1; letter-spacing:.18em; transform:translateY(0); }
+}
+@media (prefers-reduced-motion:reduce){
+    .motion-ready .section-label,
+    .motion-ready .section-title span{ animation:none; opacity:1; }
+}
+
+/* ---- 8. Footer: gradient hairline + email underline ---- */
+.site-footer{
+    border-top:1px solid transparent;
+    border-image:linear-gradient(90deg,transparent,rgba(200,169,106,.55),transparent) 1;
+}
+.footer-email{
+    background-image:linear-gradient(90deg,currentColor,currentColor);
+    background-size:0% 1px;
+    background-repeat:no-repeat;
+    background-position:left 100%;
+    transition:background-size .45s cubic-bezier(.22,1,.36,1);
+}
+.footer-email:hover{
+    background-size:100% 1px;
+}
+
+/* ---- 9. Form fields: focus glow (contact) ---- */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible{
+    outline:none;
+    border-color:var(--accent) !important;
+    box-shadow:0 0 0 4px rgba(200,169,106,.18) !important;
+    transition:box-shadow .25s ease,border-color .25s ease;
+}
+
+/* ---- 10. Featured pricing card: quiet gold pulse ---- */
+@keyframes goldGlow{
+    0%,100%{ box-shadow:0 18px 45px rgba(200,169,106,.16); }
+    50%{ box-shadow:0 22px 58px rgba(200,169,106,.32); }
+}
+.motion-ready .pricing-card.featured{
+    animation:goldGlow 4.5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion:reduce){
+    .motion-ready .pricing-card.featured{ animation:none; }
+}
+
+
+/* ---- 11. Studio marquee ticker ---- */
+.n3-marquee{
+    overflow:hidden;
+    border-top:1px solid rgba(200,169,106,.35);
+    border-bottom:1px solid rgba(200,169,106,.35);
+    background:#FEF9F3;
+}
+.n3-marquee-track{
+    display:flex;
+    align-items:center;
+    gap:2.4rem;
+    width:max-content;
+    animation:n3-marquee 36s linear infinite;
+    will-change:transform;
+}
+.n3-marquee-group{
+    display:flex;
+    align-items:center;
+    gap:2.4rem;
+    flex-shrink:0;
+    padding:.9rem 0;
+}
+.n3-marquee-group span{
+    font-size:.78rem;
+    font-weight:600;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--primary);
+}
+.n3-marquee-group em{
+    font-style:normal;
+    color:var(--accent);
+    font-size:.62rem;
+}
+.n3-marquee:hover .n3-marquee-track{ animation-play-state:paused; }
+@keyframes n3-marquee{ to{ transform:translateX(-50%); } }
+@media (max-width:640px){
+    .n3-marquee-group{ gap:1.6rem; padding:.7rem 0; }
+    .n3-marquee-track{ gap:1.6rem; }
+    .n3-marquee-group span{ font-size:.66rem; letter-spacing:.2em; }
+}
+@media (prefers-reduced-motion:reduce){
+    .n3-marquee-track{ animation:none; width:100%; flex-wrap:wrap; justify-content:center; }
+    .n3-marquee-group{ flex-wrap:wrap; justify-content:center; row-gap:.4rem; }
+}
