@@ -50,6 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         link.addEventListener("click", () => {
 
+            if(
+                link.classList.contains("nav-dropdown-trigger") &&
+                window.matchMedia("(max-width: 768px)").matches
+            ){
+                return;
+            }
+
             menu?.classList.remove("active");
             toggle?.classList.remove("active");
             toggle?.setAttribute("aria-expanded", "false");
@@ -423,7 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ".service-card", ".portfolio-card", ".contact-card", ".contact-form",
         ".section-title", ".about-content", ".about-image", ".service-overview-card",
         ".process-step", ".package-group", ".bespoke-card", ".project-case",
-        ".testimonial", ".promise-card", ".work-clients", ".why-nine3-item", ".service-list-item", ".signature-block"
+        ".testimonial", ".promise-card", ".work-clients", ".why-nine3-item", ".service-list-item", ".blog-card", ".blog-coming", ".signature-block"
     ];
 
     const motionItems = Array.from(document.querySelectorAll(revealSelectors.join(",")));
@@ -486,62 +493,96 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+/* ==========================================================
+   NAV CONTROLLER — About dropdown + mobile accordion
+   Added 27 Sep 2026
+========================================================== */
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const toggle = document.querySelector(".mobile-toggle");
     const nav = document.querySelector(".main-nav");
+    const dropLi = document.querySelector(".main-nav .nav-item-dropdown");
+    const trigger = document.querySelector(".main-nav .nav-dropdown-trigger");
 
-    if (!toggle || !nav) return;
+    if(!toggle || !nav) return;
+
+
+    const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+
+
+    /* keep .is-open in sync with .active (both used by CSS) */
 
     toggle.addEventListener("click", () => {
 
-        const isOpen = toggle.getAttribute("aria-expanded") === "true";
+        nav.classList.toggle("is-open", nav.classList.contains("active"));
 
-        toggle.setAttribute(
-            "aria-expanded",
-            String(!isOpen)
-        );
 
-        toggle.setAttribute(
-            "aria-label",
-            isOpen ? "Open navigation" : "Close navigation"
-        );
+        if(!nav.classList.contains("active") && dropLi){
 
-        nav.classList.toggle("is-open", !isOpen);
+            dropLi.classList.remove("submenu-open");
+
+            if(trigger) trigger.setAttribute("aria-expanded", "false");
+
+        }
 
     });
 
 
-    nav.querySelectorAll("a").forEach(link => {
+    /* mobile: the About trigger opens the submenu instead of navigating */
 
-        link.addEventListener("click", () => {
+    if(trigger && dropLi){
 
-            toggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+        trigger.addEventListener("click", (e) => {
 
-            toggle.setAttribute(
-                "aria-label",
-                "Open navigation"
-            );
+            if(!isMobile()) return;
 
-            nav.classList.remove("is-open");
+            e.preventDefault();
+
+            const open = dropLi.classList.toggle("submenu-open");
+
+            trigger.setAttribute("aria-expanded", String(open));
 
         });
+
+    }
+
+
+    /* Escape closes the panel and the submenu */
+
+    document.addEventListener("keydown", (e) => {
+
+        if(e.key !== "Escape") return;
+
+        nav.classList.remove("active", "is-open");
+
+        toggle.classList.remove("active");
+
+        toggle.setAttribute("aria-expanded", "false");
+
+        toggle.setAttribute("aria-label", "Open navigation");
+
+        document.body.classList.remove("menu-open");
+
+
+        if(dropLi){
+
+            dropLi.classList.remove("submenu-open");
+
+            if(trigger) trigger.setAttribute("aria-expanded", "false");
+
+        }
 
     });
 
 });
-
-
     /* ======================================================
        MISSING IMAGE FALLBACK
        (branded placeholder instead of a broken-image icon)
     ====================================================== */
 
     const brokenImages = document.querySelectorAll(
-        ".portfolio-card img, .case-image img, .about-image img"
+        ".portfolio-card img, .case-image img, .about-image img, .blog-card-media img"
     );
 
     const markBroken = (img) => {
@@ -549,7 +590,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const holder =
             img.closest(".portfolio-card") ||
             img.closest(".case-image") ||
-            img.closest(".about-image");
+            img.closest(".about-image") ||
+            img.closest(".blog-card-media");
 
         if(holder){
             holder.classList.add("img-missing");

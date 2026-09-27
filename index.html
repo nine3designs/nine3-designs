@@ -113,43 +113,57 @@
 
     <ul>
 
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
 
-        <li>
-            <a href="portfolio.html">
-                Our Work
-            </a>
-        </li>
+        <li><a href="portfolio.html">Our Work</a></li>
 
-        <li>
-            <a href="services.html">
-                Services
-            </a>
-        </li>
+        <li><a href="services.html">Services</a></li>
 
-        <li>
-            <a href="about.html">
+        <li class="nav-item-dropdown">
+
+            <a href="about.html" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="about-submenu">
+
                 About
+
+                <span class="dropdown-chevron" aria-hidden="true"></span>
+
             </a>
+
+            <div class="nav-dropdown-menu" id="about-submenu">
+
+                <a href="about.html">About Nine3</a>
+
+                <a href="blog.html">The Journal</a>
+
+            </div>
+
         </li>
 
-        <li>
-            <a href="contact.html">
-                Contact
-            </a>
-        </li>
+        <li><a href="contact.html">Contact</a></li>
 
         <li class="sister-site-mobile">
-            <a href="/weddings/index.html">
-                Nine3 Weddings →
-            </a>
+
+            <a href="/weddings/index.html">Nine3 Weddings &rarr;</a>
+
         </li>
 
     </ul>
+
+    <div class="nav-panel-foot">
+
+        <a href="/cdn-cgi/l/email-protection#e78f828b8b88a7898e8982d48382948e808994c98488c9928c" class="nav-panel-email"><span class="__cf_email__" data-cfemail="422a272e2e2d022c2b2c27712627312b252c316c212d6c3729">[email&#160;protected]</span></a>
+
+        <div class="nav-panel-social">
+
+            <a href="https://facebook.com/nine3designs" target="_blank" rel="noopener noreferrer" aria-label="Nine3 Designs on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V5h-3c-2.8 0-5 2.2-5 5v2H6v3h3v6h3v-6h3l1-3h-4v-2c0-1.1.9-2 2-2z"/></svg></a>
+
+            <a href="https://instagram.com/nine3designs" target="_blank" rel="noopener noreferrer" aria-label="Nine3 Designs on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="instagram-dot"/></svg></a>
+
+            <a href="https://www.tiktok.com/@nine3.designs" target="_blank" rel="noopener noreferrer" aria-label="Nine3 Designs on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3c.4 2.1 1.7 3.5 4 3.7v3.1c-1.5 0-2.9-.4-4-1.2v7.1c0 4-2.6 6.3-6 6.3-3.1 0-5.5-2.3-5.5-5.4 0-3.4 2.7-5.7 6.2-5.7.4 0 .8 0 1.2.1v3.2c-.4-.1-.8-.2-1.2-.2-1.5 0-2.9 1-2.9 2.6 0 1.4 1 2.4 2.3 2.4 1.4 0 2.4-.9 2.4-2.7V3H16z"/></svg></a>
+
+        </div>
+
+    </div>
 
 </nav>
 
@@ -250,15 +264,15 @@
         <div class="hero-image hero-collage">
 
             <figure class="collage-card collage-a">
-                <img src="assets/images/portfolio/tails-main.jpg" alt="Tails &amp; Tides signage designed by Nine3 Designs" loading="eager" fetchpriority="high">
+                <img src="assets/images/portfolio/tails-2.jpg" alt="Tails &amp; Tides signage designed by Nine3 Designs" loading="eager" fetchpriority="high">
             </figure>
 
             <figure class="collage-card collage-b">
-                <img src="assets/images/portfolio/hillsborough-2.jpg" alt="Aurélia skincare branding designed by Nine3 Designs" loading="lazy">
+                <img src="assets/images/portfolio/aurelia-2.jpg" alt="Aurélia skincare branding designed by Nine3 Designs" loading="lazy">
             </figure>
 
             <figure class="collage-card collage-c">
-                <img src="assets/images/portfolio/nordkustcoffee2.jpg" alt="E Squared Coffee Corner branding designed by Nine3 Designs" loading="lazy">
+                <img src="assets/images/portfolio/esquared-2.jpg" alt="E Squared Coffee Corner branding designed by Nine3 Designs" loading="lazy">
             </figure>
 
             <span class="collage-badge">Recent client work</span>
@@ -769,7 +783,7 @@
             <article class="portfolio-card">
 
                 <img
-                    src="assets/images/portfolio/hillsborough-2.jpg"
+                    src="assets/images/portfolio/hbro.jpg"
                     alt="Hillsborough Ortho Logo
                     loading="lazy"
                 >
@@ -928,86 +942,102 @@
     </div>
 
 </section>
-<footer class="site-footer">
+<footer class="site-footer footer-v2">
 
-    <div class="container">
+    <div class="container fv-grid">
 
-        <div class="footer-grid">
+        <div class="fv-brand">
 
-            <div class="footer-brand">
+            <a href="index.html" class="fv-logo">
 
-               
+                <img src="assets/images/branding/logo-full.svg" alt="Nine3 Designs">
 
-                <div class="footer-social">
+            </a>
 
-                    <a
-                        href="https://facebook.com/nine3designs"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                    >
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
+            <p>
+                Luxury creative design studio specialising in websites,
+                branding and marketing for businesses across the UK.
+            </p>
 
-                    <a
-                        href="https://instagram.com/nine3designs"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                    >
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
+            <div class="fv-social">
 
-                    <a
-                        href="https://tiktok.com/@nine3.designs"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="TikTok"
-                    >
-                        <i class="fa-brands fa-tiktok"></i>
-                    </a>
+                <a href="https://facebook.com/nine3designs" target="_blank" rel="noopener noreferrer" aria-label="Nine3 Designs on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V5h-3c-2.8 0-5 2.2-5 5v2H6v3h3v6h3v-6h3l1-3h-4v-2c0-1.1.9-2 2-2z"/></svg></a>
 
-                </div>
+            <a href="https://instagram.com/nine3designs" target="_blank" rel="noopener noreferrer" aria-label="Nine3 Designs on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="instagram-dot"/></svg></a>
 
-                <a href="/cdn-cgi/l/email-protection#94fcf1f8f8fbd4fafdfaf1a7f0f1e7fdf3fae7baf7fbbae1ff" class="footer-email">
-                    <span class="__cf_email__" data-cfemail="82eae7eeeeedc2ecebece7b1e6e7f1ebe5ecf1ace1edacf7e9">e: hello@nine3designs.co.uk</span>
-                </a>
-
-                <p class="footer-description">
-                    Luxury creative design studio specialising in websites,
-                    branding and marketing for businesses across the UK.
-                </p>
+            <a href="https://www.tiktok.com/@nine3.designs" target="_blank" rel="noopener noreferrer" aria-label="Nine3 Designs on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3c.4 2.1 1.7 3.5 4 3.7v3.1c-1.5 0-2.9-.4-4-1.2v7.1c0 4-2.6 6.3-6 6.3-3.1 0-5.5-2.3-5.5-5.4 0-3.4 2.7-5.7 6.2-5.7.4 0 .8 0 1.2.1v3.2c-.4-.1-.8-.2-1.2-.2-1.5 0-2.9 1-2.9 2.6 0 1.4 1 2.4 2.3 2.4 1.4 0 2.4-.9 2.4-2.7V3H16z"/></svg></a>
 
             </div>
 
         </div>
 
+        <div class="fv-col">
 
-        <div class="footer-bottom">
+            <span class="fv-heading">Explore</span>
 
-            <div class="footer-legal">
+            <a href="index.html">Home</a>
 
-                <a href="privacy-policy.html">
-                    Privacy Policy
-                </a>
+            <a href="portfolio.html">Our Work</a>
 
-                <span>·</span>
+            <a href="services.html">Services</a>
 
-                <a href="cookie-policy.html">
-                    Cookie Policy
-                </a>
+            <a href="about.html">About</a>
+
+            <a href="blog.html">The Journal</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <div class="fv-col">
+
+            <span class="fv-heading">Services</span>
+
+            <a href="services.html">Website Design</a>
+
+            <a href="services.html">Branding</a>
+
+            <a href="services.html">Logo Design</a>
+
+            <a href="services.html">Print Design</a>
+
+            <a href="services.html">Social Media</a>
+
+            <a href="services.html">Business Marketing</a>
+
+        </div>
+
+        <div class="fv-col fv-contact">
+
+            <span class="fv-heading">Let's Talk</span>
+
+            <p>Got a project in mind? I'd love to hear about it.</p>
+
+            <a href="/cdn-cgi/l/email-protection#e78f828b8b88a7898e8982d48382948e808994c98488c9928c" class="fv-email"><span class="__cf_email__" data-cfemail="422a272e2e2d022c2b2c27712627312b252c316c212d6c3729">[email&#160;protected]</span></a>
+
+            <span class="fv-location">South Yorkshire &middot; UK</span>
+
+        </div>
+
+    </div>
+
+    <div class="fv-bottom">
+
+        <div class="container fv-bottom-inner">
+
+            <div class="fv-legal">
+
+                <a href="privacy-policy.html">Privacy Policy</a>
+
+                <span>&middot;</span>
+
+                <a href="cookie-policy.html">Cookie Policy</a>
 
             </div>
 
+            <p class="fv-copy">&copy; 2026 Nine3 Designs. All Rights Reserved.</p>
 
-            <p class="footer-copyright">
-                © 2026 Nine3 Designs. All Rights Reserved.
-            </p>
-
-
-            <p class="footer-credit">
-                Built with care by Nine3 Designs
-            </p>
+            <p class="fv-credit">Built with care by Nine3 Designs</p>
 
         </div>
 
