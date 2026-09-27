@@ -855,3 +855,42 @@ html {
 .collections-details-inner .collections-detail-row:nth-child(odd) {
     border-right: 0;
 }
+
+
+/* ==========================================================
+   PAGE JOURNEY - up-next link above the footer
+========================================================== */
+.page-next {
+    padding: clamp(44px, 6vw, 68px) 24px clamp(52px, 7vw, 80px);
+    text-align: center;
+}
+
+.page-next .section-label {
+    display: block;
+    margin-bottom: 14px;
+}
+
+.page-next-link {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 4.5vw, 42px);
+    line-height: 1.15;
+    color: var(--green);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.page-next-link:hover,
+.page-next-link:focus-visible {
+    color: var(--gold);
+}
+
+.page-next-arrow {
+    display: inline-block;
+    margin-left: 8px;
+    transition: transform var(--transition);
+}
+
+.page-next-link:hover .page-next-arrow,
+.page-next-link:focus-visible .page-next-arrow {
+    transform: translateX(6px);
+}
