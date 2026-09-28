@@ -2034,3 +2034,399 @@ select:focus-visible{
     }
 
 }
+
+/* ======================================================
+   SECTION 19 - JOURNAL ARTICLES + HOMEPAGE TEASER
+   (rev 5: real article pages, homepage Journal card)
+   ====================================================== */
+
+/* --- Homepage: From the Journal teaser card --- */
+
+.journal-teaser-list{
+    list-style:none;
+    margin:1.4rem 0 1.8rem;
+    padding:0;
+}
+
+.journal-teaser-list li + li{
+    border-top:1px solid rgba(200,169,106,.35);
+}
+
+.journal-teaser-list a{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:1.2rem;
+    padding:.72rem 0;
+    text-decoration:none;
+}
+
+.journal-teaser-list .jt-title{
+    font-size:.93rem;
+    font-weight:600;
+    color:#404A3B;
+}
+
+.journal-teaser-list .jt-date{
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:rgba(64,74,59,.5);
+    white-space:nowrap;
+}
+
+.journal-teaser-list a:hover .jt-title,
+.journal-teaser-list a:focus-visible .jt-title{
+    text-decoration:underline;
+    text-decoration-color:#C8A96A;
+    text-decoration-thickness:2px;
+    text-underline-offset:4px;
+}
+
+/* --- Journal article hero --- */
+
+.journal-tag{
+    display:inline-block;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:#C8A96A;
+    border:1px solid rgba(200,169,106,.55);
+    border-radius:999px;
+    padding:.45rem 1.15rem;
+    margin-bottom:1.4rem;
+}
+
+.journal-meta{
+    margin-top:1.2rem;
+    font-size:.85rem;
+    font-weight:500;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:rgba(64,74,59,.6);
+}
+
+/* --- Article layout --- */
+
+.journal-article{
+    padding:4rem 0 6rem;
+}
+
+.journal-article > .container{
+    max-width:840px;
+}
+
+.journal-hero-media{
+    margin:0 0 3rem;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid rgba(200,169,106,.45);
+    box-shadow:0 24px 60px rgba(64,74,59,.12);
+}
+
+.journal-hero-media img{
+    display:block;
+    width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
+}
+
+.journal-hero-media.img-missing img{ display:none; }
+
+.journal-hero-media.img-missing::before{
+    content:"Nine3 Designs";
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    aspect-ratio:16/9;
+    background:linear-gradient(135deg,#333C30,#404A3B);
+    color:rgba(254,249,243,.85);
+    font-family:"Allura",cursive;
+    font-size:2.4rem;
+}
+
+/* --- Article prose --- */
+
+.journal-body{
+    font-size:1.05rem;
+    line-height:1.85;
+    color:#3E4636;
+}
+
+.journal-body p{
+    margin:0 0 1.4rem;
+}
+
+.journal-body h2{
+    font-size:1.65rem;
+    line-height:1.3;
+    margin:2.6rem 0 1rem;
+    color:#404A3B;
+}
+
+.journal-body ul,
+.journal-body ol{
+    margin:0 0 1.6rem;
+    padding-left:1.4rem;
+    list-style:disc;
+}
+
+.journal-body ol{
+    list-style:decimal;
+}
+
+.journal-body li::marker{
+    color:#C8A96A;
+}
+
+.journal-body li{
+    margin-bottom:.6rem;
+}
+
+.journal-body strong{
+    color:#404A3B;
+}
+
+.journal-body blockquote{
+    margin:2.2rem 0;
+    padding:1.15rem 1.6rem;
+    border-left:3px solid #C8A96A;
+    background:rgba(200,169,106,.08);
+    border-radius:0 12px 12px 0;
+    font-style:italic;
+    font-size:1.12rem;
+    color:#404A3B;
+}
+
+/* --- End-of-article navigation --- */
+
+.journal-endnav{
+    margin-top:4rem;
+    padding-top:2rem;
+    border-top:1px solid rgba(200,169,106,.4);
+    display:flex;
+    flex-wrap:wrap;
+    gap:1.5rem;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.journal-back{
+    font-weight:600;
+    color:#404A3B;
+    text-decoration:none;
+    transition:color .25s ease;
+}
+
+.journal-back:hover,
+.journal-back:focus-visible{
+    color:#C8A96A;
+}
+
+.journal-nextprev{
+    display:flex;
+    flex-direction:column;
+    gap:.55rem;
+}
+
+.journal-nextprev a{
+    font-size:.95rem;
+    color:#404A3B;
+    text-decoration:none;
+    transition:color .25s ease;
+}
+
+.journal-nextprev a span{
+    color:rgba(64,74,59,.55);
+    font-weight:600;
+}
+
+.journal-nextprev a:hover,
+.journal-nextprev a:focus-visible{
+    color:#C8A96A;
+}
+
+@media (max-width:640px){
+    .journal-article{ padding:3rem 0 4rem; }
+    .journal-body h2{ font-size:1.4rem; }
+    .journal-endnav{ flex-direction:column; align-items:flex-start; }
+    .journal-hero-media.img-missing::before{ font-size:1.8rem; }
+}
+
+
+/* ======================================================
+   SECTION 20 - COST GUIDE ARTICLE (rev 5.2)
+   ====================================================== */
+
+.journal-body h3{
+    font-size:1.15rem;
+    line-height:1.35;
+    margin:2rem 0 .7rem;
+    color:#404A3B;
+}
+
+/* --- At-a-glance price table --- */
+
+.cost-table-scroll{
+    overflow-x:auto;
+    margin:0 0 1.6rem;
+    -webkit-overflow-scrolling:touch;
+}
+
+table.cost-table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:540px;
+    font-size:.95rem;
+}
+
+.cost-table th{
+    background:#404A3B;
+    color:#FEF9F3;
+    text-align:left;
+    padding:.85rem 1.1rem;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+}
+
+.cost-table td{
+    padding:.85rem 1.1rem;
+    border-bottom:1px solid rgba(200,169,106,.35);
+    vertical-align:top;
+}
+
+.cost-table tr:nth-child(even) td{
+    background:rgba(200,169,106,.07);
+}
+
+.cost-table td:first-child{
+    font-weight:600;
+    color:#404A3B;
+}
+
+/* --- Three honest budgets --- */
+
+.budget-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1.3rem;
+    margin:2rem 0 1.6rem;
+}
+
+.budget-card{
+    border:1px solid rgba(200,169,106,.45);
+    border-radius:18px;
+    padding:1.5rem 1.3rem;
+    background:rgba(255,255,255,.55);
+    display:flex;
+    flex-direction:column;
+    gap:.45rem;
+}
+
+.budget-card .bp{
+    font-size:1.45rem;
+    font-weight:800;
+    color:#404A3B;
+}
+
+.budget-card .bn{
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#C8A96A;
+}
+
+.budget-card p{
+    margin:0;
+    font-size:.95rem;
+    color:#3E4636;
+}
+
+.budget-card.featured{
+    background:#404A3B;
+    border-color:#404A3B;
+}
+
+.budget-card.featured .bp{
+    color:#FEF9F3;
+}
+
+.budget-card.featured .bn{
+    color:#C8A96A;
+}
+
+.budget-card.featured p{
+    color:rgba(254,249,243,.85);
+}
+
+/* --- Closing CTA --- */
+
+.cost-cta{
+    margin:2.8rem 0 0;
+    background:#404A3B;
+    border-radius:20px;
+    padding:2.4rem 2rem;
+    text-align:center;
+}
+
+.journal-article .cost-cta h2{
+    font-size:1.6rem;
+    line-height:1.3;
+    color:#FEF9F3;
+    margin:0 0 .8rem;
+}
+
+.journal-article .cost-cta p{
+    color:rgba(254,249,243,.85);
+    max-width:640px;
+    margin:0 auto;
+}
+
+.journal-article .cost-cta-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+    justify-content:center;
+    margin-top:1.6rem;
+}
+
+.journal-article .cost-cta-note{
+    margin-top:1.4rem;
+    font-size:.74rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:rgba(254,249,243,.6);
+}
+
+.journal-article .cost-cta-note em{
+    color:#C8A96A;
+    text-transform:none;
+    letter-spacing:.02em;
+    font-size:.95rem;
+}
+
+@media (max-width:700px){
+    .cost-faq{
+        grid-template-columns:1fr;
+    }
+}
+
+@media (max-width:900px){
+    .budget-grid{
+        grid-template-columns:1fr;
+    }
+    .cost-cta-buttons .btn{
+        width:100%;
+        max-width:320px;
+    }
+}
+
+@media (max-width:640px){
+    .cost-cta h2{ font-size:1.35rem; }
+    .cost-cta{ padding:2rem 1.4rem; }
+}

@@ -430,7 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ".service-card", ".portfolio-card", ".contact-card", ".contact-form",
         ".section-title", ".about-content", ".about-image", ".service-overview-card",
         ".process-step", ".package-group", ".bespoke-card", ".project-case",
-        ".testimonial", ".promise-card", ".work-clients", ".why-nine3-item", ".service-list-item", ".blog-card", ".blog-coming", ".signature-block"
+        ".testimonial", ".promise-card", ".work-clients", ".why-nine3-item", ".service-list-item", ".blog-card", ".blog-coming", ".journal-hero", ".journal-article", ".signature-block"
     ];
 
     const motionItems = Array.from(document.querySelectorAll(revealSelectors.join(",")));
@@ -582,7 +582,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ====================================================== */
 
     const brokenImages = document.querySelectorAll(
-        ".portfolio-card img, .case-image img, .about-image img, .blog-card-media img"
+        ".portfolio-card img, .case-image img, .about-image img, .blog-card-media img, .journal-hero-media img"
     );
 
     const markBroken = (img) => {
@@ -591,7 +591,8 @@ document.addEventListener("DOMContentLoaded", () => {
             img.closest(".portfolio-card") ||
             img.closest(".case-image") ||
             img.closest(".about-image") ||
-            img.closest(".blog-card-media");
+            img.closest(".blog-card-media") ||
+            img.closest(".journal-hero-media");
 
         if(holder){
             holder.classList.add("img-missing");
