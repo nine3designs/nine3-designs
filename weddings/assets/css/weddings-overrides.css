@@ -980,3 +980,112 @@ html {
 .mobile-toggle.active span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg) !important;
 }
+/* ==================================================
+   INTERACTIVE PROCESS CARDS UPGRADE
+================================================== */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* Base Card Styling */
+.process-card {
+  position: relative;
+  background: #fbf9f5; /* Soft warm luxury white */
+  border: 1px solid rgba(194, 172, 130, 0.25); /* Subtle gold border */
+  border-radius: 4px;
+  padding: 40px 32px 35px;
+  overflow: hidden;
+  cursor: pointer;
+  
+  /* Smooth transitions for all movement and styling */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease,
+              background-color 0.4s ease;
+}
+
+/* Top Accent Line (Fills on hover) */
+.process-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: var(--color-gold, #c2ac82);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Number Styling */
+.process-number {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--color-gold, #c2ac82);
+  margin-bottom: 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Card Heading */
+.process-card h3 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #2e352b;
+  margin: 0 0 16px 0;
+  line-height: 1.25;
+}
+
+/* Divider Line within Card */
+.process-line {
+  height: 1px;
+  width: 40px;
+  background-color: rgba(194, 172, 130, 0.4);
+  margin-bottom: 20px;
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.4s ease;
+}
+
+/* Card Description Copy */
+.process-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555c50;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+/* ==================================================
+   HOVER & ACTIVE STATES (INTERACTIVITY)
+================================================== */
+
+.process-card:hover {
+  transform: translateY(-8px);
+  background-color: #ffffff;
+  border-color: rgba(194, 172, 130, 0.6);
+  box-shadow: 0 20px 40px -15px rgba(46, 53, 43, 0.08);
+}
+
+/* Trigger top gold line */
+.process-card:hover::before {
+  width: 100%;
+}
+
+/* Number subtle shift on hover */
+.process-card:hover .process-number {
+  transform: translateX(4px);
+}
+
+/* Expanding middle line on hover */
+.process-card:hover .process-line {
+  width: 100%;
+  background-color: var(--color-gold, #c2ac82);
+}
+
+/* Darken text slightly on hover */
+.process-card:hover p {
+  color: #2e352b;
+}
