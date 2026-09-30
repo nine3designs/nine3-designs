@@ -894,3 +894,46 @@ html {
 .page-next-link:focus-visible .page-next-arrow {
     transform: translateX(6px);
 }
+/* Fix header overlap and section spacing */
+.how-intro {
+  padding-top: 140px !important; /* Pushes section safely below fixed header */
+  padding-bottom: 60px !important;
+}
+
+/* Fix grid layout alignment */
+.how-intro-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 50px !important;
+  align-items: start !important; /* Aligns heading and copy at the top */
+}
+
+/* Fix heading size */
+.how-intro-heading h1,
+.how-intro-heading h2 {
+  font-size: 2.75rem !important;
+  line-height: 1.15 !important;
+  font-weight: 300 !important;
+  margin-top: 10px !important;
+  margin-bottom: 0 !important;
+}
+
+.how-intro-heading h1 span,
+.how-intro-heading h2 span {
+  color: var(--color-gold, #c2ac82);
+}
+
+/* Copy text spacing */
+.how-intro-copy {
+  padding-top: 5px;
+}
+
+.how-intro-copy p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.intro-jump {
+  margin-top: 30px;
+}
