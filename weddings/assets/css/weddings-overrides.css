@@ -937,3 +937,46 @@ html {
 .intro-jump {
   margin-top: 30px;
 }
+/* Fix mobile menu toggle button clipping */
+.mobile-toggle {
+  overflow: visible !important;
+  width: 44px !important;
+  height: 44px !important;
+  padding: 8px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Ensure lines have a clean center transform point */
+.mobile-toggle span {
+  display: block !important;
+  width: 24px !important;
+  height: 2px !important;
+  transform-origin: center center !important;
+  transition: transform 0.3s ease, opacity 0.3s ease !important;
+  margin: 3px 0 !important;
+}
+
+/* Adjust cross rotation offsets so lines stay within bounds */
+.mobile-toggle[aria-expanded="true"] span:nth-child(1),
+.mobile-toggle.is-open span:nth-child(1),
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg) !important;
+}
+
+.mobile-toggle[aria-expanded="true"] span:nth-child(2),
+.mobile-toggle.is-open span:nth-child(2),
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0 !important;
+}
+
+.mobile-toggle[aria-expanded="true"] span:nth-child(3),
+.mobile-toggle.is-open span:nth-child(3),
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg) !important;
+}
