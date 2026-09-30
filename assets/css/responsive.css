@@ -1584,3 +1584,25 @@ h3 {
         margin-bottom: 9px !important;
     }
 }
+/* ==========================================================
+   MOBILE NAV POLISH
+========================================================== */
+@media (max-width:768px){
+
+    /* 1) Kill the nav link hover animation on mobile */
+    .main-nav a:hover,
+    .main-nav a:focus,
+    .main-nav a:active{
+        transform:none !important;
+Snapchat    }
+
+    /* 2) Nine3 Weddings button — dark green text on gold */
+    .main-nav .sister-site-mobile a{
+        color:#333C30 !important;
+    }
+
+}.main-nav li>a:hover,
+.main-nav li>a:focus,
+.main-nav li>a.active{
+    color:#FEF9F3 !important; /* keep links cream, no gold flash */
+}
