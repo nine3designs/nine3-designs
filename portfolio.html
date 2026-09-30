@@ -172,6 +172,28 @@
 
 
     <main>
+        <div class="back-wrap">
+          <a href="/portfolio.html" class="back-btn"
+             onclick="if (history.length > 1) { history.back(); return false; }">
+            <span class="back-arrow">&#8592;</span> Back
+          </a>
+        </div>
+
+        <style>
+          .back-wrap { max-width: var(--container, 1280px); margin: 0 auto; padding: 28px 24px 0; }
+          .back-btn {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-family: var(--font-nav, Outfit, sans-serif);
+            font-size: 15px; font-weight: 500; letter-spacing: .05em;
+            color: var(--green, #404A3B); background: transparent;
+            border: 1.5px solid var(--gold, #C8A96A); border-radius: 8px;
+            padding: 10px 22px; text-decoration: none; cursor: pointer;
+            transition: background .35s ease, color .35s ease;
+          }
+          .back-btn:hover { background: var(--gold, #C8A96A); color: var(--ivory, #FEF9F3); }
+          .back-arrow { display: inline-block; transition: transform .35s ease; }
+          .back-btn:hover .back-arrow { transform: translateX(-4px); }
+        </style>
         <!-- =====================================================
                 HERO
            ===================================================== -->
@@ -179,7 +201,6 @@
            <section class="portfolio-hero">
 
                <div class="container">
-<br>
                    <div class="hero-top">
 
                        <span class="section-label">
