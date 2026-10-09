@@ -1083,7 +1083,7 @@ select:focus-visible{
 /* ---- 16. Journal page: layout + component styles (blog.html) ---- */
 .blog-hero{
     background:var(--cream);
-    padding:80px 0 70px;
+    padding:40px 0 50px;
 }
 .blog-hero .section-label{ color:var(--primary); opacity:.7; }
 .blog-hero h1{ color:var(--primary); }
@@ -1092,7 +1092,7 @@ select:focus-visible{
 
 .blog-posts{
     background:var(--cream);
-    padding:40px 0 90px;
+    padding:30px 0 50px;
 }
 .blog-posts .section-title{ margin-bottom:3rem; }
 .blog-posts .section-title span{ color:var(--primary); opacity:.7; }
