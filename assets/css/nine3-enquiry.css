@@ -174,3 +174,4 @@
 @media (prefers-reduced-motion:reduce){
   .n3-call-line a{ transition:none; }
 }
+main section.trusted .trusted-heading h2 { color: var(--off-white); }
