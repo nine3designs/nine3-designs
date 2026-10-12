@@ -1,0 +1,176 @@
+/* ============================================================
+   NINE3 DESIGNS — ENQUIRY UPGRADE STYLESHEET
+   Additive only: every rule is n3- prefixed, so nothing here
+   can clash with your existing styles.
+
+   HOW TO INSTALL
+   Option A (simplest): link it AFTER your main stylesheet:
+     <link rel="stylesheet" href="assets/css/nine3-enquiry.css">
+   Option B: copy everything below and paste it at the very end
+   of your existing style.css.
+
+   Mobile-first: base styles are mobile; @media (min-width) adds
+   desktop layouts. Touch targets are 50px+, safe-area insets
+   respected, and prefers-reduced-motion is honoured.
+   ============================================================ */
+
+:root{
+  --n3-olive:#404A3B;
+  --n3-gold:#C8A96A;
+  --n3-ivory:#FEF9F3;
+  --n3-ink:#2B2B2B;
+  --n3-border:#838980;
+}
+
+/* --- 1. Hero local trust line ------------------------------ */
+.n3-hero-local{
+  margin:16px 0 0;
+  font-size:.8rem;
+  letter-spacing:.04em;
+  line-height:1.6;
+  color:rgba(254,249,243,.75);
+}
+.n3-hero-local b{ color:var(--n3-gold); font-weight:600; }
+
+/* --- 2. Social proof section (Kind Words) ------------------- */
+.n3-proof{ background:var(--n3-ivory); padding:72px 0 64px; }
+.n3-proof-grid{ display:grid; gap:16px; margin:40px 0 8px; }
+.n3-quote-card{
+  background:#fff;
+  border-radius:20px;
+  padding:26px 22px;
+  box-shadow:0 10px 30px rgba(43,43,43,.06);
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin:0;
+}
+.n3-quote-stars{ color:var(--n3-gold); letter-spacing:.35em; font-size:.95rem; }
+.n3-quote-card blockquote{ margin:0; font-size:1rem; line-height:1.65; color:var(--n3-ink); }
+.n3-quote-card figcaption{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:#8a8f85; }
+.n3-proof-logos{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  align-items:center;
+  justify-items:center;
+  margin-top:36px;
+}
+.n3-proof-logos img{
+  max-height:72px; width:auto; max-width:100%;
+  object-fit:contain;
+  filter:grayscale(1); opacity:.55;
+  transition:filter .25s ease, opacity .25s ease;
+}
+.n3-proof-logos img:hover{ filter:none; opacity:1; }
+.n3-proof-badge{
+  display:inline-flex; align-items:center; gap:10px;
+  margin:36px auto 0; padding:10px 22px;
+  border:1px solid var(--n3-border); border-radius:999px;
+  font-size:.8rem; letter-spacing:.08em;
+  color:var(--n3-ink); background:#fff;
+}
+.n3-proof-badge .n3-star{ color:var(--n3-gold); }
+
+@media (min-width:760px){
+  .n3-proof{ padding:96px 0 84px; }
+  .n3-proof-grid{ grid-template-columns:repeat(3,1fr); gap:22px; }
+  .n3-proof-logos{ grid-template-columns:repeat(4,1fr); gap:24px; }
+  .n3-proof-logos img{ max-height:92px; }
+}
+
+/* --- 3. Closing CTA band ------------------------------------ */
+.n3-closing{ background:var(--n3-olive); color:var(--n3-ivory); padding:76px 0; text-align:center; }
+.n3-closing .n3-label{
+  display:block; font-size:.75rem; letter-spacing:.22em;
+  text-transform:uppercase; color:var(--n3-gold); margin-bottom:18px;
+}
+.n3-closing h2{
+  font-size:clamp(2rem,6vw,3.4rem);
+  line-height:1.08; margin:0 0 16px;
+  color:var(--n3-ivory); font-weight:600;
+}
+.n3-closing p{ max-width:540px; margin:0 auto 10px; font-size:1rem; line-height:1.7; color:rgba(254,249,243,.82); }
+.n3-closing .n3-local{ font-size:.8rem; letter-spacing:.05em; color:rgba(254,249,243,.6); margin-bottom:30px; }
+.n3-closing .n3-actions{ display:flex; flex-direction:column; gap:12px; max-width:340px; margin:0 auto; }
+.n3-closing .n3-actions .btn{
+  width:100%; min-height:50px;
+  display:inline-flex; align-items:center; justify-content:center;
+}
+
+@media (min-width:760px){
+  .n3-closing{ padding:104px 0; }
+  .n3-closing .n3-actions{ flex-direction:row; justify-content:center; max-width:none; gap:16px; }
+  .n3-closing .n3-actions .btn{ width:auto; padding:0 34px; }
+}
+
+/* --- 4. Contact page: quote beside the form ----------------- */
+.n3-form-quote{
+  margin:0 0 18px; padding:16px 18px;
+  background:rgba(200,169,106,.12);
+  border-left:3px solid var(--n3-gold);
+  border-radius:12px;
+}
+.n3-form-quote p{ margin:0 0 8px; font-size:.92rem; line-height:1.6; color:var(--n3-ink); }
+.n3-form-quote span{ font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; color:#8a8f85; }
+
+/* --- 5. Package chip (auto-shown via ?package= link) -------- */
+.n3-package-chip{
+  display:none; align-items:center; gap:8px;
+  margin:0 0 14px; padding:10px 16px;
+  background:var(--n3-olive); color:var(--n3-ivory);
+  border-radius:999px; font-size:.82rem; line-height:1.4;
+}
+.n3-package-chip.is-active{ display:inline-flex; }
+.n3-package-chip b{ color:var(--n3-gold); font-weight:600; }
+
+/* --- 6. Mobile sticky enquiry bar (injected by JS) ---------- */
+.n3-mobile-cta{
+  position:fixed; left:0; right:0; bottom:0; z-index:9990;
+  display:none; gap:10px;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));
+  background:rgba(43,50,40,.94);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  transform:translateY(115%);
+  transition:transform .3s ease;
+}
+.n3-mobile-cta.is-visible{ transform:translateY(0); }
+.n3-mobile-cta a{
+  min-height:50px;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:999px; font-weight:600; font-size:.95rem;
+  text-decoration:none;
+}
+.n3-mobile-cta .n3-quote-btn{ flex:1; background:var(--n3-gold); color:var(--n3-ink); }
+.n3-mobile-cta .n3-wa-btn{ width:50px; flex:0 0 50px; background:#25D366; color:#fff; }
+.n3-mobile-cta svg{ width:24px; height:24px; }
+
+@media (max-width:767px){
+  .n3-mobile-cta{ display:flex; }
+  body.n3-has-cta{ padding-bottom:78px; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .n3-mobile-cta{ transition:none; }
+}
+
+/* --- 7. Book a call (Google Meet) --------------------------- */
+.n3-mobile-cta .n3-meet-btn{
+  width:50px; flex:0 0 50px;
+  background:var(--n3-ivory); color:var(--n3-olive);
+}
+.n3-call-line{
+  margin-top:18px; font-size:.92rem; line-height:1.6; opacity:.85;
+}
+.n3-call-line a{
+  color:var(--n3-gold); font-weight:600; text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:border-color .2s ease;
+}
+.n3-call-line a:hover{ border-bottom-color:var(--n3-gold); }
+.n3-call-line i{ margin-right:6px; }
+
+@media (prefers-reduced-motion:reduce){
+  .n3-call-line a{ transition:none; }
+}
