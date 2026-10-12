@@ -539,7 +539,7 @@ main section.trusted .section-label {
 main section.trusted .trusted-heading h2 {
     margin: 0;
 
-    color: var(--white);
+    color: var(--accent);
 
     font-size: clamp(2.9rem, 5vw, 5rem);
     font-weight: 400;
@@ -632,7 +632,7 @@ main section.trusted .trusted-copy p {
 .testimonials-heading h2 {
     margin: 0;
 
-    color: var(--primary-dark);
+    color: #404A3B;
 
     font-size: clamp(3rem, 5vw, 5.4rem);
     font-weight: 400;
