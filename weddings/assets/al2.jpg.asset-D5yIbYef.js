@@ -1,0 +1,1 @@
+var e={url:`/assets/al2-CXPt-bvx.jpg`};export{e as t};

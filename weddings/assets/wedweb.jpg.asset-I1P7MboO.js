@@ -1,0 +1,1 @@
+var e={url:`/assets/wedweb-D9RfC0_0.jpg`};export{e as t};
