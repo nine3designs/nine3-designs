@@ -1,0 +1,1646 @@
+/* ==========================================================
+   NINE3 DESIGNS — PETROL · SIGNATURE THEME
+   ----------------------------------------------------------
+   New brand palette:
+     Petrol    #174B50  feature panels, buttons, headings, brand details
+     Porcelain #F5F1E8  main canvas, sections, portfolio, carousels
+     Graphite  #272B2B  body copy, fine details, secondary backgrounds
+     Mist      #DCE9E5  small panels, dividers, shapes, supporting details
+
+   HOW IT WORKS
+   Load this file LAST on nine3 pages (after nine3-enquiry.css):
+
+     <link rel="stylesheet" href="assets/css/nine3-theme.css">
+
+   It re-points the design tokens, then re-skins every rule in
+   variables / base / layout / components / animations /
+   responsive / portfolio / portfolio-balkan / nine3-enquiry
+   that still carries the old olive-gold palette.
+
+   The weddings section never loads this file, so /weddings
+   keeps its existing olive-gold look untouched.
+   ========================================================== */
+
+
+/* ==========================================================
+   1. DESIGN TOKENS
+   ========================================================== */
+
+:root {
+
+    /* --- Petrol (was olive green) --- */
+    --primary:        #174B50;
+    --primary-dark:   #0F3A3E;
+    --primary-light:  #2A6A70;
+
+    /* --- Mist (was gold) --- */
+    --accent:         #DCE9E5;
+    --accent-light:   #ECF3F0;
+    --accent-deep:    #123E42;   /* tiny uppercase labels on light grounds */
+
+    /* --- Canvas --- */
+    --white:          #FFFFFF;
+    --off-white:      #F5F1E8;   /* porcelain — main canvas */
+    --cream:          #EDE7DB;   /* deeper porcelain — alternate bands */
+    --light-grey:     #DCE9E5;   /* mist — dividers / small panels */
+
+    /* --- Ink --- */
+    --dark:           #272B2B;
+    --text:           #272B2B;   /* graphite body copy */
+    --text-light:     #4E5A5A;   /* softened graphite */
+
+    /* --- Legacy names still referenced by older rules --- */
+    --green:          #174B50;
+    --green-dark:     #0F3A3E;
+    --green-light:    #2A6A70;
+    --gold:           #DCE9E5;
+    --gold-light:     #ECF3F0;
+    --ivory:          #F5F1E8;
+
+    /* --- Signature ink --- */
+    --sig-ink:        #174B50;
+
+    /* --- Enquiry stylesheet tokens --- */
+    --n3-olive:       #174B50;
+    --n3-gold:        #DCE9E5;
+    --n3-ivory:       #F5F1E8;
+    --n3-ink:         #272B2B;
+    --n3-border:      #9FB4AE;
+}
+
+
+/* ==========================================================
+   2. BASE SKIN — canvas, type, buttons
+   ========================================================== */
+
+::selection {
+    background: #174B50;
+    color: #F5F1E8;
+}
+
+body {
+    background: #F5F1E8 !important;
+    color: #272B2B !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #174B50;
+}
+
+p {
+    color: #4E5A5A;
+}
+
+/* Small caps labels: petrol on light grounds (mist unreadable) */
+.section-label,
+.section-title span {
+    color: #174B50 !important;
+}
+
+/* Alternating white panels on the porcelain canvas */
+section:nth-of-type(even) {
+    background: #FFFFFF;
+}
+section:nth-of-type(even) h2,
+section:nth-of-type(even) h3,
+section:nth-of-type(even) h4 {
+    color: #174B50;
+}
+section:nth-of-type(even) p {
+    color: #4E5A5A;
+}
+
+/* Buttons: petrol fill by default */
+.btn-primary {
+    background: #174B50;
+    color: #F5F1E8;
+}
+.btn-primary:hover {
+    background: #0F3A3E;
+    color: #F5F1E8;
+}
+.btn-outline {
+    border-color: #174B50;
+    color: #174B50;
+}
+.btn-outline:hover {
+    background: #174B50;
+    color: #F5F1E8;
+}
+
+/* Back to top */
+.back-to-top {
+    background: #174B50 !important;
+    color: #F5F1E8 !important;
+}
+
+
+/* ==========================================================
+   3. HEADER + NAVIGATION
+   ========================================================== */
+
+.site-header {
+    background: #174B50 !important;
+    border-bottom: 1px solid rgba(220, 233, 229, .14) !important;
+}
+
+.main-nav a {
+    color: #F5F1E8;
+}
+.main-nav a:hover,
+.main-nav a.active {
+    color: #DCE9E5;
+}
+.main-nav a::after {
+    background: #DCE9E5;
+}
+.main-nav a.active::after {
+    background: #DCE9E5;
+}
+
+/* Nine3 Weddings pill in the header (mist chip, petrol text) */
+.header-container > .btn {
+    background: #DCE9E5 !important;
+    color: #174B50 !important;
+}
+.header-container > .btn:hover {
+    background: #ECF3F0 !important;
+    color: #174B50 !important;
+}
+
+/* Mobile toggle + slide-down nav */
+.mobile-toggle span {
+    background: #F5F1E8 !important;
+}
+.main-nav {
+    background: #174B50 !important;
+    border-top: 1px solid rgba(220, 233, 229, .16) !important;
+}
+.main-nav li {
+    border-bottom: 1px solid rgba(220, 233, 229, .16) !important;
+}
+.main-nav li > a {
+    color: #F5F1E8 !important;
+}
+.main-nav li > a:hover,
+.main-nav li > a:focus,
+.main-nav li > a.active {
+    color: #DCE9E5 !important;
+}
+.main-nav .sister-site-mobile a {
+    background: #DCE9E5 !important;
+    border: 1px solid #DCE9E5 !important;
+    color: #174B50 !important;
+}
+.sister-site-mobile {
+    border-top: 1px solid rgba(220, 233, 229, .35) !important;
+}
+.main-nav .sister-site-mobile a:hover {
+    background: #ECF3F0 !important;
+}
+
+/* About dropdown menu */
+.site-header .main-nav .nav-dropdown-menu {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(23, 75, 80, .12) !important;
+}
+.site-header .main-nav .nav-dropdown-menu a {
+    color: #272B2B;
+}
+.site-header .main-nav .nav-dropdown-menu a:hover,
+.site-header .main-nav .nav-dropdown-menu a:focus {
+    background: rgba(220, 233, 229, .55);
+    color: #174B50;
+}
+.site-header .main-nav .nav-dropdown-menu a.active {
+    color: #123E42;
+}
+
+
+/* ==========================================================
+   4. HERO + STATS / MARQUEE
+   ========================================================== */
+
+.hero {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(220, 233, 229, .12),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #174B50,
+            #0F3A3E
+        ) !important;
+}
+.hero h1,
+.hero h2 {
+    color: #F5F1E8 !important;
+}
+.hero-text p {
+    color: rgba(245, 241, 232, .85) !important;
+}
+.hero-tag {
+    background: rgba(220, 233, 229, .12);
+    color: #DCE9E5;
+}
+.hero-image::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(220, 233, 229, .12),
+            transparent 70%
+        );
+}
+
+/* Hero buttons: mist CTA + porcelain outline on the petrol panel */
+.hero .btn-primary,
+.hero-buttons .btn-primary {
+    background: #DCE9E5 !important;
+    color: #174B50 !important;
+}
+.hero .btn-primary:hover,
+.hero-buttons .btn-primary:hover {
+    background: #ECF3F0 !important;
+    color: #174B50 !important;
+}
+.hero .btn-secondary {
+    border-color: rgba(220, 233, 229, .45);
+    color: #F5F1E8;
+}
+.hero .btn-secondary:hover {
+    background: rgba(220, 233, 229, .12);
+}
+
+/* Trust banner under the hero */
+.stats {
+    background: #F5F1E8 !important;
+}
+.stat-item {
+    color: #272B2B !important;
+}
+.stat-item i {
+    color: #174B50 !important;
+}
+.stat-item:not(:last-child) {
+    border-right: 1px solid rgba(23, 75, 80, .18) !important;
+}
+
+/* Marquee strip */
+.n3-marquee {
+    background: #F5F1E8 !important;
+    border-top: 1px solid rgba(23, 75, 80, .16) !important;
+    border-bottom: 1px solid rgba(23, 75, 80, .16) !important;
+}
+.n3-marquee-group em {
+    color: rgba(23, 75, 80, .55);
+}
+.mobile-stats-ticker {
+    border-top: 1px solid rgba(23, 75, 80, .15) !important;
+    border-bottom: 1px solid rgba(23, 75, 80, .15) !important;
+}
+
+/* Scroll progress bar */
+.scroll-progress,
+#scroll-progress {
+    background: linear-gradient(90deg, #DCE9E5, #FFFFFF) !important;
+}
+
+
+/* ==========================================================
+   5. FOOTER (both versions)
+   ========================================================== */
+
+.site-footer {
+    background: #174B50 !important;
+    color: #F5F1E8 !important;
+}
+.site-footer h4 {
+    color: #DCE9E5 !important;
+}
+.site-footer p {
+    color: rgba(245, 241, 232, .78) !important;
+}
+.site-footer a {
+    color: #F5F1E8 !important;
+}
+.site-footer a:hover {
+    color: #DCE9E5 !important;
+}
+.footer-email {
+    color: #F5F1E8 !important;
+}
+.footer-email:hover {
+    color: #DCE9E5 !important;
+}
+.footer-brand p {
+    color: rgba(245, 241, 232, .78) !important;
+}
+
+/* Social circles */
+.footer-social a,
+.footer-socials a {
+    background: rgba(220, 233, 229, .08);
+    border: 1px solid rgba(220, 233, 229, .5) !important;
+    color: #F5F1E8 !important;
+}
+.footer-social a:hover,
+.footer-socials a:hover {
+    background: #DCE9E5 !important;
+    border-color: #DCE9E5 !important;
+    color: #174B50 !important;
+}
+
+/* Footer CTA button sits on petrol — flip to mist */
+.footer-brand .btn {
+    background: #DCE9E5 !important;
+    border-color: #DCE9E5 !important;
+    color: #174B50 !important;
+}
+.footer-brand .btn:hover {
+    background: #ECF3F0 !important;
+    color: #174B50 !important;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    border-top: 1px solid rgba(220, 233, 229, .18) !important;
+}
+.footer-bottom p {
+    color: rgba(245, 241, 232, .72) !important;
+}
+.footer-legal a {
+    color: rgba(245, 241, 232, .7) !important;
+}
+.footer-legal a:hover {
+    color: #DCE9E5 !important;
+}
+.footer-legal span {
+    color: rgba(245, 241, 232, .35) !important;
+}
+.footer-credit {
+    color: rgba(245, 241, 232, .6) !important;
+}
+.footer-credit span {
+    color: #DCE9E5 !important;
+}
+
+/* Footer v2 (weddings-style footer used on some pages) */
+.site-footer.footer-v2 {
+    background: #123F44 !important;
+}
+.site-footer.footer-v2 h4,
+.site-footer.footer-v2 .fv-col strong {
+    color: #DCE9E5 !important;
+}
+.site-footer.footer-v2 .fv-col > a {
+    color: #F5F1E8 !important;
+}
+.site-footer.footer-v2 .fv-col > a:hover {
+    color: #DCE9E5 !important;
+}
+.site-footer.footer-v2 .fv-email {
+    color: #F5F1E8 !important;
+}
+.site-footer.footer-v2 .fv-email:hover {
+    color: #DCE9E5 !important;
+}
+.site-footer.footer-v2 .fv-social a {
+    border: 1px solid rgba(220, 233, 229, .5) !important;
+    color: #DCE9E5 !important;
+}
+.site-footer.footer-v2 .fv-social a:hover {
+    background: #DCE9E5 !important;
+    border-color: #DCE9E5 !important;
+    color: #174B50 !important;
+}
+.site-footer.footer-v2 .fv-legal a {
+    color: #DCE9E5 !important;
+}
+
+
+/* ==========================================================
+   6. CARDS · SERVICES · PORTFOLIO · PRICING · FAQ
+   ========================================================== */
+
+/* Glass cards → solid white cards on porcelain */
+.service-card,
+.portfolio-card,
+.contact-card {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(23, 75, 80, .12) !important;
+}
+.service-card:hover,
+.portfolio-card:hover,
+.contact-card:hover {
+    border-color: rgba(23, 75, 80, .35) !important;
+}
+
+.service-icon {
+    background: #174B50 !important;
+    color: #DCE9E5 !important;
+}
+.service-card:hover .service-icon {
+    background: #DCE9E5 !important;
+    color: #174B50 !important;
+}
+
+.portfolio-content {
+    background: #FFFFFF !important;
+}
+.portfolio-content p {
+    color: #4E5A5A !important;
+}
+
+/* Case studies */
+.case-study {
+    background: #F5F1E8 !important;
+}
+.case-study.alt {
+    background: #EDE7DB !important;
+}
+.case-content p {
+    color: #4E5A5A !important;
+}
+.case-content h2::after {
+    background: #174B50;
+}
+.case-category {
+    color: #123E42 !important;
+}
+.project-services span {
+    background: #174B50 !important;
+    color: #F5F1E8 !important;
+}
+.project-services span:hover {
+    background: #2A6A70 !important;
+    color: #F5F1E8 !important;
+}
+
+/* Clients */
+.clients {
+    background: #F5F1E8 !important;
+}
+
+/* FAQ band */
+.faq-section {
+    background: #174B50 !important;
+}
+.faq-section h2 {
+    color: #F5F1E8 !important;
+}
+.faq-section .section-title p {
+    color: rgba(245, 241, 232, .85) !important;
+}
+.faq-list details {
+    background: #FFFFFF !important;
+}
+.faq-list summary {
+    color: #174B50 !important;
+}
+.faq-list summary::after {
+    color: #174B50 !important;
+}
+.faq-list details[open] {
+    border-top: 4px solid #174B50 !important;
+}
+.faq-list p {
+    color: #4E5A5A !important;
+}
+
+/* Why choose us (dark petrol panel) */
+.why-us,
+.why-contact,
+.why-section,
+.why-nine3 {
+    background: #174B50 !important;
+}
+.why-us h3,
+.why-section .section-title h2,
+.why-nine3-grid h2,
+.why-nine3-item h3 {
+    color: #F5F1E8 !important;
+}
+.why-section .section-title span {
+    color: #DCE9E5 !important;
+}
+.why-us .service-card,
+.why-section .service-card,
+.process .service-card {
+    background: #FFFFFF !important;
+}
+.why-us h3,
+.why-section .service-card h3,
+.process h3,
+.process h4 {
+    color: #174B50 !important;
+}
+.why-section .service-card p,
+.process p {
+    color: #4E5A5A !important;
+}
+.closing-message {
+    border-top: 1px solid rgba(220, 233, 229, .25) !important;
+    color: #F5F1E8 !important;
+}
+
+/* Why Nine3 interactive list */
+.why-nine3-grid p {
+    color: rgba(245, 241, 232, .8) !important;
+}
+.why-nine3-list,
+.why-nine3-item,
+.why-nine3-item:nth-child(3n + 2),
+.why-nine3-item:nth-child(3n + 3),
+.why-nine3-item:nth-child(even) {
+    border-color: rgba(220, 233, 229, .2) !important;
+}
+.why-nine3-item span {
+    color: #DCE9E5 !important;
+    border: 1px solid rgba(220, 233, 229, .45) !important;
+}
+.why-nine3-item:hover {
+    background: rgba(220, 233, 229, .07) !important;
+}
+.why-nine3-item:hover span {
+    background: #DCE9E5 !important;
+    color: #174B50 !important;
+}
+.nine3-credentials span {
+    color: rgba(245, 241, 232, .65) !important;
+}
+.nine3-credentials span::before {
+    color: #DCE9E5 !important;
+}
+
+/* Services feature panel */
+.service-feature {
+    background: #FFFFFF !important;
+    border-color: rgba(23, 75, 80, .15) !important;
+}
+.service-feature-heading {
+    border-color: rgba(23, 75, 80, .14) !important;
+}
+.service-feature-heading::before {
+    background: #174B50 !important;
+}
+.service-feature-heading .section-label {
+    color: #174B50 !important;
+}
+.service-feature-content::after {
+    color: rgba(23, 75, 80, .08) !important;
+}
+.service-feature:hover {
+    border-color: rgba(23, 75, 80, .35) !important;
+}
+.collection-link {
+    color: #174B50 !important;
+}
+.collection-link::after {
+    background: #174B50 !important;
+}
+.collection-link span {
+    color: #174B50 !important;
+}
+
+/* Print & marketing list */
+.service-list-grid,
+.service-list-item,
+.service-list-item:nth-child(even) {
+    border-color: rgba(23, 75, 80, .16) !important;
+}
+.service-list-item::before {
+    background: #174B50 !important;
+}
+.service-list-item > span {
+    color: #174B50 !important;
+}
+.service-list-item h3 {
+    color: #174B50 !important;
+}
+.service-list-item p {
+    color: #5E6D6B !important;
+}
+.service-list-item:hover {
+    background: rgba(23, 75, 80, .05) !important;
+}
+.service-list-item:hover p {
+    color: #123E42 !important;
+}
+
+/* Extras */
+.extras-section {
+    background: #EDE7DB !important;
+}
+.extras-heading h2 {
+    color: #174B50 !important;
+}
+.extras-table,
+.extra-row {
+    border-color: rgba(23, 75, 80, .18) !important;
+}
+.extra-row span {
+    color: #4E5A5A !important;
+}
+.extra-row strong {
+    color: #174B50 !important;
+}
+.extra-row:hover {
+    background: rgba(23, 75, 80, .06) !important;
+}
+
+/* Pricing */
+.pricing-card {
+    background: #FFFFFF !important;
+    border-color: rgba(23, 75, 80, .14) !important;
+}
+.pricing-card:hover {
+    border-color: rgba(23, 75, 80, .4) !important;
+}
+.pricing-card.featured {
+    border-color: #174B50 !important;
+}
+.pricing-card.featured::before {
+    background: #174B50 !important;
+}
+.pricing-card.featured::after {
+    background: #DCE9E5 !important;
+    color: #174B50 !important;
+}
+.pricing-eyebrow,
+.pricing-eyebrow i {
+    color: #123E42 !important;
+}
+.pricing-description {
+    color: #4E5A5A !important;
+}
+.pricing-divider {
+    background: rgba(23, 75, 80, .14) !important;
+}
+.pricing-footer .price {
+    color: #174B50 !important;
+}
+.pricing-footer .price span {
+    color: #5E6D6B !important;
+}
+.pricing-card li {
+    color: #4E5A5A !important;
+}
+.pricing-card li::before {
+    color: #174B50 !important;
+}
+.pricing-card .btn-outline {
+    border: 1px solid #174B50 !important;
+    color: #174B50 !important;
+}
+.pricing-card .btn-outline:hover {
+    background: #174B50 !important;
+    color: #F5F1E8 !important;
+}
+.pricing-card.featured .btn-primary {
+    background: #174B50 !important;
+    border: 1px solid #174B50 !important;
+    color: #F5F1E8 !important;
+}
+.pricing-card.featured .btn-primary:hover {
+    background: transparent !important;
+    border-color: #174B50 !important;
+    color: #174B50 !important;
+}
+
+/* CTA band */
+.cta,
+.services-page .cta {
+    background: #F5F1E8 !important;
+}
+.cta .section-label {
+    color: #174B50 !important;
+}
+.cta h2 {
+    color: #174B50 !important;
+}
+.cta p {
+    color: #4E5A5A !important;
+}
+.cta .btn {
+    background: #174B50 !important;
+    border-color: #174B50 !important;
+    color: #F5F1E8 !important;
+}
+.cta .btn:hover {
+    background: transparent !important;
+    border-color: #123E42 !important;
+    color: #123E42 !important;
+}
+
+/* View full portfolio button */
+.portfolio .section-button .btn {
+    background: #174B50 !important;
+    border: 1px solid #174B50 !important;
+    color: #F5F1E8 !important;
+}
+.portfolio .section-button .btn:hover {
+    background: transparent !important;
+    border-color: #123E42 !important;
+    color: #123E42 !important;
+}
+
+/* Homepage recent projects */
+.portfolio {
+    background: #EDE7DB !important;
+}
+.portfolio .section-title span {
+    color: #174B50 !important;
+}
+.portfolio .section-title h2 {
+    color: #174B50 !important;
+}
+.portfolio .section-title p {
+    color: #4E5A5A !important;
+}
+.portfolio-card::after {
+    background: #174B50 !important;
+}
+.portfolio-content .case-category {
+    color: #123E42 !important;
+}
+.portfolio-content h3 {
+    color: #174B50 !important;
+}
+.portfolio-content p {
+    color: #4E5A5A !important;
+}
+
+
+/* ==========================================================
+   7. INNER PAGES — HEROES, ABOUT, CONTACT, WORK, LEGAL
+   ========================================================== */
+
+.page-hero {
+    background: #F5F1E8 !important;
+    color: #272B2B !important;
+}
+.page-hero .section-label {
+    color: #174B50 !important;
+}
+.page-hero h1,
+.page-hero h2 {
+    color: #174B50 !important;
+}
+.page-hero p {
+    color: #4E5A5A !important;
+}
+
+/* About */
+.about-hero {
+    background: #F5F1E8 !important;
+    color: #272B2B !important;
+}
+.about-hero .section-label {
+    color: #174B50 !important;
+}
+.about-hero h1 {
+    color: #174B50 !important;
+}
+.about-hero p {
+    color: #4E5A5A !important;
+}
+.about-story {
+    background: #F5F1E8 !important;
+}
+.about-story-content h2,
+.about-story-content p {
+    color: #4E5A5A !important;
+}
+.about-story-content .section-label {
+    color: #174B50 !important;
+}
+.about-page .about-story {
+    background: #174B50 !important;
+}
+.about-page .about-story h2 {
+    color: #F5F1E8 !important;
+}
+.about-page .about-story p {
+    color: rgba(245, 241, 232, .88) !important;
+}
+.about-story .about-grid {
+    color: #F5F1E8 !important;
+}
+.about-story h2 {
+    color: #F5F1E8 !important;
+}
+.about-story p {
+    color: rgba(245, 241, 232, .85) !important;
+}
+.about-story img {
+    box-shadow: 0 30px 60px rgba(15, 58, 62, .45) !important;
+}
+
+/* About nine3 — why panel + mist overlap card */
+section.about-nine3,
+body section.about-nine3,
+.about-nine3.about-nine3 {
+    background: #F5F1E8 !important;
+    background-color: #F5F1E8 !important;
+    color: #272B2B !important;
+}
+.about-nine3 .section-label,
+.about-nine3-content .section-label,
+body section.about-nine3 .about-nine3-content .section-label,
+body section.about-nine3 .feature-list li span,
+.about-nine3 .feature-list li span {
+    color: #174B50 !important;
+}
+.about-nine3 .about-nine3-content h2,
+.about-nine3-content h2,
+body section.about-nine3 .about-nine3-content h2 {
+    color: #174B50 !important;
+}
+.about-nine3 .about-nine3-content p,
+.about-nine3-content p,
+body section.about-nine3 .about-nine3-content p,
+.about-nine3 .feature-list li,
+body section.about-nine3 .feature-list li {
+    color: #4E5A5A !important;
+}
+.about-nine3 .feature-list,
+.about-nine3 .about-nine3-image {
+    border-color: rgba(23, 75, 80, .16) !important;
+}
+/* The overlapping card becomes a Mist panel */
+.about-nine3 .about-nine3-card-content,
+body section.about-nine3 .about-nine3-card-content {
+    background: #DCE9E5 !important;
+    border: 1px solid rgba(23, 75, 80, .16) !important;
+    color: #272B2B !important;
+}
+.about-nine3 .about-nine3-card-content::before {
+    background: #174B50 !important;
+}
+.about-nine3 .about-nine3-card-content .section-label {
+    color: #174B50 !important;
+}
+.about-nine3 .about-nine3-card-content h2 {
+    color: #174B50 !important;
+}
+.about-nine3 .about-nine3-card-content p {
+    color: #272B2B !important;
+}
+.about-nine3 .about-nine3-card-content .btn-primary {
+    background: #174B50 !important;
+    border: 1px solid #174B50 !important;
+    color: #F5F1E8 !important;
+}
+.about-nine3 .about-nine3-card-content .btn-primary:hover {
+    background: transparent !important;
+    border-color: #174B50 !important;
+    color: #174B50 !important;
+}
+
+/* Contact */
+.contact-page {
+    background: #F5F1E8 !important;
+}
+.contact-page h1,
+.contact-page h2,
+.contact-page h3 {
+    color: #174B50 !important;
+}
+.contact-page .contact-hero {
+    background: #F5F1E8 !important;
+}
+.contact-page .contact-hero h1 {
+    color: #174B50 !important;
+}
+.contact-page .contact-hero p,
+.contact-page .page-hero p,
+.contact-page .contact-content p {
+    color: #4E5A5A !important;
+}
+.contact-page .contact-section {
+    background: #EDE7DB !important;
+}
+.contact-page .contact-content h2 {
+    color: #174B50 !important;
+}
+.contact-page .contact-details a {
+    color: #174B50 !important;
+}
+.contact-page .contact-details i {
+    color: #174B50 !important;
+}
+.contact-page .contact-form {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(23, 75, 80, .14) !important;
+}
+.contact-page .contact-form label {
+    color: #174B50 !important;
+}
+.contact-page .contact-form input,
+.contact-page .contact-form select,
+.contact-page .contact-form textarea {
+    background: #F5F1E8 !important;
+    border: 1px solid rgba(23, 75, 80, .18) !important;
+    color: #272B2B !important;
+}
+.contact-page .contact-form input:focus,
+.contact-page .contact-form select:focus,
+.contact-page .contact-form textarea:focus {
+    border-color: #174B50 !important;
+    box-shadow: 0 0 0 3px rgba(23, 75, 80, .12) !important;
+}
+
+/* Our work */
+.work-page .featured-work-content p {
+    color: rgba(245, 241, 232, .85) !important;
+}
+.work-page .case-content *,
+.work-page .case-study .case-content p,
+.work-page .case-study .case-content .case-description,
+.work-page .case-study .case-content p:first-of-type,
+.work-page .case-study .case-content p:last-of-type,
+.work-page .case-content p,
+.work-page .case-content li {
+    color: #272B2B !important;
+}
+.work-page .case-content h2,
+.work-page .featured-work-content p {
+    color: #174B50 !important;
+}
+.work-page .case-content .case-category {
+    color: #123E42 !important;
+}
+
+/* Legal pages */
+.legal-page {
+    background: #F5F1E8 !important;
+}
+.legal-header .section-label {
+    color: #174B50 !important;
+}
+.legal-header h1 {
+    color: #174B50 !important;
+}
+.legal-header p {
+    color: #4E5A5A !important;
+}
+.legal-updated {
+    color: #5E6D6B !important;
+}
+.legal-content {
+    border: 1px solid rgba(23, 75, 80, .12) !important;
+}
+.legal-content section {
+    border-bottom: 1px solid rgba(23, 75, 80, .1) !important;
+}
+.legal-content h2 {
+    color: #174B50 !important;
+}
+.legal-content h2::before {
+    background: #174B50 !important;
+}
+.legal-content p,
+.legal-content li {
+    color: #4E5A5A !important;
+}
+.legal-content li::marker {
+    color: #174B50 !important;
+}
+.legal-content a {
+    color: #174B50 !important;
+    text-decoration-color: rgba(23, 75, 80, .4) !important;
+}
+.legal-content a:hover {
+    color: #123E42 !important;
+}
+.legal-contact {
+    background: #EDE7DB !important;
+    border-left: 3px solid #174B50 !important;
+}
+.legal-contact strong {
+    color: #174B50 !important;
+}
+
+
+/* ==========================================================
+   8. PORTFOLIO PAGE + BALKAN GALLERY
+   ========================================================== */
+
+.portfolio-hero {
+    background: linear-gradient(165deg, #0F3A3E 0%, #174B50 100%) !important;
+}
+.portfolio-hero::before,
+.portfolio-hero::after {
+    border-color: rgba(220, 233, 229, .12) !important;
+}
+.hero-top {
+    border-bottom: 1px solid rgba(220, 233, 229, .18) !important;
+}
+.portfolio-hero .section-label {
+    color: rgba(245, 241, 232, .65) !important;
+}
+.hero-number {
+    color: rgba(245, 241, 232, .5) !important;
+}
+.hero-content h1 span {
+    color: #DCE9E5 !important;
+}
+.hero-description p {
+    color: rgba(245, 241, 232, .7) !important;
+}
+
+.portfolio-intro,
+.portfolio-work,
+.portfolio-cta {
+    background: #EDE7DB !important;
+}
+.intro-line {
+    background: #174B50 !important;
+}
+.portfolio-project,
+.portfolio-project:last-child {
+    border-color: #DCE9E5 !important;
+}
+.project-number,
+.project-category {
+    color: #123E42 !important;
+}
+.project-heading h2 span {
+    color: #123E42 !important;
+}
+.project-image::after {
+    background: rgba(15, 58, 62, .92) !important;
+    color: #F5F1E8 !important;
+}
+.testimonial-mark {
+    color: #174B50 !important;
+}
+
+/* Big mist CTA panel */
+.portfolio-cta-inner {
+    background: #DCE9E5 !important;
+}
+.portfolio-cta-inner::after {
+    color: rgba(23, 75, 80, .07) !important;
+}
+.portfolio-cta .section-label {
+    color: rgba(23, 75, 80, .65) !important;
+}
+.portfolio-cta h2 {
+    color: #0F3A3E !important;
+}
+.portfolio-cta p {
+    color: rgba(23, 75, 80, .8) !important;
+}
+.portfolio-cta .btn {
+    background: #174B50 !important;
+    color: #F5F1E8 !important;
+}
+
+/* Trusted-by band */
+main section.trusted {
+    background: #0F3A3E !important;
+}
+main section.trusted .section-label {
+    color: rgba(245, 241, 232, .55) !important;
+}
+main section.trusted .trusted-heading h2 {
+    color: #DCE9E5 !important;
+}
+main section.trusted .trusted-copy p {
+    color: rgba(245, 241, 232, .68) !important;
+}
+.client-logos,
+.client-logo {
+    border-color: rgba(220, 233, 229, .18) !important;
+}
+
+/* Balkan gallery */
+main section.gallery .row ul li a:hover::after {
+    background: rgba(15, 58, 62, .55) !important;
+}
+.port-number {
+    color: #123E42 !important;
+}
+.port-inner h2 span {
+    color: #123E42 !important;
+}
+.port-link {
+    border-bottom: 2px solid #174B50 !important;
+}
+.port-link:hover {
+    color: #123E42 !important;
+}
+
+
+/* ==========================================================
+   9. JOURNAL / BLOG + SIGNATURE + LIGHTBOX
+   ========================================================== */
+
+.blog-hero {
+    background: #EDE7DB !important;
+}
+.blog-hero .section-label {
+    color: #174B50 !important;
+    opacity: 1 !important;
+}
+.blog-hero h1 {
+    color: #174B50 !important;
+}
+.blog-hero h1 span {
+    color: #272B2B !important;
+}
+.blog-hero p {
+    color: #4E5A5A !important;
+}
+.blog-posts {
+    background: #EDE7DB !important;
+}
+.blog-posts .section-title span {
+    color: #174B50 !important;
+    opacity: 1 !important;
+}
+.blog-posts .section-title h2 {
+    color: #174B50 !important;
+}
+.blog-card {
+    background: #FFFFFF !important;
+}
+.blog-card-body .blog-cat {
+    color: #123E42 !important;
+}
+.blog-card-body h3 {
+    color: #174B50 !important;
+}
+.blog-card-body p {
+    color: #4E5A5A !important;
+}
+.blog-card-meta,
+.blog-card .blog-meta {
+    color: #5E6D6B !important;
+}
+.blog-link {
+    color: #174B50 !important;
+}
+.blog-link span {
+    color: rgba(23, 75, 80, .55) !important;
+}
+.blog-link:hover {
+    color: #123E42 !important;
+}
+.blog-coming {
+    background: #174B50 !important;
+}
+.blog-coming .section-title span {
+    color: #DCE9E5 !important;
+}
+.blog-coming .section-title h2 {
+    color: #F5F1E8 !important;
+}
+.blog-placeholder,
+.jt-image {
+    background: linear-gradient(135deg, #0F3A3E, #174B50) !important;
+}
+
+/* Journal teasers on the homepage */
+.journal-teaser-list .jt-title {
+    color: #174B50 !important;
+}
+.journal-teaser-list a:hover .jt-title,
+.journal-teaser-list a:focus-visible .jt-title {
+    text-decoration-color: rgba(23, 75, 80, .5) !important;
+}
+.journal-teaser-list .jt-label {
+    color: #123E42 !important;
+}
+
+/* Journal article body */
+.journal-body,
+.journal-body p {
+    color: #272B2B !important;
+}
+.journal-body h2,
+.journal-body h3,
+.journal-body strong {
+    color: #174B50 !important;
+}
+.journal-body li::marker {
+    color: #174B50 !important;
+}
+.journal-body blockquote {
+    border-left: 3px solid #174B50 !important;
+    background: rgba(220, 233, 229, .35) !important;
+    color: #174B50 !important;
+}
+.journal-back,
+.journal-nextprev a {
+    color: #174B50 !important;
+}
+.journal-back:hover,
+.journal-back:focus-visible,
+.journal-nextprev a:hover,
+.journal-nextprev a:focus-visible {
+    color: #123E42 !important;
+}
+
+/* Cost table + budget cards (journal articles) */
+.cost-table th {
+    background: #174B50 !important;
+    color: #F5F1E8 !important;
+}
+.cost-table td:first-child {
+    color: #174B50 !important;
+}
+.budget-card .bp {
+    color: #174B50 !important;
+}
+.budget-card .bn {
+    color: #123E42 !important;
+}
+.budget-card p {
+    color: #4E5A5A !important;
+}
+.budget-card.featured {
+    background: #174B50 !important;
+    border-color: #174B50 !important;
+}
+.budget-card.featured .bp {
+    color: #F5F1E8 !important;
+}
+.budget-card.featured .bn {
+    color: #DCE9E5 !important;
+}
+.cost-cta {
+    background: #174B50 !important;
+}
+.journal-article .cost-cta h2 {
+    color: #F5F1E8 !important;
+}
+.journal-article .cost-cta-note {
+    color: rgba(245, 241, 232, .7) !important;
+}
+.journal-article .cost-cta-note em {
+    color: #DCE9E5 !important;
+}
+
+/* Signature (traced ink) */
+.signature-svg .sig-name tspan,
+.signature-svg .sig-flourish,
+.signature-svg .sig-role {
+    color: #174B50;
+}
+.signature-block .sig-role {
+    fill: #174B50;
+}
+
+/* Lightbox chrome */
+.image-lightbox {
+    background: rgba(15, 26, 27, .92) !important;
+}
+.n3-lightbox-badge,
+.image-lightbox .n3-count {
+    background: rgba(15, 58, 62, .92) !important;
+    color: #F5F1E8 !important;
+}
+
+
+/* ==========================================================
+   10. ENQUIRY EXTRAS (n3- components)
+   ========================================================== */
+
+.n3-hero-local {
+    color: rgba(245, 241, 232, .8) !important;
+}
+.n3-hero-local b {
+    color: #DCE9E5 !important;
+}
+.n3-proof {
+    background: #F5F1E8 !important;
+}
+.n3-quote-stars {
+    color: #174B50 !important;
+}
+.n3-quote-card figcaption {
+    color: #5E6D6B !important;
+}
+.n3-proof-badge {
+    color: #272B2B !important;
+    border-color: #9FB4AE !important;
+}
+.n3-proof-badge .n3-star {
+    color: #174B50 !important;
+}
+.n3-closing {
+    background: #174B50 !important;
+    color: #F5F1E8 !important;
+}
+.n3-closing .n3-label {
+    color: #DCE9E5 !important;
+}
+.n3-closing h2 {
+    color: #F5F1E8 !important;
+}
+.n3-closing p,
+.n3-closing .n3-local {
+    color: rgba(245, 241, 232, .82) !important;
+}
+.n3-closing .n3-actions .btn {
+    background: #DCE9E5 !important;
+    color: #174B50 !important;
+}
+.n3-closing .n3-actions .btn:hover {
+    background: #ECF3F0 !important;
+}
+.n3-form-quote {
+    background: rgba(23, 75, 80, .06) !important;
+    border-left: 3px solid #174B50 !important;
+}
+.n3-form-quote span {
+    color: #5E6D6B !important;
+}
+.n3-package-chip b {
+    color: #DCE9E5 !important;
+}
+.n3-mobile-cta {
+    background: rgba(15, 42, 45, .95) !important;
+}
+.n3-call-line a {
+    color: #DCE9E5 !important;
+}
+.n3-call-line a:hover {
+    border-bottom-color: #DCE9E5 !important;
+}
+
+
+/* ==========================================================
+   11. FORM FOCUS STATES (global)
+   ========================================================== */
+
+input:focus,
+textarea:focus,
+select:focus,
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: #174B50 !important;
+    box-shadow: 0 0 0 4px rgba(23, 75, 80, .12) !important;
+}
+input,
+textarea,
+select {
+    color: #272B2B;
+}
+label {
+    color: #174B50;
+}
+.contact-form {
+    background: #FFFFFF !important;
+    color: #272B2B !important;
+}
+.contact-form h2 {
+    color: #174B50 !important;
+}
+.contact-about {
+    background: #FFFFFF !important;
+    color: #272B2B !important;
+}
+.contact-about h2,
+.contact-about p {
+    color: #174B50 !important;
+}
+.contact-about p {
+    color: #4E5A5A !important;
+}
+.contact-about strong,
+.contact-about a {
+    color: #174B50 !important;
+}
+.contact-about a:hover {
+    color: #0F3A3E !important;
+}
+.contact-details {
+    border-top: 1px solid rgba(23, 75, 80, .14) !important;
+}
+.detail h5 {
+    color: #174B50 !important;
+}
+.detail a {
+    color: #272B2B !important;
+}
+.signature {
+    border-top: 1px solid rgba(23, 75, 80, .14) !important;
+    color: #272B2B !important;
+}
+.signature span {
+    color: #174B50 !important;
+}
+
+
+/* ==========================================================
+   12. LEGACY RULES THAT STILL POINT AT OLD TOKENS
+   (kept harmless now that tokens are re-pointed)
+   ========================================================== */
+
+.about-nine3-card-content {
+    background: #DCE9E5;
+}
+.about-nine3 .about-nine3-card-content {
+    background: #DCE9E5 !important;
+}
+
+
+/* ==========================================================
+   13. HIGH-SPECIFICITY RESETS
+   (matches the source files' own force-block specificity,
+    e.g. body section.about-nine3 ... which would otherwise
+    beat the flat overrides above)
+   ========================================================== */
+
+/* --- About Nine3 split section (homepage) --- */
+body section.about-nine3 .about-nine3-content .section-label {
+    color: #174B50 !important;
+}
+body section.about-nine3 .about-nine3-content h2 {
+    color: #174B50 !important;
+}
+body section.about-nine3 .about-nine3-content p {
+    color: #4E5A5A !important;
+}
+body section.about-nine3 .feature-list {
+    border-top: 1px solid rgba(23, 75, 80, .14) !important;
+}
+body section.about-nine3 .feature-list li {
+    color: #272B2B !important;
+}
+body section.about-nine3 .feature-list li span {
+    color: #174B50 !important;
+}
+body section.about-nine3 .about-nine3-card-content {
+    background: #DCE9E5 !important;
+    color: #272B2B !important;
+}
+body section.about-nine3 .about-nine3-card-content .section-label {
+    color: #174B50 !important;
+}
+body section.about-nine3 .about-nine3-card-content h2 {
+    color: #174B50 !important;
+}
+body section.about-nine3 .about-nine3-card-content p {
+    color: #272B2B !important;
+}
+body section.about-nine3 .about-nine3-card-content .btn-primary {
+    background: #174B50 !important;
+    border-color: #174B50 !important;
+    color: #F5F1E8 !important;
+}
+body section.about-nine3 .about-nine3-card-content .btn-primary:hover {
+    background: transparent !important;
+    border-color: #174B50 !important;
+    color: #174B50 !important;
+}
+
+/* --- Journal teaser list (inside the Mist card) --- */
+.journal-teaser-list li + li {
+    border-top: 1px solid rgba(23, 75, 80, .25);
+}
+.journal-teaser-list .jt-date {
+    color: rgba(23, 75, 80, .6);
+}
+.journal-teaser-list a:hover .jt-title,
+.journal-teaser-list a:focus-visible .jt-title {
+    text-decoration-color: rgba(23, 75, 80, .5);
+}
+
+/* --- Hero collage badge --- */
+.collage-badge {
+    background: rgba(15, 58, 62, .85) !important;
+    border: 1px solid rgba(220, 233, 229, .5) !important;
+    color: #F5F1E8 !important;
+}
+
+/* --- Why-section cards (mobile force block) --- */
+body .why-section .service-card h3 {
+    color: #174B50 !important;
+}
+body .why-section .service-card p {
+    color: #272B2B !important;
+}
+
+/* --- Process band (hard-coded olive in base.css) --- */
+.process {
+    background: #174B50 !important;
+}
+
+/* --- Footer v2 column headings (span.fv-heading, hard-coded gold) --- */
+.site-footer.footer-v2 .fv-heading {
+    color: #DCE9E5 !important;
+}
+
+/* --- Case-variant token used by an inline style on /contact --- */
+:root {
+    --IVORY: #F5F1E8;
+}
+
+/* --- Section icon glyphs (the circle-question chip etc.) --- */
+.section-icon i {
+    color: #174B50 !important;
+}
+.faq-section .section-icon i,
+.why-contact .section-icon i,
+.why-section .section-icon i {
+    color: #DCE9E5 !important;
+}
+
+/* =====================================================
+   14) SERVICES PAGE (assets/css/services.css)
+   Local tokens declared inside services.css + its
+   hard-coded rgba(254,249,243)/rgba(51,60,48) values.
+   ===================================================== */
+:root {
+    --bg-color: #174B50;
+    --text-gold: #DCE9E5;
+    --text-muted: rgba(245, 241, 232, .72);
+    --border-line: rgba(220, 233, 229, .16);
+}
+
+main section.services-hero .section-label {
+    color: rgba(245, 241, 232, .62) !important;
+}
+
+main section.services-hero .hero-copy {
+    color: rgba(245, 241, 232, .66) !important;
+}
+
+.hero-tag {
+    border: 1px solid rgba(245, 241, 232, .2) !important;
+    color: rgba(245, 241, 232, .75) !important;
+}
+
+main section.services-hero::before {
+    border: 1px solid rgba(245, 241, 232, .09);
+}
+
+main section.services-hero::after {
+    border: 1px solid rgba(245, 241, 232, .05);
+}
+
+main section.process .section-label {
+    color: rgba(245, 241, 232, .5) !important;
+}
+
+.process-head > p {
+    color: rgba(245, 241, 232, .62) !important;
+}
+
+.services-cta-inner::after {
+    color: rgba(39, 43, 43, .07) !important;
+}
+
+.services-cta .section-label {
+    color: #123E42 !important;
+}
+
+.services-cta p {
+    color: rgba(39, 43, 43, .75) !important;
+}
+
+/* Light-panel h2 accents in services.css resolve to mist via
+   --accent; deepen to petrol-dark for legibility on light. */
+.services-intro-grid h2 span,
+.pricing-head h2 span,
+.oneoffs .oneoffs-price {
+    color: #123E42 !important;
+}
+
+/* =====================================================
+   15) PORTFOLIO PAGE (assets/css/portfolio.css)
+   Gold accents → petrol on light strip, mist on cards.
+   ===================================================== */
+.filter-btn:hover {
+    border-color: #174B50 !important;
+}
+
+.filter-btn.is-active {
+    background: #174B50 !important;
+    border-color: #174B50 !important;
+    color: #F5F1E8 !important;
+}
+
+.filter-btn:focus-visible {
+    outline: 2px solid #174B50 !important;
+}
+
+.gallery li.is-filtered-out {
+    background: rgba(23, 75, 80, .1) !important;
+}
+
+.promise-icon {
+    background: rgba(220, 233, 229, .14) !important;
+    color: #DCE9E5 !important;
+}
+
+.promise-card:hover {
+    background-color: #123E42 !important;
+}
