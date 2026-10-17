@@ -1,1 +1,0 @@
-var e={url:`/assets/forever1-CO7zp2A6.jpg`};export{e as t};
