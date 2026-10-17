@@ -31,7 +31,7 @@
     /* --- Petrol (was olive green) --- */
     --primary:        #174B50;
     --primary-dark:   #0F3A3E;
-    --primary-light:  #2A6A70;
+    --primary-light:  #1F5D64;
 
     /* --- Mist (was gold) --- */
     --accent:         #DCE9E5;
@@ -41,7 +41,7 @@
     /* --- Canvas --- */
     --white:          #FFFFFF;
     --off-white:      #F5F1E8;   /* porcelain — main canvas */
-    --cream:          #EDE7DB;   /* deeper porcelain — alternate bands */
+    --cream:          #EFECE5;   /* deeper porcelain — alternate bands */
     --light-grey:     #DCE9E5;   /* mist — dividers / small panels */
 
     /* --- Ink --- */
@@ -52,7 +52,7 @@
     /* --- Legacy names still referenced by older rules --- */
     --green:          #174B50;
     --green-dark:     #0F3A3E;
-    --green-light:    #2A6A70;
+    --green-light:    #1F5D64;
     --gold:           #DCE9E5;
     --gold-light:     #ECF3F0;
     --ivory:          #F5F1E8;
@@ -458,7 +458,7 @@ section:nth-of-type(even) p {
     background: #F5F1E8 !important;
 }
 .case-study.alt {
-    background: #EDE7DB !important;
+    background: var(--cream) !important;
 }
 .case-content p {
     color: #4E5A5A !important;
@@ -474,7 +474,7 @@ section:nth-of-type(even) p {
     color: #F5F1E8 !important;
 }
 .project-services span:hover {
-    background: #2A6A70 !important;
+    background: #1F5D64 !important;
     color: #F5F1E8 !important;
 }
 
@@ -631,7 +631,7 @@ section:nth-of-type(even) p {
 
 /* Extras */
 .extras-section {
-    background: #EDE7DB !important;
+    background: var(--cream) !important;
 }
 .extras-heading h2 {
     color: #174B50 !important;
@@ -748,7 +748,7 @@ section:nth-of-type(even) p {
 
 /* Homepage recent projects */
 .portfolio {
-    background: #EDE7DB !important;
+    background: var(--cream) !important;
 }
 .portfolio .section-title span {
     color: #174B50 !important;
@@ -920,7 +920,7 @@ body section.about-nine3 .about-nine3-card-content {
     color: #4E5A5A !important;
 }
 .contact-page .contact-section {
-    background: #EDE7DB !important;
+    background: var(--cream) !important;
 }
 .contact-page .contact-content h2 {
     color: #174B50 !important;
@@ -1016,7 +1016,7 @@ body section.about-nine3 .about-nine3-card-content {
     color: #123E42 !important;
 }
 .legal-contact {
-    background: #EDE7DB !important;
+    background: var(--cream) !important;
     border-left: 3px solid #174B50 !important;
 }
 .legal-contact strong {
@@ -1054,7 +1054,7 @@ body section.about-nine3 .about-nine3-card-content {
 .portfolio-intro,
 .portfolio-work,
 .portfolio-cta {
-    background: #EDE7DB !important;
+    background: var(--cream) !important;
 }
 .intro-line {
     background: #174B50 !important;
@@ -1140,7 +1140,7 @@ main section.gallery .row ul li a:hover::after {
    ========================================================== */
 
 .blog-hero {
-    background: #EDE7DB !important;
+    background: var(--cream) !important;
 }
 .blog-hero .section-label {
     color: #174B50 !important;
@@ -1156,7 +1156,7 @@ main section.gallery .row ul li a:hover::after {
     color: #4E5A5A !important;
 }
 .blog-posts {
-    background: #EDE7DB !important;
+    background: var(--cream) !important;
 }
 .blog-posts .section-title span {
     color: #174B50 !important;
@@ -1643,4 +1643,110 @@ main section.process .section-label {
 
 .promise-card:hover {
     background-color: #123E42 !important;
+}
+
+
+/* ==========================================================
+   16. ROUND-2 LEAK FIXES — hardcoded olive/gold !important
+   rules in shared css that section 1–15 didn't already cover.
+   ========================================================== */
+
+/* Services intro heading (components.css forces #404A3B !important) */
+.services-intro-grid h2 {
+    color: #174B50 !important;
+}
+.services-intro-grid h2 span {
+    color: #123E42 !important;
+}
+
+/* Journal + blog chips (gold text / mist-on-white = illegible) */
+.blog-tag {
+    color: #123E42 !important;
+    border-color: rgba(18, 62, 66, .32) !important;
+}
+.journal-tag {
+    color: #123E42 !important;
+    border-color: rgba(18, 62, 66, .32) !important;
+}
+
+/* Portfolio filter pills — inactive state was white-on-porcelain */
+.filter-btn {
+    color: #272B2B !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(18, 62, 66, .30) !important;
+}
+.filter-btn:hover {
+    color: #174B50 !important;
+    border-color: #174B50 !important;
+}
+.filter-btn:focus-visible {
+    outline-color: #174B50 !important;
+}
+
+/* Journal article hero (generic .page-hero stays warm #FEF9F3) */
+.journal-hero {
+    background: #F5F1E8 !important;
+}
+.journal-hero .section-label {
+    color: #123E42 !important;
+}
+.journal-hero h1 {
+    color: #174B50 !important;
+}
+.journal-hero h1 span {
+    color: #123E42 !important;
+}
+.journal-hero p {
+    color: #4E5A5A !important;
+}
+
+/* Services pricing card leftovers (olive headings, gold outline btn) */
+.pricing-card h3,
+.pricing-card h4,
+.pricing-footer .price {
+    color: #174B50 !important;
+}
+.pricing-card .btn-outline {
+    color: #123E42 !important;
+    border-color: rgba(18, 62, 66, .35) !important;
+}
+.pricing-card .btn-outline:hover {
+    background: #174B50 !important;
+    border-color: #174B50 !important;
+    color: #F5F1E8 !important;
+}
+
+/* Misc olive !important headings in components.css */
+.collection-link {
+    color: #174B50 !important;
+}
+.service-heading h2 {
+    color: #174B50 !important;
+}
+body section.about-nine3 .about-nine3-content h2,
+body section.about-nine3 .about-nine3-card-content h2,
+.about-nine3-content h2,
+.about-nine3-card-content h2 {
+    color: #174B50 !important;
+}
+
+/* Service icon accents (gold glyph / gold hover tile) */
+.service-icon {
+    color: #174B50 !important;
+}
+.service-card:hover .service-icon {
+    background: #174B50 !important;
+}
+
+/* Footer gold accents on dark petrol → mist */
+.footer-socials a:hover {
+    background: #DCE9E5 !important;
+    border-color: #DCE9E5 !important;
+}
+.footer-email:hover,
+.footer-legal a:hover {
+    color: #DCE9E5 !important;
+}
+.footer-credit span {
+    color: rgba(245, 241, 232, .55) !important;
 }
