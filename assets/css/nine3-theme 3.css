@@ -2085,3 +2085,96 @@ body section.about-nine3 .about-nine3-card-content h2,
     .contact-page .contact-content > .contact-response-copy,
     .contact-page .contact-content > .contact-details{ order: 0 !important; }
 }
+
+
+/* ==========================================================
+   18. SCROLL-STATE FIXES (round 3)
+   Fixes the leftover Old Gold / Old Olive bits that only show
+   once you SCROLL down (desktop + mobile, all core pages):
+   (1) The thin GOLD line filling across the top as you scroll —
+       it lives on body::before (gold gradient from animations.css);
+       the theme had recoloured the wrong selectors. Now matched.
+   (2) The header turning OLIVE GLASS while scrolled —
+       .site-header.is-scrolled (animations.css) beat the petrol
+       theme on specificity. Re-asserted at its own specificity.
+   (3) The mobile slide-down menu opening in OLIVE with the
+       Weddings link nearly invisible (dark text on olive).
+       Now a deep petrol drawer with a mist Weddings pill.
+   (4) Nav hover restore — a stray paste-in block outside its
+       media query froze desktop links to ivory on hover.
+       Hover is visible mist again; mobile tap-jump re-asserted.
+   ========================================================== */
+
+/* (1) Scroll progress line — gold -> porcelain/mist (fills top of page) */
+body::before {
+    background: linear-gradient(90deg, #DCE9E5, #F5F1E8) !important;
+    box-shadow: 0 1px 10px rgba(15, 42, 45, .25) !important;
+}
+/* the theme's original progress override kept for safety */
+.scroll-progress,
+#scroll-progress {
+    background: linear-gradient(90deg, #DCE9E5, #F5F1E8) !important;
+}
+
+/* (2) Scrolled header — olive glass -> deep petrol glass.
+     Matches animations.css .site-header.is-scrolled specificity */
+.site-header.is-scrolled {
+    background: rgba(18, 62, 66, .94) !important;
+    box-shadow: 0 12px 35px rgba(11, 48, 52, .30) !important;
+    backdrop-filter: blur(14px) saturate(120%) !important;
+}
+
+/* (3) Mobile slide-down menu — olive -> deep petrol */
+@media (max-width: 768px) {
+    .main-nav {
+        background: #123E42 !important;
+        border-top: 1px solid rgba(220, 233, 229, .14) !important;
+        box-shadow: 0 18px 40px rgba(11, 48, 52, .28) !important;
+    }
+    .main-nav .sister-site-mobile {
+        margin-top: 14px !important;
+        padding-top: 14px !important;
+        border-top: 1px solid rgba(220, 233, 229, .22) !important;
+        border-bottom: 0 !important;
+    }
+    /* Weddings link: was dark-olive text on olive -> now a mist pill */
+    .main-nav .sister-site-mobile a {
+        color: #174B50 !important;
+        background: #DCE9E5 !important;
+        border-radius: 999px !important;
+        min-height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: 700 !important;
+        letter-spacing: 1.3px !important;
+    }
+    /* re-assert the dropped "no tap-jump" rule (stray token killed it) */
+    .main-nav a:hover,
+    .main-nav a:focus,
+    .main-nav a:active {
+        transform: none !important;
+    }
+}
+
+/* (4) Nav hover — visible mist again, desktop + mobile
+     (fixes the ivory-only block pasted outside its media query) */
+.main-nav li>a:hover,
+.main-nav li>a:focus,
+.main-nav li>a.active {
+    color: #DCE9E5 !important;
+}
+
+/* (4b) Mobile Weddings pill text — animations.css sets gold text at
+     .site-header .main-nav .sister-site-mobile a (beats the theme's
+     petrol). Match + beat that specificity: petrol on mist. */
+.site-header .main-nav li.sister-site-mobile a {
+    color: #174B50 !important;
+    background: #DCE9E5 !important;
+    border: 1px solid #DCE9E5 !important;
+}
+.site-header .main-nav li.sister-site-mobile a:hover,
+.site-header .main-nav li.sister-site-mobile a:focus {
+    background: #ECF3F0 !important;
+    color: #174B50 !important;
+}
