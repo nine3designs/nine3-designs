@@ -2178,3 +2178,162 @@ body::before {
     background: #ECF3F0 !important;
     color: #174B50 !important;
 }
+
+
+/* ==========================================================
+   SECTION 19 — GOLD PURGE + TOKEN RETUNE + LAYOUT FIXES
+   Root cause: variables.css still ships the OLD olive/gold
+   tokens (--accent:#C8A96A etc). Every var(--accent) user
+   (services.css prices, tabs, icons, focus rings, marquee,
+   blog tags) renders GOLD. Retune the tokens here — theme
+   loads last, so :root wins.
+   ========================================================== */
+:root {
+    --accent: #174B50;          /* was gold #C8A96A */
+    --accent-light: #3E6E74;    /* was pale gold #D8BC84 */
+    --primary: #174B50;         /* was olive #404A3B */
+    --primary-dark: #123E42;    /* was #333C30 */
+    --primary-light: #2A6A70;   /* was #566150 */
+    --cream: #EFECE5;           /* keep the v2 retune */
+}
+
+/* ---- 19.1 Header/nav hairlines (her shot: lines under nav) ----
+     Theme's mobile li border was leaking onto desktop. Kill it on
+     desktop, restore it inside the mobile breakpoint only. */
+.site-header .main-nav li,
+.site-header .main-nav ul li { border-bottom: 0 !important; }
+@media (max-width: 64rem) {
+    .site-header .main-nav li { border-bottom: 1px solid rgba(220,233,229,.16) !important; }
+}
+
+/* ---- 19.2 Icon tiles: glyph must show (petrol chip + mist glyph).
+     Later theme block at ~1735 was repainting glyphs petrol-on-petrol. */
+.service-icon svg,
+.service-icon i,
+.section-icon i,
+.stat-item i {
+    color: #DCE9E5 !important;
+}
+.service-card:hover .service-icon svg,
+.service-card:hover .service-icon i {
+    color: #174B50 !important;
+}
+.stat-item i { color: #3E6E74 !important; }
+
+/* ---- 19.3 The gold "lines": hairline borders & gradients ---- */
+.n3-marquee { border-top: 1px solid rgba(220,233,229,.4) !important; border-bottom: 1px solid rgba(220,233,229,.4) !important; }
+.journal-teaser-list li + li { border-top: 1px solid rgba(23,75,80,.14) !important; }
+.cost-table td { border-bottom: 1px solid rgba(23,75,80,.14) !important; }
+.cost-table tr:nth-child(even) td { background: rgba(23,75,80,.045) !important; }
+.cost-table td:first-child { color: #174B50 !important; }
+.budget-card { border: 1px solid rgba(23,75,80,.28) !important; box-shadow: 0 24px 60px rgba(18,62,66,.10) !important; }
+.journal-hero-media { border: 1px solid rgba(220,233,229,.3) !important; }
+.journal-body blockquote { border-left: 3px solid #3E6E74 !important; background: rgba(23,75,80,.05) !important; }
+.journal-endnav { border-top: 1px solid rgba(23,75,80,.14) !important; }
+.blog-tag { border: 1px solid rgba(23,75,80,.35) !important; color: #174B50 !important; background: rgba(23,75,80,.06) !important; }
+.footer-socials a { border: 1px solid rgba(220,233,229,.35) !important; }
+.print-partner { border: 1px solid rgba(23,75,80,.28) !important; background: rgba(23,75,80,.05) !important; }
+.range-column { border: 1px solid rgba(23,75,80,.28) !important; }
+.n3-form-quote { background: rgba(23,75,80,.06) !important; border: 1px solid rgba(23,75,80,.18) !important; }
+
+/* Featured pricing ribbon (was solid gold) */
+.pricing-card.featured::after,
+.layout .pricing-card.featured::after {
+    background: #174B50 !important;
+    color: #F5F1E8 !important;
+}
+
+/* Legal page gold bits */
+.legal-content li::marker { color: #174B50 !important; }
+.legal-content a { text-decoration-color: rgba(23,75,80,.5) !important; }
+.legal-content a:hover { color: #174B50 !important; }
+.legal-content blockquote,
+.legal-content .legal-note { border-left: 3px solid #174B50 !important; background: #F5F1E8 !important; }
+.legal-content h2::before { background: #174B50 !important; }
+
+/* Old hardcoded gold TEXT rules in layout/responsive (labels, icons) */
+.page-hero .section-label,
+.contact-page .contact-hero .section-label,
+.about-story-content .section-label,
+.why-section .service-card h3,
+.why-section .service-card p,
+.work-page .case-content .case-category,
+.about-nine3 .section-label,
+body .why-section .service-card h3 {
+    color: #174B50 !important;
+}
+.why-section .service-card p { color: #272B2B !important; }
+.contact-page .contact-details i { color: #174B50 !important; }
+
+/* Portfolio/blog section-title span + filter pills */
+.portfolio .section-title span { color: #174B50 !important; }
+.portfolio-content .case-category { color: #3E6E74 !important; }
+.portfolio .section-button .btn:hover { background: #123E42 !important; border-color: #123E42 !important; }
+.filter-btn { border: 1px solid rgba(23,75,80,.4) !important; }
+
+/* Hover tints that were gold washes */
+.portfolio-card:hover { border-color: rgba(23,75,80,.45) !important; }
+.pricing-card:hover { border-color: rgba(23,75,80,.45) !important; }
+.service-list-item:hover { background: rgba(23,75,80,.04) !important; }
+.extra-row:hover { background: rgba(23,75,80,.05) !important; }
+.service-feature:hover { border-color: rgba(23,75,80,.4) !important; }
+.collection-link:hover::after { background: #174B50 !important; }
+.collection-link span { color: #174B50 !important; }
+
+/* Gold glow keyframes user + focus glows */
+.motion-ready .pricing-card.featured { box-shadow: 0 24px 60px rgba(18,62,66,.16) !important; }
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible { border-color: #174B50 !important; box-shadow: 0 0 0 3px rgba(23,75,80,.12) !important; }
+.contact-page .contact-form input:focus,
+.contact-page .contact-form select:focus,
+.contact-page .contact-form textarea:focus { border-color: #174B50 !important; box-shadow: 0 0 0 3px rgba(23,75,80,.10) !important; }
+
+/* Hero background gold radial tints (layout.css hardcodes them) */
+.hero,
+.page-hero {
+    background:
+        radial-gradient(circle at top right, rgba(220,233,229,.12), transparent 40%),
+        linear-gradient(180deg, #174B50, #123E42) !important;
+}
+.contact-circle,
+.footer-orb { background: radial-gradient(circle, rgba(220,233,229,.10), transparent 70%) !important; }
+
+/* Services page: pricing + process gold accents */
+.services-hero h1 span { color: #DCE9E5 !important; }
+.svc-top i { color: #174B50 !important; }
+.pricing-tab:hover { border-color: #174B50 !important; color: #174B50 !important; }
+.price-card.popular { border-color: #174B50 !important; }
+.bespoke-arrow { color: #174B50 !important; }
+.oneoffs .oneoffs-price { color: #174B50 !important; }
+main section.process h2 span { color: #DCE9E5 !important; }
+.process .section-label { color: rgba(220,233,229,.75) !important; }
+.step-number { color: #DCE9E5 !important; }
+.process .step-line { background-color: rgba(220,233,229,.35) !important; }
+
+
+/* ---- 19.4 Services mobile: stop the centre-scramble ----
+     (cards were rendering with 01/icon row + centred copy) */
+@media (max-width: 800px) {
+    .svc-card,
+    .svc-card h3,
+    .svc-card p { text-align: left !important; }
+    .svc-card h3 { margin: 18px 0 10px !important; }
+    .svc-card p { margin: 0 !important; }
+    .svc-top { margin-bottom: 0 !important; }
+    .services-grid { margin-top: 40px !important; }
+    main section.services-intro { padding: 64px 0 !important; }
+    main section.pricing { padding: 64px 0 !important; }
+    .services-intro-grid { gap: 34px !important; }
+    .pricing-head { gap: 34px !important; }
+}
+
+/* ---- 19.5 Contact page: kill the stray-bullet dot + calm it ----
+     Her HTML has a stray <BR><li> before the details column —
+     the browser renders it as a lone bullet. Hide it here. */
+.contact-page .contact-content > li,
+.contact-page .contact-panel li:first-child,
+.contact-page li:only-child {
+    display: none !important;
+    list-style: none !important;
+}
