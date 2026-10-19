@@ -2520,3 +2520,23 @@ main section.process h2 span { color: #DCE9E5 !important; }
         color: #DCE9E5 !important;
     }
 }
+
+/* ---------- 23. Desktop nav: kill the stray hairline (2026-10-19) ---------- */
+/* The unscoped .main-nav border-top (meant for the mobile drawer) draws a
+   line above the desktop menu text. Kill it on desktop only — the mobile
+   drawer keeps its border via section 22. */
+@media (min-width: 769px) {
+    .site-header .main-nav {
+        border-top: 0 !important;
+        border-bottom: 0 !important;
+    }
+    .site-header .main-nav li,
+    .site-header .main-nav ul li {
+        border-top: 0 !important;
+        border-bottom: 0 !important;
+    }
+    /* keep the animated hover underline working clean (no stray strokes) */
+    .site-header .main-nav a::after {
+        bottom: -6px;
+    }
+}
