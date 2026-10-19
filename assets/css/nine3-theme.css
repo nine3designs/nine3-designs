@@ -2373,3 +2373,64 @@ main section.process h2 span { color: #DCE9E5 !important; }
     border-top: 1px solid rgba(23, 75, 80, .18) !important;
     color: #272B2B !important;
 }
+
+
+/* =====================================================
+   21) ROUND 5 — page heroes back to porcelain, contact
+   heading token retune, footer gold hairline swap
+   (fixes: blog hero dark-on-dark, about hero petrol-on-
+   petrol, missing contact h1, gold seam line)
+   ===================================================== */
+
+/* 21.0) Her /contact h1 carries inline color:var(--IVORY)!important.
+   13) defined --IVORY as porcelain #F5F1E8 — correct on the old dark
+   panel, but invisible now the band is porcelain (20). Retune the
+   token so the inline style reads petrol on porcelain. */
+:root {
+    --IVORY: #174B50;
+}
+
+/* 21.1) 19's ".hero,.page-hero" dark gradient was homepage-only
+   intent but it painted EVERY inner page hero dark while section 7's
+   petrol h1 text stayed put — petrol on petrol, dark on dark.
+   Restore porcelain heroes with petrol/graphite text. */
+.page-hero,
+.about-hero,
+.blog-hero,
+.journal-hero {
+    background: #F5F1E8 !important;
+    color: #272B2B !important;
+}
+.contact-page .page-hero {
+    background: #F5F1E8 !important;
+    color: #272B2B !important;
+}
+.page-hero .section-label,
+.journal-hero .section-label {
+    color: #174B50 !important;
+}
+.page-hero h1,
+.page-hero h2,
+.page-hero h1 span,
+.blog-hero h1 span,
+.journal-hero h1 span {
+    color: #174B50 !important;
+}
+.page-hero p,
+.journal-hero p {
+    color: #4E5A5A !important;
+}
+
+/* 21.2) Footer gold gradient hairline (animations.css .site-footer
+   border-image) — gold seam between the dark page bottom and the
+   dark footer. Swap to a quiet mist hairline. */
+.site-footer {
+    border-top: 1px solid rgba(220, 233, 229, .22) !important;
+    border-image: none !important;
+}
+
+/* 21.3) Card hover glow line was gold — retune to mist. */
+.service-card:hover::before,
+.blog-card:hover::before {
+    background: linear-gradient(90deg, transparent, rgba(220, 233, 229, .55), transparent) !important;
+}
