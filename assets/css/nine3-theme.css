@@ -2337,3 +2337,39 @@ main section.process h2 span { color: #DCE9E5 !important; }
     display: none !important;
     list-style: none !important;
 }
+
+
+/* =====================================================
+   20) CONTACT PAGE — calm the colours (her note: "too
+   much colour"). Keep the dark form panel; lighten the
+   big "Creative Design With A Personal Touch" band to
+   porcelain with petrol text.
+   NOTE: her h1 carries inline color:var(--IVORY)!important.
+   --IVORY does not exist as a token, so the browser
+   resolves that inline style to the INHERITED colour —
+   meaning .why-contact's own colour drives the heading.
+   Setting the section colour to petrol also fixes the
+   heading with zero HTML changes.
+   ===================================================== */
+.why-contact {
+    background: #F5F1E8 !important;
+    color: #174B50 !important;
+}
+.why-contact .section-title span {
+    color: #3E6E74 !important;
+}
+.why-contact .service-card {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(23, 75, 80, .14) !important;
+    box-shadow: 0 14px 40px rgba(18, 62, 66, .07) !important;
+}
+.why-contact .service-card p {
+    color: #272B2B !important;
+}
+.why-contact .section-icon i {
+    color: #174B50 !important;
+}
+.closing-message {
+    border-top: 1px solid rgba(23, 75, 80, .18) !important;
+    color: #272B2B !important;
+}
