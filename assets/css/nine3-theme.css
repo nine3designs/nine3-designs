@@ -2434,3 +2434,89 @@ main section.process h2 span { color: #DCE9E5 !important; }
 .blog-card:hover::before {
     background: linear-gradient(90deg, transparent, rgba(220, 233, 229, .55), transparent) !important;
 }
+
+/* ---------- 22. Mobile drawer + dropdown final fixes (2026-10-19) ---------- */
+@media (max-width: 768px) {
+
+    /* 22.1 Drawer body — matches animations.css (0,2,0) that was beating the petrol */
+    .site-header .main-nav {
+        background: #123E42 !important;
+        border-top: 1px solid rgba(220, 233, 229, .14) !important;
+        box-shadow: 0 18px 40px rgba(11, 48, 52, .28) !important;
+    }
+    .site-header .main-nav li {
+        border-bottom: 1px solid rgba(220, 233, 229, .12) !important;
+    }
+    .site-header .main-nav li:last-child {
+        border-bottom: 0 !important;
+    }
+
+    /* 22.2 Gold email -> mist */
+    .site-header .main-nav .nav-panel-email {
+        color: #DCE9E5 !important;
+    }
+
+    /* 22.3 Gold social circles -> mist */
+    .site-header .main-nav .nav-panel-social a {
+        border: 1px solid rgba(220, 233, 229, .5) !important;
+        color: #DCE9E5 !important;
+    }
+
+    /* 22.4 Gold active-page link -> mist */
+    .site-header .main-nav a.active {
+        color: #DCE9E5 !important;
+    }
+
+    /* 22.5 About/Journal dropdown — in-flow, petrol, centred on mobile.
+       Kills the cream desktop box that was escaping onto mobile. */
+    .site-header .main-nav .nav-dropdown-menu {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 2px 0 8px !important;
+        background: transparent !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transform: none !important;
+        display: none !important;
+        z-index: auto !important;
+    }
+    .site-header .main-nav .nav-item-dropdown.force-open .nav-dropdown-menu,
+    .site-header .main-nav .nav-item-dropdown.submenu-open .nav-dropdown-menu,
+    .site-header .main-nav .nav-item-dropdown:hover .nav-dropdown-menu,
+    .site-header .main-nav .nav-item-dropdown:focus-within .nav-dropdown-menu {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: none !important;
+    }
+    .site-header .main-nav .nav-dropdown-menu a {
+        color: #F5F1E8 !important;
+        background: rgba(220, 233, 229, .05) !important;
+        text-align: center !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        letter-spacing: 1.3px !important;
+        text-transform: uppercase !important;
+        padding: 11px 8px !important;
+        margin: 0 0 3px !important;
+        border-radius: 0 !important;
+        transition: none !important;
+    }
+    .site-header .main-nav .nav-dropdown-menu a:hover,
+    .site-header .main-nav .nav-dropdown-menu a:focus {
+        background: rgba(220, 233, 229, .12) !important;
+        color: #DCE9E5 !important;
+        padding-left: 8px !important;
+    }
+    .site-header .main-nav .nav-dropdown-menu a.active {
+        color: #DCE9E5 !important;
+    }
+}
