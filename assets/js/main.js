@@ -695,3 +695,19 @@ window.__n3MainLoaded = true;
         if (!raf) raf = requestAnimationFrame(apply);
     });
 })();
+/* ---- Footer: weddings-style "Back to top" (2026-10-19) ---- */
+(function () {
+    var bar = document.querySelector(".fv-bottom-inner");
+    if (!bar) return;
+    var a = document.createElement("a");
+    a.className = "fv-top";
+    a.href = "#";
+    a.setAttribute("aria-label", "Back to top");
+    a.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Back to top</span>';
+    a.addEventListener("click", function (e) {
+        e.preventDefault();
+        var smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        window.scrollTo({ top: 0, behavior: smooth ? "smooth" : "auto" });
+    });
+    bar.appendChild(a);
+})();

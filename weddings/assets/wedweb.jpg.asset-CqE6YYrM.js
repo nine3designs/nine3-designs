@@ -1,1 +1,1 @@
-var e={url:`/weddings/assets/wedweb-D9RfC0_0.jpg`};export{e as t};
+var e={url:`/weddings/assets/wedweb3-BPQh6nSg.jpg`};export{e as t};
