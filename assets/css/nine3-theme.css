@@ -2806,3 +2806,106 @@ main section.process h2 span { color: #DCE9E5 !important; }
     }
 
 }
+
+/* ============================================================
+   SECTION 26 — Contact pills (weddings-style WhatsApp/Book a Call)
+   + nav bar scroll band fix + footer social outline removal
+   (2026-10-20)
+   ============================================================ */
+
+/* ---- 26.1 Contact Details pills: weddings-style outline pills ----
+   Stacked full-width pills, mist outline on deep petrol, mist arrow-free
+   layout matching /weddings contact. Overrides the 2-up row layout. */
+.contact-page .contact-details {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: .8rem !important;
+    margin-top: 1.6rem !important;
+}
+
+.contact-page .contact-details a {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .6rem !important;
+    padding: .72rem 1.35rem !important;
+    border: 1px solid rgba(220, 233, 229, .45) !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    color: #DCE9E5 !important;
+    font-size: .74rem !important;
+    font-weight: 600 !important;
+    letter-spacing: .18em !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    transition: background .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.contact-page .contact-details a i {
+    color: #DCE9E5 !important;
+    font-size: .9rem !important;
+}
+
+.contact-page .contact-details a:hover {
+    background: #DCE9E5 !important;
+    border-color: #DCE9E5 !important;
+    color: #123E42 !important;
+}
+
+.contact-page .contact-details a:hover i {
+    color: #123E42 !important;
+}
+
+/* ---- 26.2 Nav bar: kill the colour-change box around nav text ----
+   On scroll the header gets .is-scrolled; some rules paint a band /
+   per-link backgrounds behind the nav labels. Force flat petrol on
+   the header, the nav, its list items and the links themselves. */
+.site-header.is-scrolled,
+.site-header.is-scrolled .container,
+.site-header.is-scrolled nav,
+.site-header.is-scrolled .main-nav,
+.site-header.is-scrolled .main-nav ul,
+.site-header.is-scrolled .main-nav li,
+.site-header.is-scrolled .main-nav li a,
+.site-header .main-nav li,
+.site-header .main-nav li a {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+.site-header.is-scrolled {
+    background: #123E42 !important;
+}
+
+/* keep the header petrol at any scroll depth, no per-link tinting */
+.site-header .main-nav li a:hover,
+.site-header.is-scrolled .main-nav li a:hover {
+    background: transparent !important;
+    background-image: none !important;
+    color: #DCE9E5 !important;
+}
+
+/* ---- 26.3 Footer socials: remove the box outlines ----
+   Whatever wraps the social links must not draw borders or fills. */
+.site-footer .footer-socials a,
+.site-footer .footer-social a,
+.site-footer.footer-v2 .fv-social a,
+.site-footer .social-links a,
+.site-footer .socials a {
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+.site-footer .footer-socials a:hover,
+.site-footer .footer-social a:hover,
+.site-footer.footer-v2 .fv-social a:hover,
+.site-footer .social-links a:hover,
+.site-footer .socials a:hover {
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
