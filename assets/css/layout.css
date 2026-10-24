@@ -258,6 +258,29 @@
 }
 
 
+/* Desktop: nudge badge lower + thinner pill + slightly smaller hero heading */
+
+@media (min-width: 769px) {
+
+    .hero-tag {
+
+        margin-top: 14px;
+
+        margin-bottom: 1.15rem;
+
+        padding: 12px 20px;
+
+    }
+
+    .hero h1 {
+
+        font-size: clamp(1.5rem, 3.8vw, 3.35rem);
+
+    }
+
+}
+
+
 .hero-text p {
 
     max-width: 560px;

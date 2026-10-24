@@ -761,7 +761,7 @@ section:nth-of-type(even) p {
     color: #4E5A5A !important;
 }
 .portfolio-card::after {
-    background: #174B50 !important;
+    background: #DCE9E5 !important;
 }
 .portfolio-content .case-category {
     color: #123E42 !important;

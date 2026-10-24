@@ -2078,9 +2078,9 @@ body section.about-nine3 .about-nine3-card-content .btn-primary:hover {
     box-shadow: 0 10px 30px rgba(43, 43, 43, .035);
 
     transition:
-        transform .5s ease,
-        box-shadow .5s ease,
-        border-color .5s ease;
+        transform .65s cubic-bezier(.22,1,.36,1),
+        box-shadow .65s cubic-bezier(.22,1,.36,1),
+        border-color .65s cubic-bezier(.22,1,.36,1);
 }
 
 
@@ -2101,7 +2101,7 @@ body section.about-nine3 .about-nine3-card-content .btn-primary:hover {
 
     transform: translateX(-50%);
 
-    transition: width .55s ease;
+    transition: width .75s ease;
 }
 
 .portfolio-card:hover::after {
