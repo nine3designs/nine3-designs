@@ -278,6 +278,11 @@ main section.gallery .port:focus {
     box-shadow: var(--shadow-md);
 }
 
+.port-main img {
+    width: 50%;
+    margin: 0 auto;
+}
+
 .port-side {
     display: grid;
     grid-template-columns: 1fr 1fr;
