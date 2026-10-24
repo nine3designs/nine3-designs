@@ -96,7 +96,7 @@ main section.services-hero .section-label {
     margin: 30px 0 0;
 
     color: var(--white);
-
+    font-size: clamp(1.5rem, 3.8vw, 3.35rem);
     font-size: clamp(3.4rem, 6.4vw, 6.2rem);
     font-weight: 400;
     letter-spacing: -0.06em;
@@ -978,7 +978,7 @@ main section.services-cta {
     }
 
     .services-hero h1 {
-        font-size: clamp(3.2rem, 13vw, 5.2rem);
+        font-size: clamp(2rem, 9vw, 2.6rem);
     }
 
     .hero-tags {
