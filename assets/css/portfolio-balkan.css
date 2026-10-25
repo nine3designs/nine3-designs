@@ -393,3 +393,41 @@ main section.gallery .port:focus {
         animation: none;
     }
 }
+
+
+/* ==========================================================
+   NINE3 — DESKTOP TILE HOVER POLISH
+   Lift, soft shadow, deeper zoom. Desktop only.
+   ========================================================== */
+
+@media (min-width: 769px) {
+
+    main section.gallery .row ul li a {
+        transition:
+            transform .45s cubic-bezier(.22, 1, .36, 1),
+            box-shadow .45s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    main section.gallery .row ul li a:hover {
+        transform: translateY(-5px);
+
+        box-shadow:
+            0 22px 44px rgba(18, 62, 66, .18),
+            0 6px 14px rgba(18, 62, 66, .10);
+    }
+
+    main section.gallery .row ul li a img {
+        transition: transform .65s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    main section.gallery .row ul li a:hover img {
+        transform: scale(1.06);
+    }
+
+    main section.gallery .row ul li a::before {
+        transition:
+            opacity .35s ease,
+            top .45s cubic-bezier(.22, 1, .36, 1);
+    }
+
+}

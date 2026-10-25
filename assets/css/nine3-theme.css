@@ -2908,3 +2908,10 @@ main section.process h2 span { color: #DCE9E5 !important; }
     background: transparent !important;
     box-shadow: none !important;
 }
+
+
+/* Contact: keep the "why" statement heading at hero scale, not page scale */
+.why-contact .section-title h1 {
+    font-size: clamp(1.5rem, 3.8vw, 3.35rem) !important;
+    line-height: 1.08 !important;
+}
