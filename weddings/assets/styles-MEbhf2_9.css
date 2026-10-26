@@ -13,3 +13,6 @@
 .rv-quote{margin-top:1rem;font-family:var(--font-serif);font-size:.92rem;line-height:1.7;color:rgba(242,237,228,.85)}
 @media(min-width:768px){.rv-card{flex-basis:calc((100% - 1.5rem)/2);padding:2rem}}
 @media(min-width:1024px){.rv-card{flex-basis:calc((100% - 3rem)/3)}}
+
+/* tighter spacing between reviews and collections on small screens */
+@media(max-width:767px){.rv-section{padding-bottom:2rem}.coll-section{padding-top:3.5rem}}
