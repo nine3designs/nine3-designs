@@ -16,3 +16,14 @@
 
 /* tighter spacing between reviews and collections on small screens */
 @media(max-width:767px){.rv-section{padding-bottom:2rem}.coll-section{padding-top:3.5rem}}
+
+/* Nine3 Weddings: marquee ticker (matches main site banner) */
+.wv-marquee{overflow:hidden;border-top:1px solid rgba(200,169,106,.35);border-bottom:1px solid rgba(200,169,106,.35);background:#FEF9F3}
+.wv-marquee-track{display:flex;align-items:center;gap:2.4rem;width:max-content;animation:wv-marquee 36s linear infinite;will-change:transform}
+.wv-marquee-group{display:flex;align-items:center;gap:2.4rem;flex-shrink:0;padding:.9rem 0}
+.wv-marquee-group span{font-size:.78rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:#16343a}
+.wv-marquee-group em{font-style:normal;color:#b98a44;font-size:.62rem}
+.wv-marquee:hover .wv-marquee-track{animation-play-state:paused}
+@keyframes wv-marquee{to{transform:translateX(-50%)}}
+@media(max-width:640px){.wv-marquee-group{gap:1.6rem;padding:.7rem 0}.wv-marquee-track{gap:1.6rem}.wv-marquee-group span{font-size:.66rem;letter-spacing:.2em}}
+@media(prefers-reduced-motion:reduce){.wv-marquee-track{animation:none;width:100%;flex-wrap:wrap;justify-content:center}.wv-marquee-group{flex-wrap:wrap;justify-content:center;row-gap:.4rem}}
