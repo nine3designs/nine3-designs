@@ -1400,10 +1400,10 @@ select:focus-visible{
 
     grid-template-columns: 1.5fr 1fr 1fr 1.4fr;
 
-    gap: 55px;
+    gap: 46px;
 
-    padding-top: 74px;
-    padding-bottom: 56px;
+    padding-top: 48px;
+    padding-bottom: 40px;
 
 }
 
@@ -1417,7 +1417,7 @@ select:focus-visible{
 
     display: inline-block;
 
-    margin-bottom: 22px;
+    margin-bottom: 16px;
 
 }
 
@@ -1619,8 +1619,8 @@ select:focus-visible{
 
 .site-footer.footer-v2 .fv-bottom-inner{
 
-    padding-top: 18px;
-    padding-bottom: 18px;
+    padding-top: 14px;
+    padding-bottom: 14px;
 
     display: flex;
 
@@ -1677,8 +1677,8 @@ select:focus-visible{
 
         gap: 42px 30px;
 
-        padding-top: 56px;
-        padding-bottom: 44px;
+        padding-top: 44px;
+        padding-bottom: 34px;
 
     }
 
@@ -2429,4 +2429,11 @@ table.cost-table{
 @media (max-width:640px){
     .cost-cta h2{ font-size:1.35rem; }
     .cost-cta{ padding:2rem 1.4rem; }
+}
+
+
+.site-footer.footer-v2 .fv-credit{
+
+    display:none;
+
 }
