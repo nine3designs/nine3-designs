@@ -49,9 +49,12 @@
     gallery.querySelectorAll(".row ul li a").forEach(function (link) {
 
         link.addEventListener("click", function (event) {
+            var href = link.getAttribute("href") || "";
+
+            if (href.charAt(0) !== "#") return;
 
             event.preventDefault();
-            openItem((link.getAttribute("href") || "").slice(1));
+            openItem(href.slice(1));
 
         });
 
