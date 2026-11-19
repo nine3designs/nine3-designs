@@ -3104,6 +3104,10 @@ body.n3-lock {
     vertical-align: top;
     padding-bottom: .08em;
     margin-bottom: -.08em;
+    margin-right: .26em;
+}
+.n3-w:last-child {
+    margin-right: 0;
 }
 .n3-wi {
     display: inline-block;
