@@ -3242,3 +3242,33 @@ main section.gallery .row ul li a:focus-visible img {
     width: 100vw;
     height: 100vh;
 }
+
+
+/* ============================================================
+   SECTION 104 - HOME SERVICES WRAP + FOOTER ALIGN + QUOTE CARDS
+   (19 Nov 2026, evening feedback)
+   ============================================================ */
+
+/* Homepage: services block back inside a container
+   (it was nested in .stats full-bleed, cards stretched) */
+.home-services{
+    background: #FEF9F3;
+    padding: clamp(4rem, 8vw, 6.5rem) 0;
+}
+.home-services .services-grid{
+    margin-top: 0;
+}
+
+/* Footer: link columns sit at the bottom of the grid,
+   no dead space underneath */
+.site-footer.footer-v2 .fv-grid{
+    align-items: end;
+}
+
+/* Project pages: teal quote card hugs its content instead of
+   stretching to the grid row (long quotes spilled out) */
+main .se-card--teal{
+    aspect-ratio: auto !important;
+    height: auto !important;
+    align-self: start !important;
+}
