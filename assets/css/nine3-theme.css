@@ -2915,3 +2915,121 @@ main section.process h2 span { color: #DCE9E5 !important; }
     font-size: clamp(1.5rem, 3.8vw, 3.35rem) !important;
     line-height: 1.08 !important;
 }
+
+
+/* ============================================================
+   SECTION 99 - MOBILE FIXES (19 Nov 2026)
+   Fixes: hero collage spacing, scroll progress bar visibility,
+   service card icon alignment, reveal lag blank space, footer
+   arrows + simplified footer, iOS hamburger menu, contact page
+   spacing. Mobile only (max-width 768px). Desktop untouched.
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* 1. Homepage hero: breathing room between fixed header and collage */
+    .hero {
+        padding-top: 106px !important;
+    }
+    .hero-image.hero-collage {
+        margin-top: 18px !important;
+    }
+
+    /* 2. Scroll progress bar: paint above the fixed header so it is visible */
+    body::before {
+        z-index: 12010 !important;
+        height: 3px !important;
+    }
+
+    /* 3. Service cards: centre the icon with the centred text */
+    .services-grid .service-card {
+        text-align: center !important;
+    }
+    .services-grid .service-icon {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* 4. Kill reveal lag / staggered blank space while scrolling */
+    .motion-reveal {
+        transition-delay: 0s !important;
+        transition-duration: .45s !important;
+    }
+    .portfolio .section-title {
+        margin-bottom: 36px !important;
+    }
+    .portfolio {
+        padding-top: 62px !important;
+        padding-bottom: 70px !important;
+    }
+    .portfolio-grid {
+        gap: 18px !important;
+    }
+
+    /* 5. Hamburger menu: bulletproof panel for iOS Safari.
+          Replaces the visibility/opacity transition (which fails to
+          paint reliably on iOS) with a simple display toggle. */
+    .main-nav {
+        display: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        transition: none !important;
+        background: #123E42 !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+    }
+    .main-nav.active {
+        display: block !important;
+        pointer-events: auto !important;
+        animation: n3NavIn .18s ease both !important;
+    }
+    body.menu-open {
+        overflow: hidden !important;
+    }
+
+    /* 6. Contact page: padding under the fixed header + gaps in Details */
+    .contact-page .contact-section {
+        padding-top: 108px !important;
+    }
+    .contact-page .contact-panel-email {
+        display: inline-block !important;
+        margin-bottom: 1.15rem !important;
+    }
+    .contact-page .contact-details {
+        margin-top: 1.35rem !important;
+    }
+
+    /* 7. FAQ: tighter gap after the enquiry panel */
+    .contact-page .faq-section {
+        padding-top: 58px !important;
+        padding-bottom: 62px !important;
+    }
+
+    /* Footer on mobile: simpler and calmer */
+    .site-footer.footer-v2 .fv-social a::after {
+        content: none !important;
+    }
+    .site-footer.footer-v2 .fv-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 26px !important;
+    }
+    .site-footer.footer-v2 .fv-grid > div:nth-child(3) {
+        display: none !important;
+    }
+    .site-footer.footer-v2 .fv-brand p {
+        max-width: 34ch !important;
+    }
+    .site-footer.footer-v2 .fv-bottom-inner {
+        gap: 8px !important;
+    }
+
+}
+@keyframes n3NavIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .main-nav.active { animation: none !important; }
+}
+
