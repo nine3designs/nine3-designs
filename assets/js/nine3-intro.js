@@ -98,3 +98,62 @@
     });
 
 })();
+
+
+/* ======================================================
+   Typewriter in hero heading
+   Cycles Websites / Branding / Logos / Print after the
+   intro lift. Reduced motion keeps the static word.
+   ====================================================== */
+
+(function () {
+
+    var el = document.querySelector(".n3-type-word");
+    if (!el) return;
+
+    var words = ["Websites", "Branding", "Logos", "Print"];
+
+    var reduced = window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) {
+        el.textContent = words[0];
+        return;
+    }
+
+    var wi = 0;
+    var ci = words[0].length;
+    var deleting = false;
+
+    var startDelay = document.getElementById("n3-loader") ? 2250 : 300;
+
+    function tick() {
+
+        var word = words[wi];
+
+        if (!deleting) {
+            ci++;
+            el.textContent = word.slice(0, ci);
+            if (ci >= word.length) {
+                deleting = true;
+                window.setTimeout(tick, 2100);
+                return;
+            }
+            window.setTimeout(tick, 110);
+            return;
+        }
+
+        ci--;
+        el.textContent = word.slice(0, ci);
+        if (ci <= 0) {
+            deleting = false;
+            wi = (wi + 1) % words.length;
+            window.setTimeout(tick, 380);
+            return;
+        }
+        window.setTimeout(tick, 55);
+
+    }
+
+    window.setTimeout(tick, startDelay);
+
+})();
