@@ -1,6 +1,8 @@
 /* ==========================================================
-   Nine3 intro loader + word-by-word scroll reveal
-   Added 19 Nov 2026. Homepage only.
+   Nine3 intro loader + word-by-word scroll reveal + typewriter
+   19 Nov 2026. Homepage only.
+   Intro loader shows once per tab session; returning visitors
+   within the same session skip straight to the page.
    Reduced motion: loader skipped, everything shows instantly.
    ========================================================== */
 
@@ -18,43 +20,56 @@
 
 
     /* ======================================================
-       Intro loader (natalie-smith style curtain)
+       Intro loader: first visit per tab session only
        ====================================================== */
 
-    document.body.classList.add("n3-lock");
+    var seen = false;
+    try {
+        seen = sessionStorage.getItem("n3IntroSeen") === "1";
+    } catch (e) {}
 
-    var heroEls = [
-        document.querySelector(".hero-tag"),
-        document.querySelector(".hero-text h1"),
-        document.querySelector(".hero-text p"),
-        document.querySelector(".hero-buttons")
-    ].filter(Boolean);
+    if (seen) {
+        loader.remove();
+    } else {
+        try {
+            sessionStorage.setItem("n3IntroSeen", "1");
+        } catch (e) {}
 
-    heroEls.forEach(function (el) {
-        el.classList.add("n3-hero-el");
-    });
+        document.body.classList.add("n3-lock");
 
-    var LIFT_AFTER = 1400;
-    var LIFT_TAKES = 850;
+        var heroEls = [
+            document.querySelector(".hero-tag"),
+            document.querySelector(".hero-text h1"),
+            document.querySelector(".hero-text p"),
+            document.querySelector(".hero-buttons")
+        ].filter(Boolean);
 
-    window.setTimeout(function () {
-
-        loader.classList.add("n3-lift");
-
-        heroEls.forEach(function (el, i) {
-            el.style.transitionDelay = (i * 110) + "ms";
-            el.classList.add("n3-in");
-            el.addEventListener("transitionend", function () {
-                el.style.transitionDelay = "";
-            }, { once: true });
+        heroEls.forEach(function (el) {
+            el.classList.add("n3-hero-el");
         });
 
-        window.setTimeout(function () {
-            loader.classList.add("n3-gone");
-            document.body.classList.remove("n3-lock");
-        }, LIFT_TAKES);
+        var LIFT_AFTER = 1400;
+        var LIFT_TAKES = 850;
 
-    }, LIFT_AFTER);
+        window.setTimeout(function () {
+
+            loader.classList.add("n3-lift");
+
+            heroEls.forEach(function (el, i) {
+                el.style.transitionDelay = (i * 110) + "ms";
+                el.classList.add("n3-in");
+                el.addEventListener("transitionend", function () {
+                    el.style.transitionDelay = "";
+                }, { once: true });
+            });
+
+            window.setTimeout(function () {
+                loader.classList.add("n3-gone");
+                document.body.classList.remove("n3-lock");
+            }, LIFT_TAKES);
+
+        }, LIFT_AFTER);
+    }
 
 
     /* ======================================================
@@ -97,29 +112,17 @@
         wordIO.observe(h);
     });
 
-})();
 
+    /* ======================================================
+       Typewriter in hero heading
+       Cycles Websites / Branding / Logos / Print after the
+       intro lift. Reduced motion keeps the static word.
+       ====================================================== */
 
-/* ======================================================
-   Typewriter in hero heading
-   Cycles Websites / Branding / Logos / Print after the
-   intro lift. Reduced motion keeps the static word.
-   ====================================================== */
-
-(function () {
-
-    var el = document.querySelector(".n3-type-word");
-    if (!el) return;
+    var typeEl = document.querySelector(".n3-type-word");
+    if (!typeEl) return;
 
     var words = ["Websites", "Branding", "Logos", "Print"];
-
-    var reduced = window.matchMedia &&
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) {
-        el.textContent = words[0];
-        return;
-    }
-
     var wi = 0;
     var ci = words[0].length;
     var deleting = false;
@@ -132,7 +135,7 @@
 
         if (!deleting) {
             ci++;
-            el.textContent = word.slice(0, ci);
+            typeEl.textContent = word.slice(0, ci);
             if (ci >= word.length) {
                 deleting = true;
                 window.setTimeout(tick, 2100);
@@ -143,7 +146,7 @@
         }
 
         ci--;
-        el.textContent = word.slice(0, ci);
+        typeEl.textContent = word.slice(0, ci);
         if (ci <= 0) {
             deleting = false;
             wi = (wi + 1) % words.length;
