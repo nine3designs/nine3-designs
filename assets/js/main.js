@@ -711,3 +711,90 @@ window.__n3MainLoaded = true;
     });
     bar.appendChild(a);
 })();
+
+/* Nine3 scroll word reveal for project write-ups (vanilla port of Motion TextScrollWordReveal) */
+(function () {
+    var quotes = document.querySelectorAll(".se-quote");
+    if (!quotes.length) return;
+
+    var BUZZ = /^(brand|branding|identity|logo|wordmark|website|print|packaging|signage|typography|palette|distinctive|memorable|recognisable|recognition|versatile|scalable|mockups|monogram|emblem|symbol|icon|favicon|guidelines|moodboard|custom|timeless|premium|serif)(?:s|'s|\u2019s)?$/i;
+    var START_OPACITY = 0.15;
+    var SPREAD = 0.8;
+    var WORD_DURATION = 0.2;
+
+    quotes.forEach(function (quote) {
+        var walker = document.createTreeWalker(quote, NodeFilter.SHOW_TEXT, null);
+        var nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+
+        nodes.forEach(function (node) {
+            var frag = document.createDocumentFragment();
+            var changed = false;
+            node.nodeValue.split(/(\s+)/).forEach(function (part) {
+                if (!part) return;
+                if (/^\s+$/.test(part)) {
+                    frag.appendChild(document.createTextNode(part));
+                    return;
+                }
+                var span = document.createElement("span");
+                span.className = "n3-rw";
+                span.textContent = part;
+                var bare = part.replace(/^[^\w&-]+/, "").replace(/[^\w)-]+$/, "");
+                if (BUZZ.test(bare)) span.classList.add("n3-buzz");
+                frag.appendChild(span);
+                changed = true;
+            });
+            if (changed) node.parentNode.replaceChild(frag, node);
+        });
+    });
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    var paras = [];
+    quotes.forEach(function (quote) {
+        quote.querySelectorAll("p").forEach(function (p) {
+            var words = p.querySelectorAll(".n3-rw");
+            if (!words.length) return;
+            var list = Array.prototype.map.call(words, function (el, i) {
+                var start = words.length <= 1 ? 0 : (i / (words.length - 1)) * SPREAD;
+                return { el: el, start: start, end: Math.min(1, start + WORD_DURATION) };
+            });
+            paras.push({ el: p, words: list });
+        });
+    });
+
+    function update() {
+        var vh = window.innerHeight;
+        paras.forEach(function (para) {
+            var rect = para.el.getBoundingClientRect();
+            var total = vh * 0.55 + rect.height;
+            var progress = total > 0 ? (vh * 0.9 - rect.top) / total : 1;
+            progress = Math.max(0, Math.min(1, progress));
+            para.words.forEach(function (w) {
+                var op;
+                if (progress <= w.start) {
+                    op = START_OPACITY;
+                } else if (progress >= w.end) {
+                    op = 1;
+                } else {
+                    op = START_OPACITY + (1 - START_OPACITY) * ((progress - w.start) / (w.end - w.start));
+                }
+                w.el.style.opacity = op.toFixed(3);
+            });
+        });
+    }
+
+    var ticking = false;
+    function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+            ticking = false;
+            update();
+        });
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    update();
+})();
