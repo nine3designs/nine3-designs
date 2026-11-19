@@ -3217,3 +3217,9 @@ main section.gallery .row ul li a:focus-visible img {
     margin-bottom: clamp(4.5rem, 9vw, 7rem) !important;
 }
 
+/* SECTION 102: project write-up scroll word reveal (item pages) */
+/* Words are wrapped in .n3-rw spans by assets/js/main.js; opacity is scroll-linked, so no transitions here. */
+.se-quote .n3-buzz {
+    font-weight: 700;
+    color: #B3C2C3;
+}
