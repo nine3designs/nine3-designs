@@ -3147,3 +3147,73 @@ body.n3-lock {
 @media (prefers-reduced-motion: reduce) {
     .n3-type-caret { animation: none; }
 }
+
+
+/* ============================================================
+   SECTION 101 - INTRO POLISH + REVEAL FIXES (19 Nov 2026)
+   ============================================================ */
+
+/* Loader: horizontal lockup like natalie-smith.co.uk,
+   bigger logo beside a big rising wordmark */
+#n3-loader {
+    flex-direction: row;
+    gap: clamp(18px, 3.2vw, 36px);
+}
+#n3-loader img {
+    height: clamp(56px, 8vw, 92px);
+    width: auto;
+}
+.n3-loader-word b {
+    font-size: clamp(24px, 4.8vw, 58px);
+    font-weight: 500;
+    letter-spacing: .16em;
+    animation-duration: .95s;
+    animation-delay: .15s;
+}
+
+/* Reveal spans: inherit the real heading styles.
+   base.css styles every .section-title span as a small caps
+   kicker (.9rem, letter-spacing 2px, margin-bottom 1rem),
+   which also caught the reveal spans and shrank the headings */
+.section-title h2 .n3-w,
+.section-title h2 .n3-wi {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: inherit !important;
+    vertical-align: top;
+}
+.section-title h2 .n3-w {
+    margin-right: .26em;
+}
+.section-title h2 .n3-w:last-child {
+    margin-right: 0;
+}
+
+/* Typewriter word: bolder, mist blue */
+.n3-type-word {
+    color: #B3C2C3;
+    font-weight: 700;
+}
+
+/* Our Work page: greyscale cards, colour returns on hover */
+main section.gallery .row ul li a img {
+    filter: grayscale(1);
+    transition:
+        transform .65s cubic-bezier(.22, 1, .36, 1),
+        filter .45s ease;
+}
+main section.gallery .row ul li a:hover img,
+main section.gallery .row ul li a:focus-visible img {
+    filter: grayscale(0);
+}
+
+/* Contact page: more breathing room before the enquiry panel */
+.contact-page .contact-intro {
+    margin-bottom: clamp(4.5rem, 9vw, 7rem) !important;
+}
+
