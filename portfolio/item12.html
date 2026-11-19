@@ -282,6 +282,35 @@ main{font-family:'Satoshi',sans-serif}
     </style>
 
 
+
+    <style>
+/* --- narrow editorial pass (19 Nov) --- */
+.se-hero{max-width:560px;margin:0 auto;text-align:center;padding-bottom:2rem}
+.se-hero h1{font-size:clamp(2rem,4.5vw,2.7rem)}
+.se-lede{margin:1rem auto 0;max-width:400px}
+.se-grid{max-width:520px;padding:0 22px;gap:24px}
+.se-card{border-radius:14px;overflow:hidden}
+.se-card img{max-height:none;width:100%;height:100%;object-fit:cover;display:block}
+.cs-cta,.cs-prevnext{max-width:520px}
+.cs-prevnext{margin:0 auto}
+/* image deck: flick through project images */
+.se-deck-stage{position:relative;aspect-ratio:4/5;border-radius:14px}
+.se-deck-stage::before{content:"";position:absolute;left:-12px;top:16px;bottom:16px;width:26px;background:#272B2B;border-radius:10px;box-shadow:2px 0 10px rgba(39,43,43,.25)}
+.se-slide{position:absolute;inset:0;margin:0;opacity:0;transform:translateX(26px) scale(.97);transition:opacity 1.1s cubic-bezier(.22,1,.36,1),transform 1.1s cubic-bezier(.22,1,.36,1);pointer-events:none}
+.se-slide.is-active{opacity:1;transform:none;pointer-events:auto;z-index:2}
+.se-slide.is-prev{transform:translateX(-26px) scale(.97)}
+.se-deck-ui{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:14px}
+.se-deck-btn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(39,43,43,.25);background:#FEF9F3;color:#272B2B;cursor:pointer;font-size:1rem;transition:background .25s ease,color .25s ease}
+.se-deck-btn:hover{background:#272B2B;color:#F5F1E8}
+.se-deck-dots{display:flex;gap:8px}
+.se-deck-dot{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:rgba(39,43,43,.22);cursor:pointer;transition:background .25s ease,transform .25s ease}
+.se-deck-dot.is-active{background:#174B50;transform:scale(1.25)}
+/* cinematic slow reveal */
+.se-deck,.se-card--teal{opacity:0;transform:translateY(34px) scale(.98);transition:opacity 1s cubic-bezier(.22,1,.36,1),transform 1s cubic-bezier(.22,1,.36,1)}
+.se-in{opacity:1!important;transform:none!important}
+@media (prefers-reduced-motion:reduce){.se-deck,.se-card--teal{opacity:1;transform:none;transition:none}.se-slide{transition:none}}
+@media (max-width:768px){.se-deck-stage::before{left:-8px;width:16px}}
+    </style>
 </head>
 
 
@@ -383,10 +412,18 @@ main{font-family:'Satoshi',sans-serif}
     <p class="se-lede">Where the peak and the wave <span class="se-mark">share one line</span>.</p>
   </section>
   <section class="se-grid">
-    <figure class="se-card">
-      <img src="/assets/images/portfolio/lopwiel-1.webp" alt="Lopwiel brand identity board" loading="lazy">
-      <figcaption class="se-pill"><strong>Lopwiel</strong> &bull; Brand Identity</figcaption>
-    </figure>
+    <div class="se-deck" id="seDeck">
+      <div class="se-deck-stage">
+      <figure class="se-card se-slide"><img src="/assets/images/portfolio/lopwiel-1.webp" alt="Lopwiel brand identity board" loading="lazy"><figcaption class="se-pill"><strong>Lopwiel</strong> &bull; Brand Identity</figcaption></figure>
+      <figure class="se-card se-slide"><img src="/assets/images/portfolio/lopwiel-2.webp" alt="Lopwiel app icon on a phone" loading="lazy"><figcaption class="se-pill"><strong>Lopwiel</strong> &bull; App Icon</figcaption></figure>
+      <figure class="se-card se-slide"><img src="/assets/images/portfolio/lopwiel-3.webp" alt="Lopwiel bottle mockup" loading="lazy"><figcaption class="se-pill"><strong>Lopwiel</strong> &bull; Bottle Mockup</figcaption></figure>
+      </div>
+      <div class="se-deck-ui">
+        <button type="button" class="se-deck-btn" data-dir="-1" aria-label="Previous image">&#8592;</button>
+        <div class="se-deck-dots"></div>
+        <button type="button" class="se-deck-btn" data-dir="1" aria-label="Next image">&#8594;</button>
+      </div>
+    </div>
     <div class="se-card se-card--teal">
       <div class="se-quote">
         <p>The idea started with the moodboard: mountains easing into water became a single symbol, where the peak and the wave share one line and the water is formed in the negative space. The mountain stands for the challenge, the water for flow and recovery. Variations for different uses, from a bold app icon to a fine outline and a solid one colour mark, keep the identity consistent wherever it appears, and a small version of the symbol sits inside the o of the wordmark, tying the name and the mark together.</p>
@@ -396,15 +433,6 @@ main{font-family:'Satoshi',sans-serif}
       <button type="button" class="se-swatch" style="--sw:#BFC4B9" data-hex="#BFC4B9" aria-label="Copy colour #BFC4B9"></button>
       <button type="button" class="se-swatch" style="--sw:#C0D9C4" data-hex="#C0D9C4" aria-label="Copy colour #C0D9C4"></button>
     </div></div>
-    </div>
-    <figure class="se-card">
-      <img src="/assets/images/portfolio/lopwiel-2.webp" alt="Lopwiel app icon on a phone" loading="lazy">
-      <figcaption class="se-pill"><strong>Lopwiel</strong> &bull; App Icon</figcaption>
-    </figure>
-    <figure class="se-card">
-      <img src="/assets/images/portfolio/lopwiel-3.webp" alt="Lopwiel bottle mockup" loading="lazy">
-      <figcaption class="se-pill"><strong>Lopwiel</strong> &bull; Bottle Mockup</figcaption>
-    </figure>
   </section>
   <div class="se-marquee" aria-hidden="true"><span>Logo Design &bull; Brand In Use &bull; Print &bull; Web Design &bull; Logo Design &bull; Brand In Use &bull; Print &bull; Web Design &bull; Logo Design &bull; Brand In Use &bull; Print &bull; Web Design &bull; </span></div>  <section class="cs-cta">
     <h2>Your <em>Vision</em>. Our <em>Design</em>.</h2>
@@ -523,6 +551,38 @@ main{font-family:'Satoshi',sans-serif}
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/assets/js/main.js"></script>
        <script src="/assets/js/nine3-enquiry.js" defer></script>
+
+<script>
+(function(){
+  var deck=document.getElementById('seDeck');
+  if(!deck)return;
+  var slides=[].slice.call(deck.querySelectorAll('.se-slide'));
+  var dotsBox=deck.querySelector('.se-deck-dots');
+  var i=0;
+  slides.forEach(function(_,n){var d=document.createElement('button');d.type='button';d.className='se-deck-dot';d.setAttribute('aria-label','Go to image '+(n+1));d.addEventListener('click',function(){go(n)});dotsBox.appendChild(d);});
+  var dots=[].slice.call(dotsBox.children);
+  function go(n){
+    i=(n+slides.length)%slides.length;
+    slides.forEach(function(s,k){s.classList.toggle('is-active',k===i);s.classList.toggle('is-prev',k<i);});
+    dots.forEach(function(d,k){d.classList.toggle('is-active',k===i);});
+  }
+  deck.querySelector('[data-dir="1"]').addEventListener('click',function(){go(i+1)});
+  deck.querySelector('[data-dir="-1"]').addEventListener('click',function(){go(i-1)});
+  var x0=null;
+  deck.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  deck.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null;},{passive:true});
+  document.addEventListener('keydown',function(e){
+    var r=deck.getBoundingClientRect();
+    if(r.top<window.innerHeight*0.7&&r.bottom>0){
+      if(e.key==='ArrowRight')go(i+1);
+      if(e.key==='ArrowLeft')go(i-1);
+    }
+  });
+  go(0);
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('se-in');io.unobserve(en.target);}});},{threshold:.16});
+  [].slice.call(document.querySelectorAll('.se-deck,.se-card--teal')).forEach(function(el){io.observe(el);});
+})();
+</script>
 </body>
 
 </html>
