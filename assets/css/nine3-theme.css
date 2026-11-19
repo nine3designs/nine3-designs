@@ -3104,7 +3104,7 @@ body.n3-lock {
     vertical-align: top;
     padding-bottom: .08em;
     margin-bottom: -.08em;
-    margin-right: .26em;
+    margin-right: 0;
 }
 .n3-w:last-child {
     margin-right: 0;
@@ -3188,7 +3188,7 @@ body.n3-lock {
     vertical-align: top;
 }
 .section-title h2 .n3-w {
-    margin-right: .26em;
+    margin-right: 0;
 }
 .section-title h2 .n3-w:last-child {
     margin-right: 0;
@@ -3222,4 +3222,23 @@ main section.gallery .row ul li a:focus-visible img {
 .se-quote .n3-buzz {
     font-weight: 700;
     color: #B3C2C3;
+}
+
+
+/* SECTION 103: hero availability badge flash + intro canvas (19 Nov 2026) */
+.n3-hero-local .n3-flash {
+    display: inline-block;
+    animation: n3flash 1.4s ease-in-out infinite;
+}
+@keyframes n3flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .15; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .n3-hero-local .n3-flash { animation: none; }
+}
+#n3-loader canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
 }
