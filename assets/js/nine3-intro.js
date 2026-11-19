@@ -174,11 +174,11 @@
 
         var ctx = cv.getContext("2d");
         var W, H, DPR;
-        var SPACING = 7;
+        var SPACING = 5;
         var targets = [];
         var dots = [];
 
-        var COLORS = ["#F5F1E8", "#F5F1E8", "#F5F1E8", "#B3C2C3", "#B3C2C3", "#174B50"];
+        var COLORS = ["#F5F1E8", "#F5F1E8", "#F5F1E8", "#F5F1E8", "#B3C2C3", "#B3C2C3", "#174B50"];
 
         function sizeCanvas() {
             DPR = Math.min(window.devicePixelRatio || 1, 2);
@@ -219,7 +219,7 @@
             o.font = "700 " + big + "px 'Albert Sans', sans-serif";
             o.fillText("NINE3", W / 2, H / 2 - big * 0.22);
 
-            var small = Math.max(15, Math.min(W * 0.032, 26));
+            var small = Math.max(17, Math.min(W * 0.036, 30));
             o.font = "600 " + small + "px 'Albert Sans', sans-serif";
             o.fillText("D E S I G N S", W / 2, H / 2 + big * 0.55);
 
@@ -257,7 +257,7 @@
                 var y = d.sy + (d.ty - d.sy) * e;
                 ctx.fillStyle = d.c;
                 ctx.beginPath();
-                ctx.arc(x, y, 2.4 * (0.55 + 0.45 * e), 0, 6.283);
+                ctx.arc(x, y, 2.75 * (0.55 + 0.45 * e), 0, 6.283);
                 ctx.fill();
             }
             if (t < 3.2) {
