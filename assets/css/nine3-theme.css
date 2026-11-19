@@ -3125,3 +3125,25 @@ body.n3-lock {
     .n3-wi { transform: none; transition: none; }
 }
 
+
+/* Typewriter in hero heading (19 Nov 2026) */
+.n3-type-word {
+    color: #F5F1E8;
+}
+.n3-type-caret {
+    display: inline-block;
+    width: .06em;
+    min-width: 3px;
+    height: .82em;
+    margin-left: .1em;
+    background: #B3C2C3;
+    vertical-align: -0.06em;
+    animation: n3Caret 1.05s steps(1) infinite;
+}
+@keyframes n3Caret {
+    0%, 55% { opacity: 1; }
+    56%, 100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .n3-type-caret { animation: none; }
+}
