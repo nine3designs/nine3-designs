@@ -3033,3 +3033,91 @@ main section.process h2 span { color: #DCE9E5 !important; }
     .main-nav.active { animation: none !important; }
 }
 
+
+
+/* ============================================================
+   SECTION 100 - INTRO LOADER + WORD REVEAL (19 Nov 2026)
+   Homepage only. Desktop and mobile. Reduced motion skips all.
+   ============================================================ */
+
+/* Intro loader: full-screen petrol panel, logo + rising wordmark,
+   then the whole panel lifts away like a curtain */
+#n3-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    background: #123E42;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    transition: transform .85s cubic-bezier(.77, 0, .18, 1);
+}
+#n3-loader img {
+    height: clamp(40px, 7vw, 56px);
+    width: auto;
+}
+.n3-loader-word {
+    overflow: hidden;
+    padding: .1em 0;
+}
+.n3-loader-word b {
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: clamp(19px, 4vw, 28px);
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: #F5F1E8;
+    transform: translateY(110%);
+    animation: n3WordUp .8s cubic-bezier(.22, 1, .36, 1) .25s forwards;
+}
+#n3-loader.n3-lift {
+    transform: translateY(-101%);
+}
+#n3-loader.n3-gone {
+    display: none;
+}
+body.n3-lock {
+    overflow: hidden;
+}
+@keyframes n3WordUp {
+    to { transform: translateY(0); }
+}
+
+/* Hero elements stagger in after the lift */
+.n3-hero-el {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+.n3-hero-el.n3-in {
+    opacity: 1;
+    transform: none;
+}
+
+/* Word-by-word scroll reveal on section headings */
+.n3-w {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding-bottom: .08em;
+    margin-bottom: -.08em;
+}
+.n3-wi {
+    display: inline-block;
+    transform: translateY(115%);
+    transition: transform .6s cubic-bezier(.22, 1, .36, 1);
+}
+.n3-words-in .n3-wi {
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #n3-loader { display: none; }
+    body.n3-lock { overflow: auto; }
+    .n3-hero-el { opacity: 1; transform: none; transition: none; }
+    .n3-wi { transform: none; transition: none; }
+}
+
