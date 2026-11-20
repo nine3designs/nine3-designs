@@ -1765,7 +1765,7 @@ body section.about-nine3 .about-nine3-card-content h2,
     align-items: center !important;
     text-align: center !important;
     gap: 1rem;
-    margin: 0 auto clamp(2.75rem, 5vw, 4.25rem) !important;
+    margin: 0 auto 1.5rem !important;
     max-width: 46rem;
 }
 .contact-page .contact-intro .section-label{
@@ -3261,9 +3261,7 @@ main section.gallery .row ul li a:focus-visible img {
 
 /* Footer: link columns sit at the bottom of the grid,
    no dead space underneath */
-.site-footer.footer-v2 .fv-grid{
-    align-items: end;
-}
+
 
 /* Project pages: teal quote card hugs its content instead of
    stretching to the grid row (long quotes spilled out) */
@@ -3271,4 +3269,12 @@ main .se-card--teal{
     aspect-ratio: auto !important;
     height: auto !important;
     align-self: start !important;
+}
+
+/* Headings: word-reveal spans must not catch the eyebrow
+   tracking-in animation (ended at .18em letter-spacing,
+   which spread heading text out) (20 Nov) */
+.motion-ready .section-title h2 span{
+    animation: none !important;
+    letter-spacing: normal !important;
 }
