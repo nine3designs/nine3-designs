@@ -219,9 +219,20 @@
             o.font = "700 " + big + "px 'Albert Sans', sans-serif";
             o.fillText("NINE3", W / 2, H / 2 - big * 0.22);
 
-            var small = Math.max(17, Math.min(W * 0.036, 30));
-            o.font = "600 " + small + "px 'Albert Sans', sans-serif";
-            o.fillText("D E S I G N S", W / 2, H / 2 + big * 0.55);
+            var small = Math.max(24, Math.min(W * 0.046, 42));
+            o.font = "700 " + small + "px 'Albert Sans', sans-serif";
+            var word = "DESIGNS";
+            var gap = small * 0.42;
+            var widths = [], total = 0;
+            for (var i = 0; i < word.length; i++) {
+                widths[i] = o.measureText(word[i]).width;
+                total += widths[i] + (i < word.length - 1 ? gap : 0);
+            }
+            var cx = W / 2 - total / 2;
+            for (var i = 0; i < word.length; i++) {
+                o.fillText(word[i], cx + widths[i] / 2, H / 2 + big * 0.55);
+                cx += widths[i] + gap;
+            }
 
             grab();
 
