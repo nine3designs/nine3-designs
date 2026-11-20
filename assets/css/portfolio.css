@@ -45,9 +45,9 @@
 .portfolio-hero {
     position: relative;
 
-    min-height: 650px;
+    min-height: auto;
 
-    padding: 115px 0 100px;
+    padding: 52px 0 64px;
 
     background: linear-gradient(165deg, var(--primary-dark) 0%, var(--primary) 100%);
     color: var(--off-white);
@@ -618,11 +618,11 @@ main section.trusted .trusted-copy p {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
 
-    gap: 120px;
+    gap: 60px;
 
-    align-items: end;
+    align-items: start;
 
-    margin-bottom: 85px;
+    margin-bottom: 60px;
 }
 
 .testimonials-heading .section-label {
