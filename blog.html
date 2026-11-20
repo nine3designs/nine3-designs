@@ -225,8 +225,7 @@
 
 
         <div class="blog-grid">
-<!-- Paste into blog.html, top of .blog-grid (newest first). Image: blog/images/blog23.jpg -->
-<article class="blog-card">
+<!-- Paste into blog.html, top of .blog-grid (newest first). Image: blog/images/blog23.jpg --><article class="blog-card">
 
     <div class="blog-card-media">
 
@@ -422,6 +421,27 @@
 
 
             <!-- POST 0 - NEW: website timeline -->
+
+
+        </div>
+
+        <div class="blog-more">
+
+            <div class="blog-more-head">
+
+                <span class="section-label">More from the desk</span>
+
+                <div class="blog-nav">
+
+                    <button type="button" class="blog-arrow" id="blogPrev" aria-label="Previous articles">&larr;</button>
+
+                    <button type="button" class="blog-arrow" id="blogNext" aria-label="Next articles">&rarr;</button>
+
+                </div>
+
+            </div>
+
+            <div class="blog-track" id="blogTrack">
 
             <article class="blog-card">
 
@@ -830,7 +850,11 @@
 
         </div>
 
-    </div>
+
+            </div>
+
+        </div>
+
 
 </section>
 
@@ -989,6 +1013,76 @@
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/main.js"></script>
 
 <script src="assets/js/nine3-enquiry.js" defer></script>
+
+
+<style>
+
+/* More from the desk carousel (20 Nov) */
+
+.blog-more{ margin-top:3.5rem; }
+
+.blog-more-head{ display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.6rem; }
+
+.blog-more-head .section-label{ margin-bottom:0; }
+
+.blog-nav{ display:flex; gap:.6rem; }
+
+.blog-arrow{ width:46px; height:46px; border-radius:999px; border:1.5px solid rgba(39,43,43,.3); background:#FEF9F3; color:#272B2B; font-size:1.05rem; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; transition:background .25s ease,color .25s ease,border-color .25s ease,opacity .2s ease; }
+
+.blog-arrow:hover{ background:#174B50; border-color:#174B50; color:#F5F1E8; }
+
+.blog-arrow:disabled{ opacity:.35; cursor:default; }
+
+.blog-arrow:disabled:hover{ background:#FEF9F3; border-color:rgba(39,43,43,.3); color:#272B2B; }
+
+.blog-track{ display:flex; gap:1.6rem; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; padding-bottom:.75rem; scrollbar-width:none; }
+
+.blog-track::-webkit-scrollbar{ display:none; }
+
+.blog-track .blog-card{ flex:0 0 min(360px, 82vw); scroll-snap-align:start; }
+
+.blog-track .blog-card .blog-card-media img{ aspect-ratio:16/9; object-fit:cover; }
+
+@media(max-width:768px){ .blog-track .blog-card{ flex-basis:78vw; } }
+
+</style>
+
+<script>
+
+(function(){
+
+    var track = document.getElementById("blogTrack");
+
+    if(!track) return;
+
+    var prev = document.getElementById("blogPrev");
+
+    var next = document.getElementById("blogNext");
+
+    function step(){ var card = track.querySelector(".blog-card"); return card ? card.getBoundingClientRect().width + 25 : 360; }
+
+    function sync(){
+
+        prev.disabled = track.scrollLeft <= 4;
+
+        next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+
+    }
+
+    prev.addEventListener("click", function(){ track.scrollBy({ left: -step(), behavior:"smooth" }); });
+
+    next.addEventListener("click", function(){ track.scrollBy({ left: step(), behavior:"smooth" }); });
+
+    track.addEventListener("scroll", sync, { passive:true });
+
+    window.addEventListener("resize", sync);
+
+    sync();
+
+})();
+
+</script>
+
 </body>
 
 </html>
