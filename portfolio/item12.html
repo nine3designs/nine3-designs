@@ -288,7 +288,7 @@ main{font-family:'Satoshi',sans-serif}
 .se-hero{max-width:560px;margin:0 auto;text-align:center;padding-bottom:2rem}
 .se-hero h1{font-size:clamp(2rem,4.5vw,2.7rem)}
 .se-lede{margin:1rem auto 0;max-width:400px}
-.se-grid{max-width:960px;padding:0 22px;gap:28px;display:grid;grid-template-columns:1.05fr .95fr;align-items:start}
+@media(min-width:901px){.se-grid{max-width:960px;padding:0 22px;gap:28px;display:grid;grid-template-columns:1.05fr .95fr;align-items:start}}@media(max-width:900px){.se-grid{display:block}.se-grid > *{margin-bottom:24px}}
 section.se-grid{background:transparent!important;box-shadow:none!important}
 .se-card--teal{align-self:auto}
 .se-deck{background:transparent!important;box-shadow:none!important;transform:none!important}
