@@ -332,6 +332,17 @@ section.se-grid{background:transparent!important;box-shadow:none!important}
 .se-grid{max-width:1020px!important;grid-template-columns:1fr .92fr!important}
 @media(max-width:900px){.se-grid{display:block}.se-grid > *{margin-bottom:24px}}
 @media(max-width:768px){.se-quote{font-size:1rem!important}.se-card--teal{padding:2.25rem 1.6rem!important}}
+
+/* quote space + hover pass (20 Nov) */
+.se-card--teal::before{font-size:4.5rem!important;top:16px!important;left:26px!important}
+.se-quote{padding-top:3.4rem!important}
+.se-card{transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease}
+.se-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(39,43,43,.2)}
+.se-card--teal:hover{box-shadow:0 20px 44px rgba(10,40,44,.35)}
+.se-swatches span{transition:transform .25s ease}
+.se-swatches span:hover{transform:translateY(-3px) scale(1.18)}
+.se-deck:hover .se-slide.is-active{box-shadow:0 20px 44px rgba(39,43,43,.24)}
+@media(max-width:768px){.se-card--teal::before{font-size:4rem!important;top:10px!important;left:20px!important}.se-quote{padding-top:3rem!important}}
 </style>
 </head>
 
