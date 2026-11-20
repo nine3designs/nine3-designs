@@ -322,7 +322,17 @@ section.se-grid{background:transparent!important;box-shadow:none!important}
 @media (prefers-reduced-motion:reduce){.se-deck,.se-card--teal,.se-solo{opacity:1;transform:none;transition:none}.se-slide{transition:none}.se-slide.is-active img{animation:none}}
 @media (max-width:900px){.se-grid{display:block}.se-grid > *{margin-bottom:24px}}
 @media (max-width:768px){.se-slide.is-next1{transform:translate(-6px,-9px) rotate(-1.6deg) scale(.95)}.se-slide.is-next2{transform:translate(8px,-18px) rotate(1.8deg) scale(.9)}}
-    </style>
+    
+/* quote read pass (20 Nov) */
+.se-quote{font-family:'Raleway',sans-serif!important;font-weight:400!important;font-size:1.04rem!important;line-height:1.85!important;letter-spacing:.012em!important;text-align:left!important;max-width:none!important}
+.se-quote p{margin:0 0 1.15rem}
+.se-quote p:last-child{margin-bottom:0}
+.se-hl{font-weight:600!important;color:#FFFFFF!important;text-decoration:underline;text-decoration-color:rgba(179,194,195,.5);text-decoration-thickness:2px;text-underline-offset:5px}
+.se-card--teal{justify-content:flex-start!important;padding:2.75rem 2.4rem!important}
+.se-grid{max-width:1020px!important;grid-template-columns:1fr .92fr!important}
+@media(max-width:900px){.se-grid{display:block}.se-grid > *{margin-bottom:24px}}
+@media(max-width:768px){.se-quote{font-size:1rem!important}.se-card--teal{padding:2.25rem 1.6rem!important}}
+</style>
 </head>
 
 
@@ -430,7 +440,7 @@ section.se-grid{background:transparent!important;box-shadow:none!important}
     </figure>
     <div class="se-card se-card--teal">
       <div class="se-quote">
-        <p>The symbol is an abstract Greek column, the classic emblem of law, simplified into clean, confident strokes. It also hides the brand's initials: the capital and central shafts form a T for Tevuna, and the two hooked outer shafts read as upside down Ls for Law. A column, a monogram and the name in one simple shape that stays clear at any size, from favicons to business cards. The wordmark is set in widely spaced capitals with the tagline beneath in a lighter treatment, so the name leads and the promise follows, and the palette of blues, from deep navy to royal and soft teal, signals trust and stability, the established language of the legal sector.</p>
+        <p>The symbol is an abstract Greek column, the classic emblem of law, simplified into clean, confident strokes. It also hides the <span class="se-hl">brand</span>'s initials: the capital and central shafts form a T for Tevuna, and the two hooked outer shafts read as upside down Ls for Law. A column, a <span class="se-hl">monogram</span> and the name in one simple shape that stays clear at any size, from favicons to business cards. The <span class="se-hl">wordmark</span> is set in widely spaced capitals with the tagline beneath in a lighter treatment, so the name leads and the promise follows, and the <span class="se-hl">palette</span> of blues, from deep navy to royal and soft teal, signals trust and stability, the established language of the legal sector.</p>
       </div>
       <div class="se-swatches">
       <button type="button" class="se-swatch" style="--sw:#98C9D7" data-hex="#98C9D7" aria-label="Copy colour #98C9D7"></button>
